@@ -1,0 +1,40 @@
+Arrowhead Framework development coordination
+WebEx on April 25th 2017.
+
+1) Mandatory core systems v4.0 progress, Jerker
+Csaba: Separate WebEx meeitng ongoing for this. Sercice registry, AAA and Orchestration. Webex for Orchestration planned for next week. After that we should be able to present what 4.0 should be.
+
+2) Support core systems progress, maintainers
+Michele:
+- QoS manager for 3.2 ready. Not working in 3.0.
+- Event handler should work everywhere
+Not able to install DNS-SD inhouse...
+
+Oscar:
+Not really working on our systems. Waiting for Productive to start.
+
+Hasan:
+- Translation system, harmonisation (interface design) work going on with Fredrik and Hasan. No planned development.
+
+
+3) System Service matrix, Fredrik and Mats
+Fredrik: Matrix updated. Need input from "owners". Matrix availible here:
+https://forge.soa4d.org/svn/arrowhead/Common Design Repository/00. DEVELOPMENT/06. Governance/Arrowhead System-Service Matrix_SYNC.xlsx
+
+Csaba: Will update the matrix regarding 3.2 systems, service(IDDs) and the P and C cells. By end of this weeek.
+
+
+Fredrik propose to walk though the matrix during the meetings (since there have been trouble to get asynchronous contributions from participants...)
+
+
+4) Planing of Productive4.0 WP1 kick off workshop Location, Agenda
+- The kickoff for the entire project is planned for May 18, Dresden.
+- No participant was aware of the status for a WP1 kickoff. Errand postponed to next meeting. 
+
+
+5) Next meeting
+Planned for May 19, 15:30. (Some are in MANTIS workshop.)
+
+6) AoB
+No
+

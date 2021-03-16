@@ -1,0 +1,39 @@
+MoM Arrowhead Framework coordination meeting 170912
+
+
+Configuration system, Olov
+	Possible overlap with Authorisation system.
+	Rules are mapping between template names and service type.
+
+SystemRegistry and DeviceRegistry, Ani
+	SysD 
+	Code in development, REST API, in Java, 
+
+Translation, Hasan
+	Integration with security 	Semantics translation.
+
+QoS, Michele
+	No news  	Plans for inter cloud QoS
+	Real time QoS in the works
+
+EventHandler
+	Integration with Historian 
+Historian
+	No further comments, Jens not on-line.		
+
+How are all support core system linked to each others?
+	Start an off-line working group. Lead Hasan, participation by Erkki J, Michele, Olov, Csaba, …
+	
+
+Input from WP8 and 9
+	
+
+
+New 
+- Gateway service
+- Engineering tool for legacy adapters
+- Self adapatabiliyt
+- Smart Service Contract.
+
+
+

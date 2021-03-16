@@ -1,0 +1,259 @@
+Received: from VI1P191MB0336.EURP191.PROD.OUTLOOK.COM (2603:10a6:209:87::40)
+ by AM7P191MB1041.EURP191.PROD.OUTLOOK.COM with HTTPS via
+ AM6P195CA0063.EURP195.PROD.OUTLOOK.COM; Tue, 11 Aug 2020 11:40:52 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=pass;
+ b=DoA5ZOBOLXas8MYTVGUAfwpFyYKUwXreeypsj/hWHQJWK9q7ntWX8tI6cNjqvflGzCU5CyqRP7Z3iCIbdHeWZasmGoyoFd2OBFsDnFD2W0ihjCRW/oorhFk2bM4oZpMAQUgB9V5wla61iPWaOt6nIXUx6zDhmPTOVIWT6Ar1Fi/57g3GXskx2rZ3wqbY12PBv2tgPUxmwDz6noGmF08XJP07LxzxTTPl46sfUg71H6PvLxWFGyIPnrgiCnt/t5wGXyFSxgBUuRFDlAGTPV4O5Yczc6O7ExaPTKtS5M+YGEKtUvgt3ExzO7cTE6kN7YhoBXPXgosRX8PweL11fGseCA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rpbvA3RraxWnIVnHM3xCEEDKL8WpfaWLryvcNLO28pg=;
+ b=KNAQgzZyY4lIaOmfyGFTaTkBfVx5tTA6wXfhzvnC4ai2jtyDlNNNTDoU47iRE1lkszVO11LhXRfFMnNjT72ElFxL8bJbyMEP7+G5cElxkkfHpDjPmCY2hw3OH3/W7hKgBGzdU7AdgOVCIgLhvzeIGpQjhNZ8prorKZZuZDycBuisoCgCyjPl27TNxeXoTwl70NaF1EfsNAA4i5nURR5+QvheTvmhcKLS1cZur2TmGcjeAHwAXVUVm0cujF0FLorgwn9Qsufpz8mDudeK4EyjXtzay2Mlw0pML5XwFqzpuWqCMc5upUdAyiPI95aHECCq92nPtwVNHSCFXtXQvw8JRA==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 40.107.15.107) smtp.rcpttodomain=ltu.se smtp.mailfrom=xarepo.com;
+ dmarc=bestguesspass action=none header.from=xarepo.com; dkim=pass (signature
+ was verified) header.d=xarepo.onmicrosoft.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=xarepo.com] dkim=[1,1,header.d=xarepo.com]
+ dmarc=[1,1,header.from=xarepo.com])
+Received: from MR2P264CA0083.FRAP264.PROD.OUTLOOK.COM (2603:10a6:500:32::23)
+ by VI1P191MB0336.EURP191.PROD.OUTLOOK.COM (2603:10a6:803:2e::31) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3261.16; Tue, 11 Aug
+ 2020 11:40:50 +0000
+Received: from VE1EUR02FT021.eop-EUR02.prod.protection.outlook.com
+ (2603:10a6:500:32:cafe::a4) by MR2P264CA0083.outlook.office365.com
+ (2603:10a6:500:32::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3261.15 via Frontend
+ Transport; Tue, 11 Aug 2020 11:40:50 +0000
+Authentication-Results: spf=pass (sender IP is 40.107.15.107)
+ smtp.mailfrom=xarepo.com; ltu.se; dkim=pass (signature was verified)
+ header.d=xarepo.onmicrosoft.com;ltu.se; dmarc=bestguesspass action=none
+ header.from=xarepo.com;compauth=pass reason=109
+Received-SPF: Pass (protection.outlook.com: domain of xarepo.com designates
+ 40.107.15.107 as permitted sender) receiver=protection.outlook.com;
+ client-ip=40.107.15.107; helo=EUR01-DB5-obe.outbound.protection.outlook.com;
+Received: from EUR01-DB5-obe.outbound.protection.outlook.com (40.107.15.107)
+ by VE1EUR02FT021.mail.protection.outlook.com (10.152.12.111) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3261.16 via Frontend Transport; Tue, 11 Aug 2020 11:40:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=iVW/D8nhoslG1iKPfJfM1PpyLxEYROXCTsxZCRefVD+cnJW3fe1Oy/XK0OCtQaIcA2xkZlPYQTe6vY/pA8pl/kc661IGYgElAoKfei/plW0are2/zcmNk5Y9cOY9CJ0TPaGKXceEV8cQ/AwdU7cyC5SDrv2QBRryXDk6kILY4tE/7J3bV00R3Fa1jNecIZducOSWu6d2GEsg91lYARzRQz6VbhFaE/x8gMxXjRHI46F0F7dFsDEGgQplXJZ62cE6l970IGBx8ROa0D2jEmSkn4JDQ15knzJKmU42VwG40323Rj7PZO99aKzjDhvf8XRDUEQ0wxMWZgB2rzmZKXbEhQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rpbvA3RraxWnIVnHM3xCEEDKL8WpfaWLryvcNLO28pg=;
+ b=lho3yr7wOaDo8+984/W/4eF5uRXuca1PKju+MTtqh7n17X1ySU3r7+T2h2jMQn+hKAqFrgbRQt8O/IyoJByR4KnzanEWabd0sP7i+8A4+yRcQPi2HQmpy/faHK9rvK6uV0P32d5393ob4wVLSYyEp2704esnqK/1pEFJDZdyWTFpmhWPDsXKsgWt/OmoSTeQBhVY58Z+adwE6y1bTNVytSBhL9pxXRHHHsNtcNpDmna1OyiMQSN4qftG+ZK2Yg1ebUTrmmVjqe2YraJe7Y1zZ+AdVIHCgBwg/nF5CIsD4jNtGCHCO6ISMV8aI9DCBBl32XaalJqKDJrRpr8K++6vTQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xarepo.com; dmarc=pass action=none header.from=xarepo.com;
+ dkim=pass header.d=xarepo.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xarepo.onmicrosoft.com; s=selector2-xarepo-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rpbvA3RraxWnIVnHM3xCEEDKL8WpfaWLryvcNLO28pg=;
+ b=EP+3c1wvrkzcApQn9qJip+Ff+QxUIG2ryuZltWuNOGPAYrglYKttkk9e9nO7dFhwtqQTbXRlb6Zg6jcG158+PQGbtS96rfvW3gBbTexIpJIJROmYYGDyB7xFy5uklUNBIXxWOCjhX6oL9IGAT6c+FbucqIkb13hoKh51aVQafVQ=
+Received: from HE1PR1001MB1385.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:3:f4::9)
+ by HE1PR10MB1708.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:7:5a::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3261.16; Tue, 11 Aug
+ 2020 11:40:48 +0000
+Received: from HE1PR1001MB1385.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::3506:b02:518e:2064]) by HE1PR1001MB1385.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::3506:b02:518e:2064%4]) with mapi id 15.20.3261.024; Tue, 11 Aug 2020
+ 11:40:47 +0000
+From: =?iso-8859-1?Q?Johan_Karlsson_R=F6nnberg?= <johan.ronnberg@xarepo.com>
+To: Jerker Delsing <jerker.delsing@ltu.se>
+CC: =?iso-8859-1?Q?Olov_Schel=E9n?= <olov.schelen@ltu.se>,
+	=?iso-8859-1?Q?Nicklas_Nystr=F6m?= <nicklas.nystrom@xarepo.com>
+Subject: Orchestration vs Authorization
+Thread-Topic: Orchestration vs Authorization
+Thread-Index: AQHWb89QwM0/AQ2vp0+6mKvGuROaMA==
+Date: Tue, 11 Aug 2020 11:40:47 +0000
+Message-ID:
+ <HE1PR1001MB13856A49A02C6ED46AF39783E7450@HE1PR1001MB1385.EURPRD10.PROD.OUTLOOK.COM>
+Accept-Language: sv-SE, en-US
+Content-Language: sv-SE
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+Authentication-Results-Original: ltu.se; dkim=none (message not signed)
+ header.d=none;ltu.se; dmarc=none action=none header.from=xarepo.com;
+x-originating-ip: [46.236.103.2]
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-Correlation-Id: b290f870-7385-481c-0a5d-08d83deb658d
+x-ms-traffictypediagnostic: HE1PR10MB1708:|VI1P191MB0336:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs:
+ <HE1PR10MB1708D1ADCDF0B34190A7B606E7450@HE1PR10MB1708.EURPRD10.PROD.OUTLOOK.COM>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;OLM:8882;
+x-ms-exchange-senderadcheck: 1
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:
+ ectzV8Q4glS2zf1+8ZLpDN0z+oitWcZifyVr65cqYrLguaUbHVF0Mgb/zlEOIvQTrJY6K++Wmo5qMWPZwLp+p8IpjfYcIBql6OoOqnug43F7YwtOy5SUXXvxr6D1bdKiyi7AcRe6aXWHz76E2/mlnsAJXVoBCl7n0WYNCeU1qiwH8gv6j8XztBivkDkk4mml9VJpQKQ61VrIYJj+ns9yFgQXqR0s28G1y9obPK8lkzFRkew1IEgrzvMMXp3VpTq3gSHsXCU0yUFht7etLoSdQ256FXDfHW3rCbcJXABidMZF+8LTPcjd5Tfjeu8ABb8q3ZDd5CB/1xDGI7PzEb7D/w==
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:HE1PR1001MB1385.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFTY:;SFS:(346002)(396003)(39830400003)(376002)(366004)(136003)(6916009)(2906002)(33656002)(3480700007)(83380400001)(52536014)(7116003)(55016002)(8936002)(4744005)(8676002)(71200400001)(6506007)(9686003)(26005)(508600001)(450100002)(66446008)(316002)(107886003)(76116006)(19627405001)(86362001)(66946007)(66476007)(66556008)(7696005)(5660300002)(4326008)(186003)(54906003)(64756008);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-Original:
+ 6J5wnKj5gwPjzRZCOMORljFDd8fY5vRV1K0P4ibYUwSEK90VPrDDbQMeSwNKrxIm5lHJcFOjLTbdT8hS9e6U2Fun26zlDorYDp7pa2F3/+lX9gXXQamG4WsJZBD5sXS0JahGSyI1OMwoCri7Mnl1lvP6l211X7QYApcnXts8XwskBoK4gn3zIHqkhq/6JHVyauOGsKnbi8h2U6zMzEm4jTWBcSV4S1EKTxVqIhDCmeau+ClV3p455joPGMvzq6eqg8lZzoiwcywhSj8uQ4SfeF89g11ygkqnuDTbZp7rxPmWF2jahGNkhtijVFhmPw3DJIrtgcQsN5HR+1WFwSL8ojAmBVhCD93uYexOJgObrRWSN0uvVMF8COfrxCjbfYSvTXE0i6QpYiM62z+7+07WZ5htE4GYhE4BF6XPJGeDe22pRzYxp4DO0Y5h4l1NIvxhpYJYdDStxi2R43p8iP574aDRCR3P+nOWtE2/nrE+OISGov+NCcIq1tcBt2QG7kLh28qqkHMDADOWammuYOUVaNKvmJpFIEjf+oDY4vqukaPbcS6T8xG9M7RNKCzd9iM2jajBquxMBuif7vyigl/4dW8P2zb+DUvFSBwez2T0L67Z2q54eRkEKVHusNYiID/YvhGQ1yo392STvOFTAsZBAg==
+Content-Type: multipart/alternative;
+	boundary="_000_HE1PR1001MB13856A49A02C6ED46AF39783E7450HE1PR1001MB1385_"
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR10MB1708
+Return-Path: johan.ronnberg@xarepo.com
+X-MS-Exchange-Organization-ExpirationStartTime: 11 Aug 2020 11:40:50.3276
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ b290f870-7385-481c-0a5d-08d83deb658d
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 5453408b-a6cd-4c1e-8b10-18b500fb544e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ VE1EUR02FT021.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+ VE1EUR02FT021.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthSource:
+ VE1EUR02FT021.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 3a8421b1-3bc0-4e2c-f13d-08d83deb6407
+X-MS-Exchange-AtpMessageProperties: SA
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report:
+ CIP:40.107.15.107;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:EUR01-DB5-obe.outbound.protection.outlook.com;PTR:mail-eopbgr150107.outbound.protection.outlook.com;CAT:NONE;SFTY:;SFS:(4636009)(7636003)(4326008)(450100002)(6506007)(83300400002)(83320400002)(356005)(8676002)(83280400002)(107886003)(9686003)(83380400001)(83310400002)(83290400002)(1096003)(36906005)(33656002)(54906003)(3480700007)(7696005)(86362001)(55016002)(7116003)(8636004)(26005)(52536014)(6916009)(5660300002)(336012)(19627405001);DIR:INB;SFP:;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Aug 2020 11:40:50.1786
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b290f870-7385-481c-0a5d-08d83deb658d
+X-MS-Exchange-CrossTenant-Id: 5453408b-a6cd-4c1e-8b10-18b500fb544e
+X-MS-Exchange-CrossTenant-AuthSource:
+ VE1EUR02FT021.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1P191MB0336
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.8151309
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.3261.025
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(20160514016)(750128)(520011016)(944506458)(944626604);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?s8SZPqgngjTcp+Sp4DwvmUyuUJz/ZZkh3nIq/0qQlbEYtzVTgOiDrIPBKI?=
+ =?iso-8859-1?Q?mzpu88JeyCdZ95j4EyiFdGKuTn8jgfUFzGLc0zT44oxjGAh1dDbKg8BsWP?=
+ =?iso-8859-1?Q?+7MhmLlXmjTscjDoyj12A9DnmxoYeUWr+XVTFopmN7s9Y9CgF5l75jaF3/?=
+ =?iso-8859-1?Q?3Qeyk666hNVlWo7Zuoh6iNbVLeCrK4eOSsTNx+sbli9WFB2j95JXC9w7iR?=
+ =?iso-8859-1?Q?eil8KA2I3/cfaE8Oeuv4UjhyaU91N5EoGGwNK79g1dpdZI6U8jPh5QRArq?=
+ =?iso-8859-1?Q?fBNTiCMt5WkKY9J2TXgZLwnjvt6OZcNIrb4Jxu8X0bBYzOWLtbQRxTlu3u?=
+ =?iso-8859-1?Q?AS2lBnvG33kPlR+JxzR4h6hwjYC2ZJbfWTgnSu73cdosE6yskJPH+qcx+1?=
+ =?iso-8859-1?Q?9bOX4yQ6vZGCFHcCfRx/Svk4byh8Wek2sZ+RV58asJF5orZuAzrNxV9AbC?=
+ =?iso-8859-1?Q?sm9+6JpZkaaOvAFpbRYNJ+Qd98Azgapq7CvTJhKOFshnsEiEC1AEbzimBB?=
+ =?iso-8859-1?Q?XU5ik38xVYz745dgcAGdRfAa+BPusn1DotnPozYw/+tdUbO8oJX1BrUSqW?=
+ =?iso-8859-1?Q?bOlgPPCiGD/kkKqHVaWCTXgSOsezw8/KQm3S2Kz76LKBFc1IzSOAai/Opl?=
+ =?iso-8859-1?Q?97uJsRS0azWSFcl/2S4bw5KA5BwOjoAS2DvK96exOCdZpmbIMR14iJq6OL?=
+ =?iso-8859-1?Q?VLd3ghNhckCZI90idFxV2XlzSPCtcFmvsQF/LsATW+CPgbVPWSiI0ckQ3M?=
+ =?iso-8859-1?Q?hcxAhye03AezfN7iOi1AO66jc6Pi9nFGGXU5WkqBUA5Bd2qqSyI3Uq0UyI?=
+ =?iso-8859-1?Q?YJFTZdWglRrXhb1qZBy77oTBo1Sz8LeMC6e3tqO1sRkZ0ecaILs9Wf7yJx?=
+ =?iso-8859-1?Q?/50tldOYFOdaF807WGC+IaDadFqkL7K55CTS3aootFs5ZIHilcwLu55vX7?=
+ =?iso-8859-1?Q?NVGmM+1uCwwEbkm1rdhCZhFe0GbYiQGCtMTAvoY5KLejnA/NKlN4LqZcu9?=
+ =?iso-8859-1?Q?enSZ1BSArslPtlOlic1yylN8mHRTxe9MYpuHi2M8OyDeJMrcSlWjwL90DW?=
+ =?iso-8859-1?Q?2zUC7zJsg0YxfthO2j89F4JUoyf/MiGLhzbbTfP/WCv65kjcymOLsqW0dA?=
+ =?iso-8859-1?Q?rMIfKq5hu9qmqAYJDp1llLRgzRZrq8+GVw02akhwqwao0wTizT+e8FNdCZ?=
+ =?iso-8859-1?Q?XmkUpXk7LVdA8yFq7OadlgF1IFJsvE7vvmHz9IUTHjgtYvqzL0tnDa01N1?=
+ =?iso-8859-1?Q?DyjsWtefdWQtYNtFpAZ+4r9x/hf1dJtcHnNDCMGLQ+aFuI6acLAEIoiAyu?=
+ =?iso-8859-1?Q?pk3Soyqv9Jewxm80c6kL9noertUFJoWhWFtpLA892bvPwmc=3D?=
+MIME-Version: 1.0
+
+--_000_HE1PR1001MB13856A49A02C6ED46AF39783E7450HE1PR1001MB1385_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hej Jerker
+
+Regarding the issue of Engineering vs Security or Orchestration vs Authoriz=
+ation.
+
+We somehow need to handle the authorization of systems communication when w=
+e want to allow flexible configurations.
+One way is to bootstrap the authorization system with all allowed combinati=
+on, however that might not always be a feasible alternative.
+
+To simplify the operators work I suggest to change the Orchestrator to actu=
+ally create authorization rules when a Store rule is created and remove it =
+when the corresponding Store rule is removed. The Orchestrator has access t=
+o the authentication information for different systems and could insert new=
+ rules into the Authorization system based on the store rules that it has. =
+Since the store rules are managed using the management endpoint that requir=
+es the proper certificate, the store rules should be safe to use as source =
+for authorization rules.
+
+What are your thoughts on this?
+
+/Johan
+
+
+--_000_HE1PR1001MB13856A49A02C6ED46AF39783E7450HE1PR1001MB1385_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+Hej Jerker</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+Regarding the issue of Engineering vs Security or&nbsp;Orchestration vs Aut=
+horization.</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+We somehow need to handle the authorization of systems communication when w=
+e want to allow flexible configurations.</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+One way is to bootstrap the authorization system with all allowed combinati=
+on, however that might not always be a feasible alternative.</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+To simplify the operators work I suggest to change the Orchestrator to actu=
+ally create authorization rules when a Store rule is created and remove it =
+when the corresponding Store rule is removed. The Orchestrator has access t=
+o the authentication information
+ for different systems and could insert new rules into the Authorization sy=
+stem based on the store rules that it has. Since the store rules are manage=
+d using the management endpoint that requires the proper certificate, the s=
+tore rules should be safe to use
+ as source for authorization rules.</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+What are your thoughts on this?</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+/Johan</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+</body>
+</html>
+
+--_000_HE1PR1001MB13856A49A02C6ED46AF39783E7450HE1PR1001MB1385_--

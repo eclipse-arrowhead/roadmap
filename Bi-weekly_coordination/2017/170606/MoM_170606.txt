@@ -1,0 +1,15 @@
+1. A paling list for WP1 of Productive4.0 will be finalised in the coming days by Fredrik. 
+2. The requirements WS of Productive4.0 will be June 21 8.30-10.30. Invitation will be sent to the Productive4.0 mailing list. 
+3. The Productive4.0 development site will be in the air within 1-2 weeks.  Documentation on the various documentation and development sites will be provided by Jerker 
+4. Arrowhead Framework v4.0 specifications for the mandatory core services is currently being developed. ServiceRegistry: Jerker doc owner  Orchestration: Csaba doc owner Authorisation: Jens doc owner  
+5. Updates for core services: Translation, Hasan, no news Gatekeeper, Csaba, documentation being next to work on QoS and EventHandler, Michelle, integration to v3.2 mandatory core services is underway. First integration with Csaba is successful. 
+6. New core services to be considered: Security control
+		- using NGAC from FAR-EDGE
+        - Hasan to bring this with Jens
+
+	Addition of Producer and consumer code to systems in run-time.
+    - Discussion by LTU and Pal on this is ongoing 
+8. Poster for Summer school on Arrowhead Framework to be created. 
+
+9. A general plan for the WP1 work, meetings, deliverables, etc is under development by Fredrik. First version within 1 week.
+

@@ -1,0 +1,263 @@
+Received: from AM7P191MB1076.EURP191.PROD.OUTLOOK.COM (2603:10a6:209:83::36)
+ by AM7P191MB1041.EURP191.PROD.OUTLOOK.COM with HTTPS via
+ AM6P192CA0023.EURP192.PROD.OUTLOOK.COM; Tue, 9 Jun 2020 14:27:12 +0000
+Received: from AM5PR04CA0004.eurprd04.prod.outlook.com (2603:10a6:206:1::17)
+ by AM7P191MB1076.EURP191.PROD.OUTLOOK.COM (2603:10a6:20b:17a::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18; Tue, 9 Jun
+ 2020 14:27:12 +0000
+Received: from VE1EUR02FT030.eop-EUR02.prod.protection.outlook.com
+ (2603:10a6:206:1:cafe::a9) by AM5PR04CA0004.outlook.office365.com
+ (2603:10a6:206:1::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18 via Frontend
+ Transport; Tue, 9 Jun 2020 14:27:11 +0000
+Authentication-Results: spf=pass (sender IP is 2a00:1450:4864:20::32f)
+ smtp.mailfrom=gmail.com; ltuse.mail.onmicrosoft.com; dkim=fail (body hash did
+ not verify) header.d=gmail.com;ltuse.mail.onmicrosoft.com; dmarc=pass
+ action=none header.from=gmail.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates
+ 2a00:1450:4864:20::32f as permitted sender) receiver=protection.outlook.com;
+ client-ip=2a00:1450:4864:20::32f; helo=mail-wm1-x32f.google.com;
+Received: from mail.ltu.se (130.240.20.83) by
+ VE1EUR02FT030.mail.protection.outlook.com (10.152.12.127) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.20.3066.18 via Frontend Transport; Tue, 9 Jun 2020 14:27:11 +0000
+Received: from ltuex4.ltuad.ltu.se (130.240.20.84) by ltuex3.ltuad.ltu.se
+ (130.240.20.83) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Tue, 9 Jun 2020
+ 16:27:09 +0200
+Received: from mx3.ltu.se (130.240.42.13) by ltuex4.ltuad.ltu.se
+ (130.240.20.84) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5 via Frontend
+ Transport; Tue, 9 Jun 2020 16:27:09 +0200
+Authentication-Results-Original: mx3.ltu.se;      dkim=pass
+ header.i=@gmail.com;      spf=pass (mx3.ltu.se: domain of gmail.com
+ designates 2a00:1450:4864:20::32f as permitted sender)
+ smtp.mailfrom=svetlintanyi@gmail.com;      dmarc=pass
+ (opendmarc.status=accept) header.from=gmail.com
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	by mx3.ltu.se with esmtps (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+	(Exim 4.87_1)
+	(envelope-from <svetlintanyi@gmail.com>)
+	id 1jifDY-0009Ob-Kw
+	for jerker@ltuad.ltu.se; Tue, 09 Jun 2020 16:27:08 +0200
+Received: by mail-wm1-x32f.google.com with SMTP id l17so3032969wmj.0
+        for <jerker.delsing@ltu.se>; Tue, 09 Jun 2020 07:27:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=from:mime-version:subject:message-id:date:cc:to;
+        bh=dpTMcJ1E7jzO3m+Q2qTk7+m4LQpY6Hu0GvdKWNwahI0=;
+        b=V2VPEdJmtsLPu8ijNpNbwCW6BK1RiAEmYBn38cYLim+psCqZ/sTbBJBhe+5X94xPc7
+         ZJtpzRC0fcmi7C6dg9dZN4UPAKMSzzh4hstPbaLvGBmV9F4gCWOWxZDnOJ8k7E73AXKg
+         f/Vx8asOyGMdDz7gAwhWq/UGdGYYhjdu7uF1xCk8E58g0YrcTluEspsaugDHv+T++tyb
+         B/wFOkhJDD5zfReh0i0FH/qoeOm5l1r33XYDp4f6MRxRRwCVaMd0tZutYF0OBcXDcufl
+         KWpRd1Xsv6Zw4MZU5dMev8ygwxCFlagN+fZxui8F7Ii1/cAMrIMf9MwhhqDsNsH8yAVY
+         VCyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:mime-version:subject:message-id:date:cc:to;
+        bh=dpTMcJ1E7jzO3m+Q2qTk7+m4LQpY6Hu0GvdKWNwahI0=;
+        b=DQBMw39u0Xc44YP9XhHoI+L2qGAU4k0f0+Y3NoPVtgTodB5FKMT6C97+L65xKtiLJZ
+         sOpTKGI8yc3bd1ncfckdlGzWAfjc4+psfMqJSi3xvfj1n4RjaoVY0XK90Uq6gvoDPcqe
+         5TJImbng4/gJcH0GBs/P97dMkWlDJjVSgwY8klp+nywKm8AaK9Br78/zEnM1mwEUAKRA
+         yTFbXyDxkfcJecIoIPyiV71SJLEF2Isn6UvvXykK9RLoWrM+e04mXQ5siQtjJqCMH6z+
+         5/7zFWZJiH8bX9eJeaUUd8iYh5Rp3cS9E3Fkphe5ECczG+ggjqYqvWCrm3Yowcq5KfKN
+         fwmg==
+X-Gm-Message-State: AOAM53193Jz0HwxQI/PccqY75GaXJyVd1FhuAuKPwAqFKcwarkcNgWeA
+	lSkr+Bk7VFaMuraGhwfltJuxNCAUdtk=
+X-Google-Smtp-Source: ABdhPJy5p1NwHWl/+oVtQizIWwsJ5xzNk1gVz0p72mJHUz8+oWlMuom7uy9Jmjfhp3f3jvWyNgy+6Q==
+X-Received: by 2002:a1c:bc84:: with SMTP id m126mr4569678wmf.159.1591712825556;
+        Tue, 09 Jun 2020 07:27:05 -0700 (PDT)
+Received: from [192.168.0.157] (62-165-193-195.pool.digikabel.hu. [62.165.193.195])
+        by smtp.gmail.com with ESMTPSA id v19sm3036541wml.26.2020.06.09.07.27.04
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 09 Jun 2020 07:27:04 -0700 (PDT)
+From: Szvetlin Tanyi <svetlintanyi@gmail.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_83A02858-A81C-4E6B-AB16-FE970CB4E0E0"
+Message-Id: <91DE7487-F086-4060-9132-A00C458C6083@gmail.com>
+Date: Tue, 9 Jun 2020 16:27:03 +0200
+Cc: Pal Varga <pvarga@tmit.bme.hu>
+To: Jerker Delsing <jerker.delsing@ltu.se>
+X-Mailer: Apple Mail (2.3445.102.3)
+Subject: Arrowhead 4.2.0 Release notes
+Return-Path: svetlintanyi@gmail.com
+X-OrganizationHeadersPreserved: ltuex3.ltuad.ltu.se
+X-MS-Exchange-Organization-ExpirationStartTime: 09 Jun 2020 14:27:11.7037
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ d788969c-9f95-4d06-ecda-08d80c8132e3
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Organization-MessageDirectionality: Originating
+X-MS-Exchange-SkipListedInternetSender:
+ ip=[2a00:1450:4864:20::32f];domain=mail-wm1-x32f.google.com
+X-MS-Exchange-ExternalOriginalInternetSender:
+ ip=[2a00:1450:4864:20::32f];domain=mail-wm1-x32f.google.com
+X-CrossPremisesHeadersPromoted:
+ VE1EUR02FT030.eop-EUR02.prod.protection.outlook.com
+X-CrossPremisesHeadersFiltered:
+ VE1EUR02FT030.eop-EUR02.prod.protection.outlook.com
+X-Forefront-Antispam-Report:
+ CIP:130.240.20.83;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-wm1-x32f.google.com;PTR:mail-wm1-x32f.google.com;CAT:NONE;SFTY:;SFS:(4636009)(7636003)(7596003)(8676002)(966005)(36756003)(36906005)(83380400001)(76482006)(6916009)(5660300002)(107886003)(26005)(33964004)(82310400002)(55446002)(33656002)(7116003)(82202003)(426003)(4326008)(86362001)(73392003)(336012)(1096003)(956004)(8936002)(166002)(2616005);DIR:INB;SFP:;
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource: ltuex4.ltuad.ltu.se
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-OriginatorOrg: ltu.se
+X-MS-Office365-Filtering-Correlation-Id: d788969c-9f95-4d06-ecda-08d80c8132e3
+X-MS-TrafficTypeDiagnostic: AM7P191MB1076:
+X-MS-Exchange-AtpMessageProperties: SA
+X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jun 2020 14:27:11.5894
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d788969c-9f95-4d06-ecda-08d80c8132e3
+X-MS-Exchange-CrossTenant-Id: 5453408b-a6cd-4c1e-8b10-18b500fb544e
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=5453408b-a6cd-4c1e-8b10-18b500fb544e;Ip=[130.240.20.83];Helo=[mail.ltu.se]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7P191MB1076
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:00.9169355
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.3088.011
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(20160514016)(750128)(520011016)(944506458)(944626604);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?SWkySnVhOC9URUNlU3o0aGRXT2lHWUxaZS9RczEwN0w3YWd1aWNkeG83VUdI?=
+ =?utf-8?B?cmtIRHhHZDdHQXA0U3RhL0N3M3RXYTJ2KzF4NFpjYkp2NnpxSytkRllBcllZ?=
+ =?utf-8?B?L0dyam1CZC9EMUc3dWU4UFVZcmNZQmhIaU5EOUZLNGhjaExHTC9QZktKRXdj?=
+ =?utf-8?B?Ym5FNlo4NWtKclBzWHpuSU5sQU15VTRqRHhRSnA3b1RiYjRtT2JHaHYwaXkw?=
+ =?utf-8?B?eUZRZ0hnWC9YSzBDS1NRdWxsNzd4TVRuK0FMRVMvZHpaYXhjR0xxYnJsSlF5?=
+ =?utf-8?B?cGxGSlE0Q2s4K25UVk96TEw4a3NVS2p5VXovd0VnU1B1UnVoOUpHOTQ1dUlj?=
+ =?utf-8?B?dkxtWG1EeUFVUVoyNmN5c3RML0xFTHpGbmxZdk1GTHZweWVZYnF1SDYvQ2tw?=
+ =?utf-8?B?c0cvNWFEcVZmL2UwRkNjNmZvaVV0QkhROTkxTzlldVFuVndqNmdaMS93U2t2?=
+ =?utf-8?B?eG1pOUYwY2lqZThtazQ5ZkErTVVObUVQZGlHTGlDZWo0Y3EyZ1RpbHcrZ2E0?=
+ =?utf-8?B?Y1N1UTlLak9uVWk2anNRWWtOVWNvaTNZVVBIZjIxN0VKRjMvOElaYm0xbHlL?=
+ =?utf-8?B?czJGajVrUVFHYXUvZW55QXpmWjkrL3RqcEZyZkhvOEsvMTd4bm1SMm9vdERT?=
+ =?utf-8?B?cEg5U2xtQllYL2ZFZlMzTmRGSkp2bm5rQ2lOdXFWcUtpVVdxc0pHMnhFV3Zq?=
+ =?utf-8?B?OGtvOUFNYUNwbU1iaHh1MXc2Q1RHZWtFb04yTndaUC9nenRMcG9wZFNVcW9Z?=
+ =?utf-8?B?UjF2S0VWeWMwcWlvdkp4MHl2YncrTEFPQWtnYUlTTzFyMFByTUlydGw5WnBQ?=
+ =?utf-8?B?UnFlL3VuZlltTWI3aVB0Z0Zhc201dDZLTnordjJFN1NFVkJBbmpRdGczWE1N?=
+ =?utf-8?B?SU5WUGJxQlNqNDlUaFZGbDlHZjBjaUplZ0J5UkdYbXhHUlI0RmdzSWkyU0I1?=
+ =?utf-8?B?UGFvTmQwSDFMOWVLZ1ZYU29sbW9IOTBPTHdsbW56Y0xwN0wzcGZJcEU2aTBE?=
+ =?utf-8?B?blYxUHphQytObURJQzlzUUUzMzdYbDBDdkYzaEJXeFFvTnlmYzBKWGZxWElz?=
+ =?utf-8?B?UStQV1h3YmEvT1A3bVRHa3Y4Mklub0t5aVIwY0doaVdvMmZrbEhCR3RsVHNv?=
+ =?utf-8?B?U20zN2ZnQ1ZhY1poR3FVWFdrYkVQMkFUV01IZ3p3b0tObFNPblEydzloQVNu?=
+ =?utf-8?B?TTZrSkpjWlordy81UWxqcTlMK0ZrdW5ScG44RHZQVndrWGZRK3k3ejJiRm5T?=
+ =?utf-8?B?cUdWRmlQZzlQNjJuL0E1RE5OUEhXanE3VWEvMktmMU4xMDR3QkVIMm12RUpr?=
+ =?utf-8?B?MXRKVlNVenRGeEZUbEJVQVJTb2JldHVIV2N3enYwVVdaaStaRDJNOXZLK3Vl?=
+ =?utf-8?B?VFI4aEhoZmV0ZnBpTjRFdnlpZXNEUXp1anZGTVRqOXZCZ3ZFQ3h4L0NZK2N3?=
+ =?utf-8?B?YmxHR0JMUzZNZTVsTXhzMHdaUG5UQ0xnNmQxck1rMnlTMDNxSEVnSVBQeTI1?=
+ =?utf-8?B?aWFOSm5veUlGSU85RnNZVFF6WWttNUYvditLQ0h6ZEZNcEkwK0lFUGovL1cw?=
+ =?utf-8?B?REYzblk2UlRuM2NTZzdVNWlTUEdUOVF3M1BRMkJkQ015NCtaVzlsZFVzU1Rv?=
+ =?utf-8?B?U2F1eENyK1NpSUJTaTNENGN2RkVxL1JUZkJTZlphWGR1Qkp2R0k2anJNTW5y?=
+ =?utf-8?B?ZzZMT0Yvc2c4UTRFNDJCclUrc2szSys3aFVBck9mZHU3bzNPTG1SamxRPT0=?=
+MIME-Version: 1.0
+
+--Apple-Mail=_83A02858-A81C-4E6B-AB16-FE970CB4E0E0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Dear Jerker,=20
+
+I=E2=80=99ve pasted the release notes.
+
+Best wishes,
+Svetlin
+
+
+Arrowhead 4.2.0
+
+<date of the release>
+
+What's New
+
+Various core systems have been relesed.
+- Certificate Authority, the main purpose of this supporting core system =
+is issuing signed certificates to be used in the local cloud. The issued =
+certificates may be revoked from the Management Interface.
+- QoS Monitor, the main purpose of this supporting core system is =
+providing QoS (Quality of Service) measurements to the QoS Manager =
+(which is part of the Orchestrator core system).
+- Onboarding Controller, the main purpose of this supporting core system =
+is to be the entry board for the onboarding procedure. The onboarding =
+controller sits at the edge of the Arrowhead Local Cloud. It is not only =
+reachable from within the cloud by authorized systems, but also from the =
+public through its "accept all" interfaces. Any client may authenticate =
+itself through an Arrowhead certificate, through an authorized =
+manufacturer certificate, or simply through a shared secret.
+- Device Registry, this supporting core system provides a database to =
+store information related to the devices within the Local Cloud.
+- System Registry, this supporting core system provides a database to =
+store information related to the systems of the currently actively =
+offered services within the Local Cloud.
+- Choreographer, this supporting core system allows to execute =
+pre-defined workflows through orchestration and service consumption.
+- Datamanager, this supporting core system provides storage for sensor =
+data in SenML format.
+- Huge ammount of unit and integration tests to ensure seamless =
+operation.
+- Extended documentation, which will be expanded in the near future.
+
+
+Bug Fixes
+
+- Some minor issues in the Service Registry and Orchestrator have been =
+fixed.
+
+Detailed documentation of the framework can be found in the GitHub =
+repository: https://github.com/arrowhead-f/core-java-spring =
+<https://github.com/arrowhead-f/core-java-spring>=09=
+
+--Apple-Mail=_83A02858-A81C-4E6B-AB16-FE970CB4E0E0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; line-b=
+reak: after-white-space;" class=3D"">Dear Jerker,&nbsp;<div class=3D""><br =
+class=3D""></div><div class=3D"">I=E2=80=99ve pasted the release notes.</di=
+v><div class=3D""><br class=3D""></div><div class=3D"">Best wishes,</div><d=
+iv class=3D"">Svetlin</div><div class=3D""><br class=3D""></div><div class=
+=3D""><br class=3D""></div><div class=3D""><div class=3D""><b class=3D"">Ar=
+rowhead 4.2.0</b></div><div class=3D""><br class=3D""></div><div class=3D""=
+>&lt;date of the release&gt;</div><div class=3D""><br class=3D""></div><div=
+ class=3D"">What's New</div><div class=3D""><br class=3D""></div><div class=
+=3D"">Various core systems have been relesed.</div><div class=3D"">- <b cla=
+ss=3D"">Certificate Authority</b>, the main purpose of this supporting core=
+ system is issuing signed certificates to be used in the local cloud. The i=
+ssued certificates may be revoked from the Management Interface.</div><div =
+class=3D"">- <b class=3D"">QoS Monitor</b>, the main purpose of this suppor=
+ting core system is providing QoS (Quality of Service) measurements to the =
+QoS Manager (which is part of the Orchestrator core system).</div><div clas=
+s=3D"">- <b class=3D"">Onboarding Controller</b>, the main purpose of this =
+supporting core system is to be the entry board for the onboarding procedur=
+e. The onboarding controller sits at the edge of the Arrowhead Local Cloud.=
+ It is not only reachable from within the cloud by authorized systems, but =
+also from the public through its &quot;accept all&quot; interfaces. Any cli=
+ent may authenticate itself through an Arrowhead certificate, through an au=
+thorized manufacturer certificate, or simply through a shared secret.</div>=
+<div class=3D"">- <b class=3D"">Device Registry</b>, this supporting core s=
+ystem provides a database to store information related to the devices withi=
+n the Local Cloud.</div><div class=3D"">- <b class=3D"">System Registry</b>=
+, this supporting core system provides a database to store information rela=
+ted to the systems of the currently actively offered services within the Lo=
+cal Cloud.</div><div class=3D"">- <b class=3D"">Choreographer</b>, this sup=
+porting core system allows to execute pre-defined workflows through orchest=
+ration and service consumption.</div><div class=3D"">- <b class=3D"">Datama=
+nager</b>, this supporting core system provides storage for sensor data in =
+SenML format.</div><div class=3D"">- Huge ammount of unit and integration t=
+ests to ensure seamless operation.</div><div class=3D"">- Extended document=
+ation, which will be expanded in the near future.</div><div class=3D""><br =
+class=3D""></div><div class=3D""><br class=3D""></div><div class=3D"">Bug F=
+ixes</div><div class=3D""><br class=3D""></div><div class=3D"">- Some minor=
+ issues in the Service Registry and Orchestrator have been fixed.</div></di=
+v><div class=3D""><br class=3D""></div><div class=3D"">Detailed documentati=
+on of the framework can be found in the GitHub repository:&nbsp;<a href=3D"=
+https://github.com/arrowhead-f/core-java-spring" class=3D"">https://github.=
+com/arrowhead-f/core-java-spring</a><span class=3D"Apple-tab-span" style=3D=
+"white-space: pre;">	</span></div></body></html>=
+
+--Apple-Mail=_83A02858-A81C-4E6B-AB16-FE970CB4E0E0--

@@ -1,0 +1,603 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+\newcommand{\fparam}[1]{\textit{\textcolor{ArrowheadBlue}{#1}}}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1 \label{sec:model:primitives:#1} \label{sec:model:primitives:#1s}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[5]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    #2 \textcolor{ArrowheadPurple}{#3} \\
+    \small
+    \hspace*{0.075\textwidth}\begin{minipage}{0.1\textwidth}
+      \vspace*{1mm}
+      Interface: \\
+      \notblank{#4}{Input: \\}{}
+      \notblank{#5}{Output: \\}{}
+    \end{minipage}
+    \begin{minipage}{0.825\textwidth}
+      \vspace*{1mm}
+      \textcolor{ArrowheadBlue}{#1} \\
+      \notblank{#4}{\mref{#4} \\}{}
+      \notblank{#5}{\mref{#5} \\}{}
+    \end{minipage}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s}
+}
+%%
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{Orchestration HTTP/TLS/JSON}
+\ArrowheadServiceID{orchestrationl}
+\ArrowheadType{Interface Design Description}
+\ArrowheadTypeShort{IDD}
+\ArrowheadVersion{4.3.0}
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Szvetlin Tanyi}
+\ArrowheadStatus{RELEASE}
+\ArrowheadContact{szvetlin@aitia.ai}
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  \Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    This document describes a HTTP/TLS/JSON variant of the Orchestration service.
+  \end{abstract}
+
+  \vspace*{1cm}
+
+  \scriptsize
+  \begin{tabularx}{\textwidth}{l X}
+    \raisebox{-0.5\height}{\includegraphics[width=2cm]{figures/artemis_logo}} & {ARTEMIS Innovation Pilot Project: Arrowhead\newline
+    THEME [SP1-JTI-ARTEMIS-2012-AIPP4 SP1-JTI-ARTEMIS-2012-AIPP6]\newline
+    [Production and Energy System Automation Intelligent-Built environment and urban infrastructure for sustainable and friendly cities]}
+  \end{tabularx}
+  \vspace*{-0.2cm}
+\end{center}
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+
+This document describes the Orchestration Eclipse Arrowhead service, which provides Application Systems with orchestration information: where they need to connect to. The outcome of the Orchestration Service include rules that will tell the Application System what Service provider System(s) it should connect to and how (acting as a Service Consumer). 
+
+This document exists as a complement to the \textit{Orchestration -- Service Description} document.
+For further details about how this service is meant to be used, please consult that document.
+The rest of this document describes how to realize the Orchestration service using HTTP \cite{fielding2014hypertext}, TLS \cite{rescorla2018transport} and JSON \cite{bray2014json}, both in terms of its functions (Section \ref{sec:functions}) and its information model (Section \ref{sec:model}).
+
+\newpage
+
+\section{Service Functions}
+\label{sec:functions}
+
+This section lists the functions that must be exposed by the Orchestration service in alphabetical order.
+In particular, each subsection first names the HTTP method and path used to call the function, after which it names an abstract function from the Orchestration SD document, as well as input and output types.
+All functions in this section respond with the HTTP status code \texttt{200 Created} if called successfully. The error codes are, \texttt{400 Bad Request} if request is malformed, \texttt{401 Unauthorized} if improper client side certificate is provided, \texttt{500 Internal Server Error} if Service Registry is unavailable.
+
+\fsubsection{Echo}{GET}{/orchestrator/echo}{}{StatusCodeKind}
+
+Called to check the core systems availability, as exemplified in Listing \ref{lst:echo}.
+
+\begin{lstlisting}[language=http,label={lst:echo},caption={An \fref{Echo} invocation response.}]
+GET /authorization/echo HTTP/1.1
+
+Got it!
+\end{lstlisting}
+
+\fsubsection{Orchestration}{POST}{/orchestrator/orchestration/}{ServiceRequestForm}{OrchestrationResponse}
+
+Called to start the orchestration process. \ref{lst:orchestration_request}.
+
+Orchestrator can be used in two ways. The first one uses predefined rules (coming from the Orchestrator Store DB) to find the appropriate providers for the consumer. The second option is the dynamic orchestration in which case the core service searches the whole local cloud (and maybe some other clouds) to find matching providers.
+
+Store Orchestration:
+\begin{itemize}
+    \item requester system is mandatory,
+    \item requested service and all the other parameters are optional,
+    \item if requested service is not specified, then this service returns the top priority local provider of all services contained by the orchestrator store database for the requester system. if requested service is specified, then you have to define the service definition and exactly one interface (all other service requirements are optional). In this case, it returns all accessible providers from the orchestrator store database that provides the specified service via the specified interface to the specified consumer.
+\end{itemize}
+
+Dynamic Orchestration:
+\begin{itemize}
+    \item requester system is mandatory,
+    \item requested service is mandatory, but just the service definition part, all other parameters of the requested service are optional,
+    \item all other parameters are optional
+\end{itemize}
+
+\begin{lstlisting}[language=http,label={lst:orchestration_request},caption={An \fref{Orchestration} invocation with ServiceRequestForm  payload.}]
+POST/orchestrator/orchestration HTTP/1.1
+
+{
+  "requesterSystem": {
+    "systemName": "string",
+    "address": "string",
+    "port": 0,
+    "authenticationInfo": "string"
+  },
+  "requestedService": {
+    "serviceDefinitionRequirement": "string",
+    "interfaceRequirements": [
+      "string"
+    ],
+    "securityRequirements": [
+      "NOT_SECURE", "CERTIFICATE", "TOKEN"
+    ],
+    "metadataRequirements": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    },
+    "versionRequirement": 0,
+    "maxVersionRequirement": 0,
+    "minVersionRequirement": 0
+  },
+  "preferredProviders": [
+    {
+      "providerCloud": {
+        "operator": "string",
+        "name": "string"
+      },
+      "providerSystem": {
+        "systemName": "string",
+        "address": "string",
+        "port": 0
+      }
+    }
+  ],
+  "orchestrationFlags": {
+    "additionalProp1": true,
+    "additionalProp2": true,
+    "additionalProp3": true
+  }
+}
+
+\end{lstlisting}
+
+Response of the call above:
+
+\begin{lstlisting}[language=http,label={lst:response_orchestration},caption={An \fref{OrchestrationResponse}}]
+{
+  "response": [
+    {
+      "provider": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "service": {
+        "id": 0,
+        "serviceDefinition": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "serviceUri": "string",
+      "secure": "TOKEN",
+      "metadata": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },  
+      "interfaces": [
+        {
+          "id": 0,
+          "createdAt": "string",
+          "interfaceName": "string",
+          "updatedAt": "string"
+        }
+      ],
+      "version": 0,
+      "authorizationTokens": {
+        "interfaceName1": "token1",
+        "interfaceName2": "token2"
+      },
+      "warnings": [
+        "FROM_OTHER_CLOUD", "TTL_UNKNOWN"
+      ]
+    }
+  ]
+}
+
+
+\end{lstlisting}
+
+\fsubsection{Start store Orchestration by ID}{GET}{/orchestrator/orchestration/\{id\}}{}{OrchestrationResponse}
+
+If the consumer knows its' ID, it can used this service as shortcut for store-based orchestration when the service returns the top priority local provider of all services contained by the orchestrator store database for the requester system (identified by the ID) Listing \ref{lst:store_orch}.
+
+\begin{lstlisting}[language=http,label={lst:store_orch},caption={A \fref{Store orchestration by ID} invocation.}]
+GET /orchestrator/orchestration/{id} HTTP/1.1
+
+{
+  "response": [
+    {
+      "provider": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "service": {
+        "id": 0,
+        "serviceDefinition": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "serviceUri": "string",
+      "secure": "TOKEN",
+      "metadata": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },  
+      "interfaces": [
+        {
+          "id": 0,
+          "createdAt": "string",
+          "interfaceName": "string",
+          "updatedAt": "string"
+        }
+      ],
+      "version": 0,
+      "authorizationTokens": {
+        "interfaceName1": "token1",
+        "interfaceName2": "token2"
+      },
+      "warnings": [
+        "FROM_OTHER_CLOUD", "TTL_UNKNOWN"
+      ]
+    }
+  ]
+}
+
+\end{lstlisting}
+
+\newpage
+
+\section{Information Model}
+\label{sec:model}
+
+Here, all data objects that can be part of the service calls associated with this service are listed in alphabetic order.
+Note that each subsection, which describes one type of object, begins with the \textit{struct} keyword, which is meant to denote a JSON \pref{Object} that must contain certain fields, or names, with values conforming to explicitly named types.
+As a complement to the primary types defined in this section, there is also a list of secondary types in Section \ref{sec:model:primitives}, which are used to represent things like hashes, identifiers and texts.
+
+\msubsection{struct}{Commands}
+
+A plain \pref{Object}. A "qosExclusivity" key can be set, with a \pref{Number} value which reserves the provider for the consumer for the set amount of seconds. This means the Orchestrator won't offer this provider to anyone else until the given time has not passed.
+
+
+\msubsection{struct}{InterfaceObject}
+
+This structure is used to describe an Interface \pref{Object}.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"id"                 & \pref{RandomID} & ID. \\ \hline
+"interfaceName"      & \pref{Interface}   & Interface Name. \\ \hline
+"createdAt"          & \pref{DateTime} & Created At. \\ \hline
+"updatedAt"          & \pref{DateTime} & Updated At. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{Metadata}
+
+A JSON \pref{Object} which maps \pref{String} key-value pairs.
+
+\msubsection{struct}{OrchestrationResponse}
+
+This structure is used to describe an OrchestrationResponse \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{3.5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type               & Description \\ \hline
+"provider"            & \pref{Provider}                    & Provider. \\ \hline
+"service"             & \pref{Service}                     & Service. \\ \hline
+"serviceUri"          & \pref{URI}                         & Service URI. \\ \hline
+"secure"              & \pref{SecureType}                  & Secure Type. \\ \hline
+"metadata"            & \pref{Metadata}                    & Metadata. \\ \hline 
+"interfaces"          & \pref{Array}$<$\mref{InterfaceObject}$>$ & Interfaces \\ \hline
+"version"             & \pref{Version}                     & Version number \\ \hline
+"authorizationTokens" & \pref{AuthorizationTokens}         & Authorization Tokens \\ \hline 
+"warnings"            & \pref{Warnings}                    & Warnings \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{Provider}
+
+This structure is used to describe a Provider \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{6cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"id"                 & \pref{RandomID} & ID. \\ \hline
+"systemName"         & \pref{Name}     & System Name. \\ \hline
+"address"            & \pref{String}   & Address. \\ \hline
+"port"               & \pref{Port}     & Port. \\ \hline
+"authenticationInfo" & \pref{String}   & Authentication Info. \\ \hline
+"createdAt"          & \pref{DateTime} & Created At. \\ \hline
+"updatedAt"          & \pref{DateTime} & Updated At. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{Service}
+
+This structure is used to describe a Service \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"id"                 & \pref{RandomID} & ID. \\ \hline
+"serviceDefinition"  & \pref{String}   & Service Definition. \\ \hline
+"createdAt"          & \pref{DateTime} & Created At. \\ \hline
+"updatedAt"          & \pref{DateTime} & Updated At. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{ServiceRequestForm}
+
+This structure is used to describe a ServiceRequestForm \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type                      & Description \\ \hline
+"requesterSystem"                   & \pref{System}     & Requester System. \\ \hline
+"requestedService"                  & \pref{Service}   & Requested Service. \\ \hline
+"preferredProviders"                & \pref{Array}$<$\mref{PreferredProvider}$>$   & Array of Preferred providers \\ \hline
+"orchestrationFlags"                & \pref{OrchestrationFlags}     & Orchestration flags \\ \hline
+"qosRequirements"                   & \pref{QoSRequirements}     & QoS Requirements \\ \hline
+"commands"                           & \pref{Commands}     & Orchestration Commands \\ \hline
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{PreferredProvider}
+
+This structure is used to describe a PreferredProvider \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type                      & Description \\ \hline
+"providerCloud"         & \pref{ProviderCloud}     & Provider Cloud. \\ \hline
+"providerSystem"            & \pref{ProviderSystem}   & Provider System. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{ProviderCloud}
+
+This structure is used to describe a ProviderCloud \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type                      & Description \\ \hline
+"operator"         & \pref{Name}     & Name of the operator company. \\ \hline
+"name"            & \pref{Name}   & Name of the cloud. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{ProviderSystem}
+
+This structure is used to describe a ProviderSystem \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type                      & Description \\ \hline
+"systemName"         & \pref{Name}     & System Name. \\ \hline
+"address"            & \pref{String}   & Address. \\ \hline
+"port"               & \pref{Port}     & Port. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{RequesterSystem}
+
+This structure is used to describe a RequesterSystem \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type                      & Description \\ \hline
+"systemName"         & \pref{Name}     & System Name. \\ \hline
+"address"            & \pref{String}   & Address. \\ \hline
+"port"               & \pref{Port}     & Port. \\ \hline
+"authenticationInfo" & \pref{String}   & Authentication Info. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{RequestedService}
+
+This structure is used to describe a RequestedService \pref{Object}. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{6cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type                      & Description \\ \hline
+"serviceDefinitionRequirement"         & \pref{String}     & Required Service Definition. \\ \hline
+"interfaceRequirements"            & \pref{Array}$<$\mref{Interface}$>$   & List of required interfaces. \\ \hline
+"securityRequirements"               & \pref{Array}$<$\mref{SecureType}$>$     & List of Secure Type. \\ \hline
+"metadataRequirements" & \pref{Metadata}   & Required Metadata. \\ \hline
+"versionRequirement"   & \pref{Version} & Version Requirement \\ \hline
+"maxVersionRequirement" & \pref{Version} & Maximum version \\ \hline
+"minVersionRequirement" & \pref{Version} & Minimum version \\ \hline
+
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{QoSRequirements}
+
+A plain \pref{Object}. The following keys can be set:
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type                      & Description \\ \hline
+"qosMaxRespTimeThreshold"         & \pref{Name}     & Milliseconds,  maximum value of the response time. \\ \hline
+"qosAvgRespTime"            & \pref{Number}   & Milliseconds, maximum value of the average response time. \\ \hline
+"qosJitterThreshold"               & \pref{Number}     &  Milliseconds, maximum acceptable jitter. \\ \hline
+"qosMaxRecentPacketLoss" & \pref{Number}   & Percent (0-100). \\ \hline
+"qosMaxPacketLost"       & \pref{Number} & Percent (0-100). \\ \hline
+
+\end{tabularx}
+\end{table}
+
+
+\msubsection{struct}{Warnings}
+
+A JSON \pref{Array} which contains \pref{String} values.
+
+It can contain the following values:
+\begin{itemize}
+    \item \textbf{FROM\_OTHER\_CLOUD} (if the provider is in an other cloud)
+    \item \textbf{TTL\_EXPIRED} (the provider is no longer accessible)
+\item \textbf{TTL\_EXPIRING} (the provider will be inaccessible in a matter of minutes),
+\item \textbf{TTL\_UNKNOWN} (the provider does not specified expiration time)
+\end{itemize}
+
+\subsection{Primitives}
+\label{sec:model:primitives}
+
+As all messages are encoded using the JSON format \cite{bray2014json}, the following primitive constructs, part of that standard, become available.
+Note that the official standard is defined in terms of parsing rules, while this list only concerns syntactic information.
+Furthermore, the \pref{Object} and \pref{Array} types are given optional generic type parameters, which are used in this document to signify when pair values or elements are expected to conform to certain types. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{3cm} | X |} \hline
+\rowcolor{gray!33} JSON Type & Description \\ \hline
+\pdef{Value}                 & Any out of \pref{Object}, \pref{Array}, \pref{String}, \pref{Number}, \pref{Boolean} or \pref{Null}. \\ \hline
+\pdef{Object}$<$A$>$         & An unordered collection of $[$\pref{String}: \pref{Value}$]$ pairs, where each \pref{Value} conforms to type A. \\ \hline
+\pdef{Array}$<$A$>$          & An ordered collection of \pref{Value} elements, where each element conforms to type A. \\ \hline
+\pdef{String}                & An arbitrary UTF-8 string. \\ \hline
+\pdef{Number}                & Any IEEE 754 binary64 floating point number \cite{cowlishaw2019floating}, except for \textit{+Inf}, \textit{-Inf} and \textit{NaN}. \\ \hline
+\pdef{Boolean}               & One out of \texttt{true} or \texttt{false}. \\ \hline
+\pdef{Null}                  & Must be \texttt{null}. \\ \hline
+\end{tabularx}
+\end{table}
+
+With these primitives now available, we proceed to define all the types specified in the Service Discovery Register SD document without a direct equivalent among the JSON types.
+Concretely, we define the Service Discovery Register SD primitives either as \textit{aliases} or \textit{structs}.
+An \textit{alias} is a renaming of an existing type, but with some further details about how it is intended to be used.
+Structs are described in the beginning of the parent section.
+The types are listed by name in alphabetical order.
+
+\subsubsection{alias \pdef{DateTime} = \pref{String}}
+
+Pinpoints a moment in time in the format of "YYYY-MM-DD HH:mm:ss", where "YYYY" denotes year (4 digits), "MM" denotes month starting from 01, "DD" denotes day starting from 01, "HH" denotes hour in the 24-hour format (00-23), "MM" denotes minute (00-59), "SS" denotes second (00-59). " " is used as separator between the date and the time.
+An example of a valid date/time string is "2020-12-05 12:00:00"
+
+
+\subsubsection{alias \pdef{Interface} = \pref{String}}
+
+A \pref{String} that describes an interface in \textit{Protocol-SecurityType-MimeType} format. \textit{SecurityType} can be SECURE or INSECURE. \textit{Protocol} and \textit{MimeType} can be anything. An example of a valid interface is: "HTTPS-SECURE-JSON" or "HTTP-INSECURE-SENML".
+
+\subsubsection{alias \pdef{Name} = \pref{String}}
+
+A String that is meant to be short (less than a few tens of characters) and both human and machine-readable.
+
+\subsubsection{alias \pdef{id} = \pref{Number}}
+
+An identifier generated for each \pref{Object} that enables to distinguish them and later to refer to a specific \pref{Object}.
+
+\subsubsection{alias \pdef{RandomID} = \pref{Number}}
+
+An integer Number, originally chosen from a secure source of random numbers. When new RandomIDs are created, they must be ensured not to conflict with any relevant existing random numbers.
+
+\subsubsection{alias \pdef{Name} = \pref{String}}
+
+A \pref{String} that is meant to be short (less than a few tens of characters) and both human and machine-readable.
+
+\subsubsection{alias \pdef{SecureType} = \pref{String}}
+
+A \pref{String} that describes an the security type. Possible values are \textit{NOT\_SECURE} or \textit{CERTIFICATE} or \textit{TOKEN}.
+
+\subsubsection{alias \pdef{URI} = \pref{String}}
+
+A \pref{String} that represents the URL subpath where the offered service is reachable, starting with a slash ("/"). An example of a valid URI is "/temperature".
+
+\subsubsection{alias \pdef{Version} = \pref{Number}}
+
+A \pref{Number} that represents the version of the service. And example of a valid version is: 1.
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+\subsection{Amendments}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2020-12-05 & 1.0.0 & & Szvetlin Tanyi \\ \hline
+
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & 2021-01-28 & 4.3.0. & Jerker Delsing\\ \hline
+
+\end{tabularx}
+
+\end{document}

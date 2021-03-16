@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contract xmlns="http://cdl/2018/01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+	
+	<context xml:lang="EN">
+		<keywords>Temperature service</keywords>
+	</context>
+
+
+
+	<interface protocol="HTTP" address="http://127.0.0.1/8888" >
+	
+		<method name="POST" id="temp_update" path="/update_temp">
+
+			<request>
+				<format> 
+					<encode name="JSON" mediaType= "application/josn" version="2.3.0"/>
+					<security mode="not_secure"/>
+					<qos level="0"/> 
+					<semantic> 
+					<notation ontology="demoCustom" href="../.."/> 
+					<semantic/>
+					
+				</format> 
+			<payload>	
+					<complextype type="null"/> 					
+					<element name="name" type="String" variation="id"/>
+					<element name="localization" type="String" variation="country"/>
+                                        <complexelement name="value" type="single">
+                                            <element name="temp" type="Float" variation="temperature" unit="Celsius" max="40" />
+                                            <element name="unit" type="String" />
+                                        </complexelement>
+				
+					
+                        </payload>
+			</request>
+			
+			<response status="200">
+                            <format> 
+						<encode name="JSON" mediaType= "application/josn" version="2.3.0"/>
+					<security mode="not_secure"/>
+					<qos level="0"/> 
+					<semantic> 
+					<notation ontology="demoCustom" href="../.."/> 
+					<semantic/>
+				</format> 
+                              <payload>	
+					<complextype type="null"/> 					
+					<element name="response" type="String"/>	
+                              </payload>     
+                                
+                         </response>
+		</method>
+
+	</interface>
+</contract>

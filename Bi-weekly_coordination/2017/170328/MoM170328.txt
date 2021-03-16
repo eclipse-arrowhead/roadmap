@@ -1,0 +1,67 @@
+Arrowhead Framework development telco 170328
+
+1) Harmonisation of Arrowhead Framework, Pal
+- Different versions of
+-- ServiceRegistry, 
+-- Orchestration, 
+-- Authorisation, certificate and ticket
+
+JD informed about the discussion held in two telcos.
+
+The discussion has only advanced to the ServiceRegistry.
+The major proposals so far are:
+
+Discussion on Service naming.
+- Seams that the book definition is OK
+
+Discussion on search for meta data in the DNS TXT field through the ServiceRegistry
+- Agreement that this is desirable!
+- Possibly implemented in the Java code by BNearIT
+
+
+Discussion on providing support for ServiceRegistry access through different SOA protocols.
+- Enables introduction of new services to a local cloud and a ServiceRegistry by only requiring that the ServiceRegistry service is a WELL KNOWN. 
+- Can be implemented through the Simple ServiceRegistry API.
+
+
+2) Eventhandler and QoSManager/Monitor are being worked on. Both are tested with v3.2.  Patches applied to the orchestration system to make it work.
+Michele to upload code and documentation to the git repository at the Arrowhead Framework wiki
+
+
+PlantDescription service
+Nothing to report
+
+Configuration system
+Nothing to report
+
+Translation system
+Active  work in documentation
+OPC-UA translator is progressing.
+
+Roadmap - maturing code work for MQTT
+Compatible with V1.0 and HTTP interface, no use of Authorisation
+HTTP interface not compatible to V3.2
+
+
+Gatekeeper
+Nothing reported
+
+
+JD still to propose  common place for Roadmaps
+
+3) System service matrix
+Mats and Fredrik has made several attacks on this.
+An updated version expected sometimes next week.
+Notification will be sent by mats and Fredrik when and where it's available.
+All maintainers to complement the data after that.
+
+4) Application systems
+Flexoffer, not updates, compatible with V1.0
+
+5) Next meeting, April 11, 15.30
+
+
+6) AoB
+
+
+

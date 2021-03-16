@@ -1,0 +1,68 @@
+Arrowhead Framework telco 170314
+
+1) Harmonisation of Arrowhead Framework, Pal
+- Different versions of
+-- ServiceRegistry, 
+-- Orchestration, 
+-- Authorisation, certificate and ticket
+
+Telco,
+==============
+V1, BnearIT, released
+V3.2, AITIA, not released
+V4.0, - integration of features
+
+Key topics to address for V4.0
+===================
+Standards used
+- Should be based on solid technology arguments
+Features, ready, planed
+Ease of use
+
+Discussion on used of underlaying standards
+- Hasan, standardise interfaces from different protocols to DNS-SD
+- Mats, back ward compatibility is an important feature
+- Pal, allow for no more than one ServiceRegistry underlaying data structure.
+
+2) Eventhandler, documentation and code is available, tested with V1.0 and V3.2.
+QoS, documentation in wiki, tested with V3.2.
+Roadmap FTC and 802.15.4 integration, Michelle TODO
+
+PlantDescription service
+Nothing to report
+Roadmap?
+
+Configuration system
+Nothing to report
+Roadmap?
+
+Translation system
+Active  work in documentation
+OPC-UA translator
+Roadmap - maturing code work for MQTT
+Compatatible with V1.0 and HTTP interface, no use of Authorisation
+HTTP interface not compatible to V3.2
+
+
+Gatekeeper
+Stable V3.2 requires V3.2 AF
+
+
+JD to propose  common place for Roadmaps
+
+3) System service matrix
+Mats and Fredrik will update the matrix Thursday this week
+All maintainers to complement the data after Thursday.
+
+4) Application systems
+Flexoffer, not updates, compatible with V1.0
+
+5) Next meeting, March 28 15.30
+Invitation to FAR-EDGE people in addition to the core group
+
+
+6) AoB
+Jerker informed about the process of moving the soa4d.org site responsibility from Schneider Electric to LTU.
+
+
+

@@ -1,0 +1,389 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Bold;
+\f3\fswiss\fcharset0 ArialMT;\f4\fswiss\fcharset0 Arial-BoldMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red251\green2\blue7;
+\red69\green60\blue204;\red9\green79\blue209;\red20\green160\blue194;\red38\green38\blue38;\red242\green242\blue242;
+\red255\green255\blue255;\red15\green114\blue45;\red9\green75\blue106;\red145\green145\blue145;\red83\green83\blue83;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\cname textColor;\cssrgb\c0\c0\c0;\cssrgb\c100000\c14902\c0;
+\cssrgb\c34510\c33725\c83922;\cssrgb\c0\c40784\c85490;\cssrgb\c0\c68627\c80392;\cssrgb\c20000\c20000\c20000;\cssrgb\c96078\c96078\c96078;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c50980\c23137;\cssrgb\c0\c36863\c49020;\cssrgb\c63529\c63529\c63529;\cssrgb\c40000\c40000\c40000;
+}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 From: Pal Varga <pvarga@tmit.bme.hu>\
+Subject: Re: Join Webex meeting in progress: Pal\
+Date: 9 March 2021 at 14:17:16 CET\
+To: Jerker Delsing <Jerker.Delsing@ltu.se>\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 15 then. Sorry for the mess.\
+In the meantime, the answers discussed with Svetlin:\
+---\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf3 "Missing project-wide Arrowhead community\'94
+\f1\b0  GitHub offers a build in wiki for exactly this purpose. The first concept was to have everything in one place (the long readme). The Latex documentation will be soon ready. The corresponding sections will be removed from the readme, and the technical information will be migrated to the appropriate wifi section.\
+\
+
+\f2\b "Missing core-client-skeleton library"
+\f1\b0 : This is a common mistake. What repository you are looking for is a package. See the attached screenshot. For it to be usable, you need to do third step of the \'93
+\f2\b Requirements
+\f1\b0 \'94 section.\
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 {{\NeXTGraphic unknown.png \width13200 \height5740 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf3 "make use of wiki module for repositories\'94
+\f1\b0 : We will migrate the technical documentation to the GitHub Wiki.\
+\
+
+\f2\b "Missing a simple tutorial ("Hello World") for a better Access into the AH FW development\'94
+\f1\b0 : This a very good comment, it would be beneficial to create a step by step tutorial with increasing difficulty, starting from a single provider, ending with a fully fledged inter cloud scenario. A \'93tutorial\'94 progression draft will be created and will be presented for review.\
+\
+
+\f2\b "Constants within the code (e.g., IP's of core services) in one central place, not in every single module
+\f1\b0 \'94: Everything is dynamically configurable via the application.properties file before startup.\
+\
+
+\f2\b "Time synchronisation service\'94
+\f1\b0 : We can explore this idea. Further discussion needed.\
+\
+Bosch:\
+
+\f2\b "Decrease size of repository\'94
+\f1\b0  Issue is that someone\'92s local copy will restore the current git history, with the large files. Solution: recreate the repository and push the code.\
+\
+
+\f2\b "Add License File to the repository\'94 \cf4 \strokec4 Resolved
+\f1\b0 \cf3 \strokec3 \
+
+\f2\b "main pom.xml references Apache License\'94 \cf4 \strokec4 Resolved
+\f1\b0 \cf3 \strokec3 \
+
+\f2\b "Master branch is ahead of the development branch\'94 \cf4 \strokec4 Resolved
+\f1\b0 \cf3 \strokec3 \
+
+\f2\b "The README in the development branch still says v4.1.3\'94 \cf4 \strokec4 Resolved
+\f1\b0 \cf3 \strokec3 \
+\
+
+\f2\b "Make build server accessible\'94
+\f1\b0  Using GitHub Actions to enforce code convention and build the code is a good idea, will make code reviews easier. Moreover a Jenkins CI/CD instance will be available from Eclipse, that will build the release packages and docker containers.\
+\
+
+\f2\b "Kubernetes Deployment\'94
+\f1\b0  It is possible to create a Kubernetes cluster. A good hackathlon idea.\
+\
+
+\f2\b "Service generation implies System generation\'94
+\f1\b0  Since 2020 November there is a new client endpoint in the service registry, which enables this functionality. This issue will be properly resolved after merging Service-System-Device Registry Core systems into one.\
+\
+----\
+\
+Pal\
+\
+On 09/03/2021 14:14, Jerker Delsing wrote:\
+\pard\pardeftab720\partightenfactor0
+\cf5 \strokec5 15 is OK\
+\'a015.30 is to late.\
+\
+Jerker\
+\pard\pardeftab720\partightenfactor0
+\cf3 \strokec3 ====================\
+Professor Jerker Delsing\
+Lulea University of Technology\
+EISLAB\
+97187 Lulea\'a0\
+Sweden\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "mailto:jerker.delsing@ltu.se"}}{\fldrslt \cf6 \ul \ulc6 \strokec6 email: jerker.delsing@ltu.se}}\
+phone: 0046706261931\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.ltu.se%2Feislab&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234555741%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=HekVYPlqTDq2i6LT8JJw6tM7oeEWr9fg0SMkcFWu7EU%3D&reserved=0"}}{\fldrslt \cf6 \ul \ulc6 \strokec6 http://www.ltu.se/eislab}}\
+\pard\pardeftab720\partightenfactor0
+\cf5 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \strokec7 On 9 Mar 2021, at 14:11, Pal Varga <{\field{\*\fldinst{HYPERLINK "mailto:pvarga@tmit.bme.hu"}}{\fldrslt \cf6 \ul \ulc6 \strokec6 pvarga@tmit.bme.hu}}> wrote:\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf7 Hi Jerker,\
+Sorry, I made a mistake. Only free from 15:00 - can I join you then? Or 15:30?\
+Thanks,\
+\'a0\'a0\'a0 Pal\uc0\u8232 \
+\pard\pardeftab720\partightenfactor0
+\cf7 On 09/03/2021 14:06, jerker delsing wrote:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trcbpat9 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth14260\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl360\partightenfactor0
+
+\f3\fs28 \cf8 \strokec8 \'a0\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trcbpat9 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth14260\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trcbpat10 \trwWidth12000\trftsWidth3 \trmarl1130 \trmarr1130 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth12000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl360\partightenfactor0
+\cf8 \'a0\nestcell \nestrow
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trcbpat10 \trwWidth12000\trftsWidth3 \trmarl1130 \trmarr1130 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth10000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl1000 \clpadr1000 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl360\partightenfactor0
+\cf8 {{\NeXTGraphic cisco-webex-meetings.png \width2400 \height600 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\intbl\itap2\pardeftab720\sl360\partightenfactor0
+\cf8 \nestcell \nestrow
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trcbpat10 \trwWidth12000\trftsWidth3 \trmarl1130 \trmarr1130 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth12000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl360\partightenfactor0
+\cf8 \'a0\nestcell \lastrow\nestrow
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trcbpat10 \trwWidth12000\trftsWidth3 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth10000\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl1000 \clpadr1000 \gaph\cellx8640
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth10000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl920\partightenfactor0
+
+\fs68 \cf3 \strokec3 jerker delsing is inviting you to a Webex meeting in progress. \nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7935\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\fs28 \cf8 \strokec8 \'a0\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7935\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl440\partightenfactor0
+
+\f4\b\fs32 \cf3 \strokec3 Pal\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7935\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl400\partightenfactor0
+
+\f3\b0\fs28 \cf8 \strokec8 \'a0\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7935\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl440\partightenfactor0
+
+\fs32 \cf3 \strokec3 Host: jerker delsing \nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7935\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl440\partightenfactor0
+\cf3 Tuesday 9 March 2021 \nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7935\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl440\partightenfactor0
+\cf3 14:00\'a0\'a0|\'a0\'a0Sweden Time (Stockholm, GMT+01:00)\'a0\'a0|\'a0\'a01 hr \nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3708\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clmrg \clvertalc \clshdrawnil \clwWidth3708\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl360\partightenfactor0
+
+\fs28 \cf8 \strokec8 \'a0\nestcell 
+\pard\intbl\itap3\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3708\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3720\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+
+\itap4\trowd \taflags0 \trgaph108\trleft-108 \trcbpat11 \trminw3200 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth2268\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt200 \clpadl720 \clpadb200 \clpadr720 \gaph\cellx8640
+\pard\intbl\itap4\pardeftab720\sl360\qc\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fltu.webex.com%2Fltu%2Fe.php%3FMTID%3Dm05f878ab79798dca7d4a05cddb7f584b&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234555741%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=Ian9jyG9txG0RhhtiCXpnZHZh%2FoPCkWlHVX2dCKPOvc%3D&reserved=0"}}{\fldrslt 
+\fs40 \cf10 \strokec10 Join meeting}}\nestcell \lastrow\nestrow\nestcell 
+
+\itap4\trowd \taflags0 \trgaph108\trleft-108 \trminw3720 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3720\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap4\pardeftab720\sl360\partightenfactor0
+\cf8 \'a0\nestcell \lastrow\nestrow\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9814\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl680\partightenfactor0
+\cf8 \'a0\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9814\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f4\b \cf3 \strokec3 More ways to join:\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9814\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl200\partightenfactor0
+
+\f3\b0 \cf8 \strokec8 \'a0\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9814\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f4\b\fs24 \cf3 \strokec3 Join from the meeting link\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9814\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl360\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fltu.webex.com%2Fltu%2Fe.php%3FMTID%3Dm05f878ab79798dca7d4a05cddb7f584b&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234565733%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=SRHJDraONpCVbOuSmijOMAwoZf1sQA23aiA%2ByiFrCXg%3D&reserved=0"}}{\fldrslt 
+\f3\b0\fs28 \cf12 \strokec12 https://ltu.webex.com/ltu/e.php?MTID=m05f878ab79798dca7d4a05cddb7f584b}}
+\f3\b0\fs28 \cf8 \strokec8 \nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9814\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl400\partightenfactor0
+\cf8 \'a0\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth2773\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f4\b\fs24 \cf3 \strokec3 Join by meeting number\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5790\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl440\partightenfactor0
+
+\f3\b0\fs28 \cf8 \strokec8 Meeting number (access code): 181 470 2957 \nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth4404\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl440\partightenfactor0
+\cf8 Meeting password: Yws3AdCMH83\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth155\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl440\partightenfactor0
+\cf8 \'a0 \nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6063\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f4\b\fs24 \cf3 \strokec3 Tap to join from a mobile device (attendees only)\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6063\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "tel:%2B46850513563,,*01*1814702957%23%23*01*"}}{\fldrslt 
+\f3\b0\fs28 \cf12 \strokec12 +46850513563,,1814702957##}}
+\f3\b0\fs28 \cf8 \strokec8 \'a0\cf13 \strokec13 Sweden toll\cf8 \strokec8 \nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6063\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "tel:%2B49-6196-7819736,,*01*1814702957%23%23*01*"}}{\fldrslt \cf12 \strokec12 +49-6196-7819736,,1814702957##}}\'a0\cf13 \strokec13 Germany toll\cf8 \strokec8 \nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6063\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+\cf8 \'a0\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6468\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f4\b\fs24 \cf3 \strokec3 Join by phone\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6468\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f3\b0\fs28 \cf8 \strokec8 +46 85051 3563\'a0\cf13 \strokec13 Sweden toll\cf8 \strokec8 \nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6468\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+\cf8 +49-6196-7819736\'a0\cf13 \strokec13 Germany toll\cf8 \strokec8 \nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6468\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fltu.webex.com%2Fltu%2Fglobalcallin.php%3FserviceType%3DMC%26ED%3D1213535672%26tollFree%3D1&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234575722%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=JJu%2Bs4ujhk5zMcl9xi1rzYgPzm4CUFgzwSMNVu2osqU%3D&reserved=0"}}{\fldrslt \cf12 \strokec12 Global call-in numbers}}\'a0\'a0|\'a0\'a0{\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.webex.com%2Fpdf%2Ftollfree_restrictions.pdf&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234575722%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=vL%2BISzTUbpQOer5QeYe45GS48InLZI6hHXKLDQQuDpU%3D&reserved=0"}}{\fldrslt \cf12 \strokec12 Toll-free calling restrictions}}\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth77\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl400\partightenfactor0
+\cf8 \'a0\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7420\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f4\b\fs24 \cf3 \strokec3 Join from a video system or application\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7420\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f3\b0\fs28 \cf8 \strokec8 Dial {\field{\*\fldinst{HYPERLINK "sip:1814702957@ltu.webex.com"}}{\fldrslt \cf12 \strokec12 1814702957@ltu.webex.com}}\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7420\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+\cf8 You can also dial 62.109.219.4 and enter your meeting number.\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth77\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl100\partightenfactor0
+\cf8 \'a0\nestcell \lastrow\nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6712\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f4\b\fs24 \cf3 \strokec3 Join using Microsoft Lync or Microsoft Skype for Business\nestcell \nestrow
+
+\itap3\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth6712\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap3\pardeftab720\sl480\partightenfactor0
+
+\f3\b0\fs28 \cf8 \strokec8 Dial {\field{\*\fldinst{HYPERLINK "sip:1814702957.ltu@lync.webex.com"}}{\fldrslt \cf12 \strokec12 1814702957.ltu@lync.webex.com}}\nestcell \lastrow\nestrow\nestcell \lastrow\nestrow
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trcbpat10 \trwWidth12000\trftsWidth3 \trmarl1130 \trmarr1130 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth12000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl360\partightenfactor0
+\cf8 \'a0\nestcell \nestrow
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trcbpat10 \trwWidth12000\trftsWidth3 \trmarl1130 \trmarr1130 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth10000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl1000 \clpadr1000 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl480\partightenfactor0
+\cf3 \strokec3 Need help? Go to {\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhelp.webex.com%2F&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234585715%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=aNTIcioIzm1NWnKx5c7dTlJGs3HnxqyErBFYyBK78oY%3D&reserved=0"}}{\fldrslt \cf12 \strokec12 https://help.webex.com}}\nestcell \nestrow
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trcbpat10 \trwWidth12000\trftsWidth3 \trmarl1130 \trmarr1130 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth12000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl360\partightenfactor0
+\cf8 \strokec8 \'a0\nestcell \lastrow\nestrow\cell \lastrow\row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trcbpat9 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth14260\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trwWidth12000\trftsWidth3 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth12000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl360\partightenfactor0
+\cf8 \'a0\nestcell \nestrow
+
+\itap2\trowd \taflags0 \trgaph108\trleft-108 \trwWidth12000\trftsWidth3 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth12000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\sl360\qc\partightenfactor0
+
+\fs18 \cf14 \strokec14 \'a9 2021 Cisco and/or its affiliates. All rights reserved.\'a0\'a0 {\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.cisco.com%2Fc%2Fen%2Fus%2Fabout%2Flegal%2Fprivacy.html&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234585715%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=HVnn97helbWhZ11AuI2xkBXdIi5gWZhZLsl0i%2F6Anyo%3D&reserved=0"}}{\fldrslt \cf12 \strokec12 Privacy Statement}} \'a0|\'a0 {\field{\*\fldinst{HYPERLINK "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.cisco.com%2Fc%2Fen%2Fus%2Fproducts%2Funiversal-cloud-agreement.html&data=04%7C01%7C%7C823ebf9b61574bc7eb8808d8e2fdae0f%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637508927234595714%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=up%2BdCJwSxab793xD9WXBxQWVDNuKpLJUDdW1Pyj%2Fwo0%3D&reserved=0"}}{\fldrslt \cf12 \strokec12 Terms of Service}}\nestcell \lastrow\nestrow
+\pard\intbl\itap1\pardeftab720\sl360\partightenfactor0
+
+\fs32 \cf3 \strokec3 \cell \lastrow\row
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf5 \strokec5 \
+}

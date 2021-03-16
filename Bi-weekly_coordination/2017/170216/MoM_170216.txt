@@ -1,0 +1,65 @@
+MoM Arrowhead Framework telco 170215, 15.30-17.00 CET
+
+Agenda
+
+1) Arrowhead Framework Open source project, Jerker
+Short introduction of current status of government of Arrowhead Framework and repository operations.
+LTU will take over the hosting of forge.soa4d.org from Schneider by May 2017.
+LTU will run this as long the Productive4.0 project is in operations.
+The Arrowhead Framework wiki repository was update to a git repository 170218.
+
+2) Core systems, which are they and status
+The current core system status was reported. Historian was not reported since Jens was not on-line.
+Status and compatibilities to other core services to be stated in system_service_matrix in git. 
+
+3) Releases of core systems, versioning
+Versoning should be made according to the following numbering schema:
+
+x.y stable version
+x.y+1_dev_0x latest development version
+x.y+1_pre_0x latest ore release candidate version
+x.y+1_rc         release candidate version
+x.y+1 	       released stable version
+
+Still ti determine is how systems and services should be numbered.
+
+The following release procedure was agreed:
+1) Approval of _dev and _pre versions by core system maintainer
+2) Approval _rc and x.y stable version by maintainer group
+
+Criteria for approval still TBD. 
+
+4) Maintainers of individual core systems
+ServiceRegistry, TDB
+Authorisation, AA, AAA, TBD
+Orchestration, TBD
+PlantDescription, Oscar 
+Configuration, Oscar
+Translation, Hasan
+Historian, Jens
+Gatekeeper, Csaba
+SystemRegistry, TBD
+Device registry, TBD
+QoS, Michele/Luis
+Eventhandler, Michele/Luis
+
+
+5) Maintenance of Arrowhead Framework Wiki
+LTU and Jeker will be the main maintainer of the Arrowhead Framework wiki site.
+
+
+6) ToDo list
+Each maintainer was requested to initiate a roadmap for the core systems.
+
+7) Next meetings and who to invite
+These Arrowhead Framework development coordination webex meetings to be run bi weekly on Tuesdays 15.30-17.00 CET. Starting on Tuesday Feb 28, 2017.
+webex meetings hosted by LTU.
+Meeting chairs: Jerker and Luis
+
+8) AoB
+No AoB
+
+
+
+at keyboard
+Jerker

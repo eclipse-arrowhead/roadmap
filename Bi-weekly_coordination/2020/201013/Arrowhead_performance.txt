@@ -1,0 +1,33 @@
+Student: Can Deliorman
+Title: Performance Evaluation of a Middleware Framework for CPS/IoT Ecosystem
+ 
+Abstract
+The Internet of Things (IoT) is becoming a reality, as the number of devices connected
+to the Internet increases rapidly. These devices need to communicate with each other
+without human interaction. Interoperability, availability, reliability, mobility, performance,
+management, scalability, and security are the main challenges in an IoT ecosystem. As a
+middleware for Cyber-Physical Spaces/Internet of Things, the Arrowhead Framework has
+been developed to tackle these challenges. As the number of devices connected through the
+framework grows higher, the framework may experience performance problems, such as
+errors and/or crashes. To evaluate the reliability, availability, performance, and scalability
+of the Arrowhead Framework, we have conducted load and stress tests on the framework
+to explore the limits of different components. Since the Internet of Things will cover
+various hardware, we have repeated our tests on two different hardware configurations.
+Our goal is to detect potential bottlenecks, errors, and optimal configurations in different
+use cases. The Arrowhead Framework is developed in Java programming language and
+runs on the Java Virtual Machine (JVM). There are multiple JVMs available on the
+market that promise less resource consumption and better startup times. Ahead-of-
+Time (AOT) compilation is also increasingly being used along with Just-in-Time (JIT)
+compilation methods for the JVMs. OpenJ9 has integrated the AOT compilation with
+the JIT compilation and shared classes cache to improve the startup times and reduce
+resource consumption. After executing our tests on the HotSpot JVM, we repeated
+our performance tests on OpenJ9 with the default configuration, as well as on OpenJ9
+with shared classes cache. We have found that the limits for simultaneous requests on a
+component may be as low as ten requests per second. However, this number is highly
+dependent on the hardware configuration. For use cases where high traffic is expected,
+an enhanced hardware configuration is recommended. We have also discovered that even
+though OpenJ9 with shared classes cache reduced the memory consumption and startup
+times, it led to higher response times than the HotSpot JVM. Nevertheless, it can be
+an interesting option for devices with limited resources and low traffic. Our tests help
+developers and users of the Arrowhead Framework with deciding on the correct hardware
+and software solution when using the framework.

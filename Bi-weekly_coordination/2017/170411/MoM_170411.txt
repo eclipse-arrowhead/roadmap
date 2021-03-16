@@ -1,0 +1,39 @@
+MoM Arrowhead coordination 170411
+
+
+
+1) System service  matrix, review, Fredrik, Mats
+The updated version was presented and discussed.
+It was concluded that the ServiceRegistry system is special from a deployment and startup view point.
+The concluded thinking is:
+The ServiceRegistry exhibits a DNS-SD interface
+The ServiceRegistryBridge exhibits interfaces to SOA protocols like e.g. HTTP, CoAP, MQTT, ... and bridges them to DNS-SD
+
+A still open discussion is on how versioning numbering should be displayed: baseline and artifact version.
+This also have to be tide to SD, IDD, CP and SP documents in a structured way.
+
+Finally it was considered how links to documentation could be made. The idea of implementing the SystemService matrix in the wiki was lifted. No conclusion was made. 
+
+
+2) Arrowhead Framework V4.0, progress, Jerker
+Csaba, Pal, Fredrik, Hasna, Mats and Jerker is working. Telcos every week.
+ServiceRegistry is covered. Next step is to create concrete specifications of ServiceRegistry V4.0. Will include more advanced querying functionality. Details TBD.
+Authorisation is currently discussed. Differences and underlaying argument is being understood. Details of this stil t be documented.
+Orchestration is not started yet.
+Ambition is to have specifications for Mandatory system ready by May 18 and the kick off of Productive4.0.
+
+
+3) Core system road maps, maintainers short status report.
+Was pushed to next meeting.
+
+4) Additional core systems?
+Was pushed to next meeting.
+
+5) Invitation to a broader audience
+Jerker will initiate a format to suit a attendece from a wider group
+ 
+6) AoB
+Nothing
+
+
+Jerker

@@ -1,0 +1,62 @@
+;; RefTeX parse info file
+;; File: /Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex
+;; User: jerkerdelsing (Jerker Delsing)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/")
+
+(label-numbers)
+
+(bof "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex")
+
+("sec:services:consumed:#1" "s" "\\newcommand{\\spref}[2]{{\\textcolor{ArrowheadBlue}{\\hyperref[sec:services:produced:#1]{#2}}}} \\newcom" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil)
+
+("sec:services:produced:#1" "s" "%% \\begin{document} %% Arrowhead Document Properties \\ArrowheadTitle{ServiceRegistry} \\ArrowheadType" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil)
+
+(toc "toc" "    1 Overview" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 2 "1" "\\section{Overview}" 1944)
+
+("sec:overview" "s" "This document describes the Eclipse Arrowhead ServiceRegistry system, which exists to enable service" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil)
+
+("fig:Use_case_ServiceRegistry" "f" nil "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil "")
+
+("fig:ServiceRegistrySysDD" "f" "A SysML block description diagram of the Eclipse Arrowhead ServiceRegsitry system. v4.3.0 only suppo" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil)
+
+(toc "toc" "    2 System Role" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 2 "2" "\\section{System Role}" 4708)
+
+("sec:role" "s" "This System only provides one Core Service the \\textbf{Service Discovery}. There are two use case sc" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil)
+
+(toc "toc" "    3 Services" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 2 "3" "\\section{Services}" 6846)
+
+("sec:services" "s" "\\subsection{Consumed Services} None. \\subsection{Provided Services} \\subsubsection{\\spdef{ServiceDis" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil)
+
+(toc "toc" "      3.1 Consumed Services" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 3 "3.1" "\\subsection{Consumed Services}" 6888)
+
+(toc "toc" "      3.2 Provided Services" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 3 "3.2" "\\subsection{Provided Services}" 6927)
+
+(toc "toc" "        3.2.1 \\spdef{ServiceDiscovery}{ServiceDiscovery}" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 4 "3.2.1" "\\subsubsection{\\spdef{ServiceDiscovery}{ServiceDiscovery}}" 6959)
+
+(toc "toc" "    4 Security" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 2 "4" "\\section{Security}" 7220)
+
+("sec:security" "s" "This System can be secured via the HTTPS protocol. If it is started in secure mode, it verifies whet" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil)
+
+(toc "toc" "    5 Revision History" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 2 "5" "\\section{Revision History}" 8157)
+
+(toc "toc" "      5.1 Amendments" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 3 "5.1" "\\subsection{Amendments}" 8184)
+
+(toc "toc" "      5.2 Quality Assurance" "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex" nil 3 "5.2" "\\subsection{Quality Assurance}" 8503)
+
+(bib "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/bibliography.bib")
+
+(eof "/Users/jerkerdelsing/Work/lule/EISLAB/OLD_Projects/arrowhead/ArrowheadTools/Arrowhead_Tools/WP3 Arrowhead Framework/Task 3.1/Work/Roadmap/4.3/Documentation_review/Arrowhead Service Registry Documentation_JD/service_registry_sysdd.tex")
+))
+

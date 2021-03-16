@@ -1,0 +1,41 @@
+MoM Arrowhead Framework development telco 170228
+
+
+1) Arrowhead Framework wiki updated to a git repository. All links has been checked and updated. Most of the repository should be in good shape.
+
+2) System service matrix, SSM, was examined. It was decided that all maintainers should assign a version number to each core system. Suggested version number is 0.9. This version number of each core system should be provided for each core system in the SSM.
+
+Once the common code based of the Mandatory core system is established each core system should be update to be compatibility with the updated Mandatory core systems. Once done the version to the core systems should have version number 1.0.
+
+3) No update on the status of the Historian system could be provided.
+
+4) 5) 7) The merge of the three implementations of the Mandatory core system will be merged. Pal will lead this work. Fredrik, Hasan and Jerker will be involved. The following has to be considered:
+- Differences between the versions
+- Features in the three version, which to be included in the reased version
+- Usages of different standards and libraries
+- Development roadmap beyond the unified code
+
+
+6) Coexistence of AA and AAA solution.
+Pal to investigate 3.2 implementation regarding shared ACL and format semantics of ACL to support co-existence of X.509 and Radius ticket solutions
+
+8) Review of Core system developments
+QoSManager and QoSMontoir: at v0.9 code and doc. To be updated to comply with common Mandatory core system code base. Michelle to make updates in SSM and wiki repository.
+
+Gatekeeper: Stable v1.0. There are some performance issues. Pal/Csaba to make update in SSM and wiki repository.
+
+Application system:
+Flexoffer: Currently using BnearIT core systems. Will be continued in a number of projects. Peteur is willing to make the Flexoffer visible in the Arrowhead Framework wiki with links to the code which currently is hosted at github.
+
+The question of a users guide with a stepvise usage of the core systems was viewed as important.
+
+Pal reported about student corse work that might be possible to document such that a this user guide can be reality.
+
+9) AoB
+Mats did propose a yearly Arrowhead application contest with a € price.
+It was note that this could be arranged in cooperaiton with a yearlt Arrowhead developers conference. It's possible that this can be supported by Productive4.0.
+
+
+At the keyboard
+
+Jerker

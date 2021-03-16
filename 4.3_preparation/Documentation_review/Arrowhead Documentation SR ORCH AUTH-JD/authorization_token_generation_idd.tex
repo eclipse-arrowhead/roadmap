@@ -1,0 +1,302 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+\newcommand{\fparam}[1]{\textit{\textcolor{ArrowheadBlue}{#1}}}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1 \label{sec:model:primitives:#1} \label{sec:model:primitives:#1s}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[5]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    #2 \textcolor{ArrowheadPurple}{#3} \\
+    \small
+    \hspace*{0.075\textwidth}\begin{minipage}{0.1\textwidth}
+      \vspace*{1mm}
+      Interface: \\
+      \notblank{#4}{Input: \\}{}
+      \notblank{#5}{Output: \\}{}
+    \end{minipage}
+    \begin{minipage}{0.825\textwidth}
+      \vspace*{1mm}
+      \textcolor{ArrowheadBlue}{#1} \\
+      \notblank{#4}{\mref{#4} \\}{}
+      \notblank{#5}{\mref{#5} \\}{}
+    \end{minipage}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s}
+}
+%%
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{AuthorizationControl HTTP/TLS/JSON}
+\ArrowheadServiceID{token-generation}
+\ArrowheadType{Interface Design Description}
+\ArrowheadTypeShort{IDD}
+\ArrowheadVersion{4.3.0}
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Szvetlin Tanyi}
+\ArrowheadStatus{RELEASE}
+\ArrowheadContact{szvetlin@aitia.ai}
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  \Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    This document describes a HTTP/TLS/JSON variant of the TokenGeneration service.
+  \end{abstract}
+
+  \vspace*{1cm}
+
+  \scriptsize
+  \begin{tabularx}{\textwidth}{l X}
+    \raisebox{-0.5\height}{\includegraphics[width=2cm]{figures/artemis_logo}} & {ARTEMIS Innovation Pilot Project: Arrowhead\newline
+    THEME [SP1-JTI-ARTEMIS-2012-AIPP4 SP1-JTI-ARTEMIS-2012-AIPP6]\newline
+    [Production and Energy System Automation Intelligent-Built environment and urban infrastructure for sustainable and friendly cities]}
+  \end{tabularx}
+  \vspace*{-0.2cm}
+\end{center}
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+
+This document describes the HTTP/TLS/JSON variant of the TokenGeneration Eclipse Arrowhead service, which enables access token generation for clients.
+Examples of this interaction is the Orchestrator during the orchestration process needs an authorization token for the consumer to be able to use the requested service. 
+
+This document exists as a complement to the \textit{TokenGeneration -- Service Description} document.
+For further details about how this service is meant to be used, please consult that document.
+The rest of this document describes how to realize the TokenGeneration service using HTTP \cite{fielding2014hypertext}, TLS \cite{rescorla2018transport} and JSON \cite{bray2014json}, both in terms of its functions (Section \ref{sec:functions}) and its information model (Section \ref{sec:model}).
+
+\newpage
+
+\section{Service Functions}
+\label{sec:functions}
+
+This section lists the functions that must be exposed by the Authorization Control service in alphabetical order.
+In particular, each subsection first names the HTTP method and path used to call the function, after which it names an abstract function from the TokenGeneration SD document, as well as input and output types.
+All functions in this section respond with the HTTP status code \texttt{200 Created} if called successfully. The error codes are, \texttt{400 Bad Request} if request is malformed, \texttt{401 Unauthorized} if improper client side certificate is provided, \texttt{500 Internal Server Error} if Service Registry is unavailable.
+
+\fsubsection{TokenGeneration}{GET}{/authorization/token}{TokenRule}{TokenData}
+
+Called to generate a token for the client with the given properties, as exemplified in Listing \ref{lst:token}.
+
+\begin{lstlisting}[language=http,label={lst:token},caption={An \fref{Token} invocation response.}]
+POST /authorization/token HTTP/1.1
+
+{
+  "consumer": {
+    "address": "string",
+    "authenticationInfo": "string",
+    "port": 0,
+    "systemName": "string"
+  },
+  "consumerCloud": {
+    "authenticationInfo": "string",
+    "gatekeeperRelayIds": [
+      0
+    ],
+    "gatewayRelayIds": [
+      0
+    ],
+    "name": "string",
+    "neighbor": true,
+    "operator": "string",
+    "secure": true
+  },
+  "duration": 0,
+  "providers": [
+    {
+      "provider": {
+        "address": "string",
+        "authenticationInfo": "string",
+        "port": 0,
+        "systemName": "string"
+      },
+      "serviceInterfaces": [
+        "string"
+      ]
+    }
+  ],
+  "service": "string"
+}
+
+\end{lstlisting}
+
+Response of the call above:
+
+\begin{lstlisting}[language=http,label={lst:token_response},caption={A \fref{Check an InterCloud Rule} InterCloudRresponse}]
+
+{
+  "tokenData": [
+    {
+      "providerAddress": "string",
+      "providerName": "string",
+      "providerPort": 0,
+      "tokens": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      }
+    }
+  ]
+}
+
+\end{lstlisting}
+
+\newpage
+
+\section{Information Model}
+\label{sec:model}
+
+Here, all data objects that can be part of the service calls associated with this service are listed in alphabetic order.
+Note that each subsection, which describes one type of object, begins with the \textit{struct} keyword, which is meant to denote a JSON \pref{Object} that must contain certain fields, or names, with values conforming to explicitly named types.
+As a complement to the primary types defined in this section, there is also a list of secondary types in Section \ref{sec:model:primitives}, which are used to represent things like hashes, identifiers and texts.
+
+\msubsection{struct}{TokenData}
+
+This structure is the response of the \pref{TokenRule}
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{3.5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"tokenData"  & \pref{Array}$<$\mref{TokenInfo}$>$     & Array of Token related information. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{TokenInfo}
+
+This structure is used to describe a TokenInfo \pref{Object}.
+
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{6cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"providerAddress"           & \pref{String}       & Provider Address. \\ \hline
+"providerName"              & \pref{Name}         & Provider Name. \\ \hline
+"providerPort"              & \pref{Number}       & Provider Port. \\ \hline
+"tokens"                    & \pref{Object}       & Token key value pairs. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{TokenRule}
+
+This structure is used to describe a TokenData \pref{Object}.
+
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{6cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"consumer"                   & \pref{Consumer}  & Consumer. \\ \hline
+"consumerCloud"              & \pref{Cloud}     & Neighboring Cloud. \\ \hline
+"duration"                   & \pref{Number}    & Validity of the token in seconds. \\ \hline
+"providers"                  & \pref{Array}$<$\mref{Provider}$>$    & List of Providers and interfaces. \\ \hline
+"service"                    & \pref{Name}      & Service Definition \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\subsection{Primitives}
+\label{sec:model:primitives}
+
+As all messages are encoded using the JSON format \cite{bray2014json}, the following primitive constructs, part of that standard, become available.
+Note that the official standard is defined in terms of parsing rules, while this list only concerns syntactic information.
+Furthermore, the \pref{Object} and \pref{Array} types are given optional generic type parameters, which are used in this document to signify when pair values or elements are expected to conform to certain types. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{3cm} | X |} \hline
+\rowcolor{gray!33} JSON Type & Description \\ \hline
+\pdef{Value}                 & Any out of \pref{Object}, \pref{Array}, \pref{String}, \pref{Number}, \pref{Boolean} or \pref{Null}. \\ \hline
+\pdef{Object}$<$A$>$         & An unordered collection of $[$\pref{String}: \pref{Value}$]$ pairs, where each \pref{Value} conforms to type A. \\ \hline
+\pdef{Array}$<$A$>$          & An ordered collection of \pref{Value} elements, where each element conforms to type A. \\ \hline
+\pdef{String}                & An arbitrary UTF-8 string. \\ \hline
+\pdef{Number}                & Any IEEE 754 binary64 floating point number \cite{cowlishaw2019floating}, except for \textit{+Inf}, \textit{-Inf} and \textit{NaN}. \\ \hline
+\pdef{Boolean}               & One out of \texttt{true} or \texttt{false}. \\ \hline
+\pdef{Null}                  & Must be \texttt{null}. \\ \hline
+\end{tabularx}
+\end{table}
+
+With these primitives now available, we proceed to define all the types specified in the Service Discovery Register SD document without a direct equivalent among the JSON types.
+Concretely, we define the Service Discovery Register SD primitives either as \textit{aliases} or \textit{structs}.
+An \textit{alias} is a renaming of an existing type, but with some further details about how it is intended to be used.
+Structs are described in the beginning of the parent section.
+The types are listed by name in alphabetical order.
+
+\subsubsection{alias \pdef{Name} = \pref{String}}
+
+A String that is meant to be short (less than a few tens of characters) and both human and machine-readable.
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+\subsection{Amendments}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2020-12-05 & 1.0.0 & & Szvetlin Tanyi \\ \hline
+
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & 2021-01-26  & 4.3.0 & Jerker Delsing\\ \hline
+
+\end{tabularx}
+
+\end{document}
