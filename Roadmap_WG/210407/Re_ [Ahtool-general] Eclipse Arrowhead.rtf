@@ -1,0 +1,152 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red69\green60\blue204;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\cname textColor;\cssrgb\c0\c0\c0;\cssrgb\c34510\c33725\c83922;
+}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 From: "Jeroschewski Sven Erik (IOC/PDL21)" <SvenErik.Jeroschewski@bosch.io>\
+Subject: Re: [Ahtool-general] Eclipse Arrowhead\
+Date: 21 December 2020 at 13:48:18 CET\
+To: Marco Jahn <marco.jahn@eclipse-foundation.org>, Jerker Delsing <jerker.delsing@ltu.se>, Szvetlin Tanyi <szvetlin@aitia.ai>, Pal Varga <pvarga@tmit.bme.hu>\
+Cc: Krzysztof Radecki <krzysztof.radecki@dac.digital>, "Kristan Johannes (IOC/PDL21)" <Johannes.Kristan@bosch.io>\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Hello everyone, \
+\
+first of all great news and kudos to everyone involved for bringing the code over to the Eclipse Foundation. Allow me to add some first observations regarding the project website. \'a0\
+\
+#Hosting the Docs/Readme:\
+Regarding the documentation, I like the general idea to separate it into multiple files too as this might be a bit easier to maintain in the long run. Additionally, embedding the Readme/documentation files within a framework such as ReadTheDocs also has the benefit that you become more flexible regarding the UI-design and one thus could integrate the documentation into other websites e.g. https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.arrowhead.eu%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=U%2FjiqV904jod90PmzhvUZI%2F1cVZwLlmjoA2nYG7Jfjg%3D&amp;reserved=0 (see below). \
+Other Eclipse projects such as Eclipse IoT Packages or Eclipse Hono (https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.eclipse.org%2Fhono%2Fdocs%2F&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=%2BQP0MJb%2FYhley6mXOVl06yLSYSk3D2T%2Bk%2BDphrctyCY%3D&amp;reserved=0) have done this through the Hugo framework https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgohugo.io%2F&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=F2772vfuYIG5YEdgEX7UyfAHQLaFVOyfyGF4eC8Hhz4%3D&amp;reserved=0. Essentially, the projects maintain the documentation within MD (Markup) files like in https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Feclipse%2Fhono%2Ftree%2Fmaster%2Fsite%2Fdocumentation%2Fcontent&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=m830WbI9y2qMPxewbgdaPoF7elirxsvGxaD121X9o7M%3D&amp;reserved=0. Hugo then creates the website as part of a build job in Jenkins. \
+\
+#maintain project website in GIT:\
+This brings me to my second question, could we setup a way to propose changes to https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.arrowhead.eu%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=U%2FjiqV904jod90PmzhvUZI%2F1cVZwLlmjoA2nYG7Jfjg%3D&amp;reserved=0 through PRs in a GitHub repository? \
+At the moment, I am not sure how one can propose changes to arrowhead.eu/eclipse-arrowhead other than sending an e-mail to the maintainers of the website. This could become cumbersome for everyone involved and lacks the ability to easily track changes. \'a0My assumption here is that this is this is the project website with the intention to promote the actual technology and the code rather than the publicly funded projects itself (such as https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.arrowhead.eu%2Farrowheadtools&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=s7l5GzULG7D1NCk%2FoVQ1BBntKUcJ3kDJjUhBBuE8rzU%3D&amp;reserved=0). \
+\
+#Redirect from Eclipse.org/arrowhead:\
+Is it further possible to setup a redirect from eclipse.org/arrowhead to https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.arrowhead.eu%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=U%2FjiqV904jod90PmzhvUZI%2F1cVZwLlmjoA2nYG7Jfjg%3D&amp;reserved=0 ? For most Eclipse Projects eclipse.org/<projectname> directly points to the dedicated project website.\
+\
+#Own domain for Eclipse project website\
+Would it be very difficult to give https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.arrowhead.eu%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016188326%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=U%2FjiqV904jod90PmzhvUZI%2F1cVZwLlmjoA2nYG7Jfjg%3D&amp;reserved=0 its own domain or only use eclipse.org/arrowhead ? Personally, I find it confusing to switch between the different copyrights (ARROWHEAD, Eclipse), footer and contexts (Artemis, Eclipse) under the same domain. \
+(Sidenotes: clicking "Copyright Agent" in the Footer of https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.arrowhead.eu%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016198321%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=qFpo8dizMhQVn%2BPyIw8lsCw4oiipOJqCuOhWOeXu%2Ftk%3D&amp;reserved=0 resulted in an 404 Page from the Eclipse Foundation.)\
+\
+#Differentiate between publicly funded project and Eclipse project on landing page\
+I really like the central landing page under Arrowhead.eu. But my proposal is to add some more context as there is a huge difference between the publicly funded projects which focus on the joint work and activities over a specific time frame and the Eclipse project which more prioritizes the management of the results and the actual code. The Eclipse project may further exist beyond lifetime of the funded projects. The landing page could look something like this:\
+"The code and the technology are maintained as part of <link Eclipse Arrowhead>. <newline> The work on these technologies has been kicked-off as part of the publicly funded <link Arrowhead project> and continues in the context of the publicly funded <link Arrowhead Tools>.\
+\
+#Own GitHub organization\
+I guess it is too late for this question and more out of curiosity, what is the reason that you created a own GitHub organization instead of joining the existing Eclipse organization? \
+\
+Sorry, if some of the proposals might come a bit late.\
+\
+Mit freundlichen Gr\'fc\'dfen / Best regards\
+\
+Sven Erik Jeroschewski \
+\
+(IOC/PDL21)\
+Bosch.IO GmbH | Ullsteinstr. 128 | 12109 Berlin | GERMANY | https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.bosch.io%2F&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016198321%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=HAtx1rgrF1L1UQOFsFvbZYM%2FUNyB0GjnQTOCQfvq88k%3D&amp;reserved=0 <applewebdata://0BB55571-5118-404B-AFB6-55DCC4752DB2/https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.bosch.io%2F&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016198321%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=HAtx1rgrF1L1UQOFsFvbZYM%2FUNyB0GjnQTOCQfvq88k%3D&amp;reserved=0>\
+Tel. +49(30)726112-416 | Mobile +49(152)24308225 | Threema <threema://add/?id=N6PZHU3Z> / Threema Work <threemawork://add/?id=N6PZHU3Z>: N6PZHU3Z | SvenErik.Jeroschewski@bosch.io\
+\
+Registered Office: Berlin, Registration Court: Amtsgericht Charlottenburg; HRB 148411 B\
+Chairman of the Supervisory Board: Dr.-Ing. Thorsten L\'fccke; Managing Directors: Dr. Stefan Ferber, Dr. Aleksandar Mitrovic, Yvonne Reckling \
+\
+\
+\uc0\u65279 Am 18.12.20, 16:08 schrieb "Ahtool-general im Auftrag von Marco Jahn via Ahtool-general" <ahtool-general-bounces@forge.soa4d.org im Auftrag von ahtool-general@forge.soa4d.org>:\
+\
+\'a0\'a0\'a0Hi Krzysztof,\
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 configure the project icon in the GitHub repository\
+\pard\pardeftab720\partightenfactor0
+\cf3 \strokec3 \'a0\'a0\'a0I can\'92t do it, Szvetlin as a committer should be able to do it.\
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 The documentation/Readme is quite lengthy - I think moving it to a platform like ReadTheDocs would be a good idea, for the benefit of the readers.\
+\pard\pardeftab720\partightenfactor0
+\cf3 \strokec3 \'a0\'a0\'a0That\'92s something to be discussed with the project leads aka Jerker and Pal and the committers aka Szvetlin. Personally I think having the documentation right there on GitHub is not a bad idea. But I don\'92t know ReadTheDocs.\
+\
+\'a0\'a0\'a0Best regards,\
+\'a0\'a0\'a0Marco\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 On 18. Dec 2020, at 14:36, Krzysztof Radecki <krzysztof.radecki@dac.digital> wrote:\
+\
+Hi Marko,\
+\
+great news. Might I suggest 2 things?\
+configure the project icon in the GitHub repository\
+The documentation/Readme is quite lengthy - I think moving it to a platform like ReadTheDocs would be a good idea, for the benefit of the readers.\
+Thoughts?\
+\
+Best regards\
+Krzysztof\
+\
+pt., 18 gru 2020 o 13:46 Marco Jahn via Ahtool-general <ahtool-general@forge.soa4d.org <mailto:ahtool-general@forge.soa4d.org>> napisa\uc0\u322 (a):\
+Dear Jerker, all,\
+\
+I\'92m happy to inform you that just in time before Christmas, the transfer of Arrowhead core to the new Eclipse Arrowhead organisation on GitHub has been completed: https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016198321%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=RP%2FxtGzYHzB2a%2FVrsW%2Bf3zatKABJOlEfwDtI6YdwcLU%3D&amp;reserved=0 <https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016198321%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=RP%2FxtGzYHzB2a%2FVrsW%2Bf3zatKABJOlEfwDtI6YdwcLU%3D&amp;reserved=0> <https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016198321%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=RP%2FxtGzYHzB2a%2FVrsW%2Bf3zatKABJOlEfwDtI6YdwcLU%3D&amp;reserved=0 <https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Feclipse-arrowhead&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016198321%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=RP%2FxtGzYHzB2a%2FVrsW%2Bf3zatKABJOlEfwDtI6YdwcLU%3D&amp;reserved=0>>\
+\
+When we are back in 2021 we can get concrete on the official first release, start discussing the actions for the second release, and start to involve more contributors and committers.\
+\
+Have a nice Christmas holiday!\
+\
+Best regards,\
+Marco \
+\
+\'97\
+Marco Jahn, PhD\
+Manager, Research Projects | Eclipse Foundation Europe GmbH\
+M: +49 163 2012473 \
+\
+Berliner Allee 47, 64295 Darmstadt\
+Handelsregister: Darmstadt HRB 92821\
+Managing Directors: Mike Milinkovich, Ga\'ebl Blondelle\
+\
+\
+\
+\
+\
+\
+\
+\
+_______________________________________________\
+Ahtool-general mailing list\
+Ahtool-general@forge.soa4d.org <mailto:Ahtool-general@forge.soa4d.org>\
+https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fforge.soa4d.org%2Fmailman%2Flistinfo%2Fahtool-general&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016208318%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=VZ12RGoekY2tzeJFJiwGtHGISNL%2B2txrb4157IAmKGU%3D&amp;reserved=0 <https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fforge.soa4d.org%2Fmailman%2Flistinfo%2Fahtool-general&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016208318%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=VZ12RGoekY2tzeJFJiwGtHGISNL%2B2txrb4157IAmKGU%3D&amp;reserved=0>\
+\
+\
+-- \
+Krzysztof Radecki | CTO\
+krzysztof.radecki@dac.digital \'a0| \'a0+48 533 83 63 63\
+https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.dac.digital%2F&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016208318%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=UDnPbmdc7Yz%2FkJhQGurtoOsZk6D59Pxku4C9PgKlU0I%3D&amp;reserved=0\
+\pard\pardeftab720\partightenfactor0
+\cf3 \strokec3 \
+\
+\'a0\'a0\'a0\'97\
+\'a0\'a0\'a0Marco Jahn, PhD\
+\'a0\'a0\'a0Manager, Research Projects | Eclipse Foundation Europe GmbH\
+\'a0\'a0\'a0M: +49 163 2012473 \
+\
+\'a0\'a0\'a0Berliner Allee 47, 64295 Darmstadt\
+\'a0\'a0\'a0Handelsregister: Darmstadt HRB 92821\
+\'a0\'a0\'a0Managing Directors: Mike Milinkovich, Ga\'ebl Blondelle\
+\
+\
+\
+\
+\
+\
+\
+\
+\'a0\'a0\'a0_______________________________________________\
+\'a0\'a0\'a0Ahtool-general mailing list\
+\'a0\'a0\'a0Ahtool-general@forge.soa4d.org\
+\'a0\'a0\'a0https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fforge.soa4d.org%2Fmailman%2Flistinfo%2Fahtool-general&amp;data=04%7C01%7C%7C9882330f53f144e25cb608d8a5aeb1aa%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637441517016208318%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=VZ12RGoekY2tzeJFJiwGtHGISNL%2B2txrb4157IAmKGU%3D&amp;reserved=0\
+\
+}
