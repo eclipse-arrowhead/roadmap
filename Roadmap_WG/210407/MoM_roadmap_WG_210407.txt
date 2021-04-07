@@ -6,10 +6,12 @@ Roadmap WG 210407
     1. Szvetlin will create the CI/CD+Jenkins instance for Eclipse Arrowhead starting by April 12.
 3. Lowering the entry step 
     1. Gabor demoed an early prototype of the Halo world example.
-    2. Cristina introduced the from model to code and deployment concept
-    3. Emanuel introduce the device, cloud deamons and the cloud management system ideas.
+    2. Cristina introduced the from model to code and deployment concept, slides in roadmap repo  and todays meeting folder.
+    3. Emanuel introduce the device, cloud deamons and the cloud management system ideas, slides in roadmap repo and todays meeting folder.
     4. Action point: Cristina and Gabor to meet and align their efforts.
-    5. Action point: Emanuell and Mario to meet and align their efforts.
+    5. Action point: Emanuel and Mario to meet and align their efforts.
 4. The remaining agenda items pushed to next meeting
 5. Next meeting: April 21. 14-30 - 16.00
+
+
 
