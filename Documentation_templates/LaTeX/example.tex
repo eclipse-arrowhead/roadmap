@@ -1,0 +1,92 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{Arrowhead LaTeX Example}
+\ArrowheadType{EXAMPLE} % System-of-Systems Description, System Description, Service Description, etc.
+\ArrowheadTypeShort{EXMPL} % SoSD, SysD, SD, IDD, CP, etc.
+\ArrowheadVersion{1.2.1}
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Emanuel Palm}
+\ArrowheadStatus{Proposal}
+\ArrowheadContact{emanuel.palm@ltu.se}
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Image
+  % \includegraphics[scale=1.5]{path/to/image}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    This is an example using the Arrowhead LaTeX document template (arrowhead.cls).
+  \end{abstract}
+
+  \vspace*{1cm}
+\end{center}
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Example Section 1}
+
+Sections, label, images and so on are used as they normally are.
+
+\subsection{Example Section 1.1}
+
+\newpage
+
+\section{Example Section 2}
+
+\newpage
+
+%\bibliographystyle{IEEEtran}
+%\bibliography{path/to/your/bibtex/bibliography}
+
+\newpage
+
+\section{Revision History}
+\subsection{Amendments}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{2cm} | p{1.25cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2021-08-19 & 1.2.1 & Adjust for adding to Roadmap repository. & Emanuel Palm \\ \hline
+
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{2cm} | p{1.25cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & & & \\ \hline
+
+\end{tabularx}
+
+\end{document}
