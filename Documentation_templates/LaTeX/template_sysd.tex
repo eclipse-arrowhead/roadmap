@@ -1,0 +1,227 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1\label{sec:model:primitives:#1}\label{sec:model:primitives:#1s}\label{sec:model:primitives:#1es}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[3]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    function
+    \textcolor{ArrowheadBlue}{#1}
+    (\notblank{#2}{\mref{#2}}{})
+    \notblank{#3}{: \mref{#3}}{}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s} \label{sec:model:#2es}
+}
+%%
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{XXX} % XXX = SystemName e.g. Service Registry HTTP/TLS/JSON}
+\ArrowheadType{System Description}
+\ArrowheadTypeShort{SysD}
+\ArrowheadVersion{X.Y.Z} % Arrowhead version X.Y.Z, e..g. 4.4.1
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Doument author} % Corresponding author e.g. Jerker Delsing
+\ArrowheadStatus{RELEASE} % e..g. RELEASE, RELEASE CONDIDATE, PROTOTYPE
+\ArrowheadContact{xx@yy.xx} % Email of corresponding author
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  %\Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    This is the template for System Description (SysD document)
+    according to the Eclipse Arrowehad documentation structure. 
+  \end{abstract}
+
+  \vspace*{1cm}
+
+%   \scriptsize
+%   \begin{tabularx}{\textwidth}{l X}
+%     \raisebox{-0.5\height}{\includegraphics[width=2cm]{figures/artemis_logo}} & {ARTEMIS Innovation Pilot Project: Arrowhead\newline
+%     THEME [SP1-JTI-ARTEMIS-2012-AIPP4 SP1-JTI-ARTEMIS-2012-AIPP6]\newline
+%     [Production and Energy System Automation Intelligent-Built environment and urban infrastructure for sustainable and friendly cities]}
+%   \end{tabularx}
+%   \vspace*{-0.2cm}
+ \end{center}
+
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+\color{red}
+This document describes the [XX] system, which provides [brief
+description of system functionality]. Prefereable make use of SysML/UML 
+use case diagram. 
+\color{black}
+
+The rest of this document is organized as follows.
+In Section \ref{sec:prior_art}, we reference major prior art capabilitites
+of the system.
+In Section \ref{sec:use}, we the intended usage of the system.
+In Section \ref{sec:properties}, we describe fundmental properties
+provided by the system.
+In Section \ref{sec:delimitations}, we describe de-limitations of capabilitites
+ofn the system.
+In Section \ref{sec:services}, we describe the abstract service
+functions consumed or produced by the system.
+In Section \ref{sec:security}, we describe the security capabilitites
+of the system.
+
+\newpage
+
+\subsection{Significant Prior Art}
+\label{sec:prior_art}
+
+\color{red}
+Describe significant prior art which provides the
+foundation for the system - May be omitted for simple services
+\color{black}  
+
+\subsection{How This Service Is Meant to Be Used}
+\label{sec:use}
+
+\color{red}
+Describe intended usage of the system. Usage scenarios
+shall be described. Preferable a SysML/UML blaock diagram of the
+System should be provided. See the SysML profile and library
+(github.com/eclispe-arrowhead/profile-library-sysml) for
+support on how such block diagram should look like. Suitable tools are
+Eclipse Papyrus and MagicDraw.
+\color{black}  
+
+\subsection{System functionalities and properties}
+\label{sec:properties}
+
+\color{red}
+Describe system functionalities and properties like e.g.:
+\begin{itemize}
+\item Functional properties of the syxstem
+\item Data storef by the system
+\item Non functional properties
+\item Power saving properties
+\item Statefull and states preserved, functoinal and non-functional
+\item Stateless
+\item ...
+\end{itemize}  
+\color{black}  
+
+
+\subsection{Important Delimitations}
+\label{sec:delimitations}
+
+\color{red}
+Provide delimitations of the provided system
+\color{black}  
+
+
+
+\newpage
+
+\section{Services}
+\label{sec:services}
+
+\color{red}
+This section describes consumed and prodiuced service.
+In particular, each subsection names a prodiuced or consumed service
+indicating the different capabilities and associated interfaces of the
+service. Referecen to the appropriate SD document shall be made.
+\color{black}
+
+
+\newpage
+
+\section{Security}
+\label{sec:security}
+\color{red}
+\begin{itemize}
+\item  If the system can be started in un-secure and/or
+Arrowhead secure mode.
+\item Handling of Arrowhead compliant and
+non-compliant X.509 certificates.
+\item Implemented security model shall be described, protocol used, data
+protection used, system authentication capability, produced service
+authorisation cheching, etc.
+\end{itemize}
+For Arrowhead certificate profile
+see github.com/eclipse-arrowhead/documentation
+\color{black}
+
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+\subsection{Amendments}
+
+\color{red}
+Revision history and Quality assurance as per examples below
+\color{black}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2020-12-05 & \arrowversion & & Tanyi Szvetlin \\ \hline
+2 & 2021-07-14 & \arrowversion & Minor updatees & Jerker Delsing \\ \hline
+3 & 2022-01-12 & \arrowversion & Minor updatees & Jerker Delsing \\ \hline
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & 2022-01-10 & \arrowversion  &  \\ \hline
+
+\end{tabularx}
+
+\end{document}
