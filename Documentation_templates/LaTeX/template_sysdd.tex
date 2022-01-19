@@ -70,7 +70,7 @@
   % Front Page Abstract
   \begin{abstract}
     This is the template for System Design Description (SysDD document)
-    according to the Eclipse Arrowehad documentation structure. 
+    according to the Eclipse Arrowhead documentation structure. 
   \end{abstract}
 
   \vspace*{1cm}
@@ -97,10 +97,10 @@
 \color{red}
 This document describes the [XX] system, which provides [brief
 description of the implementation of the [XX] SysD.
-functionality]. Prefereable make use of SysML/UML 
+functionality]. Preferable make use of SysML/UML 
 use case diagram. 
 \color{black}
-In Section \ref{Implementation}, we descibe implementation details of
+In Section \ref{Implementation}, we describe implementation details of
 the system
 
 
@@ -115,7 +115,8 @@ the system
 \begin{itemize}
 \item Used coding language and version
 \item Used tools, IDE, compiler, linker etc.
-\item Used libraries
+\item Used libraries and purpose
+\item Staeful or stateless implementation   
 \end{itemize} 
 \color{black}
 
@@ -123,7 +124,7 @@ the system
 \color{red}
   \begin{itemize}
   \item Resources necessary to perform the function operations
-  \item Data handled by the system
+  \item Data handled and eventually stored by the system
     \begin{itemize}
     \item Used database
     \item Database structure
@@ -142,17 +143,17 @@ Typical non-functional properties implemented are e.g.
 \subsubsection {Internal monitoring}
 \subsubsection {Configuration}
   \begin{itemize}
-  \item Configurtion data accepted
+  \item Configuration data accepted
   \item Configuration data formats, se blow.
   \item ...  
   \end{itemize}  
 
-Forr each of the non-functional operations the following details
+For each of the non-functional operations the following details
 should be documented 
 
 \begin{itemize}
   \item Resources necessary to perform the non-functional operations
-  \item Data handled by the system
+  \item Data handled and eventually stored by the system
     \begin{itemize}
     \item Used database
     \item Database structure
@@ -163,21 +164,6 @@ should be documented
   \end{itemize}
 \color{black}
 
-
-\subsection {Statefull - stateless}
-\color{red}
-\begin{itemize}
-  \item Statefull implementation 
-    \begin{itemize}
-    \item State data to be keept
-    \item Used database
-    \item Database structure
-    \item Used ontology
-    \item Data models
-    \end{itemize}
-  \item Stateless implementation
-  \end{itemize}
-\color{black}
 
 
 
@@ -195,20 +181,20 @@ reference to used library shall be made.
   \caption{References to doumentation for services produced and
     consumed. }
   \label{tab:services}
-  \begin{tabular}{|r|r|r|r|r|}
+  \begin{tabular}{|r|r|r|r|}
     \hline
-    \rowcolor{gray!33}\textbf{Services produced} & \textbf{SysD ref} & \textbf{SD ref} & \textbf{IDD ref} & \textbf{Library ref}\\
+    \rowcolor{gray!33}\textbf{Services produced} & \textbf{SysD ref} & \textbf{SD ref} & \textbf{IDD ref} \\
     \hline
  
-    aaa & SysD XXX & SD aaa & IDD aaa & Kalix \\ \hline
-    bbb & SysD XXX & SD bbb & IDD bbb & Kalix \\ \hline
+    aaa & SysD XXX & SD aaa & IDD aaa \\ \hline
+    bbb & SysD XXX & SD bbb & IDD bbb \\ \hline
 
-    &&&& \\ \hline
+    &&& \\ \hline
 
-    \rowcolor{gray!33}\textbf{Services consumed} & \textbf{SysD ref} & \textbf{SD ref} & \textbf{IDD ref} & \textbf{Library ref}\\
+    \rowcolor{gray!33}\textbf{Services consumed} & \textbf{SysD ref} & \textbf{SD ref} & \textbf{IDD ref}\\
     \hline
-    zzz & SysD ZZZ & SD zzz & IDD zzz & Kalix \\ \hline
-    yyy & SysD YYY & SD yyy & IDD yyy & Kalix \\ \hline
+    zzz & SysD ZZZ & SD zzz & IDD zzz \\ \hline
+    yyy & SysD YYY & SD yyy & IDD yyy \\ \hline
     
   \end{tabular}
 \end{table*}
@@ -233,8 +219,8 @@ Revision history and Quality assurance as per examples below
 \rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
 
 1 & 2020-12-05 & \arrowversion & & Tanyi Szvetlin \\ \hline
-2 & 2021-07-14 & \arrowversion & Minor updatees & Jerker Delsing \\ \hline
-3 & 2022-01-12 & \arrowversion & Minor updatees & Jerker Delsing \\ \hline
+2 & 2021-07-14 & \arrowversion & Minor updates & Jerker Delsing \\ \hline
+3 & 2022-01-12 & \arrowversion & Minor updates & Jerker Delsing \\ \hline
 \end{tabularx}
 
 \subsection{Quality Assurance}

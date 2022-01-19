@@ -19,7 +19,7 @@
   \renewcommand*{\do}[1]{\rref{##1},\ }
   \subsection*{
     \thesubsection\quad
-    function
+    operation
     \textcolor{ArrowheadBlue}{#1}
     (\notblank{#2}{\mref{#2}}{})
     \notblank{#3}{: \mref{#3}}{}
@@ -123,14 +123,14 @@ Describe significant prior art which provides the
 foundation for the system - May be omitted for simple services
 \color{black}  
 
-\subsection{How This Service Is Meant to Be Used}
+\subsection{How This System Is Meant to Be Used}
 \label{sec:use}
 
 \color{red}
 Describe intended usage of the system. Usage scenarios
 shall be described. Preferable a SysML/UML blaock diagram of the
 System should be provided. See the SysML profile and library
-(github.com/eclispe-arrowhead/profile-library-sysml) for
+(github.com/eclipse-arrowhead/profile-library-sysml) for
 support on how such block diagram should look like. Suitable tools are
 Eclipse Papyrus and MagicDraw.
 \color{black}  
@@ -140,14 +140,28 @@ Eclipse Papyrus and MagicDraw.
 
 \color{red}
 Describe system functionalities and properties like e.g.:
+\subsubsection {Functional properties of the system}
+
+\subsubsection {Configuration of the system}
+Available parameters
+
+\subsubsection {Data stored by the system}
+
+Brief overview of data stored to achive the functionality of the system. 
+
+\subsubsection {Non functional properties}
+
 \begin{itemize}
-\item Functional properties of the syxstem
-\item Data storef by the system
-\item Non functional properties
-\item Power saving properties
-\item Statefull and states preserved, functoinal and non-functional
-\item Stateless
-\item ...
+  \item security, 
+  \item safety, 
+  \item energy consumption,
+  \item latency
+  \item Power saving properties, 
+\end{itemize}
+
+\subsubsection {Stateful or stateless}
+\begin{itemize} 
+\item states preserved, functional and non-functional
 \end{itemize}  
 \color{black}  
 
@@ -156,7 +170,8 @@ Describe system functionalities and properties like e.g.:
 \label{sec:delimitations}
 
 \color{red}
-Provide delimitations of the provided system
+Provide delimitations of the provided system. Describe what the system
+solve and what i does not solve.
 \color{black}  
 
 
@@ -167,10 +182,10 @@ Provide delimitations of the provided system
 \label{sec:services}
 
 \color{red}
-This section describes consumed and prodiuced service.
+This section describes consumed and produced service.
 In particular, each subsection names a prodiuced or consumed service
 indicating the different capabilities and associated interfaces of the
-service. Referecen to the appropriate SD document shall be made.
+service. Reference to the appropriate SD document shall be made.
 \color{black}
 
 
@@ -186,7 +201,7 @@ Arrowhead secure mode.
 non-compliant X.509 certificates.
 \item Implemented security model shall be described, protocol used, data
 protection used, system authentication capability, produced service
-authorisation cheching, etc.
+authorisation checking, etc.
 \end{itemize}
 For Arrowhead certificate profile
 see github.com/eclipse-arrowhead/documentation
@@ -211,8 +226,8 @@ Revision history and Quality assurance as per examples below
 \rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
 
 1 & 2020-12-05 & \arrowversion & & Tanyi Szvetlin \\ \hline
-2 & 2021-07-14 & \arrowversion & Minor updatees & Jerker Delsing \\ \hline
-3 & 2022-01-12 & \arrowversion & Minor updatees & Jerker Delsing \\ \hline
+2 & 2021-07-14 & \arrowversion & Minor updates & Jerker Delsing \\ \hline
+3 & 2022-01-12 & \arrowversion & Minor updates & Jerker Delsing \\ \hline
 \end{tabularx}
 
 \subsection{Quality Assurance}
