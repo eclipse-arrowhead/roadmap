@@ -96,7 +96,7 @@
 \section{Overview}
 \label{sec:overview}
 \color{red}
-This document describes the [XX] service, which is enables [brief description of service capabilities]. 
+This document describes the [XX] service, which is enables [a description of service capabilities excluding implementation details]. 
 
 The rest of this document is organized as follows.
 In Section \ref{sec:functions}, we describe the abstract message functions provided by the service.
@@ -114,10 +114,10 @@ foundation for the service - May be omitted for simple services \color{black}
 \color{red} Describe intended usage of the service \color{black}  
 
 
-\subsection{Important Delimitations}
+\subsection{Important Delimitations and Dependencies}
 \label{sec:delimitations}
 
-\color{red} Provide delimitations of the provided service \color{black}  
+\color{red} Provide delimitations and dependecies of the provided service \color{black}  
 
 
 
@@ -181,9 +181,10 @@ Here, all data objects that can be part something the XX Service
 provides to the hosting System are listed in alphabetic order.
 Note that each subsection, which describes one type of object, begins with the \textit{struct} keyword, which is used to denote a collection of named fields, each with its own data type.
 As a complement to the explicitly defined types in this section, there is also a list of implicit primitive types in Section \ref{sec:model:primitives}, which are used to represent things like hashes and identifiers.
-\color{black}
 
-An overview of the data object types is illustrated in Figure \ref{fig:model_overview}.
+EXAMPLE data object types are illustrated in Figure \ref{fig:model_overview}.
+
+\color{black}
 
 \begin{figure}[ht!]
   \centering
@@ -197,10 +198,9 @@ An overview of the data object types is illustrated in Figure \ref{fig:model_ove
 \end{figure}
 
 \newpage
-
-\msubsection{struct}{ServiceRegistryRequest}
-
 \color{red} 
+\msubsection{struct}{AA}
+
  EXAMPLE: This structure is used to register a service offering into the Service Registry.
 \color{black}
  
@@ -231,9 +231,10 @@ version                   &\pref{Version}     & Version of the service. \\ \hlin
 
 \newpage
 
-\msubsection{struct}{ServiceRegistryUnregisterRequest}
-
 \color{red} 
+\msubsection{struct}{BB}
+
+
 EXAMPLE: This structure is used to register a service offering into
 the Service Registry. Please also refer to the activity diagram in
 Figure \ref{fig:unregister_overview} \color{black}
@@ -261,9 +262,10 @@ service\_definition                    & \pref{Name} & Service Definition of the
 
 \newpage
 
-\msubsection{struct}{ServiceQueryForm}
-
 \color{red} 
+
+\msubsection{struct}{CC}
+
 EXAMPLE: This structure is used to query service offering registered in
 the Service Registry. Please also refer to the activity diagram in
 Figure \ref{fig:query_overview} \color{black}
