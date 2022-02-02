@@ -8,14 +8,14 @@
 \renewcommand{\dateseparator}{-}
 
 %% Special references
-\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
 \newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\oref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:operations:#1]{#1}}}}
 \newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1\label{sec:model:primitives:#1}\label{sec:model:primitives:#1s}\label{sec:model:primitives:#1es}}}}
 \newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
 
-\newrobustcmd\fsubsection[3]{
+\newrobustcmd\osubsection[3]{
   \addtocounter{subsection}{1}
-  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}operation \textcolor{ArrowheadBlue}{#1}}
   \renewcommand*{\do}[1]{\rref{##1},\ }
   \subsection*{
     \thesubsection\quad
@@ -24,7 +24,7 @@
     (\notblank{#2}{\mref{#2}}{})
     \notblank{#3}{: \mref{#3}}{}
   }
-  \label{sec:functions:#1}
+  \label{sec:operations:#1}
 }
 \newrobustcmd\msubsection[2]{
   \addtocounter{subsection}{1}
@@ -99,8 +99,8 @@
 This document describes the [XX] service, which is enables [a description of service capabilities excluding implementation details]. 
 
 The rest of this document is organized as follows.
-In Section \ref{sec:functions}, we describe the abstract message functions provided by the service.
-In Section \ref{sec:model}, we end the document by presenting the data types used by the mentioned functions.
+In Section \ref{sec:operations}, we describe the abstract message operations provided by the service.
+In Section \ref{sec:model}, we end the document by presenting the data types used by the mentioned operations.
 \color{black}
 
 \newpage
@@ -124,7 +124,7 @@ foundation for the service - May be omitted for simple services \color{black}
 \newpage
 
 \section{Service Interface}
-\label{sec:functions}
+\label{sec:operations}
 
 \color{red}
 This section describes the interfaces to the [XX] service.
@@ -145,7 +145,7 @@ All abstract data types named in this section are defined in Section \ref{sec:mo
 
 The following interface operations are available.
 
-\fsubsection{AA}{aa}{response}
+\osubsection{AA}{aa}{response}
 
 \color{red} 
 The AA operation is used to ..... The services will contain various
@@ -153,19 +153,19 @@ metadata as well as a physical endpoint. The various parameters are
 representing the necessary service input information.
 \color{black}
 
-\fsubsection{BB}{bb}{response}
+\osubsection{BB}{bb}{response}
 
 \color{red} 
 The BB operation is used to .... 
 \color{black}
 
-\fsubsection{CC}{cc}{Response}
+\osubsection{CC}{cc}{Response}
 
 \color{red} 
 The CC operation enable ......
 \color{black}
 
-\fsubsection{Echo}{}{StatusCodeKind}
+\osubsection{Echo}{}{StatusCodeKind}
 
 \color{red} 
 The Echo operation provides an is alive response from the XX service.
