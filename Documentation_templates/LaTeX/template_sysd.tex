@@ -139,18 +139,18 @@ Eclipse Papyrus and MagicDraw.
 \label{sec:properties}
 
 \color{red}
-Describe system functionalities and properties like e.g.:
+Narrative describe system functionalities and properties (no
+implmentation details) like e.g.:
+
 \subsubsection {Functional properties of the system}
 
-\subsubsection {Configuration of the system}
-Available parameters
+\subsubsection {Configuration of system properties}
+
 
 \subsubsection {Data stored by the system}
-
 Brief overview of data stored to achive the functionality of the system. 
 
 \subsubsection {Non functional properties}
-
 \begin{itemize}
   \item security, 
   \item safety, 
@@ -158,6 +158,7 @@ Brief overview of data stored to achive the functionality of the system.
   \item latency
   \item Power saving properties, 
 \end{itemize}
+
 
 \subsubsection {Stateful or stateless}
 \begin{itemize} 
@@ -186,23 +187,45 @@ This section describes consumed and produced service.
 In particular, each subsection names a prodiuced or consumed service
 indicating the different capabilities and associated interfaces of the
 service. Reference to the appropriate SD document shall be made.
+
+\subsection{Produced service}
+with references to SD and IDD documents
+
+\subsection{Consumed services}
+with references to SD and IDD documents
+
 \color{black}
+
+
 
 
 \newpage
 
 \section{Security}
 \label{sec:security}
+
+
 \color{red}
+Overview of security leel chosen for the system
+
+The follwoing bullets should be covered 
 \begin{itemize}
 \item  If the system can be started in un-secure and/or
 Arrowhead secure mode.
 \item Handling of Arrowhead compliant and
 non-compliant X.509 certificates.
-\item Implemented security model shall be described, protocol used, data
-protection used, system authentication capability, produced service
-authorisation checking, etc.
 \end{itemize}
+
+\subsection {Security model}
+The following points should be described:
+\begin{itemize}
+\item protocol supported 
+\item data protection supported 
+\item system authentication capability supported
+\item produced service authorisation checking, 
+\item etc.
+\end{itemize}
+
 For Arrowhead certificate profile
 see github.com/eclipse-arrowhead/documentation
 \color{black}

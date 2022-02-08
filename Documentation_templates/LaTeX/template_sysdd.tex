@@ -110,6 +110,9 @@ the system
 \section{Implementation}
 \label{Implementation}
 
+This implementation is based on the SysD document ...... {\cite{.....}}
+
+
 \subsection {Implementation language and tools}
 \color{red}
 \begin{itemize}
@@ -173,8 +176,13 @@ should be documented
 \label{sec:services}
 
 \color{red}
-Reference to the appropriate SysD, SD and IDD documents plus a
-reference to used library shall be made.
+The implementation services is based on the follwoing SD and IDD
+documents:
+\begin{itemize}
+\item SD: {Title \cite{.....}}
+\item IDD: {Title \cite{.....}} % multiple IDD arre possible e.g. HTTP
+\item IDD: {Title \cite{.....}} % e.g. MQTT
+\end{itemize}
 
 \begin{table*}[ht!]
   \centering
@@ -186,14 +194,17 @@ reference to used library shall be made.
     \rowcolor{gray!33}\textbf{Services produced} & \textbf{SysD ref} & \textbf{SD ref} & \textbf{IDD ref} \\
     \hline
  
-    aaa & SysD XXX & SD aaa & IDD aaa \\ \hline
+    aaa & SysD XXX & SD aaa & IDD a1 \\ \hline % multiple IDD's can excist for and SD, e.g. HTTP 
+    aaa & SysD XXX & SD aaa & IDD a2 \\ \hline % e.g. MQTT 
+
     bbb & SysD XXX & SD bbb & IDD bbb \\ \hline
 
     &&& \\ \hline
 
     \rowcolor{gray!33}\textbf{Services consumed} & \textbf{SysD ref} & \textbf{SD ref} & \textbf{IDD ref}\\
     \hline
-    zzz & SysD ZZZ & SD zzz & IDD zzz \\ \hline
+    zzz & SysD ZZZ & SD zzz & IDD zzz1 \\ \hline % multiple IDD's can excist for and SD, e.g. HTTP
+    zzz & SysD ZZZ & SD zzz & IDD zzz2 \\ \hline % e.g. websocket
     yyy & SysD YYY & SD yyy & IDD yyy \\ \hline
     
   \end{tabular}
