@@ -1,0 +1,90 @@
+/etc/arrowhead/
+└── clouds
+    ├── tc1
+    │   └── conf.d
+    │       └── cores
+    │           ├── authorization
+    │           │   ├── ah.jar -> /usr/share/arrowhead/cores/authorization/arrowhead-authorization-4.4.0.jar
+    │           │   ├── application.properties
+    │           │   ├── authorization.log
+    │           │   ├── authorization.p12
+    │           │   ├── log4j2.xml
+    │           │   └── silent_start.sh
+    │           ├── eventhandler
+    │           │   ├── ah.jar -> /usr/share/arrowhead/cores/eventhandler/arrowhead-eventhandler-4.4.0.jar
+    │           │   ├── application.properties
+    │           │   ├── eventhandler.log
+    │           │   ├── eventhandler.p12
+    │           │   ├── log4j2.xml
+    │           │   └── silent_start.sh
+    │           ├── gatekeeper
+    │           │   ├── ah.jar -> /usr/share/arrowhead/cores/gatekeeper/arrowhead-gatekeeper-4.4.0.jar
+    │           │   ├── application.properties
+    │           │   ├── gatekeeper.log
+    │           │   ├── gatekeeper.p12
+    │           │   ├── log4j2.xml
+    │           │   └── silent_start.sh
+    │           ├── gateway
+    │           │   ├── ah.jar -> /usr/share/arrowhead/cores/gateway/arrowhead-gateway-4.4.0.jar
+    │           │   ├── application.properties
+    │           │   ├── gateway.log
+    │           │   ├── gateway.p12
+    │           │   ├── log4j2.xml
+    │           │   └── silent_start.sh
+    │           ├── orchestrator
+    │           │   ├── ah.jar -> /usr/share/arrowhead/cores/orchestrator/arrowhead-orchestrator-4.4.0.jar
+    │           │   ├── application.properties
+    │           │   ├── log4j2.xml
+    │           │   ├── orchestrator.log
+    │           │   ├── orchestrator.p12
+    │           │   └── silent_start.sh
+    │           └── serviceregistry
+    │               ├── ah.jar -> /usr/share/arrowhead/cores/serviceregistry/arrowhead-serviceregistry-4.4.0.jar
+    │               ├── application.properties
+    │               ├── log4j2.xml
+    │               ├── serviceregistry.log
+    │               ├── serviceregistry.p12
+    │               └── silent_start.sh
+    └── tc2
+        └── conf.d
+            └── cores
+                ├── authorization
+                │   ├── ah.jar -> /usr/share/arrowhead/cores/authorization/arrowhead-authorization-4.4.0.jar
+                │   ├── application.properties
+                │   ├── authorization.log
+                │   ├── log4j2.xml
+                │   ├── silent_start.sh
+                │   └── start.sh
+                ├── eventhandler
+                │   ├── ah.jar -> /usr/share/arrowhead/cores/eventhandler/arrowhead-eventhandler-4.4.0.jar
+                │   ├── application.properties
+                │   ├── eventhandler.log
+                │   ├── log4j2.xml
+                │   └── silent_start.sh
+                ├── gatekeeper
+                │   ├── ah.jar -> /usr/share/arrowhead/cores/gatekeeper/arrowhead-gatekeeper-4.4.0.jar
+                │   ├── application.properties
+                │   ├── gatekeeper.log
+                │   ├── log4j2.xml
+                │   └── silent_start.sh
+                ├── gateway
+                │   ├── ah.jar -> /usr/share/arrowhead/cores/gateway/arrowhead-gateway-4.4.0.jar
+                │   ├── application.properties
+                │   ├── gateway.log
+                │   ├── log4j2.xml
+                │   └── silent_start.sh
+                ├── orchestrator
+                │   ├── ah.jar -> /usr/share/arrowhead/cores/orchestrator/arrowhead-orchestrator-4.4.0.jar
+                │   ├── application.properties
+                │   ├── log4j2.xml
+                │   ├── orchestrator.log
+                │   └── silent_start.sh
+                └── serviceregistry
+                    ├── ah.jar -> /usr/share/arrowhead/cores/serviceregistry/arrowhead-serviceregistry-4.4.0.jar
+                    ├── application.properties
+                    ├── log4j2.xml
+                    ├── serviceregistry.log
+                    ├── silent_start.sh
+                    └── start.sh
+
+19 directories, 68 files
