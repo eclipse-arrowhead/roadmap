@@ -12,7 +12,7 @@
 %% Special references
 \newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
 \newcommand{\oref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:operations:#1]{#1}}}}
-\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1 \label{sec:model:primitives:#1} \label{sec:model:primitives:#1s}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1\label{sec:model:primitives:#1}\label{sec:model:primitives:#1s}}}}
 \newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
 
 \newrobustcmd\osubsection[5]{
@@ -31,9 +31,9 @@
     \end{minipage}
     \begin{minipage}{0.825\textwidth}
       \vspace*{1mm}
-      \textcolor{ArrowheadBlue}{#1} \\
+      \textcolor{ArrowheadBlue}{#1{\kern 0.1em}()} \\
       \notblank{#4}{\mref{#4} \\}{}
-      \notblank{#5}{\mref{#5} \\}{}
+      \notblank{#5}{#5 \\}{}
     \end{minipage}
   }
   \label{sec:operations:#1}
@@ -171,7 +171,7 @@ improper client side certificate is provided, \texttt{500 Internal
 \color{red}
 All interfaces to be described as provided by the following examples
 
-\osubsection{Register}{POST}{/serviceregistry/register}{ServiceRegistryRequest}{}
+\osubsection{Register}{POST}{/serviceregistry/register}{ServiceRegistryRequest}{\pref{Void} or \mref{Error}}
 Called to register a service offered by the caller system, as exemplified in Listing \ref{lst:register}.
 
 \begin{lstlisting}[language=http,label={lst:register},caption={A \oref{Register} invocation.}]
@@ -236,9 +236,8 @@ POST /serviceregistry/register HTTP/1.1
 }
 \end{lstlisting}
 
-%\subsection{Unregister}{DELETE}{/serviceregistry/unregister\\
 \osubsection{Unregister}{DELETE}{/serviceregistry/unregister\\
- \hspace*{0.1\textwidth}?address=\fparam{\{address\}}\\\hspace*{0.1\textwidth}\&port=\fparam{\{port\}}\\\hspace*{0.1\textwidth}\&service\_definition=\fparam{\{service\_definition\}}\\\hspace*{0.1\textwidth}\&system\_name=\fparam{\{system\_name\}}}{ServiceRegistryUnregisterRequest}{}
+ \hspace*{0.1\textwidth}?address=\fparam{\{address\}}\\\hspace*{0.1\textwidth}\&port=\fparam{\{port\}}\\\hspace*{0.1\textwidth}\&service\_definition=\fparam{\{service\_definition\}}\\\hspace*{0.1\textwidth}\&system\_name=\fparam{\{system\_name\}}}{ServiceRegistryUnregisterRequest}{\pref{Void} or \mref{Error}}
 
 Called to unregister a service offered by the caller system, as exemplified in Listing \ref{lst:unregister}.
 
@@ -247,7 +246,7 @@ DELETE /serviceregistry/unregister?address=10.0.0.0&port=8080&service_definition
 Accept: application/json
 \end{lstlisting}
 
-\osubsection{Query}{POST}{/serviceregistry/query}{ServiceQueryForm}{ServiceQueryList}
+\osubsection{Query}{POST}{/serviceregistry/query}{ServiceQueryForm}{\pref{Array}$<$\mref{ServiceRegistryRequest}$>$ or \mref{Error}}
 
 Called to query a service offered by a core system, as exemplified in Listing \ref{lst:query}.
 
@@ -346,6 +345,18 @@ Here, all data objects that can be part of the service calls associated with thi
 Note that each subsection, which describes one type of object, begins with the \textit{struct} keyword, which is meant to denote a JSON \pref{Object} that must contain certain fields, or names, with values conforming to explicitly named types.
 As a complement to the primary types defined in this section, there is also a list of secondary types in Section \ref{sec:model:primitives}, which are used to represent things like hashes, identifiers and texts.
 
+\msubsection{struct}{Error}
+
+Indicates how some service operation failed.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{4.25cm} | p{3.5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type       & Description \\ \hline
+"code"                          & \pref{ErrorCode} & String or number indicating what whent wrong. \\ \hline
+"text"                          & \pref{String}    & An optional human-readable description of the error. \\ \hline
+\end{tabularx}
+\end{table}
+
 \msubsection{struct}{ServiceRegistryRequest}
 
 This structure is used to register a service offering into the Service Registry.
@@ -412,6 +423,8 @@ Furthermore, the \pref{Object} and \pref{Array} types are given optional generic
 \end{tabularx}
 \end{table}
 
+The \pdef{Void} type is used to indicate no value at all.
+
 With these primitives now available, we proceed to define all the types specified in the Service Discovery Register SD document without a direct equivalent among the JSON types.
 Concretely, we define the Service Discovery Register SD primitives either as \textit{aliases} or \textit{structs}.
 An \textit{alias} is a renaming of an existing type, but with some further details about how it is intended to be used.
@@ -422,6 +435,20 @@ The types are listed by name in alphabetical order.
 
 Pinpoints a moment in time in the format of "YYYY-MM-DD HH:mm:ss", where "YYYY" denotes year (4 digits), "MM" denotes month starting from 01, "DD" denotes day starting from 01, "HH" denotes hour in the 24-hour format (00-23), "MM" denotes minute (00-59), "SS" denotes second (00-59). " " is used as separator between the date and the time.
 An example of a valid date/time string is "2020-12-05 12:00:00"
+
+\subsubsection{alias \pdef{ErrorCode} = \pref{String} or \pref{Number}}
+
+Any of the following strings or numbers:
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{2.5cm} | p{1.3cm} | X |} \hline
+\rowcolor{gray!33} String & Number & Description \\ \hline
+"BadDateTime"             & 1001   & A date-time value in the received message does not follow the expected format. \\ \hline
+"Expired"                 & 1002   & The expiration time ("endOfValidity") is in the past. \\ \hline
+\end{tabularx}
+\end{table}
+
+These are, of course, only possible examples.
 
 \subsubsection{alias \pdef{id} = \pref{Number}}
 
