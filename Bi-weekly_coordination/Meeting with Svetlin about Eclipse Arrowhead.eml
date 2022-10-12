@@ -1,0 +1,156 @@
+Received: from MM0P280MB0021.SWEP280.PROD.OUTLOOK.COM (2603:10a6:190:c::21) by
+ GV3P280MB0612.SWEP280.PROD.OUTLOOK.COM with HTTPS; Mon, 5 Sep 2022 09:06:26
+ +0000
+Received: from GV3P280CA0058.SWEP280.PROD.OUTLOOK.COM (2603:10a6:150:9::28) by
+ MM0P280MB0021.SWEP280.PROD.OUTLOOK.COM (2603:10a6:190:c::21) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5588.10; Mon, 5 Sep 2022 09:06:25 +0000
+Received: from HE1EUR02FT006.eop-EUR02.prod.protection.outlook.com
+ (2603:10a6:150:9:cafe::a4) by GV3P280CA0058.outlook.office365.com
+ (2603:10a6:150:9::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5588.10 via Frontend
+ Transport; Mon, 5 Sep 2022 09:06:25 +0000
+Authentication-Results: spf=none (sender IP is 62.112.193.29)
+ smtp.mailfrom=aitia.ai; dkim=none (message not signed)
+ header.d=none;dmarc=permerror action=none header.from=aitia.ai;compauth=pass
+ reason=105
+Received-SPF: None (protection.outlook.com: aitia.ai does not designate
+ permitted sender hosts)
+Received: from judy.aitia.ai (62.112.193.29) by
+ HE1EUR02FT006.mail.protection.outlook.com (10.152.10.137) with Microsoft SMTP
+ Server id 15.20.5588.10 via Frontend Transport; Mon, 5 Sep 2022 09:06:24
+ +0000
+Received: from [192.168.0.105] (62-165-254-122.pool.digikabel.hu [62.165.254.122])
+	by judy.aitia.ai (Postfix) with ESMTPSA id C757720098;
+	Mon,  5 Sep 2022 11:06:12 +0200 (CEST)
+Message-ID: <64a65ad5-2acd-b97b-8bf5-ca0e5071c320@aitia.ai>
+Date: Mon, 5 Sep 2022 11:06:04 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.13.0
+Content-Language: hu
+To: Jerker Delsing <Jerker.Delsing@ltu.se>, Pal Varga <pvarga@tmit.bme.hu>
+Cc: =?UTF-8?Q?Bordi_Tam=c3=a1s?= <tbordi@aitia.ai>,
+ =?UTF-8?Q?G=c3=a1bor_Majoros?= <gmajoros@aitia.ai>
+From: Bocsi Rajmund <rbocsi@aitia.ai>
+Subject: Meeting with Svetlin about Eclipse Arrowhead
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+Return-Path: rbocsi@aitia.ai
+X-MS-Exchange-Organization-ExpirationStartTime: 05 Sep 2022 09:06:25.0139
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 059ae0b1-fbd9-4bd8-9de8-08da8f1de8df
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 5453408b-a6cd-4c1e-8b10-18b500fb544e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ HE1EUR02FT006.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 059ae0b1-fbd9-4bd8-9de8-08da8f1de8df
+X-MS-TrafficTypeDiagnostic: MM0P280MB0021:EE_
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Forefront-Antispam-Report:
+ CIP:62.112.193.29;CTRY:HU;LANG:en;SCL:-1;SRV:;IPV:NLI;SFV:SKN;H:judy.aitia.ai;PTR:judy.aitia.ai;CAT:NONE;SFS:;DIR:INB;
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Sep 2022 09:06:24.9045
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 059ae0b1-fbd9-4bd8-9de8-08da8f1de8df
+X-MS-Exchange-CrossTenant-Id: 5453408b-a6cd-4c1e-8b10-18b500fb544e
+X-MS-Exchange-CrossTenant-AuthSource:
+ HE1EUR02FT006.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MM0P280MB0021
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.5446900
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.5588.018
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?5bjhF4ssGeC6hfbXPia4d8qQaZVKoxWqiq7OYoJnkbX+K+2bqjaqy/E3Lk?=
+ =?iso-8859-1?Q?a6iTy0leAyGykxg/v9An74wrSVsecwYLmipj9GcsSij0gutQT12S7R7bj2?=
+ =?iso-8859-1?Q?q5q126Lnp1NgWaaArhxFt457R/q2S9W6EBYvZqIHzXs7teu0Xy5qePMqUt?=
+ =?iso-8859-1?Q?JEaImnPogiHmHcsjapRentTmXIMeAwvn48VE6N38+tQzSTFbsT4kpWMgoq?=
+ =?iso-8859-1?Q?mIePmmJE0N00skFAbz5bDI9FfIKQCllZ4Sx4BdNgfUNIWON4e9guX7ijy9?=
+ =?iso-8859-1?Q?W1YmXiwblD1vSjCpAO6WxqRaqdkvMI3V4CxeO+6FwVCBDm/n6sXSY6S++t?=
+ =?iso-8859-1?Q?waFeQGhOJW8+8ytxnZ3SI5rGwPfc+5t1BoFI/dFRxZVWuCcZbfDE3ATipP?=
+ =?iso-8859-1?Q?/7jxKBAf8sqoS7kIxdbzVRIpzC83bRKhMrp9UHx+83XV76XV1gbryix9mV?=
+ =?iso-8859-1?Q?7DScH+Zk0SKs6D9Bc3Rl4B5cMj8EpNx9q+s6myttRueLwEHMI0cx0003UY?=
+ =?iso-8859-1?Q?bjkhxgiqYgo4Is+w6UFhdcllEcpGOInAbZ6iYhwttjC9EezQ8DPhPpe3LY?=
+ =?iso-8859-1?Q?8OS5HLC63EQUtBQIj0KyPYObLgNHZoyXG8/swsf6kQmTCC8dBlCtoSN+lJ?=
+ =?iso-8859-1?Q?hqkk0lzpbo5lm44G3Zgv4LWbC5NV3eVECCCFg+i8R6flXyvLS3ZD5ZlaLW?=
+ =?iso-8859-1?Q?u7ZcZbrH2IAo7kyeixoEKzgu72w4ieYMQoOR1Txz11qc3+xxOEJuacMej1?=
+ =?iso-8859-1?Q?5+080qYveANrWCl8tLvEv1YnNolwBBzQvcwn+pX4kjBdjwnUlVT1CXRfA6?=
+ =?iso-8859-1?Q?SyP5+iQbtxzk3/wvOdzrLyn/xvsJuQ9nLR+eyTSTBA8Lx5QH1GKZB/vMTm?=
+ =?iso-8859-1?Q?ExnwQ6TICBI6YdTJ/5eKd+7kAAcg9l1Vy6VMd8XJdr9J4vEJlbvITGXiKo?=
+ =?iso-8859-1?Q?warvRepnRoNdwWvxQoclBcL9HUjhbQZIA9HVFRHAvP/eNdUruTLztmh2rL?=
+ =?iso-8859-1?Q?SPEHpCbq4eg4ZsJxumzK5AoIfgiRkAwYT/lgdFl2GWkvh6fGyB2/1vyBFs?=
+ =?iso-8859-1?Q?JNZD3Ir7/FZV2Lsrj5ZkpK5j8vloblyT0uYDHXMBJW9cS9WmOlbl4M9W0U?=
+ =?iso-8859-1?Q?GH4NIkXVdfAwytAAU3lCLWZP6w/UH4TZHaW9Xa4VqoMolIGWWfJfqIceyC?=
+ =?iso-8859-1?Q?cGiw9dt126++SH5UPQmi1QBpYXorQ+ARmZL2egqcZVWOwo+84+GIDnWbi4?=
+ =?iso-8859-1?Q?O/yqAeufuAxLUv5qQ49INP8pDvH8DkBWeRbiim3JhFb5I34098whpxAhMe?=
+ =?iso-8859-1?Q?N3AQAk7SHgAa22CwibIcsUxrrh0WoaqxLJ0Dro2vffNN0w1U/qzJ+nrcl8?=
+ =?iso-8859-1?Q?kVKmWcghwCtrwp8Ac7omnXJpY3HAfoOEAeF09iKqw2jMQC28WaZCPI55Oe?=
+ =?iso-8859-1?Q?zcpVHtA55uscoEtNCITKBPznZfBnJdY6Ii63FK/oWO2kO+JAcqN4cdrm97?=
+ =?iso-8859-1?Q?CPxCCFoFTbFhm4Z8d1IQ7jFWNwoscCTE34FuJnnGcn74tonolhCOA+hNQi?=
+ =?iso-8859-1?Q?XY++zvzMcAVtHJW3PprMHyzUp/ZHIr7XMCNWSN81HF9uDUu141L8F4O/aM?=
+ =?iso-8859-1?Q?JQj+o//w70WzxWLsK8Lj5WTrC5sBwfiWoUVr5PYmwJPC0E1VPIMRzcWk72?=
+ =?iso-8859-1?Q?rA0F44C4UXHJfAB6qY4QVwnmVW160zOn8UH9q84A7q3YIhQvXHUZRNLbRS?=
+ =?iso-8859-1?Q?MXpvyiLctGoIjguuuiuYTJ4aXDpaWr2N7Ns2XaWOEfgjTERsOW217t9oKi?=
+ =?iso-8859-1?Q?CyVQ3Q46ygEomdTrWeC3E8/MwbBA9DtrrIB2fGWsIV8mfe1WowSRHqkJBN?=
+ =?iso-8859-1?Q?cJsOaHi71CEyVxliT4I9xlX9uoN9HhdbdMc/IT13xJdoRM15Fu/V5LDA+j?=
+MIME-Version: 1.0
+
+Dear Jerker and Pal,
+
+We have just finished the meeting with Svetlin about the Eclipse 
+procedures. Svetlin showed Tamás and Gábor (our two commiters) the 
+release process, the IP check request and repository transfers.
+
+We also talked about how the contributors can work with the 
+eclipse-arrowhead repositories. Svetlin confirmed that Eclipse only 
+allows to COMMITERs to create new branches, push code into branches, or 
+merge pull requests.
+
+The recommended approach for CONTRIBUTORs to add code to the 
+core-java-spring repository (or any other) is the following:
+
+1. Fork the eclipse-arrowhead/core-java-spring repository. If you 
+already have a fork, merge eclipse-arrowhead/development branch into 
+your development branch.
+2. Create a new branch from the development branch on the fork.
+3. Develop your feature in the new branch.
+
+4. When you are ready to share your code with the community, merge 
+eclipse-arrowhead/development branch into your branch (because new 
+contributions can be there) and solve any merge problems.
+5. Create a pull request (PR) from your branch into the 
+eclipse-arrowhead/development branch.
+6. In the pull request you can ask review. Please mark Rajmund Bocsi 
+(rbocsi), Tamás Bordi (borditamas) and/or Gábor Majoros (MaGaMeGa) as 
+reviewers.
+7. After an approved review (before that reviewers may ask for changes), 
+a commiter will merge your contributions into the development branch and 
+eventually it will be part of the next release.
+
+
+To speed up the review process, please make sure your system is starting 
+without errors and all unit tests are successful. You should also make 
+sure you clean your code as best as you can. The following resources can 
+help to understand what clean code means:
+
+     Clean Coding in Java (https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.baeldung.com%2Fjava-clean-code&amp;data=05%7C01%7C%7C059ae0b1fbd94bd89de808da8f1de8df%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637979655865741684%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=sSQqQcqJvTVcaLMt7qmPxOEEq4GMeD84ZZ67%2BtoCAOY%3D&amp;reserved=0)
+     A short summary of Java Coding best practices 
+(https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmedium.com%2F%40rhamedy%2Fa-short-summary-of-java-coding-best-practices-31283d0167d3&amp;data=05%7C01%7C%7C059ae0b1fbd94bd89de808da8f1de8df%7C5453408ba6cd4c1e8b1018b500fb544e%7C1%7C0%7C637979655865741684%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=je%2Fi5%2FrT8XbBjBYlU%2BexX2%2FP5k4rBnHMC1Q8cwNAixU%3D&amp;reserved=0)
+
+Unfortunately, this means that the activity of the contributors only 
+appears retroactively when a PR is merged.
+
+
+Regards,
+Rajmund
+
