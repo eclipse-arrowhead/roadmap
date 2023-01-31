@@ -1,0 +1,594 @@
+/home/sysop/utils
+├── add_neighbor_cloud.template
+├── add_neighbor_clouds.sh
+├── add_neighbor_to_tc1_cloud.response
+├── add_neighbor_to_tc2_cloud.response
+├── add_relay.sh
+├── add_relay.template
+├── add_relay_to_tc1_cloud.response
+├── add_relay_to_tc2_cloud.response
+├── ah_scripts
+│   ├── authorization_privileges.sql
+│   ├── certificate_authority_privileges.sql
+│   ├── certificate_generation
+│   │   ├── lib_certs.sh
+│   │   ├── mk_certs.sh
+│   │   └── rm_certs.sh
+│   ├── choreographer_privileges.sql
+│   ├── configuration_privileges.sql
+│   ├── create_arrowhead_tables.sql
+│   ├── create_empty_arrowhead_db.sql
+│   ├── datamanager_privileges.sql
+│   ├── device_registry_privileges.sql
+│   ├── event_handler_privileges.sql
+│   ├── gatekeeper_privileges.sql
+│   ├── gateway_privileges.sql
+│   ├── initSQL.sh
+│   ├── old_create_empty_arrowhead_db.sql
+│   ├── onboarding_controller_privileges.sql
+│   ├── orchestrator_privileges.sql
+│   ├── patch_db_to_4.4.sql
+│   ├── plant_description_engine_privileges.sql
+│   ├── qos_monitor_privileges.sql
+│   ├── service_registry_privileges.sql
+│   ├── start_coresystems.bat
+│   ├── start_coresystems.sh
+│   ├── start_coresystems_local.bat
+│   ├── start_coresystems_local.sh
+│   ├── stop_coresystems.bat
+│   ├── stop_coresystems.sh
+│   ├── system_registry_privileges.sql
+│   ├── timemanager_privileges.sql
+│   └── translator_privileges.sql
+├── backup.sh
+├── copy_script.sh
+├── create_backup.sh
+├── create_jar_links.sh
+├── edit_cert_path.sh
+├── getconsumercloudid.sh
+├── init_db.sh
+├── ipv4.match
+├── s.txt
+├── silent_start_sr.sh
+├── start_cloud_services.sh
+├── start_services.sh
+├── stop_all_ah_core_systems.sh
+├── store.sh
+├── storetodocs.sh
+├── systems.txt
+├── tc1_db_scripts
+│   ├── authorization_privileges.sql
+│   ├── certificate_authority_privileges.sql
+│   ├── choreographer_privileges.sql
+│   ├── configuration_privileges.sql
+│   ├── create_empty_arrowhead_db.sql
+│   ├── create_tc1-arrowhead_tables.sql
+│   ├── datamanager_privileges.sql
+│   ├── device_registry_privileges.sql
+│   ├── event_handler_privileges.sql
+│   ├── gatekeeper_privileges.sql
+│   ├── gateway_privileges.sql
+│   ├── initSQL.sh
+│   ├── old_create_empty_arrowhead_db.sql
+│   ├── onboarding_controller_privileges.sql
+│   ├── orchestrator_privileges.sql
+│   ├── patch_db_to_4.4.sql
+│   ├── plant_description_engine_privileges.sql
+│   ├── qos_monitor_privileges.sql
+│   ├── service_registry_privileges.sql
+│   ├── start_coresystems.bat
+│   ├── start_coresystems.sh
+│   ├── start_coresystems_local.bat
+│   ├── start_coresystems_local.sh
+│   ├── stop_coresystems.bat
+│   ├── stop_coresystems.sh
+│   ├── system_registry_privileges.sql
+│   ├── timemanager_privileges.sql
+│   └── translator_privileges.sql
+├── tc2_db_scripts
+│   ├── authorization_privileges.sql
+│   ├── certificate_authority_privileges.sql
+│   ├── change_user.sh
+│   ├── change_user_in_init.sh
+│   ├── choreographer_privileges.sql
+│   ├── configuration_privileges.sql
+│   ├── create_empty_arrowhead_db.sql
+│   ├── create_empty_arrowhead_db.sql.old
+│   ├── create_tc2-arrowhead_tables.sql
+│   ├── datamanager_privileges.sql
+│   ├── db_users.list
+│   ├── device_registry_privileges.sql
+│   ├── event_handler_privileges.sql
+│   ├── gatekeeper_privileges.sql
+│   ├── gateway_privileges.sql
+│   ├── initSQL.sh
+│   ├── old_create_empty_arrowhead_db.sql
+│   ├── onboarding_controller_privileges.sql
+│   ├── orchestrator_privileges.sql
+│   ├── patch_db_to_4.4.sql
+│   ├── plant_description_engine_privileges.sql
+│   ├── qos_monitor_privileges.sql
+│   ├── service_registry_privileges.sql
+│   ├── start_coresystems.bat
+│   ├── start_coresystems.sh
+│   ├── start_coresystems_local.bat
+│   ├── start_coresystems_local.sh
+│   ├── stop_coresystems.bat
+│   ├── stop_coresystems.sh
+│   ├── system_registry_privileges.sql
+│   ├── timemanager_privileges.sql
+│   └── translator_privileges.sql
+├── tests
+│   ├── clienttests
+│   │   ├── alpine1consumer
+│   │   │   ├── alpine1consumer.p12
+│   │   │   ├── alpine1consumer.pub
+│   │   │   ├── alpine1consumer.pub.authinfo
+│   │   │   ├── consume_service.sh
+│   │   │   ├── copy.it
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── helloworld.response
+│   │   │   ├── helloworld.response.old
+│   │   │   ├── intercloud_consume_service.sh
+│   │   │   ├── intercloud_helloworld.response
+│   │   │   ├── intercloud_orchestration.request
+│   │   │   ├── intercloud_orchestration.request.template
+│   │   │   ├── intercloud_orchestration.response
+│   │   │   ├── intercloud_orchestration.response.metadata
+│   │   │   ├── new_intercloud_helloworld.response
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── sr_orchestration_entry.request
+│   │   │   ├── sr_orchestration_query.reply
+│   │   │   ├── start_intercloud_orchestration.sh
+│   │   │   └── start_orchestration.sh
+│   │   ├── alpine1provider
+│   │   │   ├── alpine1provider-key.pem
+│   │   │   ├── alpine1provider.p12
+│   │   │   ├── alpine1provider.pem
+│   │   │   ├── alpine1provider.pub
+│   │   │   ├── alpine1provider.pub.authinfo
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── alpine1provider-key.pem
+│   │   │   │       ├── alpine1provider.pem
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── server.log
+│   │   │   │       └── start_ah_alpine1provider_helloworld_service.sh
+│   │   │   └── start_service.sh
+│   │   ├── certificateauthority
+│   │   │   ├── create_test_client_cert.sh
+│   │   │   ├── genSystemCert.sh
+│   │   │   ├── master.crt
+│   │   │   ├── normalize_pub.sh
+│   │   │   ├── old.master.crt
+│   │   │   ├── old.testcloud2.crt
+│   │   │   ├── old.testcloud2.p12
+│   │   │   ├── testcloud2.crt
+│   │   │   └── testcloud2.p12
+│   │   ├── clienttools
+│   │   │   ├── consume_service.sh
+│   │   │   ├── old_start_service.sh
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── register_service.sh
+│   │   │   ├── requestCertificate.sh
+│   │   │   ├── start_orchestration.sh
+│   │   │   └── start_service.sh
+│   │   ├── managementtool
+│   │   │   ├── create_auth_policy.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── intra_auth.request
+│   │   │   ├── intra_auth.request.template
+│   │   │   ├── intra_auth.response
+│   │   │   ├── register_service.response
+│   │   │   ├── register_system.sh
+│   │   │   ├── sysop.p12 -> /usr/share/arrowhead/certificates/testcloud2/sysop.p12
+│   │   │   └── templates
+│   │   │       └── create_system.request.template
+│   │   ├── run_client_tests.sh
+│   │   ├── run_test.result
+│   │   ├── tc2-ac-3
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── helloworld.response
+│   │   │   ├── intercloud_consume_service.sh
+│   │   │   ├── intercloud_helloworld.response
+│   │   │   ├── intercloud_orchestration.request
+│   │   │   ├── intercloud_orchestration.request.template
+│   │   │   ├── intercloud_orchestration.response
+│   │   │   ├── intercloud_orchestration.response.metadata
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── start_intercloud_orchestration.sh
+│   │   │   ├── start_orchestration.sh
+│   │   │   ├── tc2-ac-3.p12
+│   │   │   ├── tc2-ac-3.pub
+│   │   │   └── tc2-ac-3.pub.authinfo
+│   │   ├── tc2-alpine1consumer
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── helloworld.response
+│   │   │   ├── intercloud_.response
+│   │   │   ├── intercloud_consume_service.sh
+│   │   │   ├── intercloud_helloworld.response
+│   │   │   ├── intercloud_helloworld.response.old
+│   │   │   ├── intercloud_orchestration.request
+│   │   │   ├── intercloud_orchestration.request.template
+│   │   │   ├── intercloud_orchestration.response
+│   │   │   ├── intercloud_orchestration.response.metadata
+│   │   │   ├── intercloud_orchestration.response.old
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── start_intercloud_orchestration.sh
+│   │   │   ├── start_orchestration.sh
+│   │   │   ├── tc2-alpine1consumer.p12
+│   │   │   ├── tc2-alpine1consumer.pub
+│   │   │   └── tc2-alpine1consumer.pub.authinfo
+│   │   ├── tc2-alpine1provider
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── server.log
+│   │   │   │       ├── start_ah_tc2-alpine1provider_helloworld_service.sh
+│   │   │   │       ├── tc2-alpine1provider-key.pem
+│   │   │   │       └── tc2-alpine1provider.pem
+│   │   │   ├── start_service.sh
+│   │   │   ├── tc2-alpine1provider-key.pem
+│   │   │   ├── tc2-alpine1provider.p12
+│   │   │   ├── tc2-alpine1provider.pem
+│   │   │   ├── tc2-alpine1provider.pub
+│   │   │   └── tc2-alpine1provider.pub.authinfo
+│   │   ├── tc2-ap-3
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── server.log
+│   │   │   │       ├── start_ah_tc2-ap-3_helloworld_service.sh
+│   │   │   │       ├── tc2-ap-3-key.pem
+│   │   │   │       └── tc2-ap-3.pem
+│   │   │   ├── start_service.sh
+│   │   │   ├── tc2-ap-3-key.pem
+│   │   │   ├── tc2-ap-3.p12
+│   │   │   ├── tc2-ap-3.pem
+│   │   │   ├── tc2-ap-3.pub
+│   │   │   └── tc2-ap-3.pub.authinfo
+│   │   └── templates
+│   │       ├── create_system.request.template
+│   │       ├── helloworld.content.template
+│   │       ├── intra_auth.request.template
+│   │       ├── orchestration.request.template
+│   │       ├── provider.service.template
+│   │       ├── register_service.request.template
+│   │       ├── server.template
+│   │       └── sr_entry.request.template
+│   ├── echo_test_template.sh
+│   ├── intercloud_consumption
+│   │   ├── intercloud_consume_service.sh
+│   │   ├── intercloud_orchestration.request.template
+│   │   └── start_intercloud_orchestration.sh
+│   ├── tc1_clienttests
+│   │   ├── alpine1consumer
+│   │   │   ├── alpine1consumer.p12
+│   │   │   ├── alpine1consumer.pub
+│   │   │   ├── alpine1consumer.pub.authinfo
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── null.response
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   └── start_orchestration.sh
+│   │   ├── alpine1provider
+│   │   │   ├── alpine1provider-key.pem
+│   │   │   ├── alpine1provider.p12
+│   │   │   ├── alpine1provider.pem
+│   │   │   ├── alpine1provider.pub
+│   │   │   ├── alpine1provider.pub.authinfo
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── alpine1provider-key.pem
+│   │   │   │       ├── alpine1provider.pem
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── hw.template
+│   │   │   │       ├── server.log
+│   │   │   │       └── start_ah_alpine1provider_helloworld_service.sh
+│   │   │   └── start_service.sh
+│   │   ├── certificateauthority
+│   │   │   ├── create_test_client_cert.sh
+│   │   │   ├── genSystemCert.sh
+│   │   │   ├── master.crt
+│   │   │   ├── normalize_pub.sh
+│   │   │   ├── old.master.crt
+│   │   │   ├── old.testcloud1.crt
+│   │   │   ├── old.testcloud1.p12
+│   │   │   ├── testcloud1.crt
+│   │   │   └── testcloud1.p12
+│   │   ├── clienttools
+│   │   │   ├── consume_service.sh
+│   │   │   ├── old_start_service.sh
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── register_service.sh
+│   │   │   ├── requestCertificate.sh
+│   │   │   ├── start_orchestration.sh
+│   │   │   └── start_service.sh
+│   │   ├── managementtool
+│   │   │   ├── create_auth_policy.sh
+│   │   │   ├── create_intercloud_auth_policy.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── getconsumercloudid.sh
+│   │   │   ├── inter_auth.request
+│   │   │   ├── inter_auth.request.old
+│   │   │   ├── inter_auth.request.template
+│   │   │   ├── inter_auth.response
+│   │   │   ├── inter_auth.response.old
+│   │   │   ├── intra_auth.request
+│   │   │   ├── intra_auth.request.template
+│   │   │   ├── intra_auth.response
+│   │   │   ├── register_service.response
+│   │   │   ├── register_service.response.old
+│   │   │   ├── register_system.sh
+│   │   │   ├── sysop.p12 -> /usr/share/arrowhead/certificates/testcloud1/sysop.p12
+│   │   │   └── templates
+│   │   │       └── create_system.request.template
+│   │   ├── run_client_tests.sh
+│   │   ├── tc1-alpine1consumer
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── helloworld.response
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── start_orchestration.sh
+│   │   │   ├── tc1-alpine1consumer.p12
+│   │   │   ├── tc1-alpine1consumer.pub
+│   │   │   └── tc1-alpine1consumer.pub.authinfo
+│   │   ├── tc1-alpine1provider
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── server.log
+│   │   │   │       ├── start_ah_tc1-alpine1provider_helloworld_service.sh
+│   │   │   │       ├── tc1-alpine1provider-key.pem
+│   │   │   │       └── tc1-alpine1provider.pem
+│   │   │   ├── start_service.sh
+│   │   │   ├── tc1-alpine1provider-key.pem
+│   │   │   ├── tc1-alpine1provider.p12
+│   │   │   ├── tc1-alpine1provider.pem
+│   │   │   ├── tc1-alpine1provider.pub
+│   │   │   └── tc1-alpine1provider.pub.authinfo
+│   │   ├── tc1-alpine2consumer
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── start_orchestration.sh
+│   │   │   ├── tc1-alpine2consumer.p12
+│   │   │   ├── tc1-alpine2consumer.pub
+│   │   │   └── tc1-alpine2consumer.pub.authinfo
+│   │   ├── tc1-alpine2provider
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── server.log
+│   │   │   │       ├── start_ah_tc1-alpine2provider_helloworld_service.sh
+│   │   │   │       ├── tc1-alpine2provider-key.pem
+│   │   │   │       └── tc1-alpine2provider.pem
+│   │   │   ├── start_service.sh
+│   │   │   ├── tc1-alpine2provider-key.pem
+│   │   │   ├── tc1-alpine2provider.p12
+│   │   │   ├── tc1-alpine2provider.pem
+│   │   │   ├── tc1-alpine2provider.pub
+│   │   │   └── tc1-alpine2provider.pub.authinfo
+│   │   ├── tc1-alpine3consumer
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── null.response
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── start_orchestration.sh
+│   │   │   ├── tc1-alpine3consumer.p12
+│   │   │   ├── tc1-alpine3consumer.pub
+│   │   │   └── tc1-alpine3consumer.pub.authinfo
+│   │   ├── tc1-alpine3provider
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── server.log
+│   │   │   │       ├── start_ah_tc1-alpine3provider_helloworld_service.sh
+│   │   │   │       ├── tc1-alpine3provider-key.pem
+│   │   │   │       └── tc1-alpine3provider.pem
+│   │   │   ├── start_service.sh
+│   │   │   ├── tc1-alpine3provider-key.pem
+│   │   │   ├── tc1-alpine3provider.p12
+│   │   │   ├── tc1-alpine3provider.pem
+│   │   │   ├── tc1-alpine3provider.pub
+│   │   │   └── tc1-alpine3provider.pub.authinfo
+│   │   ├── tc1-alpine4consumer
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── helloworld.response
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── start_orchestration.sh
+│   │   │   ├── tc1-alpine4consumer.p12
+│   │   │   ├── tc1-alpine4consumer.pub
+│   │   │   └── tc1-alpine4consumer.pub.authinfo
+│   │   ├── tc1-alpine4provider
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── server.log
+│   │   │   │       ├── start_ah_tc1-alpine4provider_helloworld_service.sh
+│   │   │   │       ├── tc1-alpine4provider-key.pem
+│   │   │   │       └── tc1-alpine4provider.pem
+│   │   │   ├── start_service.sh
+│   │   │   ├── tc1-alpine4provider-key.pem
+│   │   │   ├── tc1-alpine4provider.p12
+│   │   │   ├── tc1-alpine4provider.pem
+│   │   │   ├── tc1-alpine4provider.pub
+│   │   │   └── tc1-alpine4provider.pub.authinfo
+│   │   ├── tc1alpine1consumer
+│   │   │   ├── consume_service.sh
+│   │   │   ├── create_system.response
+│   │   │   ├── create_system.response.metadata
+│   │   │   ├── echo_test_template.sh
+│   │   │   ├── null.response
+│   │   │   ├── orchestration.request
+│   │   │   ├── orchestration.request.template
+│   │   │   ├── orchestration.response
+│   │   │   ├── orchestration.response.metadata
+│   │   │   ├── query_serviceregistry.sh
+│   │   │   ├── sr_entry.request.template
+│   │   │   ├── sr_orchestration-service_entry.request
+│   │   │   ├── sr_orchestration-service_query.reply
+│   │   │   ├── start_orchestration.sh
+│   │   │   ├── tc1alpine1consumer.p12
+│   │   │   ├── tc1alpine1consumer.pub
+│   │   │   └── tc1alpine1consumer.pub.authinfo
+│   │   ├── tc1alpine1provider
+│   │   │   ├── helloworld.content.template
+│   │   │   ├── provider.service.template
+│   │   │   ├── register_helloworld_service.request
+│   │   │   ├── register_helloworld_service.response
+│   │   │   ├── register_service.request.template
+│   │   │   ├── register_service.sh
+│   │   │   ├── server.template
+│   │   │   ├── services
+│   │   │   │   └── helloworld
+│   │   │   │       ├── helloworld
+│   │   │   │       ├── hw.template
+│   │   │   │       ├── server.log
+│   │   │   │       ├── start_ah_tc1alpine1provider_helloworld_service.sh
+│   │   │   │       ├── tc1alpine1provider-key.pem
+│   │   │   │       ├── tc1alpine1provider.pem
+│   │   │   │       └── update_response.sh
+│   │   │   ├── start_service.sh
+│   │   │   ├── tc1alpine1provider-key.pem
+│   │   │   ├── tc1alpine1provider.p12
+│   │   │   ├── tc1alpine1provider.pem
+│   │   │   ├── tc1alpine1provider.pub
+│   │   │   └── tc1alpine1provider.pub.authinfo
+│   │   └── templates
+│   │       ├── create_system.request.template
+│   │       ├── helloworld.content.template
+│   │       ├── intra_auth.request.template
+│   │       ├── orchestration.request.template
+│   │       ├── provider.service.template
+│   │       ├── register_service.request.template
+│   │       ├── server.template
+│   │       └── sr_entry.request.template
+│   ├── tc1_sr_echo_test.sh
+│   └── test_tc1_provider.sh
+└── trafickmonitor.sh
+
+54 directories, 537 files

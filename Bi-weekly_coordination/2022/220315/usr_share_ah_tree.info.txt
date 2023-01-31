@@ -1,0 +1,54 @@
+/usr/share/arrowhead/
+├── certificates
+│   ├── relay1
+│   │   ├── relay-truststore.p12
+│   │   └── relay1.p12
+│   ├── testcloud1
+│   │   ├── authorization.p12
+│   │   ├── authorization.pub
+│   │   ├── eventhandler.p12
+│   │   ├── eventhandler.pub
+│   │   ├── gate-truststore.p12
+│   │   ├── gatekeeper.p12
+│   │   ├── gatekeeper.pub
+│   │   ├── gateway.p12
+│   │   ├── gateway.pub
+│   │   ├── orchestrator.p12
+│   │   ├── orchestrator.pub
+│   │   ├── serviceregistry.p12
+│   │   ├── serviceregistry.pub
+│   │   ├── sysop.p12
+│   │   ├── sysop.pub
+│   │   └── truststore.p12
+│   └── testcloud2
+│       ├── authorization.p12
+│       ├── authorization.pub
+│       ├── eventhandler.p12
+│       ├── eventhandler.pub
+│       ├── gate-truststore.p12
+│       ├── gatekeeper.p12
+│       ├── gatekeeper.pub
+│       ├── gateway.p12
+│       ├── gateway.pub
+│       ├── orchestrator.p12
+│       ├── orchestrator.pub
+│       ├── serviceregistry.p12
+│       ├── serviceregistry.pub
+│       ├── sysop.p12
+│       ├── sysop.pub
+│       └── truststore.p12
+└── cores
+    ├── authorization
+    │   └── arrowhead-authorization-4.4.0.jar
+    ├── eventhandler
+    │   └── arrowhead-eventhandler-4.4.0.jar
+    ├── gatekeeper
+    │   └── arrowhead-gatekeeper-4.4.0.jar
+    ├── gateway
+    │   └── arrowhead-gateway-4.4.0.jar
+    ├── orchestrator
+    │   └── arrowhead-orchestrator-4.4.0.jar
+    └── serviceregistry
+        └── arrowhead-serviceregistry-4.4.0.jar
+
+11 directories, 40 files
