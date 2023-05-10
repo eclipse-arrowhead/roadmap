@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  9 MAY 2023 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  10 MAY 2023 07:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -569,7 +569,7 @@ LaTeX Info: Redefining \nameref on input line 39.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
 )
-<figures/arrowhead_logo.pdf, id=36, 94.49634pt x 80.02338pt>
+<figures/arrowhead_logo.pdf, id=40, 94.49634pt x 80.02338pt>
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
 Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 89.
@@ -635,7 +635,7 @@ Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 196.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
 
 [3]
-<figures/arrowhead_technology_stack.png, id=74, 342.5598pt x 211.992pt>
+<figures/arrowhead_technology_stack.png, id=79, 342.5598pt x 211.992pt>
 File: figures/arrowhead_technology_stack.png Graphic file (type png)
 <use figures/arrowhead_technology_stack.png>
 Package pdftex.def Info: figures/arrowhead_technology_stack.png  used on input 
@@ -643,64 +643,103 @@ line 199.
 (pdftex.def)             Requested size: 435.32422pt x 269.41768pt.
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 248.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 246.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [4 <./figures/arrowhead_technology_stack.png>]
-
-LaTeX Warning: Citation `Palm2019' on page 5 undefined on input line 278.
-
-
-LaTeX Warning: Reference `Emanuel2019b' on page 5 undefined on input line 298.
-
-<figures/documentation_structure.png, id=89, 1294.8375pt x 1088.065pt>
+<figures/documentation_structure.png, id=94, 1294.8375pt x 1088.065pt>
 File: figures/documentation_structure.png Graphic file (type png)
 <use figures/documentation_structure.png>
 Package pdftex.def Info: figures/documentation_structure.png  used on input lin
-e 309.
+e 249.
 (pdftex.def)             Requested size: 435.32422pt x 365.80319pt.
+<figures/ArrowheadArchitecturalLevels.png, id=96, 221.82875pt x 663.47874pt>
+File: figures/ArrowheadArchitecturalLevels.png Graphic file (type png)
+<use figures/ArrowheadArchitecturalLevels.png>
+Package pdftex.def Info: figures/ArrowheadArchitecturalLevels.png  used on inpu
+t line 262.
+(pdftex.def)             Requested size: 133.18288pt x 398.33858pt.
+
+
+LaTeX Warning: Citation `Delsing2020' on page 5 undefined on input line 295.
+
+
+LaTeX Warning: Citation `Delsing2021' on page 5 undefined on input line 295.
+
+
+LaTeX Warning: Citation `Arrowhead_DSL' on page 5 undefined on input line 297.
+
+File: figures/arrowhead_logo.pdf Graphic file (type pdf)
+<use figures/arrowhead_logo.pdf>
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 299.
+(pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
+[5 <./figures/documentation_structure.png (PNG copy)>]
+
+LaTeX Warning: Citation `Palm2019' on page 6 undefined on input line 309.
+
+<figures/ArrowheadEngineeringProcess.png, id=105, 1346.02875pt x 201.75375pt>
+File: figures/ArrowheadEngineeringProcess.png Graphic file (type png)
+<use figures/ArrowheadEngineeringProcess.png>
+Package pdftex.def Info: figures/ArrowheadEngineeringProcess.png  used on input
+ line 319.
+(pdftex.def)             Requested size: 435.32422pt x 65.24902pt.
+
+LaTeX Warning: Citation `Urgese2019' on page 6 undefined on input line 329.
+
+
+LaTeX Warning: Citation `Urgese2021' on page 6 undefined on input line 329.
+
+File: figures/arrowhead_logo.pdf Graphic file (type pdf)
+<use figures/arrowhead_logo.pdf>
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 337.
+(pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
+[6 <./figures/ArrowheadArchitecturalLevels.png>]
+
+LaTeX Warning: Reference `Emanuel2019b' on page 7 undefined on input line 342.
+
 (./Eclipse foundational principles and developments.bbl
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 25.
 )
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 322.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 357.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
- [5]
-
+ [7 <./figures/ArrowheadEngineeringProcess.png>] 
 AED: lastpage setting LastPage
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 346.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 381.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
-[6 <./figures/documentation_structure.png (PNG copy)>]
-(./Eclipse foundational principles and developments.aux)
+[8] (./Eclipse foundational principles and developments.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `"Eclipse foundational principles and develop
 ments".out' has not changed.
-(rerunfilecheck)             Checksum: 91850D0BAF31BFA52758C89DE3B92106;1159.
+(rerunfilecheck)             Checksum: 42A9A65E56036D854E4AA47914D7ABE0;1396.
  ) 
 Here is how much of TeX's memory you used:
- 15007 strings out of 478994
- 231694 string characters out of 5858184
- 590069 words of memory out of 5000000
- 32076 multiletter control sequences out of 15000+600000
- 430082 words of font info for 144 fonts, out of 8000000 for 9000
+ 15028 strings out of 478994
+ 232427 string characters out of 5858184
+ 590303 words of memory out of 5000000
+ 32093 multiletter control sequences out of 15000+600000
+ 429969 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,20n,89p,1053b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,20n,89p,1053b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texm
 f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/
 fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on "Eclipse foundational principles and developments.pdf" (6 pag
-es, 629028 bytes).
+Output written on "Eclipse foundational principles and developments.pdf" (8 pag
+es, 666039 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 59984 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 60002 words of extra memory for PDF output out of 61914 (max. 10000000)
 

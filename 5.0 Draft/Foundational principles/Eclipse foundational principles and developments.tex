@@ -240,8 +240,33 @@ decission and objectives:
     \item Network technology agnostic, allowing for different network
       properties inside different local clouds.
 
+    \item Documentation of the Eclipse Arrowhead architecture and
+      solutions based thereon to follow the adopted documentation
+      structure as shown in Figure \ref{fig:documentation_structure}.  
+  
+\begin{figure}[ht!]
+   \centering
+   \includegraphics[width=0.9\linewidth]{figures/documentation_structure}
+   \caption{The Eclipse Arrowhead documentation structure.}
+   \label{fig:documentation_structure}
+ \end{figure}
+
+
+      
+    \item Architectural levels defined are depicted in Figure \ref{fig:architecture_levels}.
+
     \end{itemize}
-   
+
+\begin{figure}[ht!]
+   \centering
+   \includegraphics[height=14cm]{figures/ArrowheadArchitecturalLevels}
+   \caption{The Eclipse Arrowhead architectural levels from network to
+     System of Systems.}
+   \label{fig:architecture_levels}
+ \end{figure}
+
+
+    
   \item Technology objectives: 
    \begin{itemize} 
       
@@ -264,7 +289,13 @@ decission and objectives:
       Audit, Monitoring, BusinessAdminstration, BusinessModels. This
       will also require ways of addressing interdependecies between
       the various stratgy directions.
+    \item Model based engineering to support documentation,
+      requirements validation, automated code generation and
+      generation of deployment ready code packages (containers)
+      \cite{Delsing2020,Delsing2021}
 
+    \item Domain specific language based on UML/SysML \cite{Arrowhead_DSL}.
+   
     \end{itemize}
     
   \end{itemize}
@@ -283,6 +314,19 @@ are:
 
 \end{itemize}
 
+\begin{figure}[ht!]
+   \centering
+   \includegraphics[width=0.9\linewidth]{figures/ArrowheadEngineeringProcess}
+   \caption{The Eclipse Arrowhead engineering process is an extension
+     of the IEC81346 engineering process..}
+   \label{fig:engineering_process}
+ \end{figure}
+
+
+\section{Eclipse Arrowhead engineering process}
+The Arrowhead engineering processs has primarly been documented in a
+couple of journanl papers by G. Urgese
+et.al. \cite{Urgese2019,Urgese2021}, cf. Figure \ref{fig:engineering_process}. 
 
 \section{Implementation specifics}
 For the current implementations a set of technologies has been choosen
@@ -301,15 +345,6 @@ Eclipse Arrowhead microsystem are:
     \item High performance: GO lang
 \end{itemize}  
  
-For documentation of the Eclipse Arrowhead and solutions based thereon
-a documentation structure has been adopted, cf. Figure \ref{fig:documentation_structure}.  
-  
-\begin{figure}[ht!]
-   \centering
-   \includegraphics[width=0.9\linewidth]{figures/documentation_structure}
-   \caption{The Eclipse Arrowhead documentation structure.}
-   \label{fig:documentation_structure}
- \end{figure}
 
 
 
