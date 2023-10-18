@@ -1,0 +1,156 @@
+<mxfile host="Electron" modified="2023-10-16T20:15:38.317Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="-hQZVPIp9ah4Y8_t7kzF" version="21.1.2" type="device">
+  <diagram name="Page-1" id="dOg7UCd59jDAo89qNwC_">
+    <mxGraphModel dx="1082" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-47" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30" y="130" width="800" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-21" value="" style="group" parent="noM4fTOgAnh_GEi2Mfc9-47" vertex="1" connectable="0">
+          <mxGeometry x="20" y="310" width="780" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-8" value="" style="group" parent="noM4fTOgAnh_GEi2Mfc9-21" vertex="1" connectable="0">
+          <mxGeometry width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-1" value="&lt;a style=&quot;box-sizing: border-box; font-family: Roboto, arial, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; text-size-adjust: auto; -webkit-text-stroke-width: 0px;&quot; class=&quot;catalog-card__link&quot; href=&quot;https://www.badgermeter.com/products/meters/ultrasonic-flow-meters/residential-ultrasonic-flow-meters/&quot;&gt;&lt;img style=&quot;box-sizing: border-box; max-width: 100%; display: block; width: 250.984375px;&quot; class=&quot;catalog-card__image&quot; alt=&quot;Residential Ultrasonic Flow Meters&quot; src=&quot;https://badgermeter.widen.net/content/mqveijqu5w/jpeg/E-Series-G2%20Residential%20Meter%20%28low%20res%29.png?w=600&amp;amp;h=600&amp;amp;position=c&amp;amp;color=ffffffff&amp;amp;quality=80&amp;amp;u=rb73pf&quot;&gt;&lt;/a&gt;" style="text;whiteSpace=wrap;html=1;" parent="noM4fTOgAnh_GEi2Mfc9-8" vertex="1">
+          <mxGeometry width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-2" value="" style="group;rotation=0;direction=north;flipV=1;" parent="noM4fTOgAnh_GEi2Mfc9-8" vertex="1" connectable="0">
+          <mxGeometry x="140" y="40" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-3" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;aspect=fixed;resizable=0;points=[];outlineConnect=0;sketch=0;fillColor=#FFFFFF;" parent="noM4fTOgAnh_GEi2Mfc9-2" vertex="1">
+          <mxGeometry x="5" y="-14" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-4" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#0000FF;" parent="noM4fTOgAnh_GEi2Mfc9-2" vertex="1">
+          <mxGeometry y="10" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-5" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;sketch=0;targetPerimeterSpacing=0;startArrow=none;" parent="noM4fTOgAnh_GEi2Mfc9-2" source="noM4fTOgAnh_GEi2Mfc9-4" target="noM4fTOgAnh_GEi2Mfc9-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="22" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-9" value="" style="group" parent="noM4fTOgAnh_GEi2Mfc9-21" vertex="1" connectable="0">
+          <mxGeometry x="250" y="30" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-10" value="&lt;a href=&quot;https://www.badgermeter.com/products/meters/ultrasonic-flow-meters/residential-ultrasonic-flow-meters/&quot; class=&quot;catalog-card__link&quot; style=&quot;box-sizing: border-box; font-family: Roboto, arial, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; text-size-adjust: auto; -webkit-text-stroke-width: 0px;&quot;&gt;&lt;img src=&quot;https://badgermeter.widen.net/content/mqveijqu5w/jpeg/E-Series-G2%20Residential%20Meter%20%28low%20res%29.png?w=600&amp;amp;h=600&amp;amp;position=c&amp;amp;color=ffffffff&amp;amp;quality=80&amp;amp;u=rb73pf&quot; alt=&quot;Residential Ultrasonic Flow Meters&quot; class=&quot;catalog-card__image&quot; style=&quot;box-sizing: border-box; max-width: 100%; display: block; width: 250.984375px;&quot;&gt;&lt;/a&gt;" style="text;whiteSpace=wrap;html=1;" parent="noM4fTOgAnh_GEi2Mfc9-9" vertex="1">
+          <mxGeometry width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-11" value="" style="group;rotation=0;direction=north;flipV=1;" parent="noM4fTOgAnh_GEi2Mfc9-9" vertex="1" connectable="0">
+          <mxGeometry x="140" y="40" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-12" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;aspect=fixed;resizable=0;points=[];outlineConnect=0;sketch=0;fillColor=#FFFFFF;" parent="noM4fTOgAnh_GEi2Mfc9-11" vertex="1">
+          <mxGeometry x="5" y="-14" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-13" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#0000FF;" parent="noM4fTOgAnh_GEi2Mfc9-11" vertex="1">
+          <mxGeometry y="10" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-14" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;sketch=0;targetPerimeterSpacing=0;startArrow=none;" parent="noM4fTOgAnh_GEi2Mfc9-11" source="noM4fTOgAnh_GEi2Mfc9-13" target="noM4fTOgAnh_GEi2Mfc9-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="22" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-15" value="" style="group" parent="noM4fTOgAnh_GEi2Mfc9-21" vertex="1" connectable="0">
+          <mxGeometry x="500" y="70" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-16" value="&lt;a href=&quot;https://www.badgermeter.com/products/meters/ultrasonic-flow-meters/residential-ultrasonic-flow-meters/&quot; class=&quot;catalog-card__link&quot; style=&quot;box-sizing: border-box; font-family: Roboto, arial, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; text-size-adjust: auto; -webkit-text-stroke-width: 0px;&quot;&gt;&lt;img src=&quot;https://badgermeter.widen.net/content/mqveijqu5w/jpeg/E-Series-G2%20Residential%20Meter%20%28low%20res%29.png?w=600&amp;amp;h=600&amp;amp;position=c&amp;amp;color=ffffffff&amp;amp;quality=80&amp;amp;u=rb73pf&quot; alt=&quot;Residential Ultrasonic Flow Meters&quot; class=&quot;catalog-card__image&quot; style=&quot;box-sizing: border-box; max-width: 100%; display: block; width: 250.984375px;&quot;&gt;&lt;/a&gt;" style="text;whiteSpace=wrap;html=1;" parent="noM4fTOgAnh_GEi2Mfc9-15" vertex="1">
+          <mxGeometry width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-17" value="" style="group;rotation=0;direction=north;flipV=1;" parent="noM4fTOgAnh_GEi2Mfc9-15" vertex="1" connectable="0">
+          <mxGeometry x="140" y="40" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-18" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;aspect=fixed;resizable=0;points=[];outlineConnect=0;sketch=0;fillColor=#FFFFFF;" parent="noM4fTOgAnh_GEi2Mfc9-17" vertex="1">
+          <mxGeometry x="5" y="-14" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-19" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#0000FF;" parent="noM4fTOgAnh_GEi2Mfc9-17" vertex="1">
+          <mxGeometry y="10" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-20" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;sketch=0;targetPerimeterSpacing=0;startArrow=none;" parent="noM4fTOgAnh_GEi2Mfc9-17" source="noM4fTOgAnh_GEi2Mfc9-19" target="noM4fTOgAnh_GEi2Mfc9-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="22" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-22" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="noM4fTOgAnh_GEi2Mfc9-47" vertex="1">
+          <mxGeometry x="410" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-23" value="" style="group;flipV=0;rotation=-180;" parent="noM4fTOgAnh_GEi2Mfc9-47" vertex="1" connectable="0">
+          <mxGeometry x="430" y="80" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-24" value="" style="shape=requiredInterface;html=1;verticalLabelPosition=bottom;sketch=0;fontSize=15;fontColor=#FFFFFF;fillColor=#FFB570;direction=south;rotation=-180;" parent="noM4fTOgAnh_GEi2Mfc9-23" vertex="1">
+          <mxGeometry y="30" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-25" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#0000FF;rotation=-180;" parent="noM4fTOgAnh_GEi2Mfc9-23" vertex="1">
+          <mxGeometry width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-26" value="" style="endArrow=none;html=1;rounded=0;fontSize=15;fontColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="noM4fTOgAnh_GEi2Mfc9-23" source="noM4fTOgAnh_GEi2Mfc9-25" target="noM4fTOgAnh_GEi2Mfc9-24" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="sourcePoint" />
+            <mxPoint x="450" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-27" value="" style="endArrow=none;html=1;rounded=0;" parent="noM4fTOgAnh_GEi2Mfc9-47" source="noM4fTOgAnh_GEi2Mfc9-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="260" as="sourcePoint" />
+            <mxPoint x="440" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-28" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="noM4fTOgAnh_GEi2Mfc9-47" source="noM4fTOgAnh_GEi2Mfc9-12" target="noM4fTOgAnh_GEi2Mfc9-24" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="184" y="348" as="sourcePoint" />
+            <mxPoint x="450" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-29" value="" style="endArrow=none;html=1;rounded=0;" parent="noM4fTOgAnh_GEi2Mfc9-47" source="noM4fTOgAnh_GEi2Mfc9-18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="376" as="sourcePoint" />
+            <mxPoint x="440" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-30" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="noM4fTOgAnh_GEi2Mfc9-47" vertex="1">
+          <mxGeometry y="190" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-31" value="" style="group;flipV=0;rotation=90;" parent="noM4fTOgAnh_GEi2Mfc9-47" vertex="1" connectable="0">
+          <mxGeometry x="40" y="220" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-32" value="" style="shape=requiredInterface;html=1;verticalLabelPosition=bottom;sketch=0;fontSize=15;fontColor=#FFFFFF;fillColor=#FFB570;direction=south;rotation=90;" parent="noM4fTOgAnh_GEi2Mfc9-31" vertex="1">
+          <mxGeometry x="15" y="15" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-33" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#0000FF;rotation=90;" parent="noM4fTOgAnh_GEi2Mfc9-31" vertex="1">
+          <mxGeometry x="-15" y="15" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-34" value="" style="endArrow=none;html=1;rounded=0;fontSize=15;fontColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="noM4fTOgAnh_GEi2Mfc9-31" source="noM4fTOgAnh_GEi2Mfc9-33" target="noM4fTOgAnh_GEi2Mfc9-32" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="20" as="sourcePoint" />
+            <mxPoint x="210" y="-420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-36" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="noM4fTOgAnh_GEi2Mfc9-47" source="noM4fTOgAnh_GEi2Mfc9-32" target="noM4fTOgAnh_GEi2Mfc9-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="260" as="sourcePoint" />
+            <mxPoint x="210" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-42" value="" style="group;rotation=90;" parent="noM4fTOgAnh_GEi2Mfc9-47" vertex="1" connectable="0">
+          <mxGeometry x="384" y="30" width="20" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-43" value="" style="ellipse;whiteSpace=wrap;html=1;align=center;aspect=fixed;resizable=0;points=[];outlineConnect=0;sketch=0;fillColor=#FFFFFF;rotation=90;" parent="noM4fTOgAnh_GEi2Mfc9-42" vertex="1">
+          <mxGeometry x="-7" y="12" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-44" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#0000FF;rotation=90;" parent="noM4fTOgAnh_GEi2Mfc9-42" vertex="1">
+          <mxGeometry x="12" y="12" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-45" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;sketch=0;targetPerimeterSpacing=0;startArrow=none;" parent="noM4fTOgAnh_GEi2Mfc9-42" source="noM4fTOgAnh_GEi2Mfc9-44" target="noM4fTOgAnh_GEi2Mfc9-43" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="29" y="17" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="noM4fTOgAnh_GEi2Mfc9-46" value="" style="endArrow=none;html=1;rounded=0;" parent="noM4fTOgAnh_GEi2Mfc9-47" target="noM4fTOgAnh_GEi2Mfc9-43" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="240" as="sourcePoint" />
+            <mxPoint x="210" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
