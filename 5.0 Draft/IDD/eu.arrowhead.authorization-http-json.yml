@@ -60,7 +60,7 @@ paths:
       operationId: authorize
       description: |
         Queries the authorization system for authorization decision for each specified action over the 
-        specified requestor and consumer pair. 
+        specified consumer and resource pair. 
 
         As a reponse, for each action in the request body, an authorization decision will be returned.
       requestBody:
@@ -70,7 +70,7 @@ paths:
             schema:
               type: object
               properties:
-                requestor:
+                consumer:
                   type: string
                   description: The identifier of the entity making the request. The format of the string is 
                     dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
@@ -85,20 +85,20 @@ paths:
                   description: The identifier of the resource being accessed. The format of the string is 
                     dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
               required:
-                - requestor
+                - consumer
                 - actions
                 - resource
             examples:
               example1:
                 summary: Example 1
                 value:
-                  requestor: user123
+                  consumer: user123
                   actions: ["read"]
                   resource: document1
               example2:
                 summary: Example 2
                 value:
-                  requestor: admin456
+                  consumer: admin456
                   actions: ["write"]
                   resource: document2
       responses:
@@ -151,7 +151,7 @@ paths:
             items:
               type: object
               properties:
-                requestor:
+                consumer:
                   type: string
                   description: The identifier of the entity making the request. The format of the string is 
                     dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
@@ -166,17 +166,17 @@ paths:
                   description: The identifier of the resource being accessed. The format of the string is 
                     dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
               required:
-                - requestor
+                - consumer
                 - actions
                 - resource
             example:
-              - requestor: "user123"
+              - consumer: "user123"
                 actions: ["read", "write"]
                 resource: "document1"
-              - requestor: "admin456"
+              - consumer: "admin456"
                 actions: ["read", "delete"]
                 resource: "document2"
-              - requestor: "user789"
+              - consumer: "user789"
                 actions: ["read"]
                 resource: "document3"
       responses:
