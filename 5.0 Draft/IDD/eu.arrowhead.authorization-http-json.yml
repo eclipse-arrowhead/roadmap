@@ -1,0 +1,378 @@
+openapi: 3.0.3
+
+info:
+  title: Authorization HTTP(S)-JSON
+  description: |
+    This specification outlines how to realize the _Arrowhead Core Authorization_ service on top of
+    either of the HTTP or HTTPS protocols with payloads encoded in JSON. The service allows for
+    service providers to check if their own _consumers_ are authorized to perform certain
+    _operations_ on certain _objects_, without having to know any details about how the
+    authorization decision is reached.
+
+    In the context of this document, we understand an _operation_ to be a string identifier that
+    names something a consumer can request that a certain type of service performs on its behalf. We
+    also understand an _object_ to be any kind resource that is acted upon while an operation is
+    performed. If, for example, a file storage service is provided, then possible _operations_ could
+    be `"upload"` and `"download"` while the _objects_ of the service are the files it stores.
+
+    No requirements are imposed on an implementation of this service with regards to how it
+    determines if certain consumers are allowed to perform certain operations on certain objects.
+    It may implement something akin to the INCITS 565-2020 standard, also known as _Next Generation_
+    _Access Control_ (NGAC), or something much less sophisticated. It is also assumed that the
+    service provider is informed about what authorization requests to approve via some other service
+    than this one.
+
+    ## Caching and Performance
+
+    Implementations of this service _may_ allow for its consumers to cache its authorization
+    decisions for brief periods of time when relevant to improve performance. When it is enabled, it
+    is communicated via the `Cache-Control` header of its responses.
+
+    An individual implementation of this service with sufficiently sophisticated software and
+    hardware should be able to handle up to and beyond hundreds of thousands of authorization
+    triplets per second. That being said, there could be cases where no available hardware is
+    performant enough, or where individual consumers are disconnected from this service for
+    significant periods of time. These use cases are outside the scope of this service.
+
+    ## Compression and Language
+
+    An implementation of this service interface _should_ be designed to support compression and
+    _may_ provide human-readable error texts in different languages than English, as described in
+    [RFC 9110, Section 12](https://www.rfc-editor.org/rfc/rfc9110#name-content-negotiation). Not
+    using compression _must_ be supported and _should_ be the default. Also, the default language
+    for error messages _must_ be American English (`en-US`).
+
+    ## Size Limits
+
+    As a mitigation against denial-of-service attacks, all implementations of this service
+    interface _should_ reject incoming requests that are larger than a predefined limit. That limit
+    _must not_ be smaller than 8192 bytes for each received request. An implementation _may_ also
+    limit the sizes of individual parts within each request. It _must_, however, receive request
+    payloads up to 4096 bytes in size. If payload compression is supported, then this limit applies
+    after decompression.
+  version: 5.0.0-rc.1
+
+paths:
+
+  /authorize:
+
+    post:
+      operationId: authorize
+      description: |
+        Queries the authorization system for authorization decision for each specified action over the 
+        specified requestor and consumer pair. 
+
+        As a reponse, for each action in the request body, an authorization decision will be returned.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestor:
+                  type: string
+                  description: The identifier of the entity making the request. The format of the string is 
+                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
+                actions:
+                  type: array
+                  items:
+                    type: string
+                  description: An array of actions to be authorized. These actions (or access rights) must be 
+                    pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
+                resource:
+                  type: string
+                  description: The identifier of the resource being accessed. The format of the string is 
+                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
+              required:
+                - requestor
+                - actions
+                - resource
+            examples:
+              example1:
+                summary: Example 1
+                value:
+                  requestor: user123
+                  actions: ["read"]
+                  resource: document1
+              example2:
+                summary: Example 2
+                value:
+                  requestor: admin456
+                  actions: ["write"]
+                  resource: document2
+      responses:
+        '200':
+          description: Successful authorization
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                description: Authorization decisions for each action in the request.
+            examples:
+              example1:
+                summary: Example 1
+                value: ["allowed"]
+              example2:
+                summary: Example 2
+                value: ["denied"]
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/Cache-Control'
+            Limit:
+              $ref: '#/components/headers/Limit'
+        '400': { $ref: '#/components/responses/400-BadRequest' }
+        '401': { $ref: '#/components/responses/401-Unauthorized' }
+        '403': { $ref: '#/components/responses/403-Forbidden' }
+        '406': { $ref: '#/components/responses/406-NotAcceptable' }
+        '408': { $ref: '#/components/responses/408-RequestTimeout' }
+        '411': { $ref: '#/components/responses/411-LengthRequired' }
+        '413': { $ref: '#/components/responses/413-PayloadTooLarge' }
+        '414': { $ref: '#/components/responses/414-URITooLarge' }
+        '415': { $ref: '#/components/responses/415-UnsupportedMediaType' }
+        '429': { $ref: '#/components/responses/429-TooManyRequests' }
+        '431': { $ref: '#/components/responses/431-RequestHeaderFieldsTooLarge' }
+        '500': { $ref: '#/components/responses/500-InternalServerError' }
+        '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
+
+  /bulkAuthorize:
+  post:
+    summary: Bulk Authorize Actions for Resources
+    description: |
+      Allows for bulk authorization requests to be sent to the authorization system in a single API request
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                requestor:
+                  type: string
+                  description: The identifier of the entity making the request. The format of the string is 
+                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
+                actions:
+                  type: array
+                  items:
+                    type: string
+                  description: An array of actions to be authorized. These actions (or access rights) must be 
+                    pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
+                resource:
+                  type: string
+                  description: The identifier of the resource being accessed. The format of the string is 
+                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
+              required:
+                - requestor
+                - actions
+                - resource
+            example:
+              - requestor: "user123"
+                actions: ["read", "write"]
+                resource: "document1"
+              - requestor: "admin456"
+                actions: ["read", "delete"]
+                resource: "document2"
+              - requestor: "user789"
+                actions: ["read"]
+                resource: "document3"
+      responses:
+        '200':
+          description: Successful bulk authorization
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: array
+                  items:
+                    type: string
+                  description: An array of decisions for each action, for each request.
+              example:
+                - ["allowed", "allowed"]
+                - ["allowed", "denied"]
+                - ["allowed"]
+components:
+
+  headers:
+
+    Cache-Control:
+      description: |
+        If present, the value of this header may only include the `max-age`, `must-revalidate` and
+        `no-store` response directives, all of which are defined in
+        [RFC 9111 Section 5.2.2](https://datatracker.ietf.org/doc/html/rfc9111#name-response-directives).
+
+        The `max-age` directive indicates for how many seconds the decision in the response may be
+        cached before being requested again by the consumer. The `must-revalidate` directive is used
+        to forbid the consumer from using the decision after the `max-age` has expired and the
+        attempt to request it again failed. The `no-store` directive instructs the consumer not to
+        cache the decision at all.
+      schema:
+        type: string
+      example: max-age=10, must-revalidate
+      required: false
+
+    Limit:
+      description: |
+        An indication of the maximum number of triplets the consuming system is allowed to include
+        in its request.
+      schema:
+        type: number
+        format: int32
+        minimum: 0
+      required: true
+
+    Retry-After:
+      description: |
+        An indication, in seconds, of how long a consumer is to wait before attempting the failed
+        request again.
+      schema:
+        type: number
+        format: int32
+        minimum: 1
+      required: true
+
+  responses:
+
+    400-BadRequest:
+      description: |
+        Invalid authorization basis submitted in request for an authorization decision.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    401-Unauthorized:
+      description: |
+        Consumer not yet authorized.
+
+        The kind of authorization required _may_ be named in the error response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    403-Forbidden:
+      description: |
+        Consumer is authorized, but lacks permission.
+
+        If a particular parameter is the cause of this error, it will be named in the payload of the
+        error response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    406-NotAcceptable:
+      description: |
+        A request contains either of the `Accept`, `Accept-Encoding` or `Accept-Language` headers,
+        and they do not allow for the service provider to respond using `application/json` as
+        `Content-Type` or with an encoding or language that the service provider supports.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    408-RequestTimeout:
+      description: |
+        A request did not arrive in full within an arbitrary timeout decided by the provider of this
+        service interface.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    411-LengthRequired:
+      description: |
+        The `Content-Length` header is missing in the request.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    413-PayloadTooLarge:
+      description: |
+        The payload in the request exceeds the size limit imposed by the service provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    414-URITooLarge:
+      description: |
+        The size of the request line in the request, which includes the HTTP version, method and
+        URI, exceeds the limit imposed by the service provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    415-UnsupportedMediaType:
+      description: |
+        The request includes a payload encoded using a `Content-Type` unsupported by the service
+        provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    429-TooManyRequests:
+      description: |
+        The consumer has sent too many request in a too short time span. The consumer is expected to
+        wait the amount of time indicated in the `Retry-After` header before trying again.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+      headers:
+        Retry-After:
+          $ref: '#/components/headers/Retry-After'
+
+    431-RequestHeaderFieldsTooLarge:
+      description: |
+        The headers section in the request exceeds the limit imposed by the service provider. This
+        response code may indicate that
+
+        1. either the name or value of a field is too large,
+        2. the combination of name and value in a field is too large, or
+        3. the complete header section is too large.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    500-InternalServerError:
+      description: |
+        The server encountered an unexpected condition that prevented it from fulfilling the
+        request.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    503-ServiceUnavailable:
+      description: |
+        The service provider is currently near its operating capacity or is undergoing maintenance.
+        The consumer is expected to wait before trying again, as indicated by the `Retry-After`
+        header in the response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+      headers:
+        Cache-Control:
+          $ref: '#/components/headers/Retry-After'
+
+  schemas:
+
+    Error:
+      description: |
+        An indication of why a received request was rejected. It is formulated with the assumption
+        that the consumer knows of and can interpret the status code in the response.
+      type: object
+      properties:
+        message:
+          description: A human-readable explanation of why the request was rejected.
+          type: string
+
+    Triplet:
+      description: |
+        Three strings identifying a _consumer_, an _operation_ and an _object_, in that order.
+        Together they describe how a certain consumer wishes do perform a certain operation on a
+        certain object.
+      type: array
+      items:
+        type: string
+      minItems: 3
+      maxItems: 3
+      example: ["yBXJ2b+1XtvKJCRYJgHdcA==", "read", "se.company.heat-sensor-b5421.temperature"]
