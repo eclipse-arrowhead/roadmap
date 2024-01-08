@@ -54,53 +54,60 @@ info:
 
 paths:
 
-  /authorize:
+  /authorizations:
+  post:
+    summary: Bulk Authorize access rights for Resources
+    description: |
+      Allows for bulk authorization requests to be sent to the authorization system in a single API request
 
-    post:
-      operationId: authorize
-      description: |
-        Queries the authorization system for authorization decision for each specified action over the 
-        specified consumer and resource pair. 
+      Queries the authorization system for authorization decision for each specified access right over the 
+      specified consumer and resource pair. 
 
-        As a reponse, for each action in the request body, an authorization decision will be returned.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
+      As a reponse, for each request in the request body, an authorization decision will be returned.
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
               type: object
               properties:
                 consumer:
                   type: string
                   description: The identifier of the entity making the request. The format of the string is 
                     dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
-                actions:
-                  type: array
-                  items:
-                    type: string
-                  description: An array of actions to be authorized. These actions (or access rights) must be 
-                    pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
+                access-right:
+                  type: string
+                  description: String identifier for the access right needed to be authorized. These access rights
+                   must be pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
                 resource:
                   type: string
                   description: The identifier of the resource being accessed. The format of the string is 
                     dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
               required:
                 - consumer
-                - actions
+                - access-right
                 - resource
             examples:
               example1:
-                summary: Example 1
+                summary: Three authorization requests from different users to different resources.
                 value:
-                  consumer: user123
-                  actions: ["read"]
-                  resource: document1
+                  - consumer: "user123"
+                    access-right: "write"
+                    resource: "document1"
+                  - consumer: "admin456"
+                    access-right: "read"
+                    resource: "document2"
+                  - consumer: "user789"
+                    access-right: "read"
+                    resource: "document3"
               example2:
-                summary: Example 2
+                summary: a single authorization request.
                 value:
-                  consumer: admin456
-                  actions: ["write"]
-                  resource: document2
+                    consumer: "user234"
+                    access-right: "read"
+                    resource: "document4"                  
       responses:
         '200':
           description: Successful authorization
@@ -109,16 +116,17 @@ paths:
               schema:
                 type: array
                 items:
-                  type: string
-                description: Authorization decisions for each action in the request.
-            examples:
-              example1:
-                summary: Example 1
-                value: ["allowed"]
-              example2:
-                summary: Example 2
-                value: ["denied"]
-          headers:
+                  type: string                
+                  description: An array of decisions for each requested triple. 
+              examples:
+                example1:
+                  - "allowed"
+                  - "denied"
+                  - "allowed"
+                example2:
+                  - "allowed"
+
+        headers:
             Cache-Control:
               $ref: '#/components/headers/Cache-Control'
             Limit:
@@ -137,64 +145,6 @@ paths:
         '500': { $ref: '#/components/responses/500-InternalServerError' }
         '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
 
-  /bulkAuthorize:
-  post:
-    summary: Bulk Authorize Actions for Resources
-    description: |
-      Allows for bulk authorization requests to be sent to the authorization system in a single API request
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              type: object
-              properties:
-                consumer:
-                  type: string
-                  description: The identifier of the entity making the request. The format of the string is 
-                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
-                actions:
-                  type: array
-                  items:
-                    type: string
-                  description: An array of actions to be authorized. These actions (or access rights) must be 
-                    pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
-                resource:
-                  type: string
-                  description: The identifier of the resource being accessed. The format of the string is 
-                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
-              required:
-                - consumer
-                - actions
-                - resource
-            example:
-              - consumer: "user123"
-                actions: ["read", "write"]
-                resource: "document1"
-              - consumer: "admin456"
-                actions: ["read", "delete"]
-                resource: "document2"
-              - consumer: "user789"
-                actions: ["read"]
-                resource: "document3"
-      responses:
-        '200':
-          description: Successful bulk authorization
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: array
-                  items:
-                    type: string
-                  description: An array of decisions for each action, for each request.
-              example:
-                - ["allowed", "allowed"]
-                - ["allowed", "denied"]
-                - ["allowed"]
 components:
 
   headers:
