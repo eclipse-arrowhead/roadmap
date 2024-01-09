@@ -1,0 +1,340 @@
+openapi: 3.0.3
+info:
+  title: Authorization Policy Management API
+  version: 1.0.0
+paths:
+  /policies:
+    get:
+      summary: List Policies
+      description: Retrieve a list of all policies.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Policy'
+  /policies/{policyId}:
+    get:
+      summary: Get Policy by ID
+      description: Retrieve details of a specific policy by its identifier.
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Policy'
+    put:
+      summary: Update Policy
+      description: Update an existing policy by its identifier.
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Policy'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Policy'
+    delete:
+      summary: Delete Policy
+      description: Delete a policy by its identifier.
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+  /subjects:
+    get:
+      summary: List subjects
+      description: Retrieve a list of all subjects.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subject'
+  /subjects/{subjectId}:
+    get:
+      summary: Get Subject by ID
+      description: Retrieve details of a specific subject by its identifier.
+      parameters: 
+        - name: subjectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subject'
+    delete:
+      summary: Delete subject
+      description: Delete a subject by its identifier. 
+      parameters:
+        - name: subjectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+  /resources:
+    get:
+      summary: List resources
+      description: Retrieve a list of all resources.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Resource'
+  /resources/{resourceId}:
+    get:
+      summary: Get resources by ID
+      description: Retrieve details of a specific resource by its identifier.
+      parameters: 
+        - name: resourceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Resource'
+    delete:
+      summary: Delete resource.
+      description: Delete a resource by its identifier. 
+      parameters:
+        - name: resourceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+ 
+  /user-attributes:
+    get:
+      summary: List user attributes
+      description: Retrieve a list of all user attributes.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attribute'
+  /user-attributes/{uaId}:
+    get:
+      summary: Get user attribute by ID
+      description: Retrieve details of a specific user attribute by its identifier.
+      parameters: 
+        - name: uaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Attribute'
+    delete:
+      summary: Delete user attribute.
+      description: Delete an user attribute by its identifier. 
+      parameters:
+        - name: uaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+  /object-attributes:
+    get:
+      summary: List object attributes
+      description: Retrieve a list of all object attributes.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attribute'
+  /object-attributes/{oaId}:
+    get:
+      summary: Get user object by ID
+      description: Retrieve details of a specific object attribute by its identifier.
+      parameters: 
+        - name: oaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Attribute'
+    delete:
+      summary: Delete object attribute.
+      description: Delete an object attribute by its identifier. 
+      parameters:
+        - name: oaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+
+
+components:
+  schemas:
+    Policy:
+      type: object
+      required: 
+        - name
+        - effect
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the policy.
+        name:
+          type: string
+          description: The human-readable name of the policy.
+        description:
+          type: string
+          description: A detailed description of the policy.
+        access-rights:
+          type: array
+          items:
+            type: string
+          description: List of access rights that the policy controls.
+        subjects:
+          type: array
+          items:
+            type: string
+          description: List of entities subject to the policy.
+        resources:
+          type: array
+          items:
+            type: string
+          description: List of resources to which the policy applies.
+        effect:
+          type: string
+          enum: ['allow', 'deny', 'associate']
+          description: The desired effect of the policy in the policy engine, this may allow the usage of ABAC, RBAC or rule-based
+            policy engine. For example, a policy containg only subjects, resources, and access-rights with the effect 'allow' would 
+            create a rule-based policy (subject, ar, resource). A policy containing only subjects/resources and user-attributes/object-attributes 
+            and with the effect 'associate' would create an attribute-based or role-based association between the specified user or object and 
+            the respective attributes. The 'deny' effect can be used to create explicit access prohibitions. 
+        user-attributes: 
+          type: array
+          items:
+            type: string
+          description: List of user-attributes (ua) that the policy controls.
+        object-attributes:
+          type: array
+          items:
+            type: string
+          description: List of object-attributes (oa) that the policy controls. 
+
+    Attribute: 
+      type: object
+      required:
+        - id
+        - name
+        - Attribute-type
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the attribute
+        name:
+          type: string
+          description: The human-readable name of the attribute
+        Attribute-type:
+          type: string
+          enum: ['user', 'object']
+          description: Type of the Attribute, 'user' for subject attributes (or roles), 'object' for resource attributes. 
+    
+    Subject:
+      type: object
+      required:
+        - id
+        - name
+      properties: 
+        id: 
+          type: string
+          description: The unique identifier of the subject
+        name: 
+          type: string
+          description: The human-readable name of the subject
+        auth-info:
+          type: string
+          description: Authentication information in case needed. E.g., certificate information of consuming systems.
+    
+    Resource:
+      required: 
+      type: object
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          description: the unique identifier of the resource
+        name: 
+          type: string
+          description: the human-readable name of the resource
+        auth-info:
+          type: string
+          description: Authentication information in case needed. E.g., certificate information of providing systems.
