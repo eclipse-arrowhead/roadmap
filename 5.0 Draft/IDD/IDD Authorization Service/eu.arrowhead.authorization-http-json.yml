@@ -54,6 +54,14 @@ info:
 
 paths:
 
+  /echo:
+    get:  
+      summary: Endpoint to check the core system availability. 
+      description: Returns an OK to indicate that the core system is available. 
+      responses:
+        '200':
+          description: OK
+
   /authorizations:
   post:
     summary: Bulk Authorize access rights for Resources
@@ -83,8 +91,12 @@ paths:
                    must be pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
                 resource:
                   type: string
+<<<<<<< Updated upstream
                   description: The identifier of the resource being accessed. The format of the string is 
                     dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
+=======
+                  description: The identifier of the resource being accessed, e.g., service instance identifier. 
+>>>>>>> Stashed changes
               required:
                 - consumer
                 - access-right
@@ -95,6 +107,7 @@ paths:
                 value:
                   - consumer: "user123"
                     access-right: "write"
+<<<<<<< Updated upstream
                     resource: "document1"
                   - consumer: "admin456"
                     access-right: "read"
@@ -102,6 +115,15 @@ paths:
                   - consumer: "user789"
                     access-right: "read"
                     resource: "document3"
+=======
+                    resource: "eu.arrowhead.tempreadings-http-json@MWtzOXIpaUEsOyEhc1NsTwo"
+                  - consumer: "MWtzOXIpaUEsOyEhc1NsTwo="
+                    access-right: "consume"
+                    resource: "/OutsideTemp"
+                  - consumer: "user789"
+                    access-right: "read"
+                    resource: "91"
+>>>>>>> Stashed changes
               example2:
                 summary: a single authorization request.
                 value:
@@ -305,6 +327,29 @@ components:
 
   schemas:
 
+    Address:
+      description: |
+        Identifies a _transport_ and a _location_.
+
+        The _transport_ identifies the base protocol that facilitates addressing a specific service
+        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
+        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
+        addressing and, by extension, sending messages to service providers and consumers, as well
+        as (B) does not build upon another protocol also providing this capability. I other words,
+        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
+        satisfy condition A.
+
+        What the _location_ part consists of depends on what transport is identified. If the
+        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
+        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
+        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
+        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
+        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
+        path to a Unix socket file.
+      type: string
+      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
+      example: tcp4:192.168.0.7:45326
+
     Error:
       description: |
         An indication of why a received request was rejected. It is formulated with the assumption
@@ -326,3 +371,7 @@ components:
       minItems: 3
       maxItems: 3
       example: ["yBXJ2b+1XtvKJCRYJgHdcA==", "read", "se.company.heat-sensor-b5421.temperature"]
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes

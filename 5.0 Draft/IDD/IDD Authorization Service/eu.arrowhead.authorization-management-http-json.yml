@@ -3,7 +3,45 @@ info:
   title: Authorization Policy Management API
   version: 1.0.0
 paths:
+<<<<<<< Updated upstream
   /policies:
+=======
+  /management/associations:
+    post:
+      summary: Create a New association
+      description: Create a new association relating resources to resource-attributes, subjects (consumers) to 
+        subject attributes, or attribute-attribute associations. 
+        The resource or subject must be an existing object. The specified attribute can be one existing from the 
+        attributes collection, or if a non-existant attribute is specified, the new attribute will be created in 
+        the collection. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Association' 
+            examples: 
+              example1:
+                summary: A call to associate a Temperature sensor service to the existing "OutsideTemp" resource attribute. 
+                value: 
+                  id: "123123"
+                  association-type: "resource"
+                  target:
+                    id: "existing-resource123"
+                    name: "eu.arrowhead.tempreadings-http-json"
+                  attribute:
+                    id: "existing-attribute1233"
+                    name: "OutsideTemp"
+                    attribute-type: "resource"
+      responses:
+        '201':
+          description: Association created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association'
+
+>>>>>>> Stashed changes
     get:
       summary: List Policies
       description: Retrieve a list of all policies.
@@ -15,8 +53,13 @@ paths:
               schema:
                 type: array
                 items:
+<<<<<<< Updated upstream
                   $ref: '#/components/schemas/Policy'
   /policies/{policyId}:
+=======
+                  $ref: '#/components/schemas/Association'
+  /management/associations/{associationId}:
+>>>>>>> Stashed changes
     get:
       summary: Get Policy by ID
       description: Retrieve details of a specific policy by its identifier.
@@ -67,7 +110,111 @@ paths:
       responses:
         '204':
           description: No content
+<<<<<<< Updated upstream
   /subjects:
+=======
+  
+  /management/permissions: 
+    post:
+      summary: Grant a new set of permissions.
+      description: Create a new set of permissions between a resource-attributes and a subject-attribute specified in the 
+        request body. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Permission' 
+            examples:
+              example1:
+                summary: A call to derive "consume" privileges for the subject attribute "TempController" to the 
+                  resource attribute "OutsideTemp". 
+                value:
+                  id: "321654"
+                  subject-attribute:
+                    id: "someid123" 
+                    name: "TempController"
+                    attribute-type: "subject"
+                  access-rights:
+                    - "consume"
+                  resource-attribute:
+                    id: "existing-attribute1233"
+                    name: "OutsideTemp"
+                    attribute-type: "resource"
+      responses:
+        '201':
+          description: Permission created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+
+    get:
+      summary: List Permission
+      description: Retrieve a list of all Permissions.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Permission'
+  /management/permissions/{permissionId}:
+    get:
+      summary: Get permission by ID
+      description: Retrieve details of a specific permission by its identifier.
+      parameters:
+        - name: permissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+    put:
+      summary: Update Permission
+      description: Update an existing permission by its identifier.
+      parameters:
+        - name: permissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+    delete:
+      summary: Delete Permission
+      description: Delete a permission by its identifier.
+      parameters:
+        - name: permissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+
+  /management/subjects:
+>>>>>>> Stashed changes
     get:
       summary: List subjects
       description: Retrieve a list of all subjects.
@@ -80,7 +227,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Subject'
-  /subjects/{subjectId}:
+  /management/subjects/{subjectId}:
     get:
       summary: Get Subject by ID
       description: Retrieve details of a specific subject by its identifier.
@@ -109,7 +256,7 @@ paths:
       responses:
         '204':
           description: No content
-  /resources:
+  /management/resources:
     get:
       summary: List resources
       description: Retrieve a list of all resources.
@@ -122,7 +269,20 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Resource'
-  /resources/{resourceId}:
+    post:
+      summary: Create a new resource
+      description: Create a new resource to be the target of authorization rules. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Resource'
+      responses:
+        '201':
+          description: Resource created successfully
+
+  /management/resources/{resourceId}:
     get:
       summary: Get resources by ID
       description: Retrieve details of a specific resource by its identifier.
@@ -152,7 +312,7 @@ paths:
         '204':
           description: No content
  
-  /user-attributes:
+  /management/user-attributes:
     get:
       summary: List user attributes
       description: Retrieve a list of all user attributes.
@@ -165,7 +325,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Attribute'
-  /user-attributes/{uaId}:
+  /management/user-attributes/{uaId}:
     get:
       summary: Get user attribute by ID
       description: Retrieve details of a specific user attribute by its identifier.
@@ -194,7 +354,7 @@ paths:
       responses:
         '204':
           description: No content
-  /object-attributes:
+  /management/object-attributes:
     get:
       summary: List object attributes
       description: Retrieve a list of all object attributes.
@@ -207,7 +367,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Attribute'
-  /object-attributes/{oaId}:
+  /management/object-attributes/{oaId}:
     get:
       summary: Get user object by ID
       description: Retrieve details of a specific object attribute by its identifier.
@@ -306,7 +466,16 @@ components:
           type: string
           enum: ['user', 'object']
           description: Type of the Attribute, 'user' for subject attributes (or roles), 'object' for resource attributes. 
+        metadata: { $ref: '#/components/schemas/Metadata' }
     
+    Metadata:
+      description: |
+        Additional details of when creating a policy element. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
     Subject:
       type: object
       required:
@@ -322,6 +491,7 @@ components:
         auth-info:
           type: string
           description: Authentication information in case needed. E.g., certificate information of consuming systems.
+        metadata: { $ref: '#/components/schemas/Metadata' }
     
     Resource:
       required: 
@@ -338,3 +508,4 @@ components:
         auth-info:
           type: string
           description: Authentication information in case needed. E.g., certificate information of providing systems.
+        metadata: { $ref: '#/components/schemas/Metadata' }

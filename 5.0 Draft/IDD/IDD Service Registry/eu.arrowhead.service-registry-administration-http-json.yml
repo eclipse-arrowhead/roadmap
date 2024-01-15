@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  title: Service Registry Management API
+  version: 1.0.0
+paths:
+  /service-registry/list:
+    get:
+      summary: List all service entries
+      description: Retrieve a list of all service entries in the service registry.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServiceEntry'
+  /service-registry/modify:
+    put:
+      summary: Modify a service entry
+      description: Modify an existing service entry in the service registry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceEntry'
+      responses:
+        '200':
+          description: Service entry modified successfully
+        '404':
+          description: Service entry not found
+  /service-registry/add:
+    post:
+      summary: Add a new service entry
+      description: Add a new service entry to the service registry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceEntry'
+      responses:
+        '201':
+          description: Service entry added successfully
+  /service-registry/delete:
+    delete:
+      summary: Delete a service entry
+      description: Delete an existing service entry from the service registry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceEntry'
+      responses:
+        '200':
+          description: Service entry deleted successfully
+        '404':
+          description: Service entry not found
+
+components:
+  schemas:
+    Address:
+      description: |
+        Identifies a _transport_ and a _location_.
+
+        The _transport_ identifies the base protocol that facilitates addressing a specific service
+        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
+        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
+        addressing and, by extension, sending messages to service providers and consumers, as well
+        as (B) does not build upon another protocol also providing this capability. I other words,
+        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
+        satisfy condition A.
+
+        What the _location_ part consists of depends on what transport is identified. If the
+        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
+        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
+        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
+        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
+        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
+        path to a Unix socket file.
+      type: string
+      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
+      example: tcp4:192.168.0.7:45326
+
+    Service:
+      type: object
+      properties:
+        
+
+    ServiceEntry:
+      type: object
+      properties:
+        serviceID:
+          type: string
+          description: The unique identifier of the service entry. 
+        producerID:
+          type: string
+          description: The ID of the system which produces the registered service. 
+        address: 
+          $ref: '#/components/schemas/Address'
+        
+
+      required:
+        - serviceName
+        - serviceURL
