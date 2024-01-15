@@ -3,9 +3,6 @@ info:
   title: Authorization Policy Management API
   version: 1.0.0
 paths:
-<<<<<<< Updated upstream
-  /policies:
-=======
   /management/associations:
     post:
       summary: Create a New association
@@ -41,7 +38,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Association'
 
->>>>>>> Stashed changes
     get:
       summary: List Policies
       description: Retrieve a list of all policies.
@@ -53,13 +49,8 @@ paths:
               schema:
                 type: array
                 items:
-<<<<<<< Updated upstream
-                  $ref: '#/components/schemas/Policy'
-  /policies/{policyId}:
-=======
                   $ref: '#/components/schemas/Association'
   /management/associations/{associationId}:
->>>>>>> Stashed changes
     get:
       summary: Get Policy by ID
       description: Retrieve details of a specific policy by its identifier.
@@ -110,9 +101,6 @@ paths:
       responses:
         '204':
           description: No content
-<<<<<<< Updated upstream
-  /subjects:
-=======
   
   /management/permissions: 
     post:
@@ -214,7 +202,6 @@ paths:
           description: No content
 
   /management/subjects:
->>>>>>> Stashed changes
     get:
       summary: List subjects
       description: Retrieve a list of all subjects.

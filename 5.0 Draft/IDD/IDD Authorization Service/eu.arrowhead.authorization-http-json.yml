@@ -91,12 +91,7 @@ paths:
                    must be pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
                 resource:
                   type: string
-<<<<<<< Updated upstream
-                  description: The identifier of the resource being accessed. The format of the string is 
-                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
-=======
                   description: The identifier of the resource being accessed, e.g., service instance identifier. 
->>>>>>> Stashed changes
               required:
                 - consumer
                 - access-right
@@ -107,15 +102,6 @@ paths:
                 value:
                   - consumer: "user123"
                     access-right: "write"
-<<<<<<< Updated upstream
-                    resource: "document1"
-                  - consumer: "admin456"
-                    access-right: "read"
-                    resource: "document2"
-                  - consumer: "user789"
-                    access-right: "read"
-                    resource: "document3"
-=======
                     resource: "eu.arrowhead.tempreadings-http-json@MWtzOXIpaUEsOyEhc1NsTwo"
                   - consumer: "MWtzOXIpaUEsOyEhc1NsTwo="
                     access-right: "consume"
@@ -123,7 +109,6 @@ paths:
                   - consumer: "user789"
                     access-right: "read"
                     resource: "91"
->>>>>>> Stashed changes
               example2:
                 summary: a single authorization request.
                 value:
@@ -371,7 +356,3 @@ components:
       minItems: 3
       maxItems: 3
       example: ["yBXJ2b+1XtvKJCRYJgHdcA==", "read", "se.company.heat-sensor-b5421.temperature"]
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
