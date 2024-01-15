@@ -17,33 +17,7 @@ info:
     consumption of the service referred to by a service record to be possible, the consumer in
     question must already implement the protocol referred to by its service type identifier.
 
-    ## Authorization
-
-    Implementing this service interface specification will entail supporting certain
-    authorization mechanisms and access control models. What mechanisms and models will be outlined
-    in a later version of this document. TODO
-
-    Whenever a consumer request the list of services that match a given query, the service registry
-    should be capable of filtering those services to which the requesting consumer does not have 
-    access to. Attribute-based access control set in the authorization system requires the 
-    _type_ of a given service (known as resources for the authorization system). A bulk request
-    from the service registry can be sent to the authorization service to validate that the 
-    requesting consumer has access to all the service definitions that may match a given query. 
-
-    Such authorization would look like the following example:
-      - consumer: "MWtzOXIpaUEsOyEhc1NsTwo"
-        access-right: "consume"
-        resource: "eu.arrowhead.tempreadings-http-json"
-      - consumer: "MWtzOXIpaUEsOyEhc1NsTwo="
-        access-right: "consume"
-        resource: "eu.arrowhead.humidityreadings-http-json"
-      - consumer: "MWtzOXIpaUEsOyEhc1NsTwo"
-        access-right: "consume"
-        resource: "eu.arrowhead.rpmcontroller-http-json
-
-    Note that the authorization of services by _type_ does not take into consideration the providing
-    system of each individual service instance.
-
+   
     ## Compression and Language
 
     An implementation of this service interface _may_ be designed to support compression and/or
@@ -573,18 +547,16 @@ components:
       pattern: ^(?:(?<type>[^!*,:@^~]+)(?:~(?<version>\d+(?:\.\d+(?:\.\d+)?)?))?)?(?:@(?<provider>[A-Za-z0-9-_]*={0,2}))?(?:\*(?<limit>\d+))?$
       example: se.arrowhead.service-discovery-http-json~1.6@MWtzOXIpaUEsOyEhc1NsTwo=
 
-    Record:
-      description: |
-        Identifies the provider of a service and the type of the service, apart from listing the
-        addresses through which the service is provided and stating any additional metadata.
-
-        Every service record is uniquely identified through the combination of its `provider`,
-        `type` and `version`.
+    Service:
       type: object
       properties:
-        provider: { $ref: '#/components/schemas/ProviderIdentifier' }
-        type: { $ref: '#/components/schemas/TypeIdentifier' }
-        version: { $ref: '#/components/schemas/Version' }
+        name: 
+          type: string
+          description: Service instance human-readable name
+        service-type:
+          $ref: '#/components/schemas/TypeIdentifier'
+        version: 
+          $ref: '#/components/schemas/Version'
         addresses:
           description:
             A collection of addresses, each with a unique tag name. The tag names _may_ be used to
@@ -593,7 +565,34 @@ components:
           type: object
           patternProperties:
             .*: { $ref: '#/components/schemas/Address' }
-        metadata: { $ref: '#/components/schemas/Metadata' }
+        metadata: 
+          $ref: '#/components/schemas/Metadata'
+
+    Record:
+      type: object
+      properties:
+        serviceID:
+          type: string
+          description: The unique identifier of the service entry. 
+        providerID:
+          $ref: '#/components/schemas/ProviderIdentifier'
+          description: The ID of the system which produces the registered service. 
+        service:
+          $ref: '#/components/schemas/Service'
+        time-to-live:
+          $ref: '#/components/schemas/TimeToLive'
+      required:
+        - serviceID
+        - providerID
+        - service
+
+
+    TimeToLive:
+      description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 
+        expiration. 
+      type: string
+      pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
+      example: 2d12h
 
     TypeIdentifier:
       description: |

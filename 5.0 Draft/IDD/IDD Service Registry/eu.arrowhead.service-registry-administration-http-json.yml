@@ -85,10 +85,51 @@ components:
       pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
       example: tcp4:192.168.0.7:45326
 
+    Metadata:
+      description: |
+        Additional details of relevance when consuming a service. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    ProviderIdentifier:
+      description: |
+        An array of bytes identifying a particular service provider. The bytes are expressed using
+        the [URL safe Base 64 encoding](https://datatracker.ietf.org/doc/html/rfc4648#section-5).
+      type: string
+      pattern: ^[A-Za-z0-9-_]*={0,2}$
+      example: MWtzOXIpaUEsOyEhc1NsTwo=
+
+    TypeIdentifier:
+      description: |
+        Identifies a particular type of service, such as `eu.arrowhead.service-discovery-coap-cbor`
+        or `eu.arrowhead.orchestration-http-json`.
+      type: string
+      pattern: ^[^!*,:@^~]+$
+      example: eu.arrowhead.authorization-http-json
+
+
     Service:
       type: object
       properties:
-        
+        name: 
+          type: string
+          description: Service instance human-readable name
+        service-type:
+          $ref: '#/components/schemas/TypeIdentifier'
+        version: 
+          $ref: '#/components/schemas/Version'
+        addresses:
+          description:
+            A collection of addresses, each with a unique tag name. The tag names _may_ be used to
+            help a service consumer chose the most appropriate address. The service consumer may,
+            however, simply try all of them in any order until it finds one that works.
+          type: object
+          patternProperties:
+            .*: { $ref: '#/components/schemas/Address' }
+        metadata: 
+          $ref: '#/components/schemas/Metadata'
 
     ServiceEntry:
       type: object
@@ -96,13 +137,29 @@ components:
         serviceID:
           type: string
           description: The unique identifier of the service entry. 
-        producerID:
-          type: string
+        providerID:
+          $ref: '#/components/schemas/ProviderIdentifier'
           description: The ID of the system which produces the registered service. 
-        address: 
-          $ref: '#/components/schemas/Address'
-        
-
+        service:
+          $ref: '#/components/schemas/Service'
+        time-to-live:
+          $ref: '#/components/schemas/TimeToLive'
       required:
-        - serviceName
-        - serviceURL
+        - serviceID
+        - providerID
+        - service
+
+    TimeToLive:
+      description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 
+        expiration. 
+      type: string
+      pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
+      example: 2d12h
+
+    Version:
+      description: |
+        A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
+        PATCH numbers are omitted, the ones omitted are assumed to be zero.
+      type: string
+      pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
+      example: 1.4
