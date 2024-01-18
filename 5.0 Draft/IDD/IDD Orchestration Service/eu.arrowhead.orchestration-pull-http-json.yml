@@ -1,0 +1,275 @@
+openapi: 3.0.0
+info:
+  title: Orchestration-pull service API description 
+  version: 1.0.0
+description: An API for using the orchestration-pull service of the Orchestration core system. This service
+  uses the orchestration store policies to recommend service providers to the requesting consumer to fulfil 
+  its task. 
+
+paths:
+  /orchestration/echo:
+    get:  
+      summary: Endpoint to check the core system availability. 
+      description: Returns an OK to indicate that the core system is available. 
+      responses:
+        '200':
+          description: OK
+
+
+  /orchestration/orchestration-pull:
+    post:
+      summary: Submit a service request and get orchestration response. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestForm'
+      responses:
+        '200':
+          description: Successful orchestration response.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrchestrationResponse'
+
+  /orchestration/orchestration-pull/{id}:
+    get:
+      summary: Get Orchestration by system id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of requesting system
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrchestrationResponse'
+        '404':
+          description: System id not found
+          content:
+            application/json:
+              example:
+                error: Orchestration failed, system id not found. 
+
+
+components:
+  schemas:
+    Address:
+      description: |
+        Identifies a _transport_ and a _location_.
+
+        The _transport_ identifies the base protocol that facilitates addressing a specific service
+        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
+        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
+        addressing and, by extension, sending messages to service providers and consumers, as well
+        as (B) does not build upon another protocol also providing this capability. I other words,
+        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
+        satisfy condition A.
+
+        What the _location_ part consists of depends on what transport is identified. If the
+        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
+        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
+        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
+        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
+        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
+        path to a Unix socket file.
+      type: string
+      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
+      example: tcp4:192.168.0.7:45326
+
+    Auth-tokens:
+      description: |
+        An (k,v) object containing authorization tokens for each interface contained in the response
+      type: object
+      example: {"interfaceName1":"token1"}
+
+    interface:
+      description: A string that describes the interface in Protocol-SecurityType-MimeType format. SecurityType can be either SECURE or 
+        INSECURE. 
+      type: string
+      pattern: ^([a-zA-Z0-9_-]+)-(SECURE|INSECURE)-([a-zA-Z0-9_-]+)$
+      example: HTTP-SECURE-JSON
+    
+    Metadata:    
+      description: |
+        Additional details of relevance when consuming a service. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    PreferredProvider:
+      type: object
+      description: information of a preferred provider to consume services from.
+      properties:
+        provider-cloud:
+          $ref: '#/components/schemas/ProviderCloud'
+        provider:
+          $ref: '#/components/schemas/ProviderSystem'
+
+    ProviderSystem:
+      type: object
+      description: information describing a provider system within a local cloud. 
+      properties:
+        system-name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+    
+    ProviderCloud:
+      type: object
+      description: an object describing the cloud in which a provider is located
+      properties:
+        operator:
+          type: string
+          description: Name of the operator company
+        name: 
+          type: string
+          description: name of the cloud 
+
+    RequesterSystem:
+      type: object
+      description: Information of the system requesting orchestration information. 
+      properties:
+        systemName: 
+          type: string
+          description: Short human readable system name.
+        systemID:
+          type: string
+          description: unique identifier of requester system
+        address: 
+          $ref: '#/components/schemas/Address'
+        auth-info:
+          type: string
+          description: Authentication info, i.e, CERTIFICATE, TOKEN, etc. 
+        interface: 
+          type: array
+          items:
+            $ref: '#/components/schemas/Interface'
+
+    RequestedService:
+      type: object
+      description: |
+        Optional information of the required service. This object contains the service requirements of the requester
+        system. 
+      properties: 
+        service-definition:
+          type: string
+          description: Service definition 
+        interfaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interface'
+        security: 
+          type: array
+          items:
+            $ref: '#/components/schemas/SecurityType'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        version:
+          $ref: '#/components/schemas/VersionReq'
+
+    Service:
+      type: object
+      properties:
+        name: 
+          type: string
+          description: Service instance human-readable name
+        service-type:
+          $ref: '#/components/schemas/TypeIdentifier'
+        version: 
+          $ref: '#/components/schemas/Version'
+        addresses:
+          description:
+            A collection of addresses, each with a unique tag name. The tag names _may_ be used to
+            help a service consumer chose the most appropriate address. The service consumer may,
+            however, simply try all of them in any order until it finds one that works.
+          type: object
+          patternProperties:
+            .*: { $ref: '#/components/schemas/Address' }
+        interface:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interface'
+        auth-info: 
+          type: string
+          description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
+        metadata: 
+          $ref: '#/components/schemas/Metadata'
+
+    SecurityType:
+      type: string
+      enum:
+        - TOKEN
+        - NON-SECURE
+        - CERTIFICATE
+
+    ServiceRequestForm:
+      type: object
+      properties:
+        requesting-system:
+          $ref: '#/components/schemas/RequesterSystem'
+        requested-service:
+          $ref: '#/components/schemas/RequestedService'
+        preferred-providers:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreferredProvider'
+
+    OrchestrationResponse:
+      type: object
+      properties:
+        providers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderSystem'
+        service:
+          $ref: '#/components/schemas/Service'
+        auth-tokens:
+          $ref: '#/components/schemes/Auth-tokens'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Warning'
+    
+    Version:
+      description: |
+        A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
+        PATCH numbers are omitted, the ones omitted are assumed to be zero.
+      type: string
+      pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
+      example: 1.4
+
+    VersionReq:
+      description: |
+        Object describing the required service version, maximun version and minimun version allowed for the 
+        required service. 
+      type: object
+      properties: 
+        version-required:
+          $ref: '#/components/schemas/Version'
+        min-version:
+          $ref: '#/components/schemas/Version'
+        max-version:
+          $ref: '#/components/schemas/Version'
+
+    Warning:
+      definition: A JSON object containing string warnings that may be returned as part of an orchestration response. 
+        FROM_OTHER_CLOUD -> if the provider is in another cloud to that of the requesting system
+        TTL_EXPIRED -> if the provider is no longer accessible 
+        TTL_EXPIRING -> the provider will be inaccessible within a short time
+        TTL_UNKNOWN - > the provider does not especify an expiration time
+      type: string
+      enum:
+        - FROM_OTHER_CLOUD
+        - TTL_EXPIRED
+        - TTL_EXPIRING
+        - TTL_UNKNOWN

@@ -572,6 +572,10 @@ components:
           type: object
           patternProperties:
             .*: { $ref: '#/components/schemas/Address' }
+        interface:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interface'
         auth-info: 
           type: string
           description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
@@ -596,6 +600,12 @@ components:
         - providerID
         - service
 
+    interface:
+      description: A string that describes the interface in Protocol-SecurityType-MimeType format. SecurityType can be either SECURE or 
+        INSECURE. 
+      type: string
+      pattern: ^([a-zA-Z0-9_-]+)-(SECURE|INSECURE)-([a-zA-Z0-9_-]+)$
+      example: HTTP-SECURE-JSON
 
     TimeToLive:
       description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 
