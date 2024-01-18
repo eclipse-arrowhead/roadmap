@@ -18,7 +18,12 @@ paths:
 
   /orchestration/orchestration-pull:
     post:
-      summary: Submit a service request and get orchestration response. 
+      summary: Submit a service request and get orchestration response. If no service definition is specified, the orchestration
+        will return the suggested services and their appropriate providers for the consuming system to fulfil its tasks, depending
+        on a existing SoS configuration or Orchestration rules. 
+
+        Information of the requesting system is mandatory. Requested service is optional. If a requested service object is specified,
+        the service definition and at least one interface must be specified. 
       requestBody:
         required: true
         content:
