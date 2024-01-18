@@ -1,6 +1,13 @@
 openapi: 3.0.0
 info:
   title: Service Registry Management API
+  description: |
+    This specification outlines how to use the _Arrowhead Service Registry Administration_ service
+    on top of either of the HTTP or HTTPS protocols with payloads encoded in JASON. The service allows for 
+    service providers or cloud administrators to list, register, or unregister services from the service
+    registry catalog. To register a service, the service provider, a system administrator, or a supporting system
+    must fill a _ServiceEntry_  object with the details of the service and the service provider. Additional 
+    inforation can be especified in the _metadata_ parameter. 
   version: 1.0.0
   # Additional information present in the IDD template
   x-transfer-protocol: [HTTP, HTTPS]
@@ -10,7 +17,7 @@ info:
   x-semantics: to-add
   x-Ontology: to-add
 
-  
+
 paths:
   /service-registry/list:
     get:
@@ -137,6 +144,9 @@ components:
           type: object
           patternProperties:
             .*: { $ref: '#/components/schemas/Address' }
+        auth-info: 
+          type: string
+          description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
         metadata: 
           $ref: '#/components/schemas/Metadata'
 

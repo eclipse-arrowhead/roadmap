@@ -1,6 +1,18 @@
 openapi: 3.0.3
 info:
   title: Authorization Policy Management API
+  description: |
+    This specification outlines how to realize the _Arrowhead Authorization Management_ service on top of either of the HTTP or HTTPS
+    protocols with payload encoded in JSON. The service allows for resources, data owners, service providers, or system administrators
+    to manage and express authorization rules to resources. 
+
+    To express authorization policies over resources needing protection, a _resource_ object must be created in the policy engine. This 
+    newly created resource can be _associated_ to existing attributes using the _/management/associations_ endpoint. The same applies
+    whenever a new _subject_ wanting to consume a _resource_ enters to the environment. A _subject_ object must be created in the policy
+    engine, and it needs to be connected to an attribute using the _/management/associations_ endpoint. This association will connect
+    the newly created _resource_ or _subject_ to existing authorization policies. 
+
+
   version: 1.0.0
   # Additional information present in the IDD template
   x-transfer-protocol: [HTTP, HTTPS]

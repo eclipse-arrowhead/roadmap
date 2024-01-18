@@ -6,17 +6,17 @@ info:
     This specification outlines how to realize the _Arrowhead Core Authorization_ service on top of
     either of the HTTP or HTTPS protocols with payloads encoded in JSON. The service allows for
     service providers to check if their own _consumers_ are authorized to perform certain
-    _operations_ on certain _objects_, without having to know any details about how the
+    _access-rights_ on certain _resource_, without having to know any details about how the
     authorization decision is reached.
 
-    In the context of this document, we understand an _operation_ to be a string identifier that
+    In the context of this document, we understand an _access-right_ to be a string identifier that
     names something a consumer can request that a certain type of service performs on its behalf. We
     also understand an _object_ to be any kind resource that is acted upon while an operation is
-    performed. If, for example, a file storage service is provided, then possible _operations_ could
-    be `"upload"` and `"download"` while the _objects_ of the service are the files it stores.
+    performed. If, for example, a file storage service is provided, then possible _access-right_ could
+    be `"upload"` and `"download"` while the _resource_ of the service are the files it stores.
 
     No requirements are imposed on an implementation of this service with regards to how it
-    determines if certain consumers are allowed to perform certain operations on certain objects.
+    determines if certain consumers are allowed to perform certain access rights on certain resources.
     It may implement something akin to the INCITS 565-2020 standard, also known as _Next Generation_
     _Access Control_ (NGAC), or something much less sophisticated. It is also assumed that the
     service provider is informed about what authorization requests to approve via some other service

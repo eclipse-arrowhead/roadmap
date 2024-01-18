@@ -572,6 +572,9 @@ components:
           type: object
           patternProperties:
             .*: { $ref: '#/components/schemas/Address' }
+        auth-info: 
+          type: string
+          description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
         metadata: 
           $ref: '#/components/schemas/Metadata'
 
