@@ -125,7 +125,6 @@ components:
       pattern: ^[^!*,:@^~]+$
       example: eu.arrowhead.authorization-http-json
 
-
     Service:
       type: object
       properties:
