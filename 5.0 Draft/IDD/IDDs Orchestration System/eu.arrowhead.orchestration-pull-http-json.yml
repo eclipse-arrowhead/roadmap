@@ -1,10 +1,33 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   title: Orchestration-pull service API description 
-  version: 1.0.0
-description: An API for using the orchestration-pull service of the Orchestration core system. This service
-  uses the orchestration store policies to recommend service providers to the requesting consumer to fulfil 
-  its task. 
+  description: |
+    An API for using the orchestration-pull service of the Orchestration core system. This service
+    uses the orchestration store policies to recommend service providers to the requesting consumer to fulfil 
+    its task. 
+
+    The consumer system request for orchestration either by specifying the service definition that the consumer requires or 
+    by using stored SoS configurations or Orchestration rules if no service information is defined. 
+
+    _SoS configurations_ represents the connections needed in a SoS for it to perform its designed task. This means, describing what services
+    must each of the systems consume to perform their individual tasks. A SoS configuration can be seen as a series of _Orchestration rules_.
+    _Orchestration rules_ represents a desired interaction between systems consuming specific services from specific preferred providers. 
+
+    In the context of this document, we reffer to the Orchestration consumer as _requesting-system_ where _system-id_ is the
+    unique identifier that represents that system. The _requested-service_ represents the service information that the _requesting-system_
+    requires orchestration. In case the _requested_service_ is specified, the requires service definition must be included in the form, 
+    in addition, at least one interface must be specified. The orchestration system will attempt to match the _requested-service_ information
+    with services present on the orchestration rules or SoS configurations. 
+
+version: 5.0.0-rc.1
+
+# Additional information present in the IDD template
+x-transfer-protocol: [HTTP, HTTPS]
+x-encryption-method: to-add
+x-encoding: JSON
+x-compression: to-add
+x-semantics: to-add
+x-Ontology: to-add
 
 paths:
   /orchestration/echo:
@@ -144,7 +167,7 @@ components:
       type: object
       description: Information of the system requesting orchestration information. 
       properties:
-        systemName: 
+        system-name: 
           type: string
           description: Short human readable system name.
         systemID:

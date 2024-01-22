@@ -1,7 +1,32 @@
 openapi: 3.0.0
 info:
   title: Orchestration Management API
-  version: 1.0.0
+  description: |
+    This API defines interfaces to interact with the Orchestration store where Orchestration rules and Sos configurations
+    are stored. 
+
+    An _orchestration rule_ connects a specified _provider_ providing a _service_ with a _consumer_. This means that the 
+    _consumer_ is adviced to consume the _service_, prefferably from the listed _provider_. Additional matching metadata
+    can be specified as part of the orchestration rule. 
+
+    The orchestration store has also the capability of storing system of systems (SoS) configurations. These configurations
+    are expressed as a series of orchestration rules, and represent desired SoS states for specific tasks. Configurations can
+    be stored and retrieved using the described interfaces in this document. Moreover, active configurations for a local cloud
+    can be defined using the _active-configuration_ endpoint. The active configuration is used by the orchestration to 
+    provide orchestration responses to consumers. 
+
+    When setting active configurations, a time-to-live parameter can be defined to specify for how long the specific configuration
+    is valid in the local cloud. 
+version: 5.0.0-rc.1
+
+# Additional information present in the IDD template
+x-transfer-protocol: [HTTP, HTTPS]
+x-encryption-method: to-add
+x-encoding: JSON
+x-compression: to-add
+x-semantics: to-add
+x-Ontology: to-add
+
 paths:
   /orchestration/rules:
     get:
