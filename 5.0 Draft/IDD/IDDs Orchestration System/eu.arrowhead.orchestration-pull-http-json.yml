@@ -243,6 +243,9 @@ components:
     ServiceRequestForm:
       type: object
       properties:
+        auth-tokens:
+          description: Authentication token of the requesting system
+          $ref: '#/components/schemes/Auth-tokens'
         requesting-system:
           $ref: '#/components/schemas/RequesterSystem'
         requested-service:
@@ -261,8 +264,6 @@ components:
             $ref: '#/components/schemas/ProviderSystem'
         service:
           $ref: '#/components/schemas/Service'
-        auth-tokens:
-          $ref: '#/components/schemes/Auth-tokens'
         warnings:
           type: array
           items:

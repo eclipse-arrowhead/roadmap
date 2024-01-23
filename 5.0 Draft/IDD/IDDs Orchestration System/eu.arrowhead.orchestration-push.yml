@@ -16,7 +16,7 @@ info:
 version: 5.0.0-rc.1
 
 # Additional information present in the IDD template
-x-transfer-protocol: [HTTP, HTTPS]
+x-transfer-protocol: [to-add]
 x-encryption-method: to-add
 x-encoding: JSON
 x-compression: to-add
@@ -25,6 +25,7 @@ x-Ontology: to-add
 
 channels:
   pushConfiguration:
+    address: 'orchestration/push'
     publish:
       message:
         $ref: "#/components/messages/SystemConfigurationEvent"
@@ -35,6 +36,8 @@ channels:
           # Specify MQTT-specific details here if using MQTT
         http:
           # Specify HTTP-specific details here if using HTTP
+
+
 components:
   schemas:
     Address:
