@@ -4,19 +4,26 @@ info:
   title: Authorization HTTP(S)-JSON
   description: |
     This specification outlines how to realize the _Arrowhead Core Authorization_ service on top of
-    either of the HTTP or HTTPS protocols with payloads encoded in JSON. The service allows for
-    service providers to check if their own _consumers_ are authorized to perform certain
-    _access-rights_ on certain _resource_, without having to know any details about how the
-    authorization decision is reached.
+    either of the HTTP or HTTPS protocols with payloads encoded in JSON. This service allows for
+    _resource_ ownwers to check _access-rights_ of _subjects_ attempting to perform operations over
+    their protected _resources_. Authorization queries are then made in the form of the _triple_
+    (subject, access-right, resource). In the context of service consumption authorization,
+    service providers act as resource owners for their provideded services (or _resources_), while 
+    consumers are _subjects_ trying to apply their _access right_ to consume a service. For such 
+    application, an authorization query shall look as:
+
+      subject: "MWtzOXIpaUEsOyEhc1NsTwo="
+      access-right: "consume"
+      resource: "/OutsideTemp"
 
     In the context of this document, we understand an _access-right_ to be a string identifier that
-    names something a consumer can request that a certain type of service performs on its behalf. We
-    also understand an _object_ to be any kind resource that is acted upon while an operation is
+    names something a subject can request that a certain type of service performs on its behalf. We
+    also understand an _resource_ to be any kind resource that is acted upon while an operation is
     performed. If, for example, a file storage service is provided, then possible _access-right_ could
     be `"upload"` and `"download"` while the _resource_ of the service are the files it stores.
 
     No requirements are imposed on an implementation of this service with regards to how it
-    determines if certain consumers are allowed to perform certain access rights on certain resources.
+    determines if certain subjects are allowed to perform certain access rights on certain resources.
     It may implement something akin to the INCITS 565-2020 standard, also known as _Next Generation_
     _Access Control_ (NGAC), or something much less sophisticated. It is also assumed that the
     service provider is informed about what authorization requests to approve via some other service
@@ -77,7 +84,7 @@ paths:
       Allows for bulk authorization requests to be sent to the authorization system in a single API request
 
       Queries the authorization system for authorization decision for each specified access right over the 
-      specified consumer and resource pair. 
+      specified subject and resource pair. 
 
       As a reponse, for each request in the request body, an authorization decision will be returned.
     requestBody:
@@ -85,42 +92,24 @@ paths:
       content:
         application/json:
           schema:
-            type: array
-            items:
-              type: object
-              properties:
-                consumer:
-                  type: string
-                  description: The identifier of the entity making the request. The format of the string is 
-                    dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
-                access-right:
-                  type: string
-                  description: String identifier for the access right needed to be authorized. These access rights
-                   must be pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
-                resource:
-                  type: string
-                  description: The identifier of the resource being accessed, e.g., service instance identifier. 
-              required:
-                - consumer
-                - access-right
-                - resource
+            $ref: '#/components/schemas/AccessRequests'
             examples:
               example1:
                 summary: Three authorization requests from different users to different resources.
                 value:
-                  - consumer: "user123"
+                  - subject: "user123"
                     access-right: "write"
                     resource: "eu.arrowhead.tempreadings-http-json@MWtzOXIpaUEsOyEhc1NsTwo"
-                  - consumer: "MWtzOXIpaUEsOyEhc1NsTwo="
+                  - subject: "MWtzOXIpaUEsOyEhc1NsTwo="
                     access-right: "consume"
                     resource: "/OutsideTemp"
-                  - consumer: "user789"
+                  - subject: "user789"
                     access-right: "read"
                     resource: "91"
               example2:
                 summary: a single authorization request.
                 value:
-                    consumer: "user234"
+                    subject: "user234"
                     access-right: "read"
                     resource: "document4"                  
       responses:
@@ -129,17 +118,24 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string                
-                  description: An array of decisions for each requested triple. 
+                type: object
+                properties:
+                  authorizationDecisions:
+                    type: array
+                    items:
+                      type: string
+                      enum:
+                        - allowed
+                        - denied
               examples:
                 example1:
-                  - "allowed"
-                  - "denied"
-                  - "allowed"
+                  value:
+                    authorizationDecisions: ["allowed", "denied"]
+                  summary: Example response with both allowed and denied decisions
                 example2:
-                  - "allowed"
+                  value:
+                    authorizationDecisions: ["allowed", "allowed", "denied"]
+                  summary: Example response with multiple decisions
 
         headers:
             Cache-Control:
@@ -171,9 +167,9 @@ components:
         [RFC 9111 Section 5.2.2](https://datatracker.ietf.org/doc/html/rfc9111#name-response-directives).
 
         The `max-age` directive indicates for how many seconds the decision in the response may be
-        cached before being requested again by the consumer. The `must-revalidate` directive is used
-        to forbid the consumer from using the decision after the `max-age` has expired and the
-        attempt to request it again failed. The `no-store` directive instructs the consumer not to
+        cached before being requested again by the subject. The `must-revalidate` directive is used
+        to forbid the subject from using the decision after the `max-age` has expired and the
+        attempt to request it again failed. The `no-store` directive instructs the subject not to
         cache the decision at all.
       schema:
         type: string
@@ -192,7 +188,7 @@ components:
 
     Retry-After:
       description: |
-        An indication, in seconds, of how long a consumer is to wait before attempting the failed
+        An indication, in seconds, of how long a subject is to wait before attempting the failed
         request again.
       schema:
         type: number
@@ -320,6 +316,12 @@ components:
 
   schemas:
 
+    AccessRequests: 
+      description: An array of authorization Triplets to be submitted to the Authorization system
+      type: array
+      items:
+        $ref: '#/components/schemas/Triplet'
+
     Address:
       description: |
         Identifies a _transport_ and a _location_.
@@ -346,7 +348,7 @@ components:
     Error:
       description: |
         An indication of why a received request was rejected. It is formulated with the assumption
-        that the consumer knows of and can interpret the status code in the response.
+        that the subject knows of and can interpret the status code in the response.
       type: object
       properties:
         message:
@@ -355,12 +357,23 @@ components:
 
     Triplet:
       description: |
-        Three strings identifying a _consumer_, an _operation_ and an _object_, in that order.
-        Together they describe how a certain consumer wishes do perform a certain operation on a
-        certain object.
-      type: array
-      items:
-        type: string
-      minItems: 3
-      maxItems: 3
-      example: ["yBXJ2b+1XtvKJCRYJgHdcA==", "read", "se.company.heat-sensor-b5421.temperature"]
+        Three strings identifying a _subject_, an _operation_ and an _resource_, in that order.
+        Together they describe how a certain subject wishes do perform a certain operation on a
+        certain resource.
+      type: object
+      properties:
+        subject:
+          type: string
+          description: The identifier of the entity making the request. The format of the string is 
+            dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
+        access-right:
+          type: string
+          description: String identifier for the access right needed to be authorized. These access rights
+            must be pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
+        resource:
+          type: string
+          description: The identifier of the resource being accessed, e.g., service instance identifier. 
+      required:
+        - subject
+        - access-right
+        - resource
