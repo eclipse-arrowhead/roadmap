@@ -6,11 +6,33 @@ info:
     protocols with payload encoded in JSON. The service allows for resources, data owners, service providers, or system administrators
     to manage and express authorization rules to resources. 
 
+    Although the interface definition for the authorization system does not impose requirements on an implementation of that service 
+    with regards to how it determines if certain subjects are allowed to perform certain access rights on certain resources. This interface
+    definition is designed to allow for Attribute-based Access Control to be enforced in the Authorization system. However, the same 
+    definition can be used to describe and manage role-based or rule-based policies by the flexible use of associations and permissions. 
+
+    This interface understands _resources_ as the entities needing protection, e.g., services, data-bases, files, etc. On the other 
+    hand, _subjects_ represents the entities trying to access or consume the previously defined _resources_. Finally, _access-rights_ 
+    represents the actions that _subjects_ attempt to performed over the protected _resources_, these can be defined with different levels
+    of granularity, such as service consumption, or read or write of data. Moreover, this interface definition understands _attributes_ as
+    characteristics from users or resources to which policies can be defined. These properties describe the relevant entities and are mainly 
+    of two types: User Attributes and Object Attributes. User attributes describe the entities trying to access resources. These can be 
+    characteristics such as roles, clearance levels, job title, etc. Moreove, object attributes describe the properties of the resources being
+    accessed and protected. These properties can be such as data classifications, sensitivity levels, file type, location, source, etc. 
+    As an example, one can set attributes to behave as roles, e.g., the user 'Alice' can be assigned to the 'IT staff' attribute, while the
+    devices 'TempSensor1' and 'TempSensor2' are both assigned to the 'Sensor data' attribute. If a policy connects the User Attribute 'IT staff' 
+    with the object attribute 'Sensor data', then Alice will be able to consume data from both Temperature sensors. 
+
     To express authorization policies over resources needing protection, a _resource_ object must be created in the policy engine. This 
     newly created resource can be _associated_ to existing attributes using the _/management/associations_ endpoint. The same applies
     whenever a new _subject_ wanting to consume a _resource_ enters to the environment. A _subject_ object must be created in the policy
     engine, and it needs to be connected to an attribute using the _/management/associations_ endpoint. This association will connect
     the newly created _resource_ or _subject_ to existing authorization policies. 
+
+    Connections between _User Attributes_ and _Object Attributes_ are made through the creation of _permissions_ by using the 
+    _/management/permissions_ endpoint. Creating a permission means that the _User Attribute_ get permission for the specified _access-rights_ 
+    to be executed on the specified _resource attribute_. This means, for example, if a permission using the user attribute 'IT staff' with the
+    _access-rights_ 
 
 
   version: 1.0.0
@@ -23,6 +45,14 @@ info:
   x-Ontology: to-add
 
 paths:
+  /ping:
+    get:  
+      summary: Endpoint to check the core system availability. 
+      description: Returns an OK to indicate that the core system is available. 
+      responses:
+        '200':
+          description: OK
+
   /management/associations:
     post:
       summary: Create a New association
@@ -436,54 +466,45 @@ components:
       required: true
 
   schemas:
-    Policy:
-      type: object
-      required: 
-        - name
-        - effect
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the policy.
-        name:
-          type: string
-          description: The human-readable name of the policy.
-        description:
-          type: string
-          description: A detailed description of the policy.
-        access-rights:
-          type: array
-          items:
-            type: string
-          description: List of access rights that the policy controls.
-        subjects:
-          type: array
-          items:
-            type: string
-          description: List of entities subject to the policy.
-        resources:
-          type: array
-          items:
-            type: string
-          description: List of resources to which the policy applies.
-        effect:
-          type: string
-          enum: ['allow', 'deny', 'associate']
-          description: The desired effect of the policy in the policy engine, this may allow the usage of ABAC, RBAC or rule-based
-            policy engine. For example, a policy containg only subjects, resources, and access-rights with the effect 'allow' would 
-            create a rule-based policy (subject, ar, resource). A policy containing only subjects/resources and user-attributes/object-attributes 
-            and with the effect 'associate' would create an attribute-based or role-based association between the specified user or object and 
-            the respective attributes. The 'deny' effect can be used to create explicit access prohibitions. 
-        user-attributes: 
-          type: array
-          items:
-            type: string
-          description: List of user-attributes (ua) that the policy controls.
-        object-attributes:
-          type: array
-          items:
-            type: string
-          description: List of object-attributes (oa) that the policy controls. 
+
+  Association:
+    oneOf:
+      - $ref: "#/components/schemas/ResourceAttributeAssociation"
+      - $ref: "#/components/schemas/SubjectAttributeAssociation"
+      - $ref: "#/components/schemas/AttributeAttributeAssociation"
+
+  ResourceAttributeAssociation:
+    type: object
+    properties:
+      resource:
+        $ref: '#/components/schemas/Resource'
+      attribute:
+        $ref: '#/components/schemas/Attribute'
+    required:
+      - resource
+      - attribute
+
+  SubjectAttributeAssociation:
+    type: object
+    properties:
+      subject:
+        $ref: '#/components/schemas/Subject'
+      attribute:
+        $ref: '#/components/schemas/Attribute'
+    required:
+      - subject
+      - attribute
+
+  AttributeAttributeAssociation:
+    type: object
+    properties:
+      attribute1:
+        $ref: '#/components/schemas/Attribute'
+      attribute2:
+        $ref: '#/components/schemas/Attribute'
+    required:
+      - attribute1
+      - attribute2
 
     Attribute: 
       type: object
@@ -529,6 +550,27 @@ components:
           description: Authentication information in case needed. E.g., certificate information of consuming systems.
         metadata: { $ref: '#/components/schemas/Metadata' }
     
+    Permission:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "Identifier of the permission"
+        subjectAttribute:
+          $ref: "#/components/schemas/Attribute"
+        accessRights:
+          type: array
+          items:
+            type: string
+            description: "Access rights, e.g., ['consume']"
+          description: "List of access rights"
+        resourceAttribute:
+          $ref: "#/components/schemas/Attribute"
+      required:
+        - id
+        - subjectAttribute
+        - accessRights
+
     Resource:
       required: 
       type: object

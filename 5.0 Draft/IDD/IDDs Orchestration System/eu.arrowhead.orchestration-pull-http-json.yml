@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Orchestration-pull service API description 
+  title: Service Orchestration-pull service API description 
   description: |
-    An API for using the orchestration-pull service of the Orchestration core system. This service
+    An API for using the Service Orchestration-pull service of the Orchestration core system. This service
     uses the orchestration store policies to recommend service providers to the requesting consumer to fulfil 
     its task. 
 
@@ -120,11 +120,35 @@ components:
       example: {"interfaceName1":"token1"}
 
     interface:
-      description: A string that describes the interface in Protocol-SecurityType-MimeType format. SecurityType can be either SECURE or 
-        INSECURE. 
-      type: string
-      pattern: ^([a-zA-Z0-9_-]+)-(SECURE|INSECURE)-([a-zA-Z0-9_-]+)$
-      example: HTTP-SECURE-JSON
+      description: An object describing interfaces used by services. This object contains information on the used 
+        protocol and the security requirements. Depending on the protocol, additional properties could be appropriate,
+        such as 'version', 'contentTypes', 'ipv4Address', 'port', 'x509PublicKey', 'basePath' or 'topic'. The same 
+        applying to security. 
+      type: object
+      properties:
+        protocol:
+          type: object
+          properties:
+            name:
+              type: string
+              description: "Transport protocol, such as 'https', 'coaps+tcp', 'json-rpc', or 'mqtt'"
+              additionalProperties: true
+          required:
+            - name
+        security:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: "Security method name, such as 'tokenAuthentication'"
+                additionalProperties: true
+            required:
+              - name
+      required:
+        - protocol
+        - security
     
     Metadata:    
       description: |

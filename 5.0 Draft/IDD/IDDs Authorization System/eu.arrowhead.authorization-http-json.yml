@@ -69,7 +69,7 @@ info:
 
 paths:
 
-  /echo:
+  /ping:
     get:  
       summary: Endpoint to check the core system availability. 
       description: Returns an OK to indicate that the core system is available. 
