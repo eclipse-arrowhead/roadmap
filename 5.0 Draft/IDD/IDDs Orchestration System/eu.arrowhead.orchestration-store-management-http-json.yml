@@ -182,29 +182,6 @@ paths:
 
 components:
   schemas:
-    Address:
-      description: |
-        Identifies a _transport_ and a _location_.
-
-        The _transport_ identifies the base protocol that facilitates addressing a specific service
-        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
-        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
-        addressing and, by extension, sending messages to service providers and consumers, as well
-        as (B) does not build upon another protocol also providing this capability. I other words,
-        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
-        satisfy condition A.
-
-        What the _location_ part consists of depends on what transport is identified. If the
-        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
-        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
-        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
-        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
-        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
-        path to a Unix socket file.
-      type: string
-      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
-      example: tcp4:192.168.0.7:45326
-
     ActiveConfiguration:
       type: object
       properties:
@@ -227,10 +204,6 @@ components:
           description: set of rules that compose the configuration
           items: 
             $ref: '#/components/schemas/Rule'
-        target: 
-          type: object
-          description: Target of the orchestration configuration
-          #TODO: define how the target should look like, is it just one target? is it an array of targets? Are the targets within the rules?
             
     Metadata:    
       description: |
@@ -272,8 +245,6 @@ components:
         system-name:
           type: string
           description: human readable name of the system
-        address:
-          $ref: '#/components/schemas/Address'
 
     TimeToLive:
       description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 

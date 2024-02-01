@@ -39,7 +39,7 @@ paths:
           description: OK
 
 
-  /orchestration/orchestration-pull:
+  /orchestration/service-recommendations:
     post:
       summary: Submit a service request and get orchestration response. If no service definition is specified, the orchestration
         will return the suggested services and their appropriate providers for the consuming system to fulfil its tasks, depending
@@ -63,9 +63,9 @@ paths:
                 items:
                   $ref: '#/components/schemas/OrchestrationResponse'
 
-  /orchestration/orchestration-pull/{id}:
+  /orchestration/service-recommendations/{id}:
     get:
-      summary: Get Orchestration by system id
+      summary: Get complete Orchestration plan for a given system, queried by system id
       parameters:
         - name: id
           in: path
@@ -119,7 +119,7 @@ components:
       type: object
       example: {"interfaceName1":"token1"}
 
-    interface:
+    Interface:
       description: An object describing interfaces used by services. This object contains information on the used 
         protocol and the security requirements. Depending on the protocol, additional properties could be appropriate,
         such as 'version', 'contentTypes', 'ipv4Address', 'port', 'x509PublicKey', 'basePath' or 'topic'. The same 
@@ -146,9 +146,6 @@ components:
                 additionalProperties: true
             required:
               - name
-      required:
-        - protocol
-        - security
     
     Metadata:    
       description: |
@@ -207,7 +204,7 @@ components:
           items:
             $ref: '#/components/schemas/Interface'
 
-    RequestedService:
+    RequestedService: #TODO: How much of this information should be asked? 
       type: object
       description: |
         Optional information of the required service. This object contains the service requirements of the requester
@@ -215,47 +212,23 @@ components:
       properties: 
         service-definition:
           type: string
-          description: Service definition 
+          description: Service definition string identifier
         interfaces:
           type: array
+          description: Interface requirement 
           items:
             $ref: '#/components/schemas/Interface'
-        security: 
-          type: array
-          items:
-            $ref: '#/components/schemas/SecurityType'
-        metadata:
-          $ref: '#/components/schemas/Metadata'
         version:
           $ref: '#/components/schemas/VersionReq'
+      required:
+        - service-definition
 
-    Service:
+    ServiceInstance:
       type: object
       properties:
-        name: 
-          type: string
-          description: Service instance human-readable name
-        service-type:
-          $ref: '#/components/schemas/TypeIdentifier'
-        version: 
-          $ref: '#/components/schemas/Version'
-        addresses:
-          description:
-            A collection of addresses, each with a unique tag name. The tag names _may_ be used to
-            help a service consumer chose the most appropriate address. The service consumer may,
-            however, simply try all of them in any order until it finds one that works.
-          type: object
-          patternProperties:
-            .*: { $ref: '#/components/schemas/Address' }
-        interface:
-          type: array
-          items:
-            $ref: '#/components/schemas/Interface'
-        auth-info: 
-          type: string
-          description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
-        metadata: 
-          $ref: '#/components/schemas/Metadata'
+        id: string
+        description: service instance unique identifier, the consumer getting the response use this to query the service registry to get 
+          full service information and connection address.
 
     SecurityType:
       type: string
@@ -271,7 +244,8 @@ components:
           description: Authentication token of the requesting system
           $ref: '#/components/schemes/Auth-tokens'
         requesting-system:
-          $ref: '#/components/schemas/RequesterSystem'
+          type: string
+          description: Requesting system unique identifier
         requested-service:
           $ref: '#/components/schemas/RequestedService'
         preferred-providers:
@@ -282,17 +256,15 @@ components:
     OrchestrationResponse:
       type: object
       properties:
-        providers:
+        services:
           type: array
           items:
-            $ref: '#/components/schemas/ProviderSystem'
-        service:
-          $ref: '#/components/schemas/Service'
+            $ref: '#/components/schemas/ServiceInstance'
         warnings:
           type: array
           items:
             $ref: '#/components/schemas/Warning'
-    
+
     Version:
       description: |
         A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
