@@ -78,40 +78,40 @@ paths:
           description: OK
 
   /authorizations:
-  post:
-    summary: Bulk Authorize access rights for Resources
-    description: |
-      Allows for bulk authorization requests to be sent to the authorization system in a single API request
+    post:
+      summary: Bulk Authorize access rights for Resources
+      description: |
+        Allows for bulk authorization requests to be sent to the authorization system in a single API request
 
-      Queries the authorization system for authorization decision for each specified access right over the 
-      specified subject and resource pair. 
+        Queries the authorization system for authorization decision for each specified access right over the 
+        specified subject and resource pair. 
 
-      As a reponse, for each request in the request body, an authorization decision will be returned.
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/AccessRequests'
-            examples:
-              example1:
-                summary: Three authorization requests from different users to different resources.
-                value:
-                  - subject: "user123"
-                    access-right: "write"
-                    resource: "eu.arrowhead.tempreadings-http-json@MWtzOXIpaUEsOyEhc1NsTwo"
-                  - subject: "MWtzOXIpaUEsOyEhc1NsTwo="
-                    access-right: "consume"
-                    resource: "/OutsideTemp"
-                  - subject: "user789"
-                    access-right: "read"
-                    resource: "91"
-              example2:
-                summary: a single authorization request.
-                value:
-                    subject: "user234"
-                    access-right: "read"
-                    resource: "document4"                  
+        As a reponse, for each request in the request body, an authorization decision will be returned.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessRequests'
+              examples:
+                example1:
+                  summary: Three authorization requests from different users to different resources.
+                  value:
+                    - subject: "user123"
+                      access-right: "write"
+                      resource: "eu.arrowhead.tempreadings-http-json@MWtzOXIpaUEsOyEhc1NsTwo"
+                    - subject: "MWtzOXIpaUEsOyEhc1NsTwo="
+                      access-right: "consume"
+                      resource: "/OutsideTemp"
+                    - subject: "user789"
+                      access-right: "read"
+                      resource: "91"
+                example2:
+                  summary: a single authorization request.
+                  value:
+                      subject: "user234"
+                      access-right: "read"
+                      resource: "document4"                  
       responses:
         '200':
           description: Successful authorization
@@ -133,11 +133,10 @@ paths:
                     authorizationDecisions: ["allowed", "denied"]
                   summary: Example response with both allowed and denied decisions
                 example2:
-                  value:
+                  value: 
                     authorizationDecisions: ["allowed", "allowed", "denied"]
                   summary: Example response with multiple decisions
-
-        headers:
+          headers:
             Cache-Control:
               $ref: '#/components/headers/Cache-Control'
             Limit:

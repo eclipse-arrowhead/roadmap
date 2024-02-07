@@ -74,43 +74,35 @@ paths:
       summary: Endpoint to check the core system availability. 
       description: Returns an OK to indicate that the core system is available. 
       responses:
-        '200':
+        '204':
           description: OK
 
   /services:
 
     get:
-      operationId: query
+      operationId: list
       description: |
-        Searches for records matching any query parameters. If no query parameters are specified,
-        any records the consuming system are permitted to access may be provided in the response.
+        Lists the services registered in the service registry. Each service is returned with its
+        registered information, containing information on how to reach each service instance. 
+        
+        As a default, only 16 services will be returned in the list request. This can be changed 
+        by using the list-size parameter. 
 
-        If the `limit` query parameter is used and given a value larger than 16, or if the `offset`
-        query parameter is used with any value, the operation is escalated from type `query` to type
-        `scan`. Permission to use the latter operation is intended only for consumers that need to
-        interact with larger number of service providers, that analyze larger numbers of records,
-        that list them for administrators or operators, or that have other special needs.
+        Moreover, a filter string expression can be included in the request. This filter string refines
+        the list results to include only those services that satisfy the filter string. Especifications 
+        on how filter strings are structurated can be found in  '#/components/parameters/filter'
 
-        As long as the operation remains a plain `query`, it will always limit its response to 16
-        records, unless a smaller `limit` is specified. If escalated to type `scan`, default and
-        maximum limits depend on how the service is configured. The limits may vary depending on the
-        attributes of the consumer, such as by allowing for a higher limit if the consumer is an
-        administrator.
-
-        Any matching records a consumer are not allowed to access will be silently discarded before
-        the record limit is imposed.
       parameters:
-        - $ref: '#/components/parameters/query-limit'
         - $ref: '#/components/parameters/query-offset'
-        - $ref: '#/components/parameters/query-q'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/list-size'
       responses:
         '200':
           description: Matching service records.
           content:
             application/json:
               schema:
-                type: array
-                items: { $ref: '#/components/schemas/Record' }
+                $ref: '#/components/schemas/Records' 
           headers:
             Cache-Control:
               $ref: '#/components/headers/Cache-Control'
@@ -239,19 +231,20 @@ components:
       explode: false
       allowReserved: true
 
-    query-limit:
-      name: limit
+    list-size:
+      name: size
       in: query
       description: |
         An indication of the maximum number of records a consuming system wants to have included in
-        the response to its query.
+        the response to the list request. 
       example: 24
       schema:
         description: |
           Indicates a maximum number of records a consuming service wishes to have included in the
-          response to some query.
+          response to the list request. 
         type: number
         format: int32
+        default: 16
         minimum: 1
 
     query-offset:
@@ -282,6 +275,40 @@ components:
         items: { $ref: '#/components/schemas/QueryExpression' }
       explode: false
       allowReserved: true
+
+    filter:
+      name: filterString
+      in: query
+      description: |
+        Filter expressions to refine the results from the list request to the service registry. A filter 
+        string is composed by one or more filter expressions, which are composed of a parameter, a matching 
+        operator, and a value. For example: 
+            Equality & Inequality checks
+            <Parameter> == "<Value>"
+            <Parameter> != "<Value>"
+
+            Scalar comparison
+            <Parameter> > "<Value>"
+            <Parameter> >= "<Value>"
+            <Parameter> < "<Value>"
+            <Parameter> <= "<Value>"
+
+            Emptiness checks
+            <Parameter> is empty
+            <Parameter> is not empty
+
+            Contains checks or Substring Matching
+            "<Value>" in <Parameter>
+            "<Value>" not in <Parameter>
+            <Parameter> contains "<Value>"
+            <Parameter> not contains "<Value>"
+
+        Valid parameters can be: Version, Interface, Security, ServiceType, Address, Port, ServiceInstanceID, ServiceName.
+
+        Multiple expressions can be used to compose a filter string. These expressions can be connected with Boolean operators
+        such as 'or', 'and', 'not'. The composition of filter strings allows for parenthesis grouping. 
+      schema:
+        type: string
 
   responses:
 
@@ -511,6 +538,34 @@ components:
                   type: string
                   example: "Required property missing: 'interfaces'."
 
+    Interface:
+      description: An object describing interfaces used by services. This object contains information on the used 
+        protocol and the security requirements. Depending on the protocol, additional properties could be appropriate,
+        such as 'version', 'contentTypes', 'ipv4Address', 'port', 'x509PublicKey', 'basePath' or 'topic'. The same 
+        applying to security. 
+      type: object
+      properties:
+        protocol:
+          type: object
+          properties:
+            name:
+              type: string
+              description: "Transport protocol, such as 'https', 'coaps+tcp', 'json-rpc', or 'mqtt'"
+              additionalProperties: true
+          required:
+            - name
+        security:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: "Security method name, such as 'tokenAuthentication'"
+                additionalProperties: true
+            required:
+              - name
+
     Metadata:
       description: |
         Additional details of relevance when consuming a service. What metadata is made available
@@ -560,7 +615,7 @@ components:
         name: 
           type: string
           description: Service instance human-readable name
-        service-type:
+        serviceType:
           $ref: '#/components/schemas/TypeIdentifier'
         version: 
           $ref: '#/components/schemas/Version'
@@ -570,17 +625,52 @@ components:
             help a service consumer chose the most appropriate address. The service consumer may,
             however, simply try all of them in any order until it finds one that works.
           type: object
-          patternProperties:
-            .*: { $ref: '#/components/schemas/Address' }
+          additionalProperties:
+            $ref: '#/components/schemas/Address'
         interface:
           type: array
           items:
             $ref: '#/components/schemas/Interface'
-        auth-info: 
+        authInfo: 
           type: string
           description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
         metadata: 
           $ref: '#/components/schemas/Metadata'
+
+    ServiceQuery:
+      type: object
+      description: Object with properties needed to refine the list results from the service registry list operation. All parameters
+        in this object are optional. Version, Interface, Security, ServiceType, Address, Port, ServiceInstanceID, ServiceName.
+      properties:
+        serviceInstanceIDs: 
+          type: array
+          items: 
+            type: string
+            description: The list of service instances IDs required in the list results.
+        ServiceNames:
+          type: array
+          items:
+            type: string
+            description: The list of service names required in the list results
+        VersionReq:
+          description: Service version requirements
+          $ref: '#/components/schemas/VersionReq'
+        AddressReq:
+          description: Service address requirements
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        interfacesReq:
+          type: array
+          description: Interface requirement 
+          items:
+            $ref: '#/components/schemas/Interface'
+
+    Records:
+      type: array
+      description: Envelope for array of Results for service list response. 
+      items:
+        $ref: '#/components/schemas/Record'
 
     Record:
       type: object
@@ -593,7 +683,7 @@ components:
           description: The ID of the system which produces the registered service. 
         service:
           $ref: '#/components/schemas/Service'
-        time-to-live:
+        timeToLive:
           $ref: '#/components/schemas/TimeToLive'
       required:
         - serviceID
@@ -629,3 +719,16 @@ components:
       type: string
       pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
       example: 1.4
+
+    VersionReq:
+      description: |
+        Object describing the required service version, maximun version and minimun version allowed for the 
+        required service. 
+      type: object
+      properties: 
+        version-required:
+          $ref: '#/components/schemas/Version'
+        min-version:
+          $ref: '#/components/schemas/Version'
+        max-version:
+          $ref: '#/components/schemas/Version'

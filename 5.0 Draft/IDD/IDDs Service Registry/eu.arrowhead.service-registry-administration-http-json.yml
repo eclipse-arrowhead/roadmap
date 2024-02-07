@@ -141,8 +141,8 @@ components:
             help a service consumer chose the most appropriate address. The service consumer may,
             however, simply try all of them in any order until it finds one that works.
           type: object
-          patternProperties:
-            .*: { $ref: '#/components/schemas/Address' }
+          additionalProperties:
+            $ref: '#/components/schemas/Address'
         interface:
           type: array
           items:
@@ -178,7 +178,7 @@ components:
       pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
       example: 2d12h
 
-    interface:
+    Interface:
       description: A string that describes the interface in Protocol-SecurityType-MimeType format. SecurityType can be either SECURE or 
         INSECURE. 
       type: string

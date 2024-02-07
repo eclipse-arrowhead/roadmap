@@ -108,7 +108,7 @@ paths:
       summary: Get Policy by ID
       description: Retrieve details of a specific policy by its identifier.
       parameters:
-        - name: policyId
+        - name: associationId
           in: path
           required: true
           schema:
@@ -119,12 +119,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Policy'
+                $ref: '#/components/schemas/Association'
     put:
-      summary: Update Policy
-      description: Update an existing policy by its identifier.
+      summary: Update Association
+      description: Update an existing Association by its identifier.
       parameters:
-        - name: policyId
+        - name: associationId
           in: path
           required: true
           schema:
@@ -134,19 +134,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Policy'
+              $ref: '#/components/schemas/Association'
       responses:
         '200':
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Policy'
+                $ref: '#/components/schemas/Association'
     delete:
-      summary: Delete Policy
-      description: Delete a policy by its identifier.
+      summary: Delete Association
+      description: Delete an Association by its identifier.
       parameters:
-        - name: policyId
+        - name: associationId
           in: path
           required: true
           schema:
@@ -287,9 +287,9 @@ paths:
         '200':
           description: Successful operation
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Subject'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subject'
     delete:
       summary: Delete subject
       description: Delete a subject by its identifier. 
@@ -345,9 +345,9 @@ paths:
         '200':
           description: Successful operation
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Resource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
     delete:
       summary: Delete resource.
       description: Delete a resource by its identifier. 
@@ -391,9 +391,9 @@ paths:
         '200':
           description: Successful operation
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Attribute'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attribute'
     delete:
       summary: Delete user attribute.
       description: Delete an user attribute by its identifier. 
@@ -436,9 +436,9 @@ paths:
         '200':
           description: Successful operation
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Attribute'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attribute'
     delete:
       summary: Delete object attribute.
       description: Delete an object attribute by its identifier. 
@@ -467,44 +467,44 @@ components:
 
   schemas:
 
-  Association:
-    oneOf:
-      - $ref: "#/components/schemas/ResourceAttributeAssociation"
-      - $ref: "#/components/schemas/SubjectAttributeAssociation"
-      - $ref: "#/components/schemas/AttributeAttributeAssociation"
+    Association:
+      oneOf:
+        - $ref: "#/components/schemas/ResourceAttributeAssociation"
+        - $ref: "#/components/schemas/SubjectAttributeAssociation"
+        - $ref: "#/components/schemas/AttributeAttributeAssociation"
 
-  ResourceAttributeAssociation:
-    type: object
-    properties:
-      resource:
-        $ref: '#/components/schemas/Resource'
-      attribute:
-        $ref: '#/components/schemas/Attribute'
-    required:
-      - resource
-      - attribute
+    ResourceAttributeAssociation:
+      type: object
+      properties:
+        resource:
+          $ref: '#/components/schemas/Resource'
+        attribute:
+          $ref: '#/components/schemas/Attribute'
+      required:
+        - resource
+        - attribute
 
-  SubjectAttributeAssociation:
-    type: object
-    properties:
-      subject:
-        $ref: '#/components/schemas/Subject'
-      attribute:
-        $ref: '#/components/schemas/Attribute'
-    required:
-      - subject
-      - attribute
+    SubjectAttributeAssociation:
+      type: object
+      properties:
+        subject:
+          $ref: '#/components/schemas/Subject'
+        attribute:
+          $ref: '#/components/schemas/Attribute'
+      required:
+        - subject
+        - attribute
 
-  AttributeAttributeAssociation:
-    type: object
-    properties:
-      attribute1:
-        $ref: '#/components/schemas/Attribute'
-      attribute2:
-        $ref: '#/components/schemas/Attribute'
-    required:
-      - attribute1
-      - attribute2
+    AttributeAttributeAssociation:
+      type: object
+      properties:
+        attribute1:
+          $ref: '#/components/schemas/Attribute'
+        attribute2:
+          $ref: '#/components/schemas/Attribute'
+      required:
+        - attribute1
+        - attribute2
 
     Attribute: 
       type: object
@@ -573,9 +573,9 @@ components:
 
     Resource:
       required: 
-      type: object
         - id
         - name
+      type: object
       properties:
         id:
           type: string

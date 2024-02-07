@@ -1,4 +1,5 @@
 openapi: 3.0.3
+
 info:
   title: Service Orchestration-pull service API description 
   description: |
@@ -18,8 +19,8 @@ info:
     requires orchestration. In case the _requested_service_ is specified, the requires service definition must be included in the form, 
     in addition, at least one interface must be specified. The orchestration system will attempt to match the _requested-service_ information
     with services present on the orchestration rules or SoS configurations. 
+  version: 5.0.0-rc.1
 
-version: 5.0.0-rc.1
 
 # Additional information present in the IDD template
 x-transfer-protocol: [HTTP, HTTPS]
@@ -226,9 +227,10 @@ components:
     ServiceInstance:
       type: object
       properties:
-        id: string
-        description: service instance unique identifier, the consumer getting the response use this to query the service registry to get 
-          full service information and connection address.
+        id: 
+          type: string
+          description: service instance unique identifier, the consumer getting the response use this to query the service registry to get 
+            full service information and connection address.
 
     SecurityType:
       type: string
@@ -242,7 +244,7 @@ components:
       properties:
         auth-tokens:
           description: Authentication token of the requesting system
-          $ref: '#/components/schemes/Auth-tokens'
+          $ref: '#/components/schemas/Auth-tokens'
         requesting-system:
           type: string
           description: Requesting system unique identifier
@@ -287,7 +289,7 @@ components:
           $ref: '#/components/schemas/Version'
 
     Warning:
-      definition: A JSON object containing string warnings that may be returned as part of an orchestration response. 
+      description: A JSON object containing string warnings that may be returned as part of an orchestration response. 
         FROM_OTHER_CLOUD -> if the provider is in another cloud to that of the requesting system
         TTL_EXPIRED -> if the provider is no longer accessible 
         TTL_EXPIRING -> the provider will be inaccessible within a short time
