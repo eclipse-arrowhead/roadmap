@@ -88,13 +88,13 @@ paths:
         As a default, only 16 services will be returned in the list request. This can be changed 
         by using the list-size parameter. 
 
-        Moreover, a filter string expression can be included in the request. This filter string refines
-        the list results to include only those services that satisfy the filter string. Especifications 
-        on how filter strings are structurated can be found in  '#/components/parameters/filter'
+        Moreover, a service Query object can be included in the request. This service query refines 
+        the list results to include only those services that satisfy the requirements specified in the 
+        Service Query object. 
 
       parameters:
         - $ref: '#/components/parameters/query-offset'
-        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/serviceQueryParam'
         - $ref: '#/components/parameters/list-size'
       responses:
         '200':
@@ -309,6 +309,14 @@ components:
         such as 'or', 'and', 'not'. The composition of filter strings allows for parenthesis grouping. 
       schema:
         type: string
+
+    serviceQueryParam:
+      name: serviceQuery
+      in: query
+      description: |
+        Service object with filtering requirements for service discovery. All parameters in the object are optional. 
+      schema: 
+        $ref: '#/components/schemas/ServiceQuery'
 
   responses:
 
