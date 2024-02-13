@@ -119,25 +119,25 @@ paths:
         '500': { $ref: '#/components/responses/500-InternalServerError' }
         '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
 
-    patch:
-      operationId: register
+  /services/register:
+    post:
+      summary: Add a new service entry
       description: |
-        Registers or updates one or more records.
+        Registers one or more records.
 
         The combination of the provider and type identifiers inside each record must be unique.
-        Providing a record when a corresponding combination of identifiers are already registered
-        will be interpreted as an attempt to replace the existing record. If more than one record
-        with corresponding identifiers are in the request, the last one in its payload will replace
-        all others.
+        If more than one record with corresponding identifiers are in the request, the last one 
+        in its payload will replace all others.
       requestBody:
+        required: true
         content:
           application/json:
             schema:
-              type: array
-              items: { $ref: '#/components/schemas/Record' }
+              $ref: '#/components/schemas/Records'
+
       responses:
         '204':
-          description: Confirms that the records in question have been registered or updated.
+          description: Confirms that the records in question have been registered.
         '400': { $ref: '#/components/responses/400-BadRequest-RecordIsInvalid' }
         '401': { $ref: '#/components/responses/401-Unauthorized' }
         '403': { $ref: '#/components/responses/403-Forbidden' }
@@ -148,23 +148,39 @@ paths:
         '431': { $ref: '#/components/responses/431-RequestHeaderFieldsTooLarge' }
         '500': { $ref: '#/components/responses/500-InternalServerError' }
         '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
+  
+  /services/{service-id}:
+    get:
+      summary: get service by ID
+      description: Retrieve details of a specific service entry by its identifier.
+      parameters:
+        - name: service-id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Record'
 
     delete:
       operationId: deregister
       description: |
-        Deregisters all records matching any query parameters. If no query parameters are specified,
-        all records are deregistered the consuming system are permitted to deregister.
+        Deregisters the service matching the service-id.
 
-        A provider wishing to deregister all of its own service records _should_ avoid sending plain
-        `DELETE /services` requests. If it has more access rights than it is aware of, it may
-        deregister more services than it intended. To ensure only its own services are deregistered,
-        it _should_ add its own provider identifier as part of the query parameter, as in
-        `DELETE /services?q=@MWtzOXIpaUEsOyEhc1NsTwo=`.
       parameters:
-        - $ref: '#/components/parameters/deregister-q'
+        - name: service-id
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '204':
-          description: Confirms that the records in question have been deregistered.
+          description: Confirms that the record in question have been deregistered.
         '400': { $ref: '#/components/responses/400-BadRequest-ExpressionIsInvalid' }
         '401': { $ref: '#/components/responses/401-Unauthorized' }
         '403': { $ref: '#/components/responses/403-Forbidden' }
