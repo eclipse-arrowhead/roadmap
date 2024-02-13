@@ -19,13 +19,6 @@ info:
     is valid in the local cloud. 
   version: 5.0.0-rc.1
 
-# Additional information present in the IDD template
-x-transfer-protocol: [HTTP, HTTPS]
-x-encryption-method: to-add
-x-encoding: JSON
-x-compression: to-add
-x-semantics: to-add
-x-Ontology: to-add
 
 paths:
   /orchestration/rules:
@@ -234,9 +227,14 @@ components:
         serviceID:
           type: string
           description: identifier of service
-        serviceInstance:
+        serviceDefinition:
           type: string
           description: name of the service instance
+        serviceType:
+          type: string
+          description: name of the service type
+        version: 
+          $ref: '#/components/schemas/Version'
 
     System:
       type: object
@@ -253,3 +251,10 @@ components:
       pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
       example: 2d12h
 
+    Version:
+      description: |
+        A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
+        PATCH numbers are omitted, the ones omitted are assumed to be zero.
+      type: string
+      pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
+      example: 1.4

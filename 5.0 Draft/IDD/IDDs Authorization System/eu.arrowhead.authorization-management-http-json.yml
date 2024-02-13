@@ -36,13 +36,6 @@ info:
 
 
   version: 1.0.0
-  # Additional information present in the IDD template
-  x-transfer-protocol: [HTTP, HTTPS]
-  x-encryption-method: to-add
-  x-encoding: JSON
-  x-compression: to-add
-  x-semantics: to-add
-  x-Ontology: to-add
 
 paths:
   /ping:

@@ -8,15 +8,48 @@ info:
     registry catalog. To register a service, the service provider, a system administrator, or a supporting system
     must fill a _ServiceEntry_  object with the details of the service and the service provider. Additional 
     inforation can be especified in the _metadata_ parameter. 
-  version: 1.0.0
-  # Additional information present in the IDD template
-  x-transfer-protocol: [HTTP, HTTPS]
-  x-encryption-method: to-add
-  x-encoding: JSON
-  x-compression: to-add
-  x-semantics: to-add
-  x-Ontology: to-add
 
+    ## Compression and Language
+
+    An implementation of this service interface _may_ be designed to support compression and/or
+    human-readable error texts in different languages than English, as described in 
+    [RFC 9110, Section 12](https://www.rfc-editor.org/rfc/rfc9110#name-content-negotiation). Not
+    using compression _must_ be supported and be the default. Also, the default language for error
+    messages _must_ be American English (`en-US`).
+
+    ## Managing Record Life-Cycles
+
+    In a typical use case, this service interface is meant to hold records for all service providers
+    currently part of its context. When a service provider joins or leaves a context, it is expected
+    to register and deregister its services, respectively. However, service providers can fail or be
+    detached from the context before they get a chance to deregister their services. This can make
+    it relevant to monitor service providers and temporarily suppress or permanently prune records
+    associated with unhealthy or inaccessible providers. Implementations of this service interface
+    are free to suppress and/or prune records in whatever way best supports the use cases they are
+    designed for.
+
+    ## Record Ownership
+
+    It is the provider indicated inside each record that is the owner of the record, and not the
+    consumer registering it. This means that a consumer may be forbidden from registering or
+    deregistering a record for certain or all other service providers, even if it may register
+    and/or deregister records with itself as provider.
+
+    ## Provider Identifiers
+
+    Every service instance registered via this service interface _must_ be associated with a unique
+    identifier. In contexts where authentication is not used, providers _must_ chose their own
+    identifiers. Those identifiers _should_ remain consistent between restarts of those providers.
+
+    ## Size Limits
+
+    As a mitigation against denial-of-service attacks, all implementations of this service
+    interface _should_ reject incoming requests that are larger than a predefined limit. That limit
+    _must not_ be smaller than 8192 bytes for each received request. An implementation _may_ also
+    limit the sizes of individual parts within each request. It _must_, however, receive request
+    URI:s up to 2816 bytes in size, as well as request payloads up to 4096 bytes in size.
+
+  version: 1.0.0
 
 paths:
   /service-registry/list:

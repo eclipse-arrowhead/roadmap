@@ -58,14 +58,6 @@ info:
     payloads up to 4096 bytes in size. If payload compression is supported, then this limit applies
     after decompression.
   version: 5.0.0-rc.1
-  
-  # Additional information present in the IDD template
-  x-transfer-protocol: [HTTP, HTTPS]
-  x-encryption-method: to-add
-  x-encoding: JSON
-  x-compression: to-add
-  x-semantics: to-add
-  x-Ontology: to-add
 
 paths:
 

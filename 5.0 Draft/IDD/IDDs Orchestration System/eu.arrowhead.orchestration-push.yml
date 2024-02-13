@@ -15,14 +15,6 @@ info:
 
 version: 5.0.0-rc.1
 
-# Additional information present in the IDD template
-x-transfer-protocol: [to-add]
-x-encryption-method: to-add
-x-encoding: JSON
-x-compression: to-add
-x-semantics: to-add
-x-Ontology: to-add
-
 channels:
   pushConfiguration:
     address: 'orchestration/push'
@@ -78,9 +70,10 @@ components:
           items: 
             $ref: '#/components/schemas/Rule'
         target: 
-          type: object
+          type: array
           description: Target of the orchestration configuration
-          #TODO: define how the target should look like, is it just one target? is it an array of targets? Are the targets within the rules?
+          items: 
+            $ref: '#/components/schemas/System'
 
     Metadata:    
       description: |

@@ -49,7 +49,6 @@ info:
     Every service instance registered via this service interface _must_ be associated with a unique
     identifier. In contexts where authentication is not used, providers _must_ chose their own
     identifiers. Those identifiers _should_ remain consistent between restarts of those providers.
-    In contexts where authentication is used, the identifier _must_ be derived as follows: TODO.
 
     ## Size Limits
 
@@ -59,13 +58,6 @@ info:
     limit the sizes of individual parts within each request. It _must_, however, receive request
     URI:s up to 2816 bytes in size, as well as request payloads up to 4096 bytes in size.
   version: 5.0.0-rc.1
-  # Additional information present in the IDD template
-  x-transfer-protocol: [HTTP, HTTPS]
-  x-encryption-method: to-add
-  x-encoding: JSON
-  x-compression: to-add
-  x-semantics: to-add
-  x-Ontology: to-add
 
 paths:
 

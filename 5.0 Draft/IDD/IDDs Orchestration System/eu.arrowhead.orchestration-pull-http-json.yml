@@ -3,12 +3,11 @@ openapi: 3.0.3
 info:
   title: Service Orchestration-pull service API description 
   description: |
-    An API for using the Service Orchestration-pull service of the Orchestration core system. This service
-    uses the orchestration store policies to recommend service providers to the requesting consumer to fulfil 
-    its task. 
+    An API for using the Service Orchestration-pull service of the Orchestration core system. This service uses the orchestration store policies 
+    to recommend service providers to the requesting consumer to fulfil its task. 
 
-    The consumer system request for orchestration either by specifying the service definition that the consumer requires or 
-    by using stored SoS configurations or Orchestration rules if no service information is defined. 
+    The consumer system request for orchestration either by specifying the service definition that the consumer requires or by using stored SoS 
+    configurations or Orchestration rules if no service information is defined. 
 
     _SoS configurations_ represents the connections needed in a SoS for it to perform its designed task. This means, describing what services
     must each of the systems consume to perform their individual tasks. A SoS configuration can be seen as a series of _Orchestration rules_.
@@ -17,18 +16,10 @@ info:
     In the context of this document, we reffer to the Orchestration consumer as _requesting-system_ where _system-id_ is the
     unique identifier that represents that system. The _requested-service_ represents the service information that the _requesting-system_
     requires orchestration. In case the _requested_service_ is specified, the requires service definition must be included in the form, 
-    in addition, at least one interface must be specified. The orchestration system will attempt to match the _requested-service_ information
-    with services present on the orchestration rules or SoS configurations. 
+    The orchestration system will attempt to match the _requested-service_ information with services present on the orchestration rules or SoS 
+    configurations. 
+
   version: 5.0.0-rc.1
-
-
-# Additional information present in the IDD template
-x-transfer-protocol: [HTTP, HTTPS]
-x-encryption-method: to-add
-x-encoding: JSON
-x-compression: to-add
-x-semantics: to-add
-x-Ontology: to-add
 
 paths:
   /orchestration/echo:
@@ -47,7 +38,7 @@ paths:
         on a existing SoS configuration or Orchestration rules. 
 
         Information of the requesting system is mandatory. Requested service is optional. If a requested service object is specified,
-        the service definition and at least one interface must be specified. 
+        the service definition must be specified. 
       requestBody:
         required: true
         content:
@@ -91,63 +82,13 @@ paths:
 
 components:
   schemas:
-    Address:
-      description: |
-        Identifies a _transport_ and a _location_.
-
-        The _transport_ identifies the base protocol that facilitates addressing a specific service
-        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
-        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
-        addressing and, by extension, sending messages to service providers and consumers, as well
-        as (B) does not build upon another protocol also providing this capability. I other words,
-        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
-        satisfy condition A.
-
-        What the _location_ part consists of depends on what transport is identified. If the
-        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
-        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
-        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
-        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
-        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
-        path to a Unix socket file.
-      type: string
-      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
-      example: tcp4:192.168.0.7:45326
 
     Auth-tokens:
       description: |
-        An (k,v) object containing authorization tokens for each interface contained in the response
+        An (k,v) object containing authorization tokens required to consume orchestration services
       type: object
       example: {"interfaceName1":"token1"}
 
-    Interface:
-      description: An object describing interfaces used by services. This object contains information on the used 
-        protocol and the security requirements. Depending on the protocol, additional properties could be appropriate,
-        such as 'version', 'contentTypes', 'ipv4Address', 'port', 'x509PublicKey', 'basePath' or 'topic'. The same 
-        applying to security. 
-      type: object
-      properties:
-        protocol:
-          type: object
-          properties:
-            name:
-              type: string
-              description: "Transport protocol, such as 'https', 'coaps+tcp', 'json-rpc', or 'mqtt'"
-              additionalProperties: true
-          required:
-            - name
-        security:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                description: "Security method name, such as 'tokenAuthentication'"
-                additionalProperties: true
-            required:
-              - name
-    
     Metadata:    
       description: |
         Additional details of relevance when consuming a service. What metadata is made available
@@ -156,56 +97,7 @@ components:
       type: object
       example: {"basePath":"v2"}
 
-    PreferredProvider:
-      type: object
-      description: information of a preferred provider to consume services from.
-      properties:
-        provider-cloud:
-          $ref: '#/components/schemas/ProviderCloud'
-        provider:
-          $ref: '#/components/schemas/ProviderSystem'
-
-    ProviderSystem:
-      type: object
-      description: information describing a provider system within a local cloud. 
-      properties:
-        system-name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-    
-    ProviderCloud:
-      type: object
-      description: an object describing the cloud in which a provider is located
-      properties:
-        operator:
-          type: string
-          description: Name of the operator company
-        name: 
-          type: string
-          description: name of the cloud 
-
-    RequesterSystem:
-      type: object
-      description: Information of the system requesting orchestration information. 
-      properties:
-        system-name: 
-          type: string
-          description: Short human readable system name.
-        systemID:
-          type: string
-          description: unique identifier of requester system
-        address: 
-          $ref: '#/components/schemas/Address'
-        auth-info:
-          type: string
-          description: Authentication info, i.e, CERTIFICATE, TOKEN, etc. 
-        interface: 
-          type: array
-          items:
-            $ref: '#/components/schemas/Interface'
-
-    RequestedService: #TODO: How much of this information should be asked? 
+    RequestedService:
       type: object
       description: |
         Optional information of the required service. This object contains the service requirements of the requester
@@ -214,11 +106,9 @@ components:
         service-definition:
           type: string
           description: Service definition string identifier
-        interfaces:
-          type: array
-          description: Interface requirement 
-          items:
-            $ref: '#/components/schemas/Interface'
+        service-type:
+          type: string
+          description: Service type string identifier
         version:
           $ref: '#/components/schemas/VersionReq'
       required:
@@ -232,13 +122,6 @@ components:
           description: service instance unique identifier, the consumer getting the response use this to query the service registry to get 
             full service information and connection address.
 
-    SecurityType:
-      type: string
-      enum:
-        - TOKEN
-        - NON-SECURE
-        - CERTIFICATE
-
     ServiceRequestForm:
       type: object
       properties:
@@ -250,10 +133,6 @@ components:
           description: Requesting system unique identifier
         requested-service:
           $ref: '#/components/schemas/RequestedService'
-        preferred-providers:
-          type: array
-          items:
-            $ref: '#/components/schemas/PreferredProvider'
 
     OrchestrationResponse:
       type: object
