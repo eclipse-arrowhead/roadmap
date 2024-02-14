@@ -1,0 +1,750 @@
+openapi: 3.0.3
+
+info:
+  title: Service Discovery HTTP(S)-JSON
+  description: |
+    This specification outlines how to realize the _Arrowhead Core Service Discovery_ service on
+    top of either of the HTTP or HTTPS protocols with payloads encoded in JSON. The service allows
+    for consumers to register, deregister and search for _service records_, provided by themselves
+    or by other service providers.
+    
+    Each service record represents a currently provided service and contains all details necessary
+    to _contact_ that service. Such details will always include network addresses and a _service_
+    _type identifier_, apart from other optional information. The service type identifier is a
+    reference to the particular message protocol implemented by the provided service. Such a
+    protocol typically builds upon a base protocol, such as HTTP or MQTT, and includes endpoints,
+    topics or other operators, as well as message types specific to the provided service. For the
+    consumption of the service referred to by a service record to be possible, the consumer in
+    question must already implement the protocol referred to by its service type identifier.
+
+   
+    ## Compression and Language
+
+    An implementation of this service interface _may_ be designed to support compression and/or
+    human-readable error texts in different languages than English, as described in 
+    [RFC 9110, Section 12](https://www.rfc-editor.org/rfc/rfc9110#name-content-negotiation). Not
+    using compression _must_ be supported and be the default. Also, the default language for error
+    messages _must_ be American English (`en-US`).
+
+    ## Managing Record Life-Cycles
+
+    In a typical use case, this service interface is meant to hold records for all service providers
+    currently part of its context. When a service provider joins or leaves a context, it is expected
+    to register and deregister its services, respectively. However, service providers can fail or be
+    detached from the context before they get a chance to deregister their services. This can make
+    it relevant to monitor service providers and temporarily suppress or permanently prune records
+    associated with unhealthy or inaccessible providers. Implementations of this service interface
+    are free to suppress and/or prune records in whatever way best supports the use cases they are
+    designed for.
+
+    ## Record Ownership
+
+    It is the provider indicated inside each record that is the owner of the record, and not the
+    consumer registering it. This means that a consumer may be forbidden from registering or
+    deregistering a record for certain or all other service providers, even if it may register
+    and/or deregister records with itself as provider.
+
+    ## Provider Identifiers
+
+    Every service instance registered via this service interface _must_ be associated with a unique
+    identifier. In contexts where authentication is not used, providers _must_ chose their own
+    identifiers. Those identifiers _should_ remain consistent between restarts of those providers.
+
+    ## Size Limits
+
+    As a mitigation against denial-of-service attacks, all implementations of this service
+    interface _should_ reject incoming requests that are larger than a predefined limit. That limit
+    _must not_ be smaller than 8192 bytes for each received request. An implementation _may_ also
+    limit the sizes of individual parts within each request. It _must_, however, receive request
+    URI:s up to 2816 bytes in size, as well as request payloads up to 4096 bytes in size.
+  version: 5.0.0-rc.1
+
+paths:
+
+  /echo:
+    get:  
+      summary: Endpoint to check the core system availability. 
+      description: Returns an OK to indicate that the core system is available. 
+      responses:
+        '204':
+          description: OK
+
+  /services:
+
+    get:
+      operationId: list
+      description: |
+        Lists the services registered in the service registry. Each service is returned with its
+        registered information, containing information on how to reach each service instance. 
+        
+        As a default, only 16 services will be returned in the list request. This can be changed 
+        by using the list-size parameter. 
+
+        Moreover, a service Query object can be included in the request. This service query refines 
+        the list results to include only those services that satisfy the requirements specified in the 
+        Service Query object. 
+
+      parameters:
+        - $ref: '#/components/parameters/query-offset'
+        - $ref: '#/components/parameters/serviceQueryParam'
+        - $ref: '#/components/parameters/list-size'
+      responses:
+        '200':
+          description: Matching service records.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Records' 
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/Cache-Control'
+            Limit:
+              $ref: '#/components/headers/Limit'
+        '400': { $ref: '#/components/responses/400-BadRequest-ExpressionIsInvalid' }
+        '401': { $ref: '#/components/responses/401-Unauthorized' }
+        '403': { $ref: '#/components/responses/403-Forbidden' }
+        '408': { $ref: '#/components/responses/408-RequestTimeout' }
+        '414': { $ref: '#/components/responses/414-URITooLarge' }
+        '415': { $ref: '#/components/responses/415-UnsupportedMediaType' }
+        '429': { $ref: '#/components/responses/429-TooManyRequests' }
+        '431': { $ref: '#/components/responses/431-RequestHeaderFieldsTooLarge' }
+        '500': { $ref: '#/components/responses/500-InternalServerError' }
+        '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
+
+  /services/register:
+    post:
+      summary: Add a new service entry
+      description: |
+        Registers one or more records.
+
+        The combination of the provider and type identifiers inside each record must be unique.
+        If more than one record with corresponding identifiers are in the request, the last one 
+        in its payload will replace all others.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Records'
+
+      responses:
+        '204':
+          description: Confirms that the records in question have been registered.
+        '400': { $ref: '#/components/responses/400-BadRequest-RecordIsInvalid' }
+        '401': { $ref: '#/components/responses/401-Unauthorized' }
+        '403': { $ref: '#/components/responses/403-Forbidden' }
+        '406': { $ref: '#/components/responses/406-NotAcceptable' }
+        '408': { $ref: '#/components/responses/408-RequestTimeout' }
+        '411': { $ref: '#/components/responses/411-LengthRequired' }
+        '413': { $ref: '#/components/responses/413-PayloadTooLarge' }
+        '431': { $ref: '#/components/responses/431-RequestHeaderFieldsTooLarge' }
+        '500': { $ref: '#/components/responses/500-InternalServerError' }
+        '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
+  
+  /services/{service-id}:
+    get:
+      summary: get service by ID
+      description: Retrieve details of a specific service entry by its identifier.
+      parameters:
+        - name: service-id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Record'
+
+    delete:
+      operationId: deregister
+      description: |
+        Deregisters the service matching the service-id.
+
+      parameters:
+        - name: service-id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Confirms that the record in question have been deregistered.
+        '400': { $ref: '#/components/responses/400-BadRequest-ExpressionIsInvalid' }
+        '401': { $ref: '#/components/responses/401-Unauthorized' }
+        '403': { $ref: '#/components/responses/403-Forbidden' }
+        '408': { $ref: '#/components/responses/408-RequestTimeout' }
+        '414': { $ref: '#/components/responses/414-URITooLarge' }
+        '429': { $ref: '#/components/responses/429-TooManyRequests' }
+        '431': { $ref: '#/components/responses/431-RequestHeaderFieldsTooLarge' }
+        '500': { $ref: '#/components/responses/500-InternalServerError' }
+        '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
+
+components:
+
+  headers:
+
+    Cache-Control:
+      description: |
+        If present, the value of this header may only include the `max-age`, `must-revalidate` and
+        `no-store` response directives, all of which are defined in
+        [RFC 9111 Section 5.2.2](https://datatracker.ietf.org/doc/html/rfc9111#name-response-directives).
+
+        The `max-age` directive indicates for how many seconds the records in the response should be
+        cached before being queried again by the consumer. The `must-revalidate` directive is used
+        to forbid the consumer from using the records after the `max-age` has expired and the
+        attempt to fetch them again failed. The `no-store` directive instructs the consumer not to
+        cache the records at all.
+      schema:
+        type: string
+      example: max-age=1800, must-revalidate
+      required: false
+
+    Limit:
+      description: |
+        An indication of the maximum number of records the consuming system is allowed to have
+        included in the response to its query.
+      schema:
+        type: number
+        format: int32
+        minimum: 0
+      required: true
+
+    Retry-After:
+      description: |
+        An indication, in seconds, of how long a consumer is to wait before attempting the failed
+        request again.
+      schema:
+        type: number
+        format: int32
+        minimum: 1
+      required: true
+
+  parameters:
+
+    deregister-q:
+      name: q
+      in: query
+      description: |
+        Deregistration query, consisting of an array of comma-separated deregistration expressions.
+        Every record matching any of the individual expressions will be deregistered, if the
+        consumer has the appropriate permissions.
+      example: eu.arrowhead.service-discovery-http-json,eu.arrowhead.authorization-http-json@MWtzOXIpaUEsOyEhc1NsTwo=
+      schema:
+        type: array
+        items: { $ref: '#/components/schemas/DeregisterExpression' }
+      explode: false
+      allowReserved: true
+
+    list-size:
+      name: size
+      in: query
+      description: |
+        An indication of the maximum number of records a consuming system wants to have included in
+        the response to the list request. 
+      example: 24
+      schema:
+        description: |
+          Indicates a maximum number of records a consuming service wishes to have included in the
+          response to the list request. 
+        type: number
+        format: int32
+        default: 16
+        minimum: 1
+
+    query-offset:
+      name: offset
+      in: query
+      description: |
+        An indication of the number of records to skip, in order from the first matched, in the
+        response to a query.
+      example: 128
+      schema:
+        description: |
+          Indicates a number of records to skip before collecting records into the response to some
+          query.
+        type: number
+        format: int32
+        minimum: 0
+
+    query-q:
+      name: q
+      in: query
+      description: |
+        Query, consisting of an array of comma-separated query expressions. Every record matching
+        any of the individual expressions will be included in the response, unless the number of
+        matching records exceeds any limit imposed by the providing system.
+      example: eu.arrowhead.service-discovery-http-json~1.7*4,eu.arrowhead.authorization-http-json*12
+      schema:
+        type: array
+        items: { $ref: '#/components/schemas/QueryExpression' }
+      explode: false
+      allowReserved: true
+
+    filter:
+      name: filterString
+      in: query
+      description: |
+        Filter expressions to refine the results from the list request to the service registry. A filter 
+        string is composed by one or more filter expressions, which are composed of a parameter, a matching 
+        operator, and a value. For example: 
+            Equality & Inequality checks
+            <Parameter> == "<Value>"
+            <Parameter> != "<Value>"
+
+            Scalar comparison
+            <Parameter> > "<Value>"
+            <Parameter> >= "<Value>"
+            <Parameter> < "<Value>"
+            <Parameter> <= "<Value>"
+
+            Emptiness checks
+            <Parameter> is empty
+            <Parameter> is not empty
+
+            Contains checks or Substring Matching
+            "<Value>" in <Parameter>
+            "<Value>" not in <Parameter>
+            <Parameter> contains "<Value>"
+            <Parameter> not contains "<Value>"
+
+        Valid parameters can be: Version, Interface, Security, ServiceType, Address, Port, ServiceInstanceID, ServiceName.
+
+        Multiple expressions can be used to compose a filter string. These expressions can be connected with Boolean operators
+        such as 'or', 'and', 'not'. The composition of filter strings allows for parenthesis grouping. 
+      schema:
+        type: string
+
+    serviceQueryParam:
+      name: serviceQuery
+      in: query
+      description: |
+        Service object with filtering requirements for service discovery. All parameters in the object are optional. 
+      schema: 
+        $ref: '#/components/schemas/ServiceQuery'
+
+  responses:
+
+    400-BadRequest-ExpressionIsInvalid:
+      description: |
+        Invalid query parameter or parameters.
+
+        The offending parameters is identified in the payload of the error response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ErrorExpressionIsInvalid' }
+
+    400-BadRequest-RecordIsInvalid:
+      description: |
+        A submitted record is invalid.
+
+        The offending field is identified in the payload of the error response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ErrorRecordIsInvalid' }
+
+    401-Unauthorized:
+      description: |
+        Consumer not yet authorized.
+
+        The kind of authorization required _may_ be named in the error reponse.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    403-Forbidden:
+      description: |
+        Consumer is authorized, but lacks permission.
+
+        If a particular parameter is the cause of this error, it will be named in the payload of the
+        error response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    406-NotAcceptable:
+      description: |
+        A request contains either of the `Accept`, `Accept-Encoding` or `Accept-Language` headers,
+        and they do not allow for the service provider to respond using `application/json` as
+        `Content-Type` or with an encoding or language that the service provider supports.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    408-RequestTimeout:
+      description: |
+        A request did not arrive in full within an arbitrary timeout decided by the provider of this
+        service interface.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    411-LengthRequired:
+      description: |
+        The `Content-Length` header is missing in the request.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    413-PayloadTooLarge:
+      description: |
+        The payload in the request exceeds the limit imposed by the service provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    414-URITooLarge:
+      description: |
+        The size of the request line in the request, which includes the HTTP version, method and
+        URI, exceeds the limit imposed by the service provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    415-UnsupportedMediaType:
+      description: |
+        The request includes a payload encoded using a `Content-Type` unsupported by the service
+        provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    429-TooManyRequests:
+      description: |
+        The consumer has sent too many request in a too short time span. The consumer is expected to
+        wait the amount of time indicated in the `Retry-After` header before trying again.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+      headers:
+        Cache-Control:
+          $ref: '#/components/headers/Retry-After'
+
+    431-RequestHeaderFieldsTooLarge:
+      description: |
+        The headers section in the request exceeds the limit imposed by the service provider. This
+        response code may indicate that
+
+        1. either the name or value of a field is too large,
+        2. the combination of name and value in a field is too large, or
+        3. the complete header section is too large.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    500-InternalServerError:
+      description: |
+        The server encountered an unexpected condition that prevented it from fulfilling the
+        request.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    503-ServiceUnavailable:
+      description: |
+        The service provider is currently near its operating capacity or is undergoing maintenance.
+        The consumer is expected to wait before trying again, as indicated by the `Retry-After`
+        header in the response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+      headers:
+        Cache-Control:
+          $ref: '#/components/headers/Retry-After'
+
+  schemas:
+
+    Address:
+      description: |
+        Identifies a _transport_ and a _location_.
+
+        The _transport_ identifies the base protocol that facilitates addressing a specific service
+        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
+        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
+        addressing and, by extension, sending messages to service providers and consumers, as well
+        as (B) does not build upon another protocol also providing this capability. I other words,
+        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
+        satisfy condition A.
+
+        What the _location_ part consists of depends on what transport is identified. If the
+        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
+        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
+        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
+        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
+        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
+        path to a Unix socket file.
+      type: string
+      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
+      example: tcp4:192.168.0.7:45326
+
+    DeregisterExpression:
+      description: |
+        An expression of facts about a set of service records to deregister. A deregister expression
+        consists of two parts, a _service part_ and a _provider part_. At least one of the two must
+        be part of the query, or it will always match zero records.
+
+        The parts are identical to those with the same names part of the `QueryExpression`. Please
+        refer to its documentation for more details about their structure.
+      type: string
+      pattern: ^(?:(?<type>[^!*,:@^~]+)(?:~(?<version>\d+(?:\.\d+(?:\.\d+)?)?))?)?(?:@(?<provider>[A-Za-z0-9-_]*={0,2}))?$
+      example: se.arrowhead.service-discovery-http-json@MWtzOXIpaUEsOyEhc1NsTwo=
+
+    Error:
+      description: |
+        An indication of why a received request was rejected. It is formulated with the assumption
+        that the consumer knows of and can interpret the status code in the response.
+      type: object
+      properties:
+        message:
+          description: A human-readable explanation of why the request was rejected.
+          type: string
+
+    ErrorExpressionIsInvalid:
+      description: |
+        Indicates how a search expression, part of a query or deregistration attempt, is invalid.
+      allOf:
+        - $ref: '#/components/schemas/Error'
+        - type: object
+          properties:
+            expression:
+              description: |
+                Identifies the first invalid expression in the original request, as well as
+                providing an explanation for why it is invalid.
+              type: object
+              properties:
+                offset:
+                  description: |
+                    The position of the offending expression, from the first given in the URI of the
+                    rejected request.
+                  type: number
+                  format: int32
+                  minimum: 0
+                  example: 2
+                message:
+                  description: A human-readable explanation of why this record is invalid.
+                  type: string
+                  example: "Unexpected character '=' at position 20 of 'eu.arrowhead.service=registry'."
+
+    ErrorRecordIsInvalid:
+      description: |
+        Indicates how a record, provided as part of a registration attempt, is invalid.
+      allOf:
+        - $ref: '#/components/schemas/Error'
+        - type: object
+          properties:
+            record:
+              description: |
+                Identifies the first invalid record in the original request, as well as providing
+                an explanation for why it is invalid.
+              type: object
+              properties:
+                offset:
+                  description: |
+                    The position of the offending record, from the first given in the rejected
+                    request.
+                  type: number
+                  format: int32
+                  minimum: 0
+                  example: 4
+                message:
+                  description: A human-readable explanation of why this record is invalid.
+                  type: string
+                  example: "Required property missing: 'interfaces'."
+
+    Interface:
+      description: An object describing interfaces used by services. This object contains information on the used 
+        protocol and the security requirements. Depending on the protocol, additional properties could be appropriate,
+        such as 'version', 'contentTypes', 'ipv4Address', 'port', 'x509PublicKey', 'basePath' or 'topic'. The same 
+        applying to security. 
+      type: object
+      properties:
+        protocol:
+          type: object
+          properties:
+            name:
+              type: string
+              description: "Transport protocol, such as 'https', 'coaps+tcp', 'json-rpc', or 'mqtt'"
+              additionalProperties: true
+          required:
+            - name
+        security:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: "Security method name, such as 'tokenAuthentication'"
+                additionalProperties: true
+            required:
+              - name
+
+    Metadata:
+      description: |
+        Additional details of relevance when consuming a service. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    ProviderIdentifier:
+      description: |
+        An array of bytes identifying a particular service provider. The bytes are expressed using
+        the [URL safe Base 64 encoding](https://datatracker.ietf.org/doc/html/rfc4648#section-5).
+      type: string
+      pattern: ^[A-Za-z0-9-_]*={0,2}$
+      example: MWtzOXIpaUEsOyEhc1NsTwo=
+
+    QueryExpression:
+      description: |
+        An expression of facts about a desired set of service records. A query expression consists
+        of three parts, a _service part_, a _provider part_ and a _limit part_. At least one of the 
+        two former parts must be part of the query, or it will always match zero records.
+
+        The __service part__ must at least name a specific service type, but may also include a
+        version specifier. If given, the version specifier will match records with any other version
+        that is _compatible_ with it. A version specifier consist of a MAJOR, MINOR and a PATCH
+        number, separated by dots. If both or the latter of the MINOR and PATCH numbers are omitted
+        from a given version, the ones omitted are assumed to be zero. A given version is compatible
+        with a _candidate_ version if their MAJOR numbers are equal and the MINOR number of the
+        candidate version is greater than that of the given version. They are also compatible if
+        their MAJOR and MINOR numbers are equal and the PATCH number of the candidate version is
+        equal to or greater than that of the given version. For example, the query expression
+        `my-service~1.4` matches `my-service~1.4.1` and `my-service~1.6.5`. But it does not match
+        `my-service~1.3.9` or `my-service~2.0.4`.
+
+        The __provider part__ limits matches to records that refer to the identified service
+        provider.
+
+        The __limit part__ sets a limit on how many matching records to include in the response. It
+        consists of an asterisk followed by a positive integer, as in `a-service~1.0*4`.
+      type: string
+      pattern: ^(?:(?<type>[^!*,:@^~]+)(?:~(?<version>\d+(?:\.\d+(?:\.\d+)?)?))?)?(?:@(?<provider>[A-Za-z0-9-_]*={0,2}))?(?:\*(?<limit>\d+))?$
+      example: se.arrowhead.service-discovery-http-json~1.6@MWtzOXIpaUEsOyEhc1NsTwo=
+
+    Service:
+      type: object
+      properties:
+        name: 
+          type: string
+          description: Service instance human-readable name
+        serviceType:
+          $ref: '#/components/schemas/TypeIdentifier'
+        version: 
+          $ref: '#/components/schemas/Version'
+        addresses:
+          description:
+            A collection of addresses, each with a unique tag name. The tag names _may_ be used to
+            help a service consumer chose the most appropriate address. The service consumer may,
+            however, simply try all of them in any order until it finds one that works.
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Address'
+        interface:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interface'
+        authInfo: 
+          type: string
+          description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
+        metadata: 
+          $ref: '#/components/schemas/Metadata'
+
+    ServiceQuery:
+      type: object
+      description: Object with properties needed to refine the list results from the service registry list operation. All parameters
+        in this object are optional. Version, Interface, Security, ServiceType, Address, Port, ServiceInstanceID, ServiceName.
+      properties:
+        serviceInstanceIDs: 
+          type: array
+          items: 
+            type: string
+            description: The list of service instances IDs required in the list results.
+        ServiceNames:
+          type: array
+          items:
+            type: string
+            description: The list of service names required in the list results
+        VersionReq:
+          description: Service version requirements
+          $ref: '#/components/schemas/VersionReq'
+        AddressReq:
+          description: Service address requirements
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        interfacesReq:
+          type: array
+          description: Interface requirement 
+          items:
+            $ref: '#/components/schemas/Interface'
+
+    Records:
+      type: array
+      description: Envelope for array of Results for service list response. 
+      items:
+        $ref: '#/components/schemas/Record'
+
+    Record:
+      type: object
+      properties:
+        serviceID:
+          type: string
+          description: The unique identifier of the service entry. 
+        providerID:
+          $ref: '#/components/schemas/ProviderIdentifier'
+          description: The ID of the system which produces the registered service. 
+        service:
+          $ref: '#/components/schemas/Service'
+        timeToLive:
+          $ref: '#/components/schemas/TimeToLive'
+      required:
+        - serviceID
+        - providerID
+        - service
+
+    interface:
+      description: A string that describes the interface in Protocol-SecurityType-MimeType format. SecurityType can be either SECURE or 
+        INSECURE. 
+      type: string
+      pattern: ^([a-zA-Z0-9_-]+)-(SECURE|INSECURE)-([a-zA-Z0-9_-]+)$
+      example: HTTP-SECURE-JSON
+
+    TimeToLive:
+      description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 
+        expiration. 
+      type: string
+      pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
+      example: 2d12h
+
+    TypeIdentifier:
+      description: |
+        Identifies a particular type of service, such as `eu.arrowhead.service-discovery-coap-cbor`
+        or `eu.arrowhead.orchestration-http-json`.
+      type: string
+      pattern: ^[^!*,:@^~]+$
+      example: eu.arrowhead.authorization-http-json
+
+    Version:
+      description: |
+        A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
+        PATCH numbers are omitted, the ones omitted are assumed to be zero.
+      type: string
+      pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
+      example: 1.4
+
+    VersionReq:
+      description: |
+        Object describing the required service version, maximun version and minimun version allowed for the 
+        required service. 
+      type: object
+      properties: 
+        version-required:
+          $ref: '#/components/schemas/Version'
+        min-version:
+          $ref: '#/components/schemas/Version'
+        max-version:
+          $ref: '#/components/schemas/Version'
