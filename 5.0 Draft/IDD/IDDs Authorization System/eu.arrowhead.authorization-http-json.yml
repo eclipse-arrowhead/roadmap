@@ -1,0 +1,370 @@
+openapi: 3.0.3
+
+info:
+  title: Authorization HTTP(S)-JSON
+  description: |
+    This specification outlines how to realize the _Arrowhead Core Authorization_ service on top of
+    either of the HTTP or HTTPS protocols with payloads encoded in JSON. This service allows for
+    _resource_ ownwers to check _access-rights_ of _subjects_ attempting to perform operations over
+    their protected _resources_. Authorization queries are then made in the form of the _triple_
+    (subject, access-right, resource). In the context of service consumption authorization,
+    service providers act as resource owners for their provideded services (or _resources_), while 
+    consumers are _subjects_ trying to apply their _access right_ to consume a service. For such 
+    application, an authorization query shall look as:
+
+      subject: "MWtzOXIpaUEsOyEhc1NsTwo="
+      access-right: "consume"
+      resource: "/OutsideTemp"
+
+    In the context of this document, we understand an _access-right_ to be a string identifier that
+    names something a subject can request that a certain type of service performs on its behalf. We
+    also understand an _resource_ to be any kind resource that is acted upon while an operation is
+    performed. If, for example, a file storage service is provided, then possible _access-right_ could
+    be `"upload"` and `"download"` while the _resource_ of the service are the files it stores.
+
+    No requirements are imposed on an implementation of this service with regards to how it
+    determines if certain subjects are allowed to perform certain access rights on certain resources.
+    It may implement something akin to the INCITS 565-2020 standard, also known as _Next Generation_
+    _Access Control_ (NGAC), or something much less sophisticated. It is also assumed that the
+    service provider is informed about what authorization requests to approve via some other service
+    than this one.
+
+    ## Caching and Performance
+
+    Implementations of this service _may_ allow for its consumers to cache its authorization
+    decisions for brief periods of time when relevant to improve performance. When it is enabled, it
+    is communicated via the `Cache-Control` header of its responses.
+
+    An individual implementation of this service with sufficiently sophisticated software and
+    hardware should be able to handle up to and beyond hundreds of thousands of authorization
+    triplets per second. That being said, there could be cases where no available hardware is
+    performant enough, or where individual consumers are disconnected from this service for
+    significant periods of time. These use cases are outside the scope of this service.
+
+    ## Compression and Language
+
+    An implementation of this service interface _should_ be designed to support compression and
+    _may_ provide human-readable error texts in different languages than English, as described in
+    [RFC 9110, Section 12](https://www.rfc-editor.org/rfc/rfc9110#name-content-negotiation). Not
+    using compression _must_ be supported and _should_ be the default. Also, the default language
+    for error messages _must_ be American English (`en-US`).
+
+    ## Size Limits
+
+    As a mitigation against denial-of-service attacks, all implementations of this service
+    interface _should_ reject incoming requests that are larger than a predefined limit. That limit
+    _must not_ be smaller than 8192 bytes for each received request. An implementation _may_ also
+    limit the sizes of individual parts within each request. It _must_, however, receive request
+    payloads up to 4096 bytes in size. If payload compression is supported, then this limit applies
+    after decompression.
+  version: 5.0.0-rc.1
+
+paths:
+
+  /ping:
+    get:  
+      summary: Endpoint to check the core system availability. 
+      description: Returns an OK to indicate that the core system is available. 
+      responses:
+        '200':
+          description: OK
+
+  /authorizations:
+    post:
+      summary: Bulk Authorize access rights for Resources
+      description: |
+        Allows for bulk authorization requests to be sent to the authorization system in a single API request
+
+        Queries the authorization system for authorization decision for each specified access right over the 
+        specified subject and resource pair. 
+
+        As a reponse, for each request in the request body, an authorization decision will be returned.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessRequests'
+              examples:
+                example1:
+                  summary: Three authorization requests from different users to different resources.
+                  value:
+                    - subject: "user123"
+                      access-right: "write"
+                      resource: "eu.arrowhead.tempreadings-http-json@MWtzOXIpaUEsOyEhc1NsTwo"
+                    - subject: "MWtzOXIpaUEsOyEhc1NsTwo="
+                      access-right: "consume"
+                      resource: "/OutsideTemp"
+                    - subject: "user789"
+                      access-right: "read"
+                      resource: "91"
+                example2:
+                  summary: a single authorization request.
+                  value:
+                      subject: "user234"
+                      access-right: "read"
+                      resource: "document4"                  
+      responses:
+        '200':
+          description: Successful authorization
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  authorizationDecisions:
+                    type: array
+                    items:
+                      type: string
+                      enum:
+                        - allowed
+                        - denied
+              examples:
+                example1:
+                  value:
+                    authorizationDecisions: ["allowed", "denied"]
+                  summary: Example response with both allowed and denied decisions
+                example2:
+                  value: 
+                    authorizationDecisions: ["allowed", "allowed", "denied"]
+                  summary: Example response with multiple decisions
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/Cache-Control'
+            Limit:
+              $ref: '#/components/headers/Limit'
+        '400': { $ref: '#/components/responses/400-BadRequest' }
+        '401': { $ref: '#/components/responses/401-Unauthorized' }
+        '403': { $ref: '#/components/responses/403-Forbidden' }
+        '406': { $ref: '#/components/responses/406-NotAcceptable' }
+        '408': { $ref: '#/components/responses/408-RequestTimeout' }
+        '411': { $ref: '#/components/responses/411-LengthRequired' }
+        '413': { $ref: '#/components/responses/413-PayloadTooLarge' }
+        '414': { $ref: '#/components/responses/414-URITooLarge' }
+        '415': { $ref: '#/components/responses/415-UnsupportedMediaType' }
+        '429': { $ref: '#/components/responses/429-TooManyRequests' }
+        '431': { $ref: '#/components/responses/431-RequestHeaderFieldsTooLarge' }
+        '500': { $ref: '#/components/responses/500-InternalServerError' }
+        '503': { $ref: '#/components/responses/503-ServiceUnavailable' }
+
+components:
+
+  headers:
+
+    Cache-Control:
+      description: |
+        If present, the value of this header may only include the `max-age`, `must-revalidate` and
+        `no-store` response directives, all of which are defined in
+        [RFC 9111 Section 5.2.2](https://datatracker.ietf.org/doc/html/rfc9111#name-response-directives).
+
+        The `max-age` directive indicates for how many seconds the decision in the response may be
+        cached before being requested again by the subject. The `must-revalidate` directive is used
+        to forbid the subject from using the decision after the `max-age` has expired and the
+        attempt to request it again failed. The `no-store` directive instructs the subject not to
+        cache the decision at all.
+      schema:
+        type: string
+      example: max-age=10, must-revalidate
+      required: false
+
+    Limit:
+      description: |
+        An indication of the maximum number of triplets the consuming system is allowed to include
+        in its request.
+      schema:
+        type: number
+        format: int32
+        minimum: 0
+      required: true
+
+    Retry-After:
+      description: |
+        An indication, in seconds, of how long a subject is to wait before attempting the failed
+        request again.
+      schema:
+        type: number
+        format: int32
+        minimum: 1
+      required: true
+
+  responses:
+
+    400-BadRequest:
+      description: |
+        Invalid authorization basis submitted in request for an authorization decision.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    401-Unauthorized:
+      description: |
+        Consumer not yet authorized.
+
+        The kind of authorization required _may_ be named in the error response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    403-Forbidden:
+      description: |
+        Consumer is authorized, but lacks permission.
+
+        If a particular parameter is the cause of this error, it will be named in the payload of the
+        error response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    406-NotAcceptable:
+      description: |
+        A request contains either of the `Accept`, `Accept-Encoding` or `Accept-Language` headers,
+        and they do not allow for the service provider to respond using `application/json` as
+        `Content-Type` or with an encoding or language that the service provider supports.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    408-RequestTimeout:
+      description: |
+        A request did not arrive in full within an arbitrary timeout decided by the provider of this
+        service interface.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    411-LengthRequired:
+      description: |
+        The `Content-Length` header is missing in the request.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    413-PayloadTooLarge:
+      description: |
+        The payload in the request exceeds the size limit imposed by the service provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    414-URITooLarge:
+      description: |
+        The size of the request line in the request, which includes the HTTP version, method and
+        URI, exceeds the limit imposed by the service provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    415-UnsupportedMediaType:
+      description: |
+        The request includes a payload encoded using a `Content-Type` unsupported by the service
+        provider.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    429-TooManyRequests:
+      description: |
+        The consumer has sent too many request in a too short time span. The consumer is expected to
+        wait the amount of time indicated in the `Retry-After` header before trying again.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+      headers:
+        Retry-After:
+          $ref: '#/components/headers/Retry-After'
+
+    431-RequestHeaderFieldsTooLarge:
+      description: |
+        The headers section in the request exceeds the limit imposed by the service provider. This
+        response code may indicate that
+
+        1. either the name or value of a field is too large,
+        2. the combination of name and value in a field is too large, or
+        3. the complete header section is too large.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    500-InternalServerError:
+      description: |
+        The server encountered an unexpected condition that prevented it from fulfilling the
+        request.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+    503-ServiceUnavailable:
+      description: |
+        The service provider is currently near its operating capacity or is undergoing maintenance.
+        The consumer is expected to wait before trying again, as indicated by the `Retry-After`
+        header in the response.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+      headers:
+        Cache-Control:
+          $ref: '#/components/headers/Retry-After'
+
+  schemas:
+
+    AccessRequests: 
+      description: An array of authorization Triplets to be submitted to the Authorization system
+      type: array
+      items:
+        $ref: '#/components/schemas/Triplet'
+
+    Address:
+      description: |
+        Identifies a _transport_ and a _location_.
+
+        The _transport_ identifies the base protocol that facilitates addressing a specific service
+        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
+        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
+        addressing and, by extension, sending messages to service providers and consumers, as well
+        as (B) does not build upon another protocol also providing this capability. I other words,
+        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
+        satisfy condition A.
+
+        What the _location_ part consists of depends on what transport is identified. If the
+        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
+        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
+        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
+        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
+        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
+        path to a Unix socket file.
+      type: string
+      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
+      example: tcp4:192.168.0.7:45326
+
+    Error:
+      description: |
+        An indication of why a received request was rejected. It is formulated with the assumption
+        that the subject knows of and can interpret the status code in the response.
+      type: object
+      properties:
+        message:
+          description: A human-readable explanation of why the request was rejected.
+          type: string
+
+    Triplet:
+      description: |
+        Three strings identifying a _subject_, an _operation_ and an _resource_, in that order.
+        Together they describe how a certain subject wishes do perform a certain operation on a
+        certain resource.
+      type: object
+      properties:
+        subject:
+          type: string
+          description: The identifier of the entity making the request. The format of the string is 
+            dependant on the Authentication mechanism used. (e.g., a certificate string, token, id, etc)
+        access-right:
+          type: string
+          description: String identifier for the access right needed to be authorized. These access rights
+            must be pre-defined within the policy engine used. ("consume", "read", "write", "delete", "update", etc)
+        resource:
+          type: string
+          description: The identifier of the resource being accessed, e.g., service instance identifier. 
+      required:
+        - subject
+        - access-right
+        - resource

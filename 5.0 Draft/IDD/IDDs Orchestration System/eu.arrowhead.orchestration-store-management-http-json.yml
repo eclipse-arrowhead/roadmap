@@ -1,0 +1,260 @@
+openapi: 3.0.3
+info:
+  title: Orchestration Management API
+  description: |
+    This API defines interfaces to interact with the Orchestration store where Orchestration rules and Sos configurations
+    are stored. 
+
+    An _orchestration rule_ connects a specified _provider_ providing a _service_ with a _consumer_. This means that the 
+    _consumer_ is adviced to consume the _service_, prefferably from the listed _provider_. Additional matching metadata
+    can be specified as part of the orchestration rule. 
+
+    The orchestration store has also the capability of storing system of systems (SoS) configurations. These configurations
+    are expressed as a series of orchestration rules, and represent desired SoS states for specific tasks. Configurations can
+    be stored and retrieved using the described interfaces in this document. Moreover, active configurations for a local cloud
+    can be defined using the _active-configuration_ endpoint. The active configuration is used by the orchestration to 
+    provide orchestration responses to consumers. 
+
+    When setting active configurations, a time-to-live parameter can be defined to specify for how long the specific configuration
+    is valid in the local cloud. 
+  version: 5.0.0-rc.1
+
+
+paths:
+  /orchestration/rules:
+    get:
+      summary: Get All Orchestration Rules
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Rule'
+    post:
+      summary: Create Orchestration Rule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Rule'
+      responses:
+        '201':
+          description: Orchestration Rule created successfully
+        '400':
+          description: Invalid request
+
+  /orchestration/rules/{ruleId}:
+    get:
+      summary: Get Orchestration Rule by ID
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rule'
+        '404':
+          description: Orchestration Rule not found
+
+    put:
+      summary: Update Orchestration Rule
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Rule'
+      responses:
+        '200':
+          description: Orchestration Rule updated successfully
+        '404':
+          description: Orchestration Rule not found
+        '400':
+          description: Invalid request
+
+    delete:
+      summary: Delete Orchestration Rule
+      parameters:
+        - name: ruleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Orchestration Rule deleted successfully
+        '404':
+          description: Orchestration Rule not found
+
+  /orchestration/configurations:
+    post:
+      summary: Upload System of Systems Configuration
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Configuration uploaded successfully
+        '400':
+          description: Invalid request
+
+    get:
+      summary: Get Orchestration Configurations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Configuration'
+
+  /orchestration/configurations/{id}:
+    delete:
+      summary: Delete Configuration
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Configuration deleted successfully
+        '404':
+          description: Configuration not found
+
+  /orchestration/configurations/active-configuration:
+    get:
+      summary: Get Active Configuration
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActiveConfiguration'
+
+    put:
+      summary: Set Active Configuration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActiveConfiguration'
+      responses:
+        '200':
+          description: Active Configuration set successfully
+        '400':
+          description: Invalid request
+
+components:
+  schemas:
+    ActiveConfiguration:
+      type: object
+      properties:
+        configuration: 
+          $ref: '#/components/schemas/Configuration'
+        validity:
+          $ref: '#/components/schemas/TimeToLive'
+        
+    Configuration:
+      type: object
+      properties:
+        configId:
+          type: string
+          description: unique identifier of the SoS configuration        
+        name:
+          type: string
+          description: configuration human readable name
+        rules:
+          type: array
+          description: set of rules that compose the configuration
+          items: 
+            $ref: '#/components/schemas/Rule'
+            
+    Metadata:    
+      description: |
+        Additional details of relevance when consuming a service. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    Rule:
+      type: object
+      properties:
+        ruleId:
+          type: string
+        provider: 
+          $ref: '#/components/schemas/System'
+        consumer: 
+          $ref: '#/components/schemas/System'
+        service: 
+          $ref: '#/components/schemas/Service'
+        Metadata:
+          $ref: '#/components/schemas/Metadata'
+
+    Service: 
+      type: object
+      description: Information about the orchestrated service
+      properties:
+        serviceID:
+          type: string
+          description: identifier of service
+        serviceDefinition:
+          type: string
+          description: name of the service instance
+        serviceType:
+          type: string
+          description: name of the service type
+        version: 
+          $ref: '#/components/schemas/Version'
+
+    System:
+      type: object
+      description: information describing a system within a local cloud. 
+      properties:
+        system-name:
+          type: string
+          description: human readable name of the system
+
+    TimeToLive:
+      description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 
+        expiration. 
+      type: string
+      pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
+      example: 2d12h
+
+    Version:
+      description: |
+        A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
+        PATCH numbers are omitted, the ones omitted are assumed to be zero.
+      type: string
+      pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
+      example: 1.4

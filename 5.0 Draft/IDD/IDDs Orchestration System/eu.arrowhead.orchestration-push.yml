@@ -1,0 +1,139 @@
+asyncapi: 2.0.0
+info:
+  title: Service Orchestration-push Service
+  description: |
+    The Service Orchestration-push service allows for systems to load System of systems (SoS) configurations into another systems. 
+    This allows to load service consumption directives remotely into systems to perform a task. 
+
+    If no configuration is specified in the triggering message, the active configuration on the orchestrator will be pushed
+    into the target system. SoS Configurations are expressed as a series of orchestration rules, and represent desired SoS states
+    for specific tasks. 
+
+    An _orchestration rule_ connects a specified _provider_ providing a _service_ with a _consumer_. This means that the 
+    _consumer_ is adviced to consume the _service_, prefferably from the listed _provider_. Additional matching metadata
+    can be specified as part of the orchestration rule. 
+
+version: 5.0.0-rc.1
+
+channels:
+  pushConfiguration:
+    address: 'orchestration/push'
+    publish:
+      message:
+        $ref: "#/components/messages/SystemConfigurationEvent"
+      bindings:
+        amqp:
+          # Specify AMQP-specific details here if using AMQP
+        mqtt:
+          # Specify MQTT-specific details here if using MQTT
+        http:
+          # Specify HTTP-specific details here if using HTTP
+
+
+components:
+  schemas:
+    Address:
+      description: |
+        Identifies a _transport_ and a _location_.
+
+        The _transport_ identifies the base protocol that facilitates addressing a specific service
+        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
+        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
+        addressing and, by extension, sending messages to service providers and consumers, as well
+        as (B) does not build upon another protocol also providing this capability. I other words,
+        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
+        satisfy condition A.
+
+        What the _location_ part consists of depends on what transport is identified. If the
+        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
+        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
+        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
+        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
+        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
+        path to a Unix socket file.
+      type: string
+      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
+      example: tcp4:192.168.0.7:45326
+
+    Configuration:
+      type: object
+      properties:
+        configId:
+          type: string
+          description: unique identifier of the SoS configuration        
+        name:
+          type: string
+          description: configuration human readable name
+        rules:
+          type: array
+          description: set of rules that compose the configuration
+          items: 
+            $ref: '#/components/schemas/Rule'
+        target: 
+          type: array
+          description: Target of the orchestration configuration
+          items: 
+            $ref: '#/components/schemas/System'
+
+    Metadata:    
+      description: |
+        Additional details of relevance when consuming a service. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    Rule:
+      type: object
+      properties:
+        ruleId:
+          type: string
+        provider: 
+          $ref: '#/components/schemas/System'
+        consumer: 
+          $ref: '#/components/schemas/System'
+        service: 
+          $ref: '#/components/schemas/Service'
+        Metadata:
+          $ref: '#/components/schemas/Metadata'
+
+    Service: 
+      type: object
+      description: Information about the orchestrated service
+      properties:
+        serviceID:
+          type: string
+          description: identifier of service
+        serviceInstance:
+          type: string
+          description: name of the service instance
+
+    System:
+      type: object
+      description: information describing a system within a local cloud. 
+      properties:
+        system-name:
+          type: string
+          description: human readable name of the system
+        address:
+          $ref: '#/components/schemas/Address'
+
+    TimeToLive:
+      description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 
+        expiration. 
+      type: string
+      pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
+      example: 2d12h
+
+            
+  messages:
+    SystemConfigurationEvent:
+      summary: Event triggered to push system configurations to a target system
+      payload:
+        type: object
+        properties:
+          systemId:
+            type: string
+            description: Identifier of the system for which configuration is pushed
+          configuration:
+            $ref: '#/components/schemas/Configuration'
