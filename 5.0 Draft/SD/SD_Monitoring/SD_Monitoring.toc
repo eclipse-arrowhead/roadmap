@@ -6,11 +6,10 @@
 \contentsline {section}{\numberline {2}Service Interface}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Interface operation \textcolor {ArrowheadBlue}{Echo}}{4}{figure.caption.3}%
 \contentsline {subsection}{\numberline {2.2}Interface operation \textcolor {ArrowheadBlue}{Power}}{4}{section*.4}%
-\contentsline {subsection}{\numberline {2.3}Interface operation \textcolor {ArrowheadBlue}{Update}}{4}{section*.5}%
 \contentsline {section}{\numberline {3}Information Model}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}struct \textcolor {ArrowheadPurple}{echo}}{4}{section*.7}%
-\contentsline {subsection}{\numberline {3.2}struct \textcolor {ArrowheadPurple}{power}}{4}{section*.8}%
-\contentsline {subsection}{\numberline {3.3}struct \textcolor {ArrowheadPurple}{CC}}{4}{section*.9}%
+\contentsline {subsection}{\numberline {3.1}struct \textcolor {ArrowheadPurple}{echo}}{4}{section*.6}%
+\contentsline {subsection}{\numberline {3.2}struct \textcolor {ArrowheadPurple}{power}}{4}{section*.7}%
+\contentsline {subsection}{\numberline {3.3}struct \textcolor {ArrowheadPurple}{CC}}{4}{section*.8}%
 \contentsline {subsection}{\numberline {3.4}Primitives}{4}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Revision History}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Amendments}{5}{subsection.4.1}%

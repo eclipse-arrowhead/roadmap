@@ -124,7 +124,16 @@ of the system.
 
 In the edge SOA/microservice domain very little is avilable from the
 major open source projects. In legacy and monolitic code monitoring is
-mainstream but most often propritary knowledge and code. 
+mainstream but most often propritary knowledge and code.
+
+In the cloud microservice domain we can find a set of approaches. The
+way of extending the monitoring service is through usage of keypairs
+like:
+\begin{itemize}
+  \item Monitoring aspekt KEY = DATA-MODEL (response data model) e.g.
+  \item POWER = [line, battery, harvesting]
+\end{itemize}
+  
 
 \subsection{How This System Is Meant to Be Used}
 \label{sec:use}
@@ -220,10 +229,11 @@ The core services:
 \item ServiceDsicovery
 \item Authorisation
 \item Authentication
-\item Orchestration
+\item Orchestration and 
+\item all Monitor services registered in the ServiceRegistry.
 \end{itemize}
 
-and all Monitor services registered in the ServiceRegistry.
+
 
 
 %\newpage

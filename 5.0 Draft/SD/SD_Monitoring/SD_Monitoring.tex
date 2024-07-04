@@ -74,9 +74,10 @@
   \begin{abstract}
     Monitoring of any microsystem and its produced and consumed
     microservices is important in a professional indutrial
-    context. The Monitoring service provides one very basic interface
-    and mechanisms for dynamically update it self with modified, new
-    or even removed interfaces. 
+    context. The Monitoring service provides some very basic interface key-pairs
+    and a possibility to for dynamically update it self with modified, new
+    or even removed interface key-pairs. All key-pairs are
+    necessitated to be provided as meta-data to the service registration. 
   \end{abstract}
 
   \vspace*{1cm}
@@ -181,7 +182,7 @@ The Monitoring service has the interface depicted in \ref{fig:SD}
   \label{fig:SD}
 \end{figure}
 
-The following interfaces are available.
+The following basic interfaces are available.
 
 
 \osubsection{Echo}{-}{StatusCodeKind}
@@ -195,14 +196,21 @@ e.g. 100. Thus indicateing things are working as expected.
 The Power interface input parameters are: type and level.
 The responses are:
 Type=line|battery|harvesting
-Level= 0-100\%
+Level=x[V]|xx\%|nn[A]
 
 
-\osubsection{Update}{TBD}{StatusCodeKind}
 
-The Update interface enables the update of the service with a modified,
-new or rewoked interface. The response will be a status code. 
+Additional interfaces can be added by the individual producing
+microsystem. This is done specifiying
+\begin{itemize}
+  
+\item interface: Namn, e.g. FreeMemory
+\item RequestParameters, e.g. MemoryType:FreeMem
+\item ResponseParameters, e.g. DRAM:2kB
+\end{itemize}  
 
+Additional interfaces need to be provided to the ServiceRegistry when
+registering using the ServiceDiscovery service.  
 
 %\newpage
 

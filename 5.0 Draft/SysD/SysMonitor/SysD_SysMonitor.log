@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  27 MAY 2024 08:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  4 JUL 2024 15:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -572,7 +572,7 @@ Package hyperref Info: Link coloring OFF on input line 37.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
 )
-<figures/arrowhead_logo.pdf, id=76, 94.49634pt x 80.02338pt>
+<figures/arrowhead_logo.pdf, id=56, 94.49634pt x 80.02338pt>
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
 Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 90.
@@ -600,7 +600,7 @@ Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 95.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [2]
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-78.
+33.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
@@ -611,45 +611,44 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 189.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 190.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [3]
+File: figures/arrowhead_logo.pdf Graphic file (type pdf)
+<use figures/arrowhead_logo.pdf>
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 259.
+(pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
+ [4]
 No file SysD_SysMonitor.bbl.
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 264.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 274.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
-[4]
+[5]
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 288.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 298.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
- [5] 
+ [6] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./SysD_SysMonitor.aux)
-
-Package rerunfilecheck Warning: File `SysD_SysMonitor.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `SysD_SysMonitor.out':
-(rerunfilecheck)             Before: 49807FFD41BEA4AA92A8CF5F60C3C9EC;2978
-(rerunfilecheck)             After:  B6A652C7962D206D425232403EDF57DA;1893.
+Package rerunfilecheck Info: File `SysD_SysMonitor.out' has not changed.
+(rerunfilecheck)             Checksum: B6A652C7962D206D425232403EDF57DA;1893.
  ) 
 Here is how much of TeX's memory you used:
- 16124 strings out of 476025
- 263327 string characters out of 5790017
+ 16117 strings out of 476025
+ 263204 string characters out of 5790017
  1864388 words of memory out of 5000000
- 36186 multiletter control sequences out of 15000+600000
- 533722 words of font info for 130 fonts, out of 8000000 for 9000
+ 36181 multiletter control sequences out of 15000+600000
+ 533609 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,20n,90p,1018b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,20n,90p,1018b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on SysD_SysMonitor.pdf (5 pages, 36984 bytes).
+Output written on SysD_SysMonitor.pdf (6 pages, 38012 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 51350 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 143 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 51310 words of extra memory for PDF output out of 51595 (max. 10000000)
 
