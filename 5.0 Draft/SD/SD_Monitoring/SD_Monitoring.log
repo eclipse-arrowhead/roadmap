@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  4 JUL 2024 16:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  4 JUL 2024 16:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -572,7 +572,7 @@ Package hyperref Info: Link coloring OFF on input line 39.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
 )
-<figures/arrowhead_logo.pdf, id=68, 94.49634pt x 80.02338pt>
+<figures/arrowhead_logo.pdf, id=64, 94.49634pt x 80.02338pt>
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
 Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 94.
@@ -599,7 +599,7 @@ File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 99.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [2]
-<figures/Monitor_architecture.png, id=107, 460.72125pt x 189.70876pt>
+<figures/Monitor_architecture.png, id=102, 460.72125pt x 189.70876pt>
 File: figures/Monitor_architecture.png Graphic file (type png)
 <use figures/Monitor_architecture.png>
 Package pdftex.def Info: figures/Monitor_architecture.png  used on input line 1
@@ -617,13 +617,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-./SD_Monitoring.tex:180: LaTeX Error: File `figures/Monitor_SD' not found.
+./SD_Monitoring.tex:180: LaTeX Error: File `figures/Monitor\_SD' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.180 ...egraphics[width=10cm]{figures/Monitor_SD}
+l.180 ...graphics[width=10cm]{figures/Monitor\_SD}
                                                   
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -675,32 +675,23 @@ enddocument/afterlastpage: lastpage setting LastPage.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `SD_Monitoring.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `SD_Monitoring.out':
-(rerunfilecheck)             Before: 4A240D0B2548CDAAA434049105EBEE18;2415
-(rerunfilecheck)             After:  1C0FB96661A0A0578154D98CF37A1646;2225.
+Package rerunfilecheck Info: File `SD_Monitoring.out' has not changed.
+(rerunfilecheck)             Checksum: 1C0FB96661A0A0578154D98CF37A1646;2225.
  ) 
 Here is how much of TeX's memory you used:
- 16204 strings out of 476025
- 264952 string characters out of 5790017
+ 16202 strings out of 476025
+ 264917 string characters out of 5790017
  1863388 words of memory out of 5000000
- 36248 multiletter control sequences out of 15000+600000
+ 36246 multiletter control sequences out of 15000+600000
  535482 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,20n,90p,1016b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on SD_Monitoring.pdf (5 pages, 44116 bytes).
+Output written on SD_Monitoring.pdf (5 pages, 43971 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 146 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
  25 named destinations out of 1000 (max. 500000)
- 55435 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 55427 words of extra memory for PDF output out of 61914 (max. 10000000)
 
