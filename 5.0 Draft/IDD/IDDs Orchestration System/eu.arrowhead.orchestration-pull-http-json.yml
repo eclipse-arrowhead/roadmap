@@ -1,0 +1,181 @@
+openapi: 3.0.3
+
+info:
+  title: Service Orchestration-pull service API description 
+  description: |
+    An API for using the Service Orchestration-pull service of the Orchestration core system. This service uses the orchestration store policies 
+    to recommend service providers to the requesting consumer to fulfil its task. 
+
+    The consumer system request for orchestration either by specifying the service definition that the consumer requires or by using stored SoS 
+    configurations or Orchestration rules if no service information is defined. 
+
+    _SoS configurations_ represents the connections needed in a SoS for it to perform its designed task. This means, describing what services
+    must each of the systems consume to perform their individual tasks. A SoS configuration can be seen as a series of _Orchestration rules_.
+    _Orchestration rules_ represents a desired interaction between systems consuming specific services from specific preferred providers. 
+
+    In the context of this document, we reffer to the Orchestration consumer as _requesting-system_ where _system-id_ is the
+    unique identifier that represents that system. The _requested-service_ represents the service information that the _requesting-system_
+    requires orchestration. In case the _requested_service_ is specified, the requires service definition must be included in the form, 
+    The orchestration system will attempt to match the _requested-service_ information with services present on the orchestration rules or SoS 
+    configurations. 
+
+  version: 5.0.0-rc.1
+
+paths:
+  /orchestration/echo:
+    get:  
+      summary: Endpoint to check the core system availability. 
+      description: Returns an OK to indicate that the core system is available. 
+      responses:
+        '200':
+          description: OK
+
+
+  /orchestration/service-recommendations:
+    post:
+      summary: Submit a service request and get orchestration response. If no service definition is specified, the orchestration
+        will return the suggested services and their appropriate providers for the consuming system to fulfil its tasks, depending
+        on a existing SoS configuration or Orchestration rules. 
+
+        Information of the requesting system is mandatory. Requested service is optional. If a requested service object is specified,
+        the service definition must be specified. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestForm'
+      responses:
+        '200':
+          description: Successful orchestration response.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrchestrationResponse'
+
+  /orchestration/service-recommendations/{id}:
+    get:
+      summary: Get complete Orchestration plan for a given system, queried by system id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of requesting system
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrchestrationResponse'
+        '404':
+          description: System id not found
+          content:
+            application/json:
+              example:
+                error: Orchestration failed, system id not found. 
+
+
+components:
+  schemas:
+
+    Auth-tokens:
+      description: |
+        An (k,v) object containing authorization tokens required to consume orchestration services
+      type: object
+      example: {"interfaceName1":"token1"}
+
+    Metadata:    
+      description: |
+        Additional details of relevance when consuming a service. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    RequestedService:
+      type: object
+      description: |
+        Optional information of the required service. This object contains the service requirements of the requester
+        system. 
+      properties: 
+        service-definition:
+          type: string
+          description: Service definition string identifier
+        service-type:
+          type: string
+          description: Service type string identifier
+        version:
+          $ref: '#/components/schemas/VersionReq'
+      required:
+        - service-definition
+
+    ServiceInstance:
+      type: object
+      properties:
+        id: 
+          type: string
+          description: service instance unique identifier, the consumer getting the response use this to query the service registry to get 
+            full service information and connection address.
+
+    ServiceRequestForm:
+      type: object
+      properties:
+        auth-tokens:
+          description: Authentication token of the requesting system
+          $ref: '#/components/schemas/Auth-tokens'
+        requesting-system:
+          type: string
+          description: Requesting system unique identifier
+        requested-service:
+          $ref: '#/components/schemas/RequestedService'
+
+    OrchestrationResponse:
+      type: object
+      properties:
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceInstance'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Warning'
+
+    Version:
+      description: |
+        A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
+        PATCH numbers are omitted, the ones omitted are assumed to be zero.
+      type: string
+      pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
+      example: 1.4
+
+    VersionReq:
+      description: |
+        Object describing the required service version, maximun version and minimun version allowed for the 
+        required service. 
+      type: object
+      properties: 
+        version-required:
+          $ref: '#/components/schemas/Version'
+        min-version:
+          $ref: '#/components/schemas/Version'
+        max-version:
+          $ref: '#/components/schemas/Version'
+
+    Warning:
+      description: A JSON object containing string warnings that may be returned as part of an orchestration response. 
+        FROM_OTHER_CLOUD -> if the provider is in another cloud to that of the requesting system
+        TTL_EXPIRED -> if the provider is no longer accessible 
+        TTL_EXPIRING -> the provider will be inaccessible within a short time
+        TTL_UNKNOWN - > the provider does not especify an expiration time
+      type: string
+      enum:
+        - FROM_OTHER_CLOUD
+        - TTL_EXPIRED
+        - TTL_EXPIRING
+        - TTL_UNKNOWN

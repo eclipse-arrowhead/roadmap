@@ -1,0 +1,288 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1\label{sec:model:primitives:#1}\label{sec:model:primitives:#1s}\label{sec:model:primitives:#1es}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[3]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    interface operation
+    \textcolor{ArrowheadBlue}{#1}
+    (\notblank{#2}{\mref{#2}}{})
+    \notblank{#3}{: \mref{#3}}{}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s} \label{sec:model:#2es}
+}
+%%
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{Monitor} % XXX = SystemName e.g. Service Registry HTTP/TLS/JSON}
+\ArrowheadType{System Description}
+\ArrowheadTypeShort{SysD}
+\ArrowheadVersion{5.0.0} % Arrowhead version X.Y.Z, e..g. 4.4.1
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Jerker Delsing} % Corresponding author e.g. Jerker Delsing
+\ArrowheadStatus{PROTOTYPE} % e..g. RELEASE, RELEASE CONDIDATE, PROTOTYPE
+\ArrowheadContact{jerker.delsing@ltu.se} % Email of corresponding author
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  %\Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    The Monitor microsystem is a support system in the Eclipse
+    Arrowhead suite of SOA/Microservie infrastructure. The objective
+    of the Monitor system is to consume all produced Monitor
+    microservices in a local cloud and making monitored data avialable
+    for furhter processing.
+  \end{abstract}
+
+  \vspace*{1cm}
+
+%   \scriptsize
+%   \begin{tabularx}{\textwidth}{l X}
+%     \raisebox{-0.5\height}{\includegraphics[width=2cm]{figures/artemis_logo}} & {ARTEMIS Innovation Pilot Project: Arrowhead\newline
+%     THEME [SP1-JTI-ARTEMIS-2012-AIPP4 SP1-JTI-ARTEMIS-2012-AIPP6]\newline
+%     [Production and Energy System Automation Intelligent-Built environment and urban infrastructure for sustainable and friendly cities]}
+%   \end{tabularx}
+%   \vspace*{-0.2cm}
+ \end{center}
+
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+  The Monitor microsystem is a support system in the Eclipse
+    Arrowhead suite of SOA/Microservie infrastructure. The objective
+    of the Monitor system is to consume all produced Monitor
+    microservices in a local cloud and making monitored data avialable
+    for furhter processing addressing SoS issues like e.g. resilience,
+    failover, maintenance. 
+    
+The rest of this document is organized as follows.
+In Section \ref{sec:prior_art}, we reference major prior art capabilitites
+of the system.
+In Section \ref{sec:use}, we the intended usage of the system.
+In Section \ref{sec:properties}, we describe fundmental properties
+provided by the system.
+In Section \ref{sec:delimitations}, we describe de-limitations of capabilitites
+ofn the system.
+In Section \ref{sec:services}, we describe the abstract service
+functions consumed or produced by the system.
+In Section \ref{sec:security}, we describe the security capabilitites
+of the system.
+
+%\newpage
+
+\subsection{Significant Prior Art}
+\label{sec:prior_art}
+
+In the edge SOA/microservice domain very little is avilable from the
+major open source projects. In legacy and monolitic code monitoring is
+mainstream but most often propritary knowledge and code. 
+
+\subsection{How This System Is Meant to Be Used}
+\label{sec:use}
+
+The intended usage 
+    of the Monitor system is to consume all produced Monitor
+    microservices in a local cloud and making monitored data avialable
+    for furhter processing addressing SoS issues like e.g. resilience,
+    failover, maintenance. The consumption of Monitor services shall
+    be on a publish subscribe basis (MQTT).  
+    
+
+
+\subsection{System functionalities and properties}
+\label{sec:properties}
+
+Consumption of all produced Monitor service registered in the
+ServiceRegistry of a local cloud. Such
+services will provide a few mandatory interfaces and evnetually
+additional interfaces of importance to the hosting microsystem. It is
+required that non-mandatory interface shall provide necessary metadata
+such that the Monitor system can generate a complete and working publish subscribe
+consumer. The subscription to indivudual Monitor service shall be
+possible to condtion as allowed by the prodicing microsystem.
+
+
+
+
+\subsubsection {Functional properties of the system}
+
+Consumption on a publish subscribe basis of produced Monitor services.
+
+Capability to generate Monitor service consumers for those produiced
+Monitor service having non-mandatory interface with necessary meta
+data stored int the ServiceRegistry. Such generated code should be
+possible to V\&V in run-time.  
+
+
+\subsubsection {Configuration of system properties}
+
+Subscription condition to consumed Monitor service shall be possible
+to configure using a Monitor\_configuration service.
+
+\subsubsection {Data stored by the system}
+
+Monitored data will be pushed to the DataManager making data available
+for further processing.  
+
+\subsubsection {Non functional properties}
+\begin{itemize}
+  \item security, AA security based on x.509 certificates is supported. 
+  \item safety, ...
+  \item energy consumption,  ...
+  \item latency,  ...
+  \item Power saving properties,  ... 
+\end{itemize}
+
+
+\subsubsection {Stateful or stateless}
+\begin{itemize} 
+\item states preserved, functional and non-functional
+\end{itemize}  
+
+
+\subsection{Important Delimitations}
+\label{sec:delimitations}
+
+The Monitor system is not expected to take actions on the monitor data
+being collected. Data will be pushed to DataManager for further
+actions by other microsystems within the local cloud or external local clouds.
+
+
+%\newpage
+
+\section{Services}
+\label{sec:services}
+
+This section describes consumed and produced service.
+In particular, each subsection names a prodiuced or consumed service
+indicating the different capabilities and associated interfaces of the
+service. Reference to the appropriate SD document shall be made.
+
+\subsection{Produced service}
+
+\begin{itemize}
+\item Monitor\_management
+\end{itemize}
+
+\subsection{Consumed services}
+
+The core services:
+\begin{itemize}
+\item ServiceDsicovery
+\item Authorisation
+\item Authentication
+\item Orchestration
+\end{itemize}
+
+and all Monitor services registered in the ServiceRegistry.
+
+
+%\newpage
+
+\section{Security}
+\label{sec:security}
+
+
+Overview of security level chosen for the system
+
+The following is covered 
+\begin{itemize}
+\item  The system can be started in un-secure and/or
+Arrowhead secure mode.
+\item The system can only handling Arrowhead compliant X.509 certificates.
+\end{itemize}
+
+\subsection {Security model}
+The following points should be described:
+\begin{itemize}
+\item protocol supported: HTTP, MQTT 
+\item data protection supported: TLS 
+\item system authentication capability supported: Arrowhead X.509 certificate
+\item produced service authorisation checking: via token from
+  Orchestration system directly via the Authorisation system 
+
+\end{itemize}
+
+For Arrowhead certificate profile
+see github.com/eclipse-arrowhead/documentation
+
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+\subsection{Amendments}
+
+Revision history and Quality assurance. 
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2024-05-26 & \arrowversion & & Jerker Delsing \\ \hline
+2 &  & \arrowversion & & \\ \hline
+3 & & \arrowversion & & \\ \hline
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & 2022-01-10 & \arrowversion  &  \\ \hline
+
+\end{tabularx}
+
+\end{document}
