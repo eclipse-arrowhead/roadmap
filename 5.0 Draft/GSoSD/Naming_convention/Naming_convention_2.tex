@@ -1,0 +1,223 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1\label{sec:model:primitives:#1}\label{sec:model:primitives:#1s}\label{sec:model:primitives:#1es}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[3]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    operation
+    \textcolor{ArrowheadBlue}{#1}
+    (\notblank{#2}{\mref{#2}}{})
+    \notblank{#3}{: \mref{#3}}{}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s} \label{sec:model:#2es}
+}
+%%
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{Eclispe Arrohead Naming Convention} % XXX = SystemName e.g. Service Registry HTTP/TLS/JSON}
+\ArrowheadType{}
+\ArrowheadTypeShort{SoSD}
+\ArrowheadVersion{5.0.0} % Arrowhead version X.Y.Z, e..g. 4.4.1
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Jerker Delsing} % Corresponding author e.g. Jerker Delsing
+\ArrowheadStatus{Prototype} % e..g. RELEASE, RELEASE CONDIDATE, PROTOTYPE
+\ArrowheadContact{jerker.delsing@ltu.se} % Email of corresponding author
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  %\Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    Proposla for naming convention of microsystems, microservices and
+    associated attributes and metadata. This is intended as an
+    appendix to the Eclipse Arrowhead GSoSD document.  
+  \end{abstract}
+
+  \vspace*{1cm}
+
+%   \scriptsize
+%   \begin{tabularx}{\textwidth}{l X}
+%     \raisebox{-0.5\height}{\includegraphics[width=2cm]{figures/artemis_logo}} & {ARTEMIS Innovation Pilot Project: Arrowhead\newline
+%     THEME [SP1-JTI-ARTEMIS-2012-AIPP4 SP1-JTI-ARTEMIS-2012-AIPP6]\newline
+%     [Production and Energy System Automation Intelligent-Built environment and urban infrastructure for sustainable and friendly cities]}
+%   \end{tabularx}
+%   \vspace*{-0.2cm}
+ \end{center}
+
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+  Proposla for naming convention of microsystems, microservices and
+    associated attributes and metadata. This is intended as an
+    appendix to the Eclipse Arrowhead GSoSD document.
+    
+The rest of this document is organized as follows.
+In Section \ref{sec:prior_art}, we reference major prior art on
+microsystem and microservice naming within the Eclispe Arrowhead project. 
+
+In Section \ref{sec:principles}, we detail the underlaying thinking
+and principles for the
+naming convention.
+
+In Section \ref{sec:examples}, we provide a set of example.
+
+
+\newpage
+
+\subsection{Significant Prior Art}
+\label{sec:prior_art}
+
+A previous proposal by Paniagua et.al \cite{Paniagua_2019} has not
+  gained attention. Thus we here proposa a significantly simpler
+  naming convention approach for Eclipse Arrowhead mincrosystems,
+  microservice and associated metadata and attributes.
+
+\subsection{Foundational naming principles}
+\label{sec:principles}
+The ambition with this naming conventions is to provide names being:
+\begin{itemize}
+\item Avoid namings which generates considerable extra work for most programing
+  languages
+\item Names shall reflect the intended functionality and usage in an SOA
+  architecture
+\item Microsystem and Microservice name shall not be identical
+\item Microsystems name shall start with a Capital letter
+\item Microservices name shall starrts with a lowercase letter
+
+\item Metadata and attribute naming should be descriptive enabling
+  easy human understandning of context
+  
+\item Naming of instances of microsystems microservices, metadata and
+  attrtibutes shall follow  the naming convention of the
+  applied standard
+  
+\item The choice of indsutry standards to be applied should preferable
+  be possible to connected to the Industrial Data Ontology (IDO), ISO 23726-3
+\end{itemize}
+
+
+\subsection{Naming example}
+\label{sec:examples}
+
+PLease find below a set of examples for the most important naming
+siutaitons in the Eclipse Arrowhead architecture
+\begin{itemize}
+\item Microsystems name always start with a Capital letter: examples
+  \begin{itemize}
+  \item ServiceRegistry
+  \item DynamicServiceOrchestration
+  \item SimpleServiceOrchestration
+  \item FlexibleServiceOrchestration
+
+  \item ComputeOrchestrationSystem
+  \item DeploymentOrchestrationSystem
+  \item ConsumerAuhtorizationSystem
+  \item Authentication
+  \end{itemize}
+  
+\item Microservices name always starrts with a lowercase letter: examples 
+  \begin{itemize}
+  \item serviceDiscovery
+  \item serviceOrchestration
+  \item computeOrchestration
+  \item simpleOrchestrationStoreManagement
+  \item flexibleOrchestrationStoreManagement
+  \item deploymentOrchestration
+  \item consumerAuhtorization
+  \end{itemize}
+
+\item Metadata and attribute naming which in combination to the
+  related Microsystem or Micsroservice shall be meaningfull
+  \begin{itemize}
+  \item Metadata/attribute: Timestamp (of what should be possible to infere from
+    the naming of the microsystem or microservice instance to which the
+    metadata/attribute is connected
+  \item Metadata/attribute: SWversion (version reference of the
+    deployed software)
+  \item Metadata/attribute: SWcompiler (which comiler was used)
+  \item Metadata/attribute: CompilerSwitches (used compiler switches
+    and value) 
+  \end{itemize}
+
+\item Instance naming shall follow the naming convention of the
+    applied standard e.g. ISO 15296, ISO 10303, S5000. 
+
+\end{itemize} 
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+%\subsection{Amendments}
+
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2025-04-02 & \arrowversion & & Jerker Delsing \\ \hline
+2 & 2025-04-09 & \arrowversion & & Jerker Delsing \\ \hline
+3 & & & & \\ \hline
+
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & 2025-04-02 & \arrowversion  &  Pal Varga\\ \hline
+
+\end{tabularx}
+
+\end{document}
