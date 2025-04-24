@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  14 APR 2025 08:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  24 APR 2025 09:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -616,7 +616,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 186.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 190.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [4]
 (./Naming_convention_2.bbl
@@ -625,12 +625,12 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 )
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 199.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 211.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [5]
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 223.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 235.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [6]
 
@@ -640,17 +640,17 @@ Package rerunfilecheck Info: File `Naming_convention_2.out' has not changed.
 (rerunfilecheck)             Checksum: E6CB7D401F867D411B3DE032D89BC14A;958.
  ) 
 Here is how much of TeX's memory you used:
- 16097 strings out of 476025
- 263152 string characters out of 5790017
+ 16103 strings out of 476025
+ 263203 string characters out of 5790017
  1865388 words of memory out of 5000000
  36182 multiletter control sequences out of 15000+600000
- 534141 words of font info for 119 fonts, out of 8000000 for 9000
+ 534367 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,20n,90p,1022b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,20n,90p,1022b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/
 texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Naming_convention_2.pdf (6 pages, 41909 bytes).
+Output written on Naming_convention_2.pdf (6 pages, 42008 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream

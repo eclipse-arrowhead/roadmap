@@ -124,22 +124,25 @@ A previous proposal by Paniagua et.al \cite{Paniagua_2019} has not
 \label{sec:principles}
 The ambition with this naming conventions is to provide names being:
 \begin{itemize}
-\item Avoid namings which generates considerable extra work for most programing
-  languages
+\item Names shall only be composed of ASCII characters.
+
 \item Names shall reflect the intended functionality and usage in an SOA
   architecture
 \item Microsystem and Microservice name shall not be identical
 \item Microsystems name shall start with a Capital letter
-\item Microservices name shall starrts with a lowercase letter
+\item Microservices name shall starts with a lowercase letter
 
 \item Metadata and attribute naming should be descriptive enabling
   easy human understandning of context
+
+\item Microservice interfaces should be all lowercase with - as the
+  separator between word to enable readability
   
 \item Naming of instances of microsystems microservices, metadata and
   attrtibutes shall follow  the naming convention of the
   applied standard
   
-\item The choice of indsutry standards to be applied should preferable
+\item The choice of industry standards to be applied should preferable
   be possible to connected to the Industrial Data Ontology (IDO), ISO 23726-3
 \end{itemize}
 
@@ -147,7 +150,7 @@ The ambition with this naming conventions is to provide names being:
 \subsection{Naming example}
 \label{sec:examples}
 
-PLease find below a set of examples for the most important naming
+Please find below a set of examples for the most important naming
 siutaitons in the Eclipse Arrowhead architecture
 \begin{itemize}
 \item Microsystems name always start with a Capital letter: examples
@@ -163,7 +166,7 @@ siutaitons in the Eclipse Arrowhead architecture
   \item Authentication
   \end{itemize}
   
-\item Microservices name always starrts with a lowercase letter: examples 
+\item Microservices name always start with a lowercase letter: examples 
   \begin{itemize}
   \item serviceDiscovery
   \item serviceOrchestration
@@ -173,6 +176,8 @@ siutaitons in the Eclipse Arrowhead architecture
   \item deploymentOrchestration
   \item consumerAuhtorization
   \end{itemize}
+
+  
 
 \item Metadata and attribute naming which in combination to the
   related Microsystem or Micsroservice shall be meaningfull
@@ -187,6 +192,14 @@ siutaitons in the Eclipse Arrowhead architecture
     and value) 
   \end{itemize}
 
+  \item Microservice interface naming which in combination to the
+    related Microsystem and/or Micsroservice shall be meaningfull: examples
+    \begin{itemize}
+    \item general-management
+    \item device-discovery
+    \item service-discovery
+    \end{itemize}
+    
 \item Instance naming shall follow the naming convention of the
     applied standard e.g. ISO 15296, ISO 10303, S5000. 
 
