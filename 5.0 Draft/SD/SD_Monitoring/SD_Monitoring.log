@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  4 JUL 2024 16:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.30)  5 JUL 2024 10:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -636,38 +636,46 @@ Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 183.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
 [3 <./figures/Monitor_architecture.png>]
 
-LaTeX Warning: Hyper reference `sec:model:-' on page 4 undefined on input line 
-188.
+LaTeX Warning: Hyper reference `sec:model:Pull/Push,XXh' on page 4 undefined on
+ input line 188.
 
 
-LaTeX Warning: Hyper reference `sec:model:StatusCodeKind' on page 4 undefined o
-n input line 188.
+LaTeX Warning: Hyper reference `sec:model:StatusCode,StatusCodeKind' on page 4 
+undefined on input line 188.
 
 
 LaTeX Warning: Hyper reference `sec:model:type,level' on page 4 undefined on in
-put line 194.
+put line 196.
 
 
 LaTeX Warning: Hyper reference `sec:model:type, level' on page 4 undefined on i
-nput line 194.
+nput line 196.
+
+
+LaTeX Warning: Hyper reference `sec:model:X,Y' on page 4 undefined on input lin
+e 208.
+
+
+LaTeX Warning: Hyper reference `sec:model:A,B' on page 4 undefined on input lin
+e 208.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 241.
+(hyperref)                be the same. Added a new anchor on input line 247.
 
 
 LaTeX Warning: Reference `fig:query_overview' on page 4 undefined on input line
- 309.
+ 315.
 
 No file SD_Monitoring.bbl.
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 353.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 359.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
 [4]
 File: figures/arrowhead_logo.pdf Graphic file (type pdf)
 <use figures/arrowhead_logo.pdf>
-Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 375.
+Package pdftex.def Info: figures/arrowhead_logo.pdf  used on input line 381.
 (pdftex.def)             Requested size: 78.29205pt x 66.29497pt.
  [5] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -675,23 +683,32 @@ enddocument/afterlastpage: lastpage setting LastPage.
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `SD_Monitoring.out' has not changed.
-(rerunfilecheck)             Checksum: 1C0FB96661A0A0578154D98CF37A1646;2225.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `SD_Monitoring.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `SD_Monitoring.out':
+(rerunfilecheck)             Before: 1C0FB96661A0A0578154D98CF37A1646;2225
+(rerunfilecheck)             After:  04ADA568D9E650D3130781DE72BDC6F1;2543.
  ) 
 Here is how much of TeX's memory you used:
- 16202 strings out of 476025
- 264917 string characters out of 5790017
+ 16218 strings out of 476025
+ 265194 string characters out of 5790017
  1863388 words of memory out of 5000000
- 36246 multiletter control sequences out of 15000+600000
- 535482 words of font info for 132 fonts, out of 8000000 for 9000
+ 36255 multiletter control sequences out of 15000+600000
+ 535708 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,20n,90p,1016b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on SD_Monitoring.pdf (5 pages, 43971 bytes).
+Output written on SD_Monitoring.pdf (5 pages, 44730 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
+ 147 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
  55427 words of extra memory for PDF output out of 61914 (max. 10000000)
 

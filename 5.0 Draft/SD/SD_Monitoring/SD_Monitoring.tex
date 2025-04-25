@@ -185,31 +185,37 @@ The Monitoring service has the interface depicted in \ref{fig:SD}
 The following basic interfaces are available.
 
 
-\osubsection{Echo}{-}{StatusCodeKind}
+\osubsection{Echo}{Pull/Push,XXh}{StatusCode,StatusCodeKind}
 
-The Echo interface will responde with an TCP respnde code
+The Echo interface will responde with an TCP responde code
 e.g. 100. Thus indicateing things are working as expected.
-
+The Echo interface shoul be possible to subscribe to or make a pull request.
+For the subscription an alive update will be pushed every XX
+hour. Default XX is 24 hours.
 
 \osubsection{Power}{type,level}{type, level}
 
 The Power interface input parameters are: type and level.
+Type=line|battery|harvesting
+Level= XX\% (subscription to power level going below xx\% and repeated
+alert every 5\% reduction in supply level) 
+
 The responses are:
 Type=line|battery|harvesting
-Level=x[V]|xx\%|nn[A]
+Level=x[V]|xx\%|nn[A] dependent on the Type value.
 
 
-
+\osubsection{AdditionalMonitoringTypel}{X,Y}{A,B}
 Additional interfaces can be added by the individual producing
 microsystem. This is done specifiying
 \begin{itemize}
   
-\item interface: Namn, e.g. FreeMemory
-\item RequestParameters, e.g. MemoryType:FreeMem
-\item ResponseParameters, e.g. DRAM:2kB
+\item interface: MonitoringType, e.g. FreeMemory
+\item RequestParameters, e.g. MemoryType : FreeMemValue
+\item ResponseParameters, e.g. DRAM : 2kB
 \end{itemize}  
 
-Additional interfaces need to be provided to the ServiceRegistry when
+Additional interfaces data need to be provided as metadata to the ServiceRegistry when
 registering using the ServiceDiscovery service.  
 
 %\newpage
@@ -238,9 +244,9 @@ registering using the ServiceDiscovery service.
 %   \label{fig:model_overview}
 % \end{figure}
 
-\msubsection{struct}{echo}
+\msubsection{struct}{-,-}{echo,alive}
 
-This structure is used to get an echo from the Monitoring serevice
+This structure is used to get an echo from the Monitor service
 based on StatuCodeKind.
  
 % \begin{table}[ht!]
@@ -268,7 +274,7 @@ based on StatuCodeKind.
 %   \label{fig:unregister_overview}
 % \end{figure}
 
-\msubsection{struct}{power}
+\msubsection{struct}{power, level}
 
 Provide type of power supply e.g. line, battery, harvesting.
 Provides level of power e.g. \%, energy
