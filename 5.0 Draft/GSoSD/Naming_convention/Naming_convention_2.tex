@@ -98,6 +98,19 @@
   Proposla for naming convention of microsystems, microservices and
     associated attributes and metadata. This is intended as an
     appendix to the Eclipse Arrowhead GSoSD document.
+
+\subsection{Why naming convention is necessary}
+System, service, operation, device and interface names are used in
+programing languages, URLs, DNS entries, file systems. A consistent
+approach to naming in the community will simplify usages of different programing
+languages and support human and machine understanding of the intended
+meaning. Different key entities in the Arrowhead architecture should
+easily be distinguished throug its naming style.  
+It will further support integration and interoperability with
+major internet and modeling technologies abd standards, like
+e.g. Semantic Web, Ontologies, Knowledge Graphs, SysML. It will further support interoperability and
+integration with major industrial standards like e.g. ISO 15926, ISO
+10303, S5000, IEC 81346. 
     
 The rest of this document is organized as follows.
 In Section \ref{sec:prior_art}, we reference major prior art on
@@ -112,7 +125,7 @@ In Section \ref{sec:examples}, we provide a set of example.
 
 \newpage
 
-\subsection{Significant Prior Art}
+\section{Significant Prior Art}
 \label{sec:prior_art}
 
 A previous proposal by Paniagua et.al \cite{Paniagua_2019} has not
@@ -120,53 +133,92 @@ A previous proposal by Paniagua et.al \cite{Paniagua_2019} has not
   naming convention approach for Eclipse Arrowhead mincrosystems,
   microservice and associated metadata and attributes.
 
-\subsection{Foundational naming principles}
+\section{Foundational naming principles}
 \label{sec:principles}
 The ambition with this naming conventions is to provide names being:
 \begin{itemize}
+
 \item Names shall only be composed of ASCII characters.
 
-\item Names shall reflect the intended functionality and usage in an SOA
-  architecture
-\item Microsystem and Microservice name shall not be identical
-\item Microsystems name shall start with a Capital letter
-\item Microservices name shall starts with a lowercase letter
-
-\item Metadata and attribute naming should be descriptive enabling
-  easy human understandning of context
-
-\item Microservice interfaces should be all lowercase with - as the
-  separator between word to enable readability
+\item Names shall reflect the intended functionality and usage in an
+  SOA architecture
   
+\item Different style per architecture entity
+  \begin{itemize}
+  \item System name: PascalCase
+    \begin{itemize}
+    \item Example: ServiceRegistry
+    \end{itemize}
+
+  \item Service name: camelCase
+  \begin{itemize}
+    \item Example: serviceDiscovery
+    \end{itemize}
+
+  \item Service operation name: kebab-case
+  \begin{itemize}
+    \item Example: get-entries
+    \end{itemize}
+
+  \item Interface name: snake\_case
+    \begin{itemize}
+    \item Example: generic\_http
+    \end{itemize}
+
+  \item Device name: UPPER\_SNAKE\_CASE
+  \begin{itemize}
+    \item Example: MY\_DEVICE
+    \end{itemize}
+    
+  \item Attributes like e.g. keys in payloads, metadata, properties: camelCase
+   \begin{itemize}
+    \item Example: subUrl
+    \end{itemize}
+ \end{itemize}
+
+\item Composite identifiers like service instance identifiers: \\
+  SystemName $<$delimiter$>$serviceName$<$delimiter$>$version \\
+  Cloud identifiers: CloudName$<$delimiter$>$Organization \\
+  delimiter: ``$|$”  is proposed
+   \begin{itemize}
+    \item Examples: \\
+      ServiceRegistry$|$serviceDiscovery$|$1.0.0 \\
+      TestCloud$|$AitiaInc)
+     \end{itemize}
+ 
+  
+
+ 
 \item Naming of instances of microsystems microservices, metadata and
   attrtibutes shall follow  the naming convention of the
-  applied standard
+  applied standard e.g. ISO 15296, ISO 10303, S5000
   
 \item The choice of industry standards to be applied should preferable
   be possible to connected to the Industrial Data Ontology (IDO), ISO 23726-3
+
+
 \end{itemize}
 
 
-\subsection{Naming example}
+\section{Naming example}
 \label{sec:examples}
 
 Please find below a set of examples for the most important naming
 siutaitons in the Eclipse Arrowhead architecture
 \begin{itemize}
-\item Microsystems name always start with a Capital letter: examples
+\item Microsystems name - PacalCase
   \begin{itemize}
   \item ServiceRegistry
   \item DynamicServiceOrchestration
   \item SimpleServiceOrchestration
   \item FlexibleServiceOrchestration
-
   \item ComputeOrchestrationSystem
   \item DeploymentOrchestrationSystem
   \item ConsumerAuhtorizationSystem
   \item Authentication
   \end{itemize}
   
-\item Microservices name always start with a lowercase letter: examples 
+\item Microservices name - camelCaseal
   \begin{itemize}
   \item serviceDiscovery
   \item serviceOrchestration
@@ -177,35 +229,46 @@ siutaitons in the Eclipse Arrowhead architecture
   \item consumerAuhtorization
   \end{itemize}
 
-  
-
-\item Metadata and attribute naming which in combination to the
-  related Microsystem or Micsroservice shall be meaningfull
+ \item Metadata and attribute naming: camelCase (which in combination to the
+  related Microsystem or Micsroservice shall be meaningfull)
   \begin{itemize}
-  \item Metadata/attribute: Timestamp (of what should be possible to infere from
+  \item Metadata/attribute: timeStamp (of what should be possible to infere from
     the naming of the microsystem or microservice instance to which the
-    metadata/attribute is connected
-  \item Metadata/attribute: SWversion (version reference of the
+    metadata/attribute is connected)
+  \item Metadata/attribute: softWareVersion (version reference of the
     deployed software)
-  \item Metadata/attribute: SWcompiler (which comiler was used)
-  \item Metadata/attribute: CompilerSwitches (used compiler switches
+  \item Metadata/attribute: compiler (which comiler and verson was used)
+  \item Metadata/attribute: compilerSwitches (used compiler switches
     and value) 
   \end{itemize}
 
-  \item Microservice interface naming which in combination to the
-    related Microsystem and/or Micsroservice shall be meaningfull: examples
-    \begin{itemize}
-    \item general-management
-    \item device-discovery
-    \item service-discovery
-    \end{itemize}
-    
-\item Instance naming shall follow the naming convention of the
-    applied standard e.g. ISO 15296, ISO 10303, S5000. 
-
 \end{itemize} 
 
+\section{How to align with other standards in use}
 
+\begin{itemize}
+
+\item URL Reserved characters: ! * ' ( ) ; : @ \& = + \$ , / ? \# [ ] 
+  
+  
+\item Not to use these as separator in composite identifiers.
+ \item Certificate authentication method: X.509 certificate common name allows only: uppercase letters, lowercase letters, digits, hyphen (but not at the start or end) and dot (as a separator between domain levels)
+   \begin{itemize}
+   \item To use kebab-case in certificates and transform in code
+     level (service-registry.test-cloud.aitia-inc.arrowhead.eu =
+     ServiceRegistry.TestCloud.AitiaInc.arrowhead.eu) 
+   \item Not to use dot as separator in composite identifiers.\\
+     CN represents a fully qualified domain name, which can be maximum
+     253 character and max 63 char per label.  (subdomain.example.com)
+     
+   \item To apply max 63 char rule to the names
+   \item Semantic versioning: $<$major$>$.$<$minor$>$.$<$patch$>$
+   \item Not to use dot as separator in composite identifiers.
+   \item RDF (Resource Description Framework) for Knowledge Graphs: Reserved characters: $<$, $>$, \&, “, \\
+     Not to use these as separator in composite identifiers.
+   \end{itemize}
+ \end{itemize}
+ 
 \bibliographystyle{IEEEtran}
 \bibliography{bibliography}
 
