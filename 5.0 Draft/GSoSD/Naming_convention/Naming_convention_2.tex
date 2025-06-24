@@ -37,7 +37,7 @@
 \begin{document}
 
 %% Arrowhead Document Properties
-\ArrowheadTitle{Eclispe Arrohead Naming Convention} % XXX = SystemName e.g. Service Registry HTTP/TLS/JSON}
+\ArrowheadTitle{Eclipse Arrowhead Naming Convention} % XXX = SystemName e.g. Service Registry HTTP/TLS/JSON}
 \ArrowheadType{}
 \ArrowheadTypeShort{SoSD}
 \ArrowheadVersion{5.0.0} % Arrowhead version X.Y.Z, e..g. 4.4.1
@@ -69,7 +69,7 @@
 
   % Front Page Abstract
   \begin{abstract}
-    Proposla for naming convention of microsystems, microservices and
+    Proposal for naming convention of microsystems, microservices and
     associated attributes and metadata. This is intended as an
     appendix to the Eclipse Arrowhead GSoSD document.  
   \end{abstract}
@@ -95,32 +95,32 @@
 
 \section{Overview}
 \label{sec:overview}
-  Proposla for naming convention of microsystems, microservices and
-    associated attributes and metadata. This is intended as an
-    appendix to the Eclipse Arrowhead GSoSD document.
+  Proposal for naming convention of microsystems, microservices, associated attributes and metadata. This is intended as an appendix to the Eclipse Arrowhead GSoSD document.
 
 \subsection{Why naming convention is necessary}
-System, service, operation, device and interface names are used in
-programing languages, URLs, DNS entries, file systems. A consistent
-approach to naming in the community will simplify usages of different programing
+System, service, service operation, device and interface names are used in
+programming languages, URLs, DNS entries, file systems. A consistent
+approach to naming in the community will simplify usages of different programming
 languages and support human and machine understanding of the intended
 meaning. Different key entities in the Arrowhead architecture should
-easily be distinguished throug its naming style.  
+easily be distinguished through its naming style.  
 It will further support integration and interoperability with
-major internet and modeling technologies abd standards, like
+major internet and modeling technologies and standards, like
 e.g. Semantic Web, Ontologies, Knowledge Graphs, SysML. It will further support interoperability and
 integration with major industrial standards like e.g. ISO 15926, ISO
-10303, S5000, IEC 81346. 
-    
-The rest of this document is organized as follows.
-In Section \ref{sec:prior_art}, we reference major prior art on
-microsystem and microservice naming within the Eclispe Arrowhead project. 
+10303, IEC 81346. \\
 
-In Section \ref{sec:principles}, we detail the underlaying thinking
+
+The rest of this document is organized as follows.
+
+In Section \ref{sec:prior_art}, we reference major prior art on
+microsystem and microservice naming within the Eclipse Arrowhead project. 
+
+In Section \ref{sec:principles}, we detail the underlying thinking
 and principles for the
 naming convention.
 
-In Section \ref{sec:examples}, we provide a set of example.
+In Section \ref{sec:examples}, we provide a set of examples.
 
 
 \newpage
@@ -129,21 +129,23 @@ In Section \ref{sec:examples}, we provide a set of example.
 \label{sec:prior_art}
 
 A previous proposal by Paniagua et.al \cite{Paniagua_2019} has not
-  gained attention. Thus we here proposa a significantly simpler
+  gained attention. Thus we propose here a significantly simpler
   naming convention approach for Eclipse Arrowhead mincrosystems,
-  microservice and associated metadata and attributes.
+  microservice, associated metadata and attributes.
 
 \section{Foundational naming principles}
 \label{sec:principles}
-The ambition with this naming conventions is to provide names being:
+The ambition of this naming convention is to provide names that meet the following criteria:
 \begin{itemize}
 
 \item Names shall only be composed of ASCII characters.
 
+\item Names should have a maximum character length.
+
 \item Names shall reflect the intended functionality and usage in an
-  SOA architecture
+  SOA architecture.
   
-\item Different style per architecture entity
+\item Different style per architectural entity:
   \begin{itemize}
   \item System name: PascalCase
     \begin{itemize}
@@ -176,25 +178,31 @@ The ambition with this naming conventions is to provide names being:
     \end{itemize}
  \end{itemize}
 
-\item Composite identifiers like service instance identifiers: \\
-  SystemName $<$delimiter$>$serviceName$<$delimiter$>$version \\
-  Cloud identifiers: CloudName$<$delimiter$>$Organization \\
-  delimiter: ``$|$”  is proposed
+\item Composite identifiers:
+  \begin{itemize}
+      \item  service instance identifiers: SystemName$<$delimiter$>$serviceName$<$delimiter$>$version 
+  \end{itemize}
+
+  \begin{itemize}
+      \item cloud identifiers: CloudName$<$delimiter$>$OrganizationName
+  \end{itemize}
+
+  \begin{itemize}
+      \item delimiter: "$|$”  is proposed
+  \end{itemize}
+  
    \begin{itemize}
     \item Examples: \\
       ServiceRegistry$|$serviceDiscovery$|$1.0.0 \\
-      TestCloud$|$AitiaInc)
+      TestCloud$|$AitiaInc
      \end{itemize}
- 
   
-
- 
-\item Naming of instances of microsystems microservices, metadata and
-  attrtibutes shall follow  the naming convention of the
-  applied standard e.g. ISO 15296, ISO 10303, S5000
+\item Naming of instances of microsystems, microservices, metadata and
+  attributes shall follow  the naming convention of the
+  applied standard e.g. ISO 15296, ISO 10303.
   
 \item The choice of industry standards to be applied should preferable
-  be possible to connected to the Industrial Data Ontology (IDO), ISO 23726-3
+  be possible to connected to the Industrial Data Ontology (IDO), ISO 23726-3.
 
 
 \end{itemize}
@@ -204,40 +212,41 @@ The ambition with this naming conventions is to provide names being:
 \label{sec:examples}
 
 Please find below a set of examples for the most important naming
-siutaitons in the Eclipse Arrowhead architecture
+situations in the Eclipse Arrowhead architecture.
 \begin{itemize}
-\item Microsystems name - PacalCase
+\item Microsystem name - PascalCase
   \begin{itemize}
   \item ServiceRegistry
   \item DynamicServiceOrchestration
-  \item SimpleServiceOrchestration
-  \item FlexibleServiceOrchestration
-  \item ComputeOrchestrationSystem
-  \item DeploymentOrchestrationSystem
-  \item ConsumerAuhtorizationSystem
+  \item SimpleStoreServiceOrchestration
+  \item FlexibleStoreServiceOrchestration
+  \item ComputeOrchestration
+  \item DeploymentOrchestration
+  \item ConsumerAuthorization
   \item Authentication
   \end{itemize}
   
-\item Microservices name - camelCaseal
+\item Microservice name - camelCase
   \begin{itemize}
   \item serviceDiscovery
   \item serviceOrchestration
   \item computeOrchestration
-  \item simpleOrchestrationStoreManagement
-  \item flexibleOrchestrationStoreManagement
+  \item simpleStoreManagement
+  \item flexibleStoreManagement
   \item deploymentOrchestration
-  \item consumerAuhtorization
+  \item authorization
+  \item identity
   \end{itemize}
 
  \item Metadata and attribute naming: camelCase (which in combination to the
-  related Microsystem or Micsroservice shall be meaningfull)
+  related microsystem or microservice shall be meaningful)
   \begin{itemize}
-  \item Metadata/attribute: timeStamp (of what should be possible to infere from
+  \item Metadata/attribute: timeStamp (of what should be possible to infer from
     the naming of the microsystem or microservice instance to which the
     metadata/attribute is connected)
-  \item Metadata/attribute: softWareVersion (version reference of the
+  \item Metadata/attribute: softwareVersion (version reference of the
     deployed software)
-  \item Metadata/attribute: compiler (which comiler and verson was used)
+  \item Metadata/attribute: compiler (which compiler and version was used)
   \item Metadata/attribute: compilerSwitches (used compiler switches
     and value) 
   \end{itemize}
@@ -249,24 +258,26 @@ siutaitons in the Eclipse Arrowhead architecture
 \begin{itemize}
 
 \item URL Reserved characters: ! * ' ( ) ; : @ \& = + \$ , / ? \# [ ] 
+\begin{itemize}
+    \item Not to use these as separator in composite identifiers.
+\end{itemize}  
   
-  
-\item Not to use these as separator in composite identifiers.
- \item Certificate authentication method: X.509 certificate common name allows only: uppercase letters, lowercase letters, digits, hyphen (but not at the start or end) and dot (as a separator between domain levels)
+ \item Certificate authentication method: X.509 certificate common name (CN) allows only: uppercase letters, lowercase letters, digits, hyphen (but not at the start or end) and dot (as a separator between domain levels).
    \begin{itemize}
-   \item To use kebab-case in certificates and transform in code
-     level (service-registry.test-cloud.aitia-inc.arrowhead.eu =
-     ServiceRegistry.TestCloud.AitiaInc.arrowhead.eu) 
-   \item Not to use dot as separator in composite identifiers.\\
-     CN represents a fully qualified domain name, which can be maximum
-     253 character and max 63 char per label.  (subdomain.example.com)
-     
-   \item To apply max 63 char rule to the names
-   \item Semantic versioning: $<$major$>$.$<$minor$>$.$<$patch$>$
+   \item Some environments handles CN in case insensitive mode. In these cases, one can use kebab-case in certificates and transform in code level (service-registry.test-cloud.aitia-inc.arrowhead.eu = ServiceRegistry.TestCloud.AitiaInc.arrowhead.eu) 
    \item Not to use dot as separator in composite identifiers.
-   \item RDF (Resource Description Framework) for Knowledge Graphs: Reserved characters: $<$, $>$, \&, “, \\
-     Not to use these as separator in composite identifiers.
-   \end{itemize}
+   \item CN represents a fully qualified domain name, which can be maximum
+     253 characters and maximum 63 characters per label: (e.g. subdomain.example.com) 
+     \begin{itemize}
+         \item To apply maximum 63 characters rule to the names.
+     \end{itemize}
+ \end{itemize}
+ 
+ \item Semantic versioning: $<$major$>$.$<$minor$>$.$<$patch$>$
+ \item RDF (Resource Description Framework) for Knowledge Graphs: Reserved characters: $<$, $>$, \&, “,
+    \begin{itemize}
+    \item Not to use these as separator in composite identifiers.
+    \end{itemize}
  \end{itemize}
  
 \bibliographystyle{IEEEtran}
@@ -283,7 +294,8 @@ siutaitons in the Eclipse Arrowhead architecture
 
 1 & 2025-04-02 & \arrowversion & & Jerker Delsing \\ \hline
 2 & 2025-04-09 & \arrowversion & & Jerker Delsing \\ \hline
-3 & & & & \\ \hline
+3 & 2025-06-24 & \arrowversion & & Rajmund Bocsi \\ \hline
+4 & & & & \\ \hline
 
 \end{tabularx}
 
