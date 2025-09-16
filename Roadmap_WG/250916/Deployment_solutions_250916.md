@@ -3,9 +3,9 @@
 
 ## Attendees
 
-Johan Kristiansson <johan.kristiansson@ltu.se>, LTU
-Bocsi Rajmund <rbocsi@aitia.ai>, AITIA
-Tamás Bordi <tbordi@aitia.ai>, AITIA
+* Johan Kristiansson <johan.kristiansson@ltu.se>, LTU
+* Bocsi Rajmund <rbocsi@aitia.ai>, AITIA
+* Tamás Bordi <tbordi@aitia.ai>, AITIA
 
 ## Meeting Target
 
