@@ -1,0 +1,818 @@
+{
+  "recordedAtUTC": "2026-11-03T15:18:53.758392+00:00",
+  "coreSupportServicesPerCloud": 20,
+  "containers": {
+    "java": [
+      {
+        "service": "aigym",
+        "container": "arrowhead-v52-test-cloud-aigym-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-aigym-java-spring:20261103",
+        "imageId": "sha256:51ccc7d0410f227193c6d9584291b2a2cfe2202bc6edb1af013548dde86dc7dc",
+        "created": "2026-11-03T15:09:03.799123625Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "authentication",
+        "container": "arrowhead-v52-test-cloud-authentication-1",
+        "imageTag": "arrowhead-test-redeploy/authentication-java:20261103",
+        "imageId": "sha256:e337ebb0386dee5de021b3a0454f317a27c670dbe2579baf0ca6cbf9f544d3d8",
+        "created": "2026-11-03T15:05:25.592808178Z",
+        "status": "running",
+        "health": "not-defined",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "blacklist",
+        "container": "arrowhead-v52-test-cloud-blacklist-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-blacklist-java-spring:20261103",
+        "imageId": "sha256:287676ec1e8643667b9988e497d422b4df58af49b3888f23a5a4117a2f59dd2a",
+        "created": "2026-11-03T15:13:58.433895637Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "certificate-authority",
+        "container": "arrowhead-v52-test-cloud-certificate-authority-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-certificateauthority-java-spring:20261103",
+        "imageId": "sha256:dd8acfe4088622ac8457fc9364d4a7ec934cd8db003b3ba2933ef4312ec4420d",
+        "created": "2026-11-03T15:05:25.184280177Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/data",
+            "volumeName": "arrowhead-v52-test-cloud_certificate-authority-data"
+          }
+        ]
+      },
+      {
+        "service": "choreographer",
+        "container": "arrowhead-v52-test-cloud-choreographer-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-choreographer-java-spring:20261103",
+        "imageId": "sha256:37cccb7fefebe66636904e5bcd2d1195c53df962ff55fa15dd87e622e3fe08bd",
+        "created": "2026-11-03T15:05:23.802429052Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "configuration",
+        "container": "arrowhead-v52-test-cloud-configuration-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-configuration-java-spring:20261103",
+        "imageId": "sha256:340a1a61246b5701f43a2594dd778054e20027be7c69c3051ee78a24d8f619ec",
+        "created": "2026-11-03T15:05:23.802809718Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "consumerauthorization",
+        "container": "arrowhead-v52-test-cloud-consumerauthorization-1",
+        "imageTag": "arrowhead-test-redeploy/consumer-authorization-java:20261103",
+        "imageId": "sha256:22924b1bdda095057e1ea3b3127443c13763649ba0acf1686aec2f44aec8ffff",
+        "created": "2026-11-03T15:05:26.038863178Z",
+        "status": "running",
+        "health": "not-defined",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "datamanager",
+        "container": "arrowhead-v52-test-cloud-datamanager-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-datamanager-java-spring:20261103",
+        "imageId": "sha256:39652790935c229712c8e161e84a44a02c2af087798d844418b9da6faede6d6a",
+        "created": "2026-11-03T15:05:29.945018888Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "device-qos-evaluator",
+        "container": "arrowhead-v52-test-cloud-device-qos-evaluator-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-deviceqosevaluator-java-spring:20261103",
+        "imageId": "sha256:cefca37a114cec85b226f96d29471f59204f570159366dccda0cd351959342ed",
+        "created": "2026-11-03T15:13:58.446536387Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "eventhandler",
+        "container": "arrowhead-v52-test-cloud-eventhandler-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-eventhandler-java-spring:20261103",
+        "imageId": "sha256:5e7dbaed3478c8d9dd523767435d3c382336d26a67967bad5ccbe23bbf42b801",
+        "created": "2026-11-03T15:05:29.933789471Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "gatekeeper",
+        "container": "arrowhead-v52-test-cloud-gatekeeper-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-gatekeeper-java-spring:20261103",
+        "imageId": "sha256:980116afed3fabcc0a0ccbb953c4a417f7efbd9d6d250c64b00e90ba92915d37",
+        "created": "2026-11-03T15:05:29.351659513Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/data",
+            "volumeName": "arrowhead-v52-test-cloud_gatekeeper-data"
+          }
+        ]
+      },
+      {
+        "service": "gatetunnel",
+        "container": "arrowhead-v52-test-cloud-gatetunnel-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-gatetunnel-java-spring:20261103",
+        "imageId": "sha256:2a4afb299620619836b2a02e5549c693c4e8a592e226ce50a972d03eed14347b",
+        "created": "2026-11-03T15:05:29.352954179Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/data",
+            "volumeName": "arrowhead-v52-test-cloud_gatetunnel-data"
+          }
+        ]
+      },
+      {
+        "service": "onboarding",
+        "container": "arrowhead-v52-test-cloud-onboarding-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-onboarding-java-spring:20261103",
+        "imageId": "sha256:84d9affd33a84cc0cccdc39ae100e0447b339de685595c56371a47591f1f3a4d",
+        "created": "2026-11-03T15:05:25.439824552Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "plantdescriptionengine",
+        "container": "arrowhead-v52-test-cloud-plantdescriptionengine-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-plantdescriptionengine-java-spring:20261103",
+        "imageId": "sha256:77b3b038a14bf83732bd60886a5d2057ec721cd2edcac23147221a2515193406",
+        "created": "2026-11-03T15:05:29.918250888Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "serviceorchestration-dynamic",
+        "container": "arrowhead-v52-test-cloud-serviceorchestration-dynamic-1",
+        "imageTag": "arrowhead-test-redeploy/serviceorchestration-dynamic-java:20261103",
+        "imageId": "sha256:a108072de606bd8c602107ec19df91290d8c7191457cd0e95446bc53564b8eab",
+        "created": "2026-11-03T15:05:25.580692844Z",
+        "status": "running",
+        "health": "not-defined",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "serviceorchestration-simple",
+        "container": "arrowhead-v52-test-cloud-serviceorchestration-simple-1",
+        "imageTag": "arrowhead-test-redeploy/serviceorchestration-simple-java:20261103",
+        "imageId": "sha256:c9375b8a280bb1066dbcef02dcf241776a552fb224217ee5c97d0f67f091ffe9",
+        "created": "2026-11-03T15:05:25.578816136Z",
+        "status": "running",
+        "health": "not-defined",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "serviceregistry",
+        "container": "arrowhead-v52-test-cloud-serviceregistry-1",
+        "imageTag": "arrowhead-test-redeploy/serviceregistry-java:20261103",
+        "imageId": "sha256:6ee7e31cbff63715d90eb10e4e3e2aedf2bfcf2390aa4b1b317aa43157817285",
+        "created": "2026-11-03T15:05:21.698684801Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "sysmonitor",
+        "container": "arrowhead-v52-test-cloud-sysmonitor-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-sysmonitor-java-spring:20261103",
+        "imageId": "sha256:84708bd037c99fb76ec9374e1a2f0fe2c3c3e08d99fbc7ba3e855e9deaafa449",
+        "created": "2026-11-03T15:05:29.697502513Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/data",
+            "volumeName": "arrowhead-v52-test-cloud_sysmonitor-data"
+          }
+        ]
+      },
+      {
+        "service": "timemanager",
+        "container": "arrowhead-v52-test-cloud-timemanager-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-timemanager-java-spring:20261103",
+        "imageId": "sha256:a929120620315606c70381044037301ae0d4dc509cfdc330af45724cff3ddeae",
+        "created": "2026-11-03T15:05:29.918897471Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "translation-manager",
+        "container": "arrowhead-v52-test-cloud-translation-manager-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-translationmanager-java-spring:20261103",
+        "imageId": "sha256:8eaa57e1a685f5ec6933a7a3d481e923b4933166c07c54784ff3dd2f3cd0147a",
+        "created": "2026-11-03T15:13:58.433146637Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/java-compose.json",
+        "stateMounts": []
+      }
+    ],
+    "go": [
+      {
+        "service": "aigym",
+        "container": "arrowhead-v52-test-cloud-go-aigym-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-aigym-go:20261103-health",
+        "imageId": "sha256:50c1ed7506d4edb78bb409810d1a247b132ec69b0cad9a4859db2d58d20a9f57",
+        "created": "2026-11-03T14:50:15.92433459Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-aigym-state"
+          }
+        ]
+      },
+      {
+        "service": "authentication",
+        "container": "arrowhead-v52-test-cloud-go-authentication-1",
+        "imageTag": "arrowhead-test-redeploy/authentication:20261103-health",
+        "imageId": "sha256:dd9d4cbeac2af8ee3c102e5f43e16f09da46cb8aa9711702022df381681a7417",
+        "created": "2026-11-03T14:50:15.520466214Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-authentication-state"
+          }
+        ]
+      },
+      {
+        "service": "blacklist",
+        "container": "arrowhead-v52-test-cloud-go-blacklist-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-blacklist-go:20261103-health",
+        "imageId": "sha256:eab282993c06aaa6332037ff6217b3fdafbf5770f15a920fc2d5ec397e608463",
+        "created": "2026-11-03T14:50:15.927073173Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-blacklist-state"
+          }
+        ]
+      },
+      {
+        "service": "certificate-authority",
+        "container": "arrowhead-v52-test-cloud-go-certificate-authority-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-certificateauthority-go:20261103-health",
+        "imageId": "sha256:b5f1580c0fa8bba5dad30a33b02fe5cb2d41f22201aae1f52f667e527d790201",
+        "created": "2026-11-03T14:50:15.919127006Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-certificate-authority-state"
+          }
+        ]
+      },
+      {
+        "service": "choreographer",
+        "container": "arrowhead-v52-test-cloud-go-choreographer-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-choreographer-go:20261103-health",
+        "imageId": "sha256:8b44f161eee42b91dc34907d789364bade55ccc02a6fbf6fa82e6e284e46e7d3",
+        "created": "2026-11-03T14:50:15.928887631Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-choreographer-state"
+          }
+        ]
+      },
+      {
+        "service": "configuration",
+        "container": "arrowhead-v52-test-cloud-go-configuration-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-configuration-go:20261103-health",
+        "imageId": "sha256:3c6c4497bb150ced823a747ec78bcb0f6228d1fe7b3d0b126e178ceafe91295c",
+        "created": "2026-11-03T14:50:15.928005298Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-configuration-state"
+          }
+        ]
+      },
+      {
+        "service": "consumerauthorization",
+        "container": "arrowhead-v52-test-cloud-go-consumerauthorization-1",
+        "imageTag": "arrowhead-test-redeploy/consumer-authorization:20261103-health",
+        "imageId": "sha256:9a68854337c22a7b826727c105b973f5a4814610b2ddd1a5999af59801c8bcab",
+        "created": "2026-11-03T14:50:15.92326509Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-consumerauthorization-state"
+          }
+        ]
+      },
+      {
+        "service": "datamanager",
+        "container": "arrowhead-v52-test-cloud-go-datamanager-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-datamanager-go:20261103-health",
+        "imageId": "sha256:2b4101d03c341fc3a7d19e8701559f5eb12436e1ef6b385ecd105c3bb97f61b8",
+        "created": "2026-11-03T14:50:15.926822298Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-datamanager-state"
+          }
+        ]
+      },
+      {
+        "service": "device-qos-evaluator",
+        "container": "arrowhead-v52-test-cloud-go-device-qos-evaluator-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-deviceqosevaluator-go:20261103-health",
+        "imageId": "sha256:659296ecde39c47022e91dd3d7c5001062030444b6d3431696b64e224ebfda0d",
+        "created": "2026-11-03T14:50:15.925382298Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-device-qos-evaluator-state"
+          }
+        ]
+      },
+      {
+        "service": "eventhandler",
+        "container": "arrowhead-v52-test-cloud-go-eventhandler-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-eventhandler-go:20261103-health",
+        "imageId": "sha256:782ccc1819d0695ee14082d2581181fc1804927bee625ee67b2246cf9fb339f3",
+        "created": "2026-11-03T14:50:15.929800298Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-eventhandler-state"
+          }
+        ]
+      },
+      {
+        "service": "gatekeeper",
+        "container": "arrowhead-v52-test-cloud-go-gatekeeper-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-gatekeeper-go:20261103-health",
+        "imageId": "sha256:992093b7a3897226f0a8567dfd073258783ef858e8e941bdd8e28089edf66d38",
+        "created": "2026-11-03T14:50:15.926434423Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-gatekeeper-state"
+          }
+        ]
+      },
+      {
+        "service": "gatetunnel",
+        "container": "arrowhead-v52-test-cloud-go-gatetunnel-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-gatetunnel-go:20261103-health",
+        "imageId": "sha256:36b01e065eeed050c31d563b3f6d371e6c4422fe77361e063baf1b5e5c1de287",
+        "created": "2026-11-03T14:50:15.925662048Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-gatetunnel-state"
+          }
+        ]
+      },
+      {
+        "service": "onboarding",
+        "container": "arrowhead-v52-test-cloud-go-onboarding-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-onboarding-go:20261103-health",
+        "imageId": "sha256:903ab20b6318b34a6df081a7b5f747a1178653ae27b70b2ca8edb85ee6039cd8",
+        "created": "2026-11-03T14:50:15.923483048Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-onboarding-state"
+          }
+        ]
+      },
+      {
+        "service": "plantdescriptionengine",
+        "container": "arrowhead-v52-test-cloud-go-plantdescriptionengine-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-plantdescriptionengine-go:20261103-health",
+        "imageId": "sha256:7766708007d3f6cce91b84f86e04e05068326d373931994453f550a3e8de5e6b",
+        "created": "2026-11-03T14:50:15.929751798Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-plantdescriptionengine-state"
+          }
+        ]
+      },
+      {
+        "service": "serviceorchestration-dynamic",
+        "container": "arrowhead-v52-test-cloud-go-serviceorchestration-dynamic-1",
+        "imageTag": "arrowhead-test-redeploy/serviceorchestration-dynamic:20261103-health",
+        "imageId": "sha256:7b47ed35cb34b53734ebe71e934ebf8eb9e55f0a726cc4e709a3592254e4bb02",
+        "created": "2026-11-03T14:50:15.928962006Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-serviceorchestration-dynamic-state"
+          }
+        ]
+      },
+      {
+        "service": "serviceorchestration-simple",
+        "container": "arrowhead-v52-test-cloud-go-serviceorchestration-simple-1",
+        "imageTag": "arrowhead-test-redeploy/serviceorchestration-simple:20261103-health",
+        "imageId": "sha256:fa681b2d48a10c852f9f64729e0d8fd2fdd4a204688196d7a1d0d9550d383d98",
+        "created": "2026-11-03T14:50:15.928071173Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-serviceorchestration-simple-state"
+          }
+        ]
+      },
+      {
+        "service": "serviceregistry",
+        "container": "arrowhead-v52-test-cloud-go-serviceregistry-1",
+        "imageTag": "arrowhead-test-redeploy/serviceregistry:20261103-health",
+        "imageId": "sha256:82903542103447c0603e77762e695e153d2ff06f2d44e246f1489dfbad6a1369",
+        "created": "2026-11-03T14:50:15.064354714Z",
+        "status": "running",
+        "health": "not-defined",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/data",
+            "volumeName": "arrowhead-v52-test-cloud-go_serviceregistry-data"
+          }
+        ]
+      },
+      {
+        "service": "sysmonitor",
+        "container": "arrowhead-v52-test-cloud-go-sysmonitor-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-sysmonitor-go:20261103-health",
+        "imageId": "sha256:36d46779ef388d85a383ad57dfd5f5f65ebf561b6d656d14125a40ca08fedff3",
+        "created": "2026-11-03T14:50:15.928028006Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-sysmonitor-state"
+          }
+        ]
+      },
+      {
+        "service": "timemanager",
+        "container": "arrowhead-v52-test-cloud-go-timemanager-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-timemanager-go:20261103-health",
+        "imageId": "sha256:20c92a453276527756983ac5230ddb93d50f29e4f5d3d7984a3f3e656d02ad43",
+        "created": "2026-11-03T14:50:15.926389548Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-timemanager-state"
+          }
+        ]
+      },
+      {
+        "service": "translation-manager",
+        "container": "arrowhead-v52-test-cloud-go-translation-manager-1",
+        "imageTag": "arrowhead-test-redeploy/ah5-translationmanager-go:20261103-health",
+        "imageId": "sha256:ef378fe11aa36e69815503bb65054834b40207af7cde192cc7c7fb40a25882e5",
+        "created": "2026-11-03T14:50:15.919144465Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/go-compose.json",
+        "stateMounts": [
+          {
+            "type": "volume",
+            "target": "/state",
+            "volumeName": "arrowhead-v52-test-cloud-go_go-translation-manager-state"
+          }
+        ]
+      }
+    ],
+    "rust": [
+      {
+        "service": "aigym",
+        "container": "arrowhead-v53-test-cloud-rust-aigym-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.82011696Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "authentication",
+        "container": "arrowhead-v53-test-cloud-rust-authentication-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:36.795466877Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "blacklist",
+        "container": "arrowhead-v53-test-cloud-rust-blacklist-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.818507626Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "certificateauthority",
+        "container": "arrowhead-v53-test-cloud-rust-certificateauthority-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.827335585Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "choreographer",
+        "container": "arrowhead-v53-test-cloud-rust-choreographer-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.798202918Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "configuration",
+        "container": "arrowhead-v53-test-cloud-rust-configuration-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.822005126Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "consumer-authorization",
+        "container": "arrowhead-v53-test-cloud-rust-consumer-authorization-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.829681251Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "datamanager",
+        "container": "arrowhead-v53-test-cloud-rust-datamanager-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.818683543Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "deviceqosevaluator",
+        "container": "arrowhead-v53-test-cloud-rust-deviceqosevaluator-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.820964835Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "eventhandler",
+        "container": "arrowhead-v53-test-cloud-rust-eventhandler-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.819640043Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "gatekeeper",
+        "container": "arrowhead-v53-test-cloud-rust-gatekeeper-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.95660021Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "gatetunnel",
+        "container": "arrowhead-v53-test-cloud-rust-gatetunnel-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.980417668Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "onboarding",
+        "container": "arrowhead-v53-test-cloud-rust-onboarding-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.822261876Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "plantdescriptionengine",
+        "container": "arrowhead-v53-test-cloud-rust-plantdescriptionengine-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.819663626Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "serviceorchestration-dynamic",
+        "container": "arrowhead-v53-test-cloud-rust-serviceorchestration-dynamic-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.819016168Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "serviceorchestration-simple",
+        "container": "arrowhead-v53-test-cloud-rust-serviceorchestration-simple-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.79840371Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "serviceregistry",
+        "container": "arrowhead-v53-test-cloud-rust-serviceregistry-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.819675835Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "sysmonitor",
+        "container": "arrowhead-v53-test-cloud-rust-sysmonitor-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.81374721Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "timemanager",
+        "container": "arrowhead-v53-test-cloud-rust-timemanager-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.817484335Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      },
+      {
+        "service": "translationmanager",
+        "container": "arrowhead-v53-test-cloud-rust-translationmanager-1",
+        "imageTag": "arrowhead-test-redeploy/core-support-rust:20261103",
+        "imageId": "sha256:2d31dcdc7696670498fc8eb2c6c992908be730aa8f8edc2b8d3267ec8321142a",
+        "created": "2026-11-03T14:56:35.816392835Z",
+        "status": "running",
+        "health": "healthy",
+        "composeFiles": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/rust-compose.json",
+        "stateMounts": []
+      }
+    ]
+  },
+  "volumesDeleted": false,
+  "unrelatedProjectsRedeployed": false
+}

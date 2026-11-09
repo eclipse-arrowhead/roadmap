@@ -1,0 +1,221 @@
+sssssss.sssss......ss.........sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss...FFF....................................FFF.........................................................FFF.........................................................FFF......FFF.....................................................................FFF....................................
+======================================================================
+FAIL: test_AIGym_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_naming)
+AIGym.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_AIGym_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_presence)
+AIGym.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_AIGym_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_protected)
+AIGym.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_CertificateAuthority_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_naming)
+CertificateAuthority.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_CertificateAuthority_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_presence)
+CertificateAuthority.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_CertificateAuthority_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_protected)
+CertificateAuthority.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_DataManager_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_naming)
+DataManager.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_DataManager_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_presence)
+DataManager.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_DataManager_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_protected)
+DataManager.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_GateTunnel_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_naming)
+GateTunnel.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_GateTunnel_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_presence)
+GateTunnel.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_GateTunnel_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_protected)
+GateTunnel.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_Gatekeeper_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_naming)
+Gatekeeper.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_Gatekeeper_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_presence)
+Gatekeeper.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_Gatekeeper_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_protected)
+Gatekeeper.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_SysMonitor_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_naming)
+SysMonitor.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_SysMonitor_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_presence)
+SysMonitor.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_SysMonitor_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_protected)
+SysMonitor.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+----------------------------------------------------------------------
+Ran 503 tests in 8.934s
+
+FAILED (failures=18, skipped=205)

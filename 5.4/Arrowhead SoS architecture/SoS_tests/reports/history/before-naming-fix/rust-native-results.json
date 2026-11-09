@@ -1,0 +1,464 @@
+{
+  "state": "executed",
+  "returncode": 101,
+  "cases": [
+    {
+      "id": "gsosd_authz_event_type_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_event_type_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_event_type_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_event_type_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_event_type_missing_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_event_type_missing_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_event_type_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_event_type_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_isolation_cloud",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_isolation_consumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_isolation_provider",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_isolation_target",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_isolation_targettype",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_operation_all_read",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_operation_all_write",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_operation_blacklist_read",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_operation_blacklist_write",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_operation_whitelist_read",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_operation_whitelist_write",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_all_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_all_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_all_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_all_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_all_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_all_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_blacklist_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_blacklist_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_blacklist_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_blacklist_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_blacklist_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_blacklist_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_whitelist_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_whitelist_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_whitelist_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_whitelist_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_whitelist_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_event_type_whitelist_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_all_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_all_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_all_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_all_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_all_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_all_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_blacklist_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_blacklist_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_blacklist_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_blacklist_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_blacklist_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_blacklist_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_whitelist_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_whitelist_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_whitelist_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_whitelist_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_whitelist_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_priority_service_def_whitelist_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_all_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_all_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_blacklist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_blacklist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_missing_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_missing_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_whitelist_otherconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_authz_service_def_whitelist_testconsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_authentication_generalmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_authentication_identity",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_authentication_identitymanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_consumerauthorization_authorization",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_consumerauthorization_authorizationmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_consumerauthorization_authorizationtoken",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_consumerauthorization_authorizationtokenmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_consumerauthorization_generalmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_dynamicserviceorchestration_generalmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_dynamicserviceorchestration_serviceorchestration",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_dynamicserviceorchestration_serviceorchestrationhistorymanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_dynamicserviceorchestration_serviceorchestrationlockmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_dynamicserviceorchestration_serviceorchestrationpushmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_serviceregistry_devicediscovery",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_serviceregistry_generalmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_serviceregistry_servicediscovery",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_serviceregistry_serviceregistrymanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_serviceregistry_systemdiscovery",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_simplestoreserviceorchestration_generalmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_simplestoreserviceorchestration_serviceorchestration",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationhistorymanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationpushmanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationsimplestoremanagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_01",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_02",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_03",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_04",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_05",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_06",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_07",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_08",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_09",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_meta_10",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_provider_01",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_provider_02",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_provider_03",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_provider_04",
+      "outcome": "fail"
+    },
+    {
+      "id": "gsosd_name_provider_05",
+      "outcome": "fail"
+    },
+    {
+      "id": "gsosd_name_provider_06",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_scope_13",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_scope_14",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_scope_15",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_scope_16",
+      "outcome": "fail"
+    },
+    {
+      "id": "gsosd_name_scope_17",
+      "outcome": "fail"
+    },
+    {
+      "id": "gsosd_name_scope_18",
+      "outcome": "fail"
+    },
+    {
+      "id": "gsosd_name_target_07",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_target_08",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_target_09",
+      "outcome": "pass"
+    },
+    {
+      "id": "gsosd_name_target_10",
+      "outcome": "fail"
+    },
+    {
+      "id": "gsosd_name_target_11",
+      "outcome": "fail"
+    },
+    {
+      "id": "gsosd_name_target_12",
+      "outcome": "fail"
+    }
+  ],
+  "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-rust",
+  "elapsedSeconds": 6.59
+}

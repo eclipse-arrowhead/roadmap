@@ -1,0 +1,8 @@
+\begin{tikzpicture}[b/.style={draw,rounded corners,align=center,text width=3.0cm,minimum height=2.0cm,font=\small}, >=Stealth]
+\node[b,ahSupport] (ca) at (0,0) {\textbf{CertificateAuthority}\\Own source / JAR / image\\Own config + MySQL\\Issuer key + CRL output};
+\node[b,ahSupport] (gk) at (3.7,0) {\textbf{Gatekeeper}\\Own source / JAR / image\\Own config + MySQL\\Own relay identity};
+\node[b,ahSupport] (gt) at (7.4,0) {\textbf{GateTunnel}\\Own source / JAR / image\\Own config + MySQL\\Own relay identity};
+\node[b,ahSupport] (sm) at (11.1,0) {\textbf{SysMonitor}\\Own source / JAR / image\\Own config + MySQL\\Own subscriptions/outbox};
+\node[draw,ahInfrastructure,rounded corners,align=center,text width=13.9cm,minimum height=1.2cm,font=\small] (services) at (5.55,-3.2) {\textbf{Existing cloud services and infrastructure}\\ServiceRegistry / Authentication / DSO / ConsumerAuthorization\\AMQPS broker; MQTT output broker and organization relay as required};
+\foreach \n in {ca,gk,gt,sm} {\draw[->,thick] (\n.south) -- (\n.south |- services.north);}
+\end{tikzpicture}

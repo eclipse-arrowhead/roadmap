@@ -1,0 +1,265 @@
+{
+  "state": "executed",
+  "returncode": 0,
+  "cases": [
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-BLACKLIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-NONE",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-ALL",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-WHITELIST",
+      "outcome": "pass"
+    },
+    {
+      "id": "JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-BLACKLIST",
+      "outcome": "pass"
+    }
+  ],
+  "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-core-java-spring/consumer-authorization",
+  "freshlyCompiledSources": 80,
+  "elapsedSeconds": 1.77
+}

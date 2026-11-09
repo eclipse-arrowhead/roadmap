@@ -1,0 +1,1842 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites>
+  <testsuite name="native-java" tests="64" failures="0" skipped="0">
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-NONE-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-ALL-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-WHITELIST-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-TestConsumer-BLACKLIST-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-NONE-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-ALL-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-WHITELIST-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-SERVICE_DEF-OtherConsumer-BLACKLIST-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-NONE-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-ALL-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-WHITELIST-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-TestConsumer-BLACKLIST-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-NONE-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-ALL-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-WHITELIST-BLACKLIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-NONE" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-ALL" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-WHITELIST" />
+    <testcase classname="native-java" name="JAVA-AUTHZ-EVENT_TYPE-OtherConsumer-BLACKLIST-BLACKLIST" />
+  </testsuite>
+  <testsuite name="native-go" tests="115" failures="0" skipped="0">
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-missing-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-missing-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-missing-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-missing-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-all-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-all-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-whitelist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-whitelist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-blacklist-TestConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-blacklist-OtherConsumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-isolation-provider" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-isolation-consumer" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-isolation-cloud" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-isolation-target" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-isolation-targetType" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-operation-all-read" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-operation-all-write" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-operation-whitelist-read" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-operation-whitelist-write" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-operation-blacklist-read" />
+    <testcase classname="native-go" name="TestGSoSDPolicyDecisions/AUTHZ-operation-blacklist-write" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-01" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-02" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-03" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-04" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-05" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-06" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-07" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-08" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-09" />
+    <testcase classname="native-go" name="TestGSoSDMetadataSelection/META-10" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-provider-01" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-provider-02" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-provider-03" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-provider-04" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-provider-05" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-provider-06" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-target-07" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-target-08" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-target-09" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-target-10" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-target-11" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-target-12" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-scope-13" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-scope-14" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-scope-15" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-scope-16" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-scope-17" />
+    <testcase classname="native-go" name="TestGSoSDCanonicalIdentifiers/NAME-scope-18" />
+    <testcase classname="native-go" name="TestGSoSDAMQPTransport/secure-default" />
+    <testcase classname="native-go" name="TestGSoSDAMQPTransport/secure-explicit" />
+    <testcase classname="native-go" name="TestGSoSDAMQPTransport/plaintext" />
+    <testcase classname="native-go" name="TestGSoSDAMQPTransport/mqtt-not-monitor" />
+    <testcase classname="native-go" name="TestGSoSDAMQPTransport/missing-host" />
+    <testcase classname="native-go" name="TestGSoSDAMQPTransport/embedded-password" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/authentication/identity" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/authentication/identityManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/authentication/generalManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/consumer-authorization/authorization" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/consumer-authorization/authorizationToken" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/consumer-authorization/authorizationManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/consumer-authorization/authorizationTokenManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/consumer-authorization/generalManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestration" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestrationPushManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestrationLockManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestrationHistoryManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/generalManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestration" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestrationSimpleStoreManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestrationPushManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestrationHistoryManagement" />
+    <testcase classname="native-go" name="TestGSoSDCoreServiceMatrix/serviceorchestration-simple/generalManagement" />
+  </testsuite>
+  <testsuite name="native-rust" tests="114" failures="0" skipped="0">
+    <testcase classname="native-rust" name="gsosd_authz_event_type_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_event_type_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_event_type_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_event_type_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_event_type_missing_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_event_type_missing_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_event_type_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_event_type_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_isolation_cloud" />
+    <testcase classname="native-rust" name="gsosd_authz_isolation_consumer" />
+    <testcase classname="native-rust" name="gsosd_authz_isolation_provider" />
+    <testcase classname="native-rust" name="gsosd_authz_isolation_target" />
+    <testcase classname="native-rust" name="gsosd_authz_isolation_targettype" />
+    <testcase classname="native-rust" name="gsosd_authz_operation_all_read" />
+    <testcase classname="native-rust" name="gsosd_authz_operation_all_write" />
+    <testcase classname="native-rust" name="gsosd_authz_operation_blacklist_read" />
+    <testcase classname="native-rust" name="gsosd_authz_operation_blacklist_write" />
+    <testcase classname="native-rust" name="gsosd_authz_operation_whitelist_read" />
+    <testcase classname="native-rust" name="gsosd_authz_operation_whitelist_write" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_all_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_all_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_all_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_all_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_all_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_all_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_blacklist_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_blacklist_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_blacklist_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_blacklist_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_blacklist_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_blacklist_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_whitelist_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_whitelist_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_whitelist_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_whitelist_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_whitelist_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_event_type_whitelist_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_all_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_all_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_all_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_all_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_all_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_all_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_blacklist_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_blacklist_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_blacklist_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_blacklist_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_blacklist_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_blacklist_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_whitelist_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_whitelist_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_whitelist_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_whitelist_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_whitelist_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_priority_service_def_whitelist_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_all_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_all_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_blacklist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_blacklist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_missing_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_missing_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_whitelist_otherconsumer" />
+    <testcase classname="native-rust" name="gsosd_authz_service_def_whitelist_testconsumer" />
+    <testcase classname="native-rust" name="gsosd_matrix_authentication_generalmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_authentication_identity" />
+    <testcase classname="native-rust" name="gsosd_matrix_authentication_identitymanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_consumerauthorization_authorization" />
+    <testcase classname="native-rust" name="gsosd_matrix_consumerauthorization_authorizationmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_consumerauthorization_authorizationtoken" />
+    <testcase classname="native-rust" name="gsosd_matrix_consumerauthorization_authorizationtokenmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_consumerauthorization_generalmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_dynamicserviceorchestration_generalmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_dynamicserviceorchestration_serviceorchestration" />
+    <testcase classname="native-rust" name="gsosd_matrix_dynamicserviceorchestration_serviceorchestrationhistorymanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_dynamicserviceorchestration_serviceorchestrationlockmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_dynamicserviceorchestration_serviceorchestrationpushmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_serviceregistry_devicediscovery" />
+    <testcase classname="native-rust" name="gsosd_matrix_serviceregistry_generalmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_serviceregistry_servicediscovery" />
+    <testcase classname="native-rust" name="gsosd_matrix_serviceregistry_serviceregistrymanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_serviceregistry_systemdiscovery" />
+    <testcase classname="native-rust" name="gsosd_matrix_simplestoreserviceorchestration_generalmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_simplestoreserviceorchestration_serviceorchestration" />
+    <testcase classname="native-rust" name="gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationhistorymanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationpushmanagement" />
+    <testcase classname="native-rust" name="gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationsimplestoremanagement" />
+    <testcase classname="native-rust" name="gsosd_meta_01" />
+    <testcase classname="native-rust" name="gsosd_meta_02" />
+    <testcase classname="native-rust" name="gsosd_meta_03" />
+    <testcase classname="native-rust" name="gsosd_meta_04" />
+    <testcase classname="native-rust" name="gsosd_meta_05" />
+    <testcase classname="native-rust" name="gsosd_meta_06" />
+    <testcase classname="native-rust" name="gsosd_meta_07" />
+    <testcase classname="native-rust" name="gsosd_meta_08" />
+    <testcase classname="native-rust" name="gsosd_meta_09" />
+    <testcase classname="native-rust" name="gsosd_meta_10" />
+    <testcase classname="native-rust" name="gsosd_name_provider_01" />
+    <testcase classname="native-rust" name="gsosd_name_provider_02" />
+    <testcase classname="native-rust" name="gsosd_name_provider_03" />
+    <testcase classname="native-rust" name="gsosd_name_provider_04" />
+    <testcase classname="native-rust" name="gsosd_name_provider_05" />
+    <testcase classname="native-rust" name="gsosd_name_provider_06" />
+    <testcase classname="native-rust" name="gsosd_name_scope_13" />
+    <testcase classname="native-rust" name="gsosd_name_scope_14" />
+    <testcase classname="native-rust" name="gsosd_name_scope_15" />
+    <testcase classname="native-rust" name="gsosd_name_scope_16" />
+    <testcase classname="native-rust" name="gsosd_name_scope_17" />
+    <testcase classname="native-rust" name="gsosd_name_scope_18" />
+    <testcase classname="native-rust" name="gsosd_name_target_07" />
+    <testcase classname="native-rust" name="gsosd_name_target_08" />
+    <testcase classname="native-rust" name="gsosd_name_target_09" />
+    <testcase classname="native-rust" name="gsosd_name_target_10" />
+    <testcase classname="native-rust" name="gsosd_name_target_11" />
+    <testcase classname="native-rust" name="gsosd_name_target_12" />
+  </testsuite>
+  <testsuite name="deployment" tests="503" failures="0" skipped="503">
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AI_denied">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AI_observations">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AI_predict">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AI_sample">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_binding">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_changed_credentials">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_expired">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_login">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_logout">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_missing_token">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_self_declared">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_unknown_token">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_verify">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHN_wrong_password">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_all">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_in">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_out">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_management_allow">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_management_deny">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_metadata_match">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_metadata_miss">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_no_policy">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_allow">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_deny">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_revoked">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_in">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_out">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_event">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_provider">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_service">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_discovery_not_trust">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_missing_authn">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_missing_authz">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_orchestration_not_grant">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_own_store">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_plaintext_bootstrap">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_secured_before_ready">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BASE_store_failure">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BL_active">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BL_expired">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BL_fail_closed">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BL_reason">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BL_self_lookup">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_BL_whitelist">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_end_entity">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_key_signing">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_new_handshake">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_recorded">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_revoked">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_sign_authorized">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_sign_denied">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_trusted_key_expired">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_untrusted">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CA_valid">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CFG_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CFG_other">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CFG_own">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CFG_proxy_allowed">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CFG_proxy_denied">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CHOR_abort_owner">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CHOR_complete">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CHOR_executor_token">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CHOR_parallel">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CHOR_retry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CHOR_start">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_CHOR_step_owner">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_AIGym_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_AIGym_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Authentication_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Authentication_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Blacklist_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Blacklist_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_CertificateAuthority_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_CertificateAuthority_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Choreographer_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Choreographer_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Configuration_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Configuration_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_ConsumerAuthorization_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_ConsumerAuthorization_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_DataManager_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_DataManager_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_DeviceQoSEvaluator_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_DeviceQoSEvaluator_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_DynamicServiceOrchestration_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_DynamicServiceOrchestration_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_EventHandler_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_EventHandler_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_GateTunnel_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_GateTunnel_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Gatekeeper_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Gatekeeper_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Onboarding_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_Onboarding_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_PlantDescriptionEngine_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_PlantDescriptionEngine_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_ServiceRegistry_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_ServiceRegistry_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_SimpleStoreServiceOrchestration_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_SimpleStoreServiceOrchestration_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_SysMonitor_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_SysMonitor_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_TimeManager_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_TimeManager_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_TranslationManager_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_COMMON_TranslationManager_telemetry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DATA_history_window">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DATA_latest">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DATA_offline_producer">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DATA_service_isolation">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DATA_signal">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DATA_system_isolation">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_blacklisted">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_eligible">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_exclusive">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_expired_lock">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_intercloud_denied">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_preferred">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_push">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_qos_filter">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_qos_sort">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_token">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_translation_off">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_translation_on">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_unauthorized">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_DSO_unsubscribe">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_EVENT_all_matching">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_EVENT_expired">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_EVENT_matching">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_EVENT_nonmatching">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_EVENT_not_started">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_EVENT_publisher_binding">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_EVENT_subscriber_binding">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GK_cloud_binding">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GK_discovery">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GK_management">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GK_negotiation_recheck">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GT_closed">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GT_consumer">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GT_exchange">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GT_peer">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_GT_service">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_authorized_only">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_deduplicate">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_durable">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_history">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_invalid">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_mqtt">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_retention">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_MON_unknown_provider">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_approved">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_certificate_only">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_no_auto_grant">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_no_signing_key">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_offboard_certs">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_offboard_exclusion">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_offboard_identities">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_offboard_registry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_revoked">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_sequence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_superseded">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_system_approved">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_system_unapproved">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_ONB_unapproved">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_ack">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_ambiguous_alarm">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_atomic">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_includes">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_matched">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_missing">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_missing_alarm">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_one_active">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_operator_priority">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_plant_priority">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_silent_alarm">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_undescribed_alarm">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_unmonitored_alarm">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_PDE_withdrawn">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_QOS_device_map">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_QOS_filter">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_QOS_sort">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_RELAY_cloud_inbox">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_RELAY_dedicated_identity">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_RELAY_name_constraints">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_RELAY_role_inbox">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_RELAY_sender_spoof">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_direct_access">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_expiry">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_lookup">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_metadata_match">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_metadata_miss">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_register">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_restricted_private">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_restricted_public">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_revoke">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SR_unique_instance">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SSO_consumer_isolation">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SSO_identifiers">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SSO_no_tokens">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SSO_not_grant">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SSO_priority">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_SSO_push">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TIME_beyond_threshold">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TIME_startup">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TIME_within_threshold">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TIME_zone">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TM_bridge">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TM_bridge_token">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TM_termination">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TM_usage_report">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TM_wrong_translator">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_expired">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_local_verification">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_tampered">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_time_valid">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_usage_exhausted">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_usage_first">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_consumer">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_operation">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_provider">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_service">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_identity_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_identity_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_identity_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configuration_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configuration_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_configuration_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_time_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_time_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TimeManager_time_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_naming">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_presence">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+    <testcase classname="deployment" name="sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_protected">
+      <skipped message="Set SOS_TEST_PROFILE to an isolated test deployment profile" />
+    </testcase>
+  </testsuite>
+  <testsuite name="harness-self-tests" tests="27" failures="0" skipped="0">
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_authentication_failure_is_not_success" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_boolean_is_not_zero" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_cleanup_runs_after_failed_assertion" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_empty_only_accepts_collections" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_error_is_not_tls_rejection" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_json_pointer_arrays_and_escaping" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_missing_live_fixture_skips" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_missing_pointer_fails" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_missing_variable_skips" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_mutation_gate" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_negative_case_needs_control" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_nested_interpolation" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_nested_url_variable" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_not_found_is_not_authorization_denial" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_plaintext_endpoint_refused" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_preflight_before_mutation" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_redirects_refused" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_root_pointer" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_setup_capture_and_cleanup" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_snapshot_detects_partial_update" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_subset_detects_unauthorized_provider" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_telemetry_rejects_missing_sequence" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_telemetry_valid" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_typed_interpolation" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_unknown_oracle_is_error" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_variable_cycles_are_errors" />
+    <testcase classname="harness-self-tests" name="sos_tests.test_harness.HarnessTests.test_wrong_equality_fails" />
+  </testsuite>
+</testsuites>

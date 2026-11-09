@@ -1,0 +1,359 @@
+{
+  "verifiedFiles": 88,
+  "phase": "three-cloud redeployment and live checks",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "f995c7fcbe5a040b7354249a962a2594159df8c024e46305a47df10c0796579d"
+    },
+    {
+      "path": "COVERAGE.md",
+      "sha256": "f9b5be3907df35e30c309f119438f72ec9935ce3443809f9221f4c6fa1981f2d"
+    },
+    {
+      "path": "CURRENT_RESULTS.md",
+      "sha256": "028c550999b279a592657cb44133871f4cda5d2fe5e092f45f22bdd894517d40"
+    },
+    {
+      "path": "FINDINGS.md",
+      "sha256": "123b2113b7ba9de16ba11665b50ea4df534d4961cab17258da6b86136af40d36"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "ad6a6ecfe4593c5f31a6b1b0ee740cff8472798bd59b13c812062f06aab63a7a"
+    },
+    {
+      "path": "NAMING_FIX_VERIFICATION.md",
+      "sha256": "5d3fb3e8ddcef032959ae655432223f0505165dcc04626d891e7ec3db93190f3"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8c46ce54350ee80aed4f04d28472803523e25fe85ba83123607e84bbca7e9aa1"
+    },
+    {
+      "path": "RESULTS.md",
+      "sha256": "95f53ccdb86075433052b87b3680d06996a9887c23e13833eecd5e45f0aaed92"
+    },
+    {
+      "path": "TRACEABILITY.md",
+      "sha256": "53dce22940a58023f9cc99a5f7e3fc57fe7085c8c7a2068828a524fa0cce98e8"
+    },
+    {
+      "path": "catalog.json",
+      "sha256": "d9a5b356e0facc16295caab8b49362a0f8e2ec69cff8295592e1dba8506bdf9f"
+    },
+    {
+      "path": "config/lifecycle-fixture.template.json",
+      "sha256": "bf2c1a69553d18bd2de51ab2e705bc3abd099f482a6aebe7e6452afda058a868"
+    },
+    {
+      "path": "config/profile.example.json",
+      "sha256": "0f3012f8d6ac458770adf2fd65e071b06aaee01d1109cbcc0d111d9527b80332"
+    },
+    {
+      "path": "native/SoSAuthorizationEngineTests.java",
+      "sha256": "adf9513c8b59a41a1690389431ef1ba760c6cbe3efa8cf52a50a1b81ee086f9f"
+    },
+    {
+      "path": "native/gsosd_530.rs",
+      "sha256": "eee4c466711044a443622e84a07b88375e968d4eb88abd39f6a0021f276228c7"
+    },
+    {
+      "path": "native/gsosd_530_test.go",
+      "sha256": "a19b4986f9eedefda7cc9019ecdc12f7a21dd1c6edb9dd00dffbff1c8fe229be"
+    },
+    {
+      "path": "native/vectors.json",
+      "sha256": "e23b49ec4fae55a3d00b8d6e438aa130081ea5afbc4c1e79aae8b6663a121151"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/CURRENT_RESULTS.md.before-deployment",
+      "sha256": "1cdb65b5720398af73d93ae1bd5b5e7b2dac0d8ecaa5a3df6a0a0156681a15d2"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/README.md",
+      "sha256": "2444cdb00c9688d7e5f322651a0b386134cb3d2b279776239540ccc8be4a36b8"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/README.md.before-deployment",
+      "sha256": "d5adfcbb539f36d6207d66b7b3dcd9665f68289d5c2c540c0d2f695da42ee9ce"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/RESULTS.md.before-deployment",
+      "sha256": "8c83c41e40f1958b954fbd143722d3997cb1cfe740c02580a8a3ed3ba1aee627"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/deployment-snapshot.json",
+      "sha256": "fa9b183ed1e436526cc30c818e0deaaf49388e2b36a2dfa66e8692732839d7b4"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/go-builds.json",
+      "sha256": "f3e15f8a56ad832c4e1eb315b0b6337d368bc75632917a9f8ca93abd5b959ea7"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/go-checks.log",
+      "sha256": "b70378da4fcd6dfec94f83f1a9bd2bcb3e55d7b18819df65bc36fd7e154c1264"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/go-cleanup.json",
+      "sha256": "0475bfead854f1e4974345717c2027482dd0b5f32e861edf840baab59d78814a"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/go-redeploy.log",
+      "sha256": "e030723cf3996c0d01ff7f4a93fa1ea8d07427af6d5df6b40d7755fcaed2217d"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/go-results.json",
+      "sha256": "bb7e790725d3fda221afd5635b8e697a75b33a781bbf5887cff6773014d39b26"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-aigym-repair.log",
+      "sha256": "7fcba6f45ce3b4f806395a7f4b6de630ff3859c1fde54f41d856805cdb35b3d4"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-builds.json",
+      "sha256": "f955a74541a96d9c0e94cffe400f6e2d84302c56ea3920c007a68c7829c7d22c"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-checks.log",
+      "sha256": "fc85a91d9a10ee2bba32dff37c51dc473faaef3845826488f7573ebbcbaabddc"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-cleanup.json",
+      "sha256": "0475bfead854f1e4974345717c2027482dd0b5f32e861edf840baab59d78814a"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-management-restore.log",
+      "sha256": "28464f555a5690d347bea8d94587d726bea8d81bd21c0b563740370e0f8e51ab"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-mount-repair.log",
+      "sha256": "e604b02db94c991e10328ebd6d32194654307ecf97c26e221a7fa5879804f8f3"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-redeploy.log",
+      "sha256": "f97badcff24d5ec195536e9c69ec6858fae958b907ec60c44ce70ad00a0b542b"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-restored-management-settings.json",
+      "sha256": "a49a797224847e4105fa6596b5e1bb98b5f7114ee743dc598fe6285fda2900cd"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/java-results.json",
+      "sha256": "eea8a5830215b7a95bec6c620f51e2c86a5279d0fec044aeac4525f2f116cf5e"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/junit.xml",
+      "sha256": "203db0fdc36c8478b48d6785df16ab0bcbad05fe30115b3873a32bf8fefb908d"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/profile.example.before-fixture-correction.json",
+      "sha256": "53059040d3d7cce651fd86a7858e307cef3310f664ca18e53cc7262c920228b0"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/proposed-java-blacklist-read-permission.json",
+      "sha256": "1d4cf886c46544e9ed962d95df1d6b972bdf09ed53566fc15ab4747332659bba"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/rust-checks.log",
+      "sha256": "5d9f402e35894b8ad0ac4580044a65b4158cac54bc056973ca3fe5525b18e5d7"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/rust-cleanup.json",
+      "sha256": "0475bfead854f1e4974345717c2027482dd0b5f32e861edf840baab59d78814a"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/rust-redeploy.log",
+      "sha256": "add36bb387766bbd2eb441ea5e2f26e5fccd81910f0b64c65ef24afc597c0c30"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/rust-results.json",
+      "sha256": "b3d3f2ba71fc2ca94cd12607bfcf756fa7842e5ee1de17e4622f9a858fc00ad3"
+    },
+    {
+      "path": "reports/deployments/2026-11-03-primary-refresh/summary.json",
+      "sha256": "d499eff915124eba936a64e82832217f190e3a61a03a24adcfa95718964d4075"
+    },
+    {
+      "path": "reports/go-full-regression.log",
+      "sha256": "420e77f6bbf9e15649c7ca4245de59ad711fd6522d801108aea29cd624a92644"
+    },
+    {
+      "path": "reports/go-native-results.json",
+      "sha256": "08822773cb12d6b25806da194d2ce1e8b9fc09e8ca9b204017633168e65d596b"
+    },
+    {
+      "path": "reports/go-native.log",
+      "sha256": "e75b1811ce522e1bd8f6651116ffea5013a6e4f3f1d5bd164b854b0fc25f21a0"
+    },
+    {
+      "path": "reports/harness-results.json",
+      "sha256": "3f7e3388d4d2524c675a80d339106d2b61595ad6d99737dfcaa5da670e067e95"
+    },
+    {
+      "path": "reports/history/before-naming-fix/CURRENT_RESULTS.md",
+      "sha256": "45a9b7e78f0345d61a6eef6f76928ee6466fc93ebf9b264e6f0b2ddad4986497"
+    },
+    {
+      "path": "reports/history/before-naming-fix/FINDINGS.md",
+      "sha256": "522934cdee7bbb91386e7e23b80c25da9358453825c6b6fbfd90f7c2c7047bf0"
+    },
+    {
+      "path": "reports/history/before-naming-fix/README.md",
+      "sha256": "da28e4b500533bffd01a08ed369398e20fdf10dfb9b16485a3f55e75e7becae8"
+    },
+    {
+      "path": "reports/history/before-naming-fix/RESULTS.md",
+      "sha256": "247181457252fa25ec3f37054c1d25b28479343a400b2d1540b3dae7ba79ae55"
+    },
+    {
+      "path": "reports/history/before-naming-fix/go-native-results.json",
+      "sha256": "4754d960651951779f7f7437939bb8f559444b2db266de264606fa2107c52b40"
+    },
+    {
+      "path": "reports/history/before-naming-fix/go-native.log",
+      "sha256": "9a255d2c27a8be0bef060bfa7076303264abbc6f5f1bbe019d261e05c0fd1e6c"
+    },
+    {
+      "path": "reports/history/before-naming-fix/harness-results.json",
+      "sha256": "3f7e3388d4d2524c675a80d339106d2b61595ad6d99737dfcaa5da670e067e95"
+    },
+    {
+      "path": "reports/history/before-naming-fix/java-native-results.json",
+      "sha256": "8685d92912d3c8dd50c9678d75882d1de161c004dfa15c3e4a05d5835c8c0fd6"
+    },
+    {
+      "path": "reports/history/before-naming-fix/java-native.log",
+      "sha256": "985bc9f99c26260397751135cf1c57aa70a5a475f74930fe157e9e437f841af2"
+    },
+    {
+      "path": "reports/history/before-naming-fix/junit.xml",
+      "sha256": "fb3dd789d4d7e2a33a619970c7b8f46ed0089936801af2ba016891555e492f24"
+    },
+    {
+      "path": "reports/history/before-naming-fix/live-results.json",
+      "sha256": "84af04f0394474df131f95b9a741d05ba0e27ca996ffb83f763f571392fd09cc"
+    },
+    {
+      "path": "reports/history/before-naming-fix/native-results.json",
+      "sha256": "a2c66806f39ddfdca7855e26fd1d10f982a99ed58b8232df7bac01a7f915b51f"
+    },
+    {
+      "path": "reports/history/before-naming-fix/package-manifest.json",
+      "sha256": "04f42e51ff486f8e5064f824008da4cabd9ba197817d0653af9dc0d0146e3d61"
+    },
+    {
+      "path": "reports/history/before-naming-fix/package-verification.json",
+      "sha256": "f24b5ab8ea7f0a33f36af5b99209d5f99f9f87aea9d3a70003c3f5dcaea87ef5"
+    },
+    {
+      "path": "reports/history/before-naming-fix/requirements.json",
+      "sha256": "bef14975764acce9f805b0ae1f3adfdc94bf9ffd0618e935657f5a96ee687adf"
+    },
+    {
+      "path": "reports/history/before-naming-fix/rust-native-results.json",
+      "sha256": "4c58ae0e7801642bb01ad2d5dfb472f539dc190a73d461f57d76ec3af4cec5e6"
+    },
+    {
+      "path": "reports/history/before-naming-fix/rust-native.log",
+      "sha256": "00bfaf535f52eac0517e5c4c11005986e93407a6e54f92458aabc8c49ab43e91"
+    },
+    {
+      "path": "reports/history/before-naming-fix/source-fingerprints.json",
+      "sha256": "7791c0e74cad32c442e308832c218a850677738ae713a1655cc86a77e53a9757"
+    },
+    {
+      "path": "reports/java-native-results.json",
+      "sha256": "c9ea59cd86eb6911a6022de5ea78e7a09e5e866806568c370880de397c1b7163"
+    },
+    {
+      "path": "reports/java-native.log",
+      "sha256": "985bc9f99c26260397751135cf1c57aa70a5a475f74930fe157e9e437f841af2"
+    },
+    {
+      "path": "reports/junit.xml",
+      "sha256": "6f5fb7ea44d230f830108f30e35a7d8bcb7af6ddda97b9a19aabac00b824c463"
+    },
+    {
+      "path": "reports/live-results.json",
+      "sha256": "84af04f0394474df131f95b9a741d05ba0e27ca996ffb83f763f571392fd09cc"
+    },
+    {
+      "path": "reports/naming-fix-verification.json",
+      "sha256": "d8dee202c35dd325daf7b7844d49e605b10a055fdee97fcd87e566fe15c8872a"
+    },
+    {
+      "path": "reports/native-results.json",
+      "sha256": "ee4bf41e23949e28153431963815011582363bd0223c64d703876085886c5482"
+    },
+    {
+      "path": "reports/package-verification.json",
+      "sha256": "9027e2d0f6d4684d59328f6a4fa13a64ed46b78a15723512968543fa27af1049"
+    },
+    {
+      "path": "reports/rust-full-regression.log",
+      "sha256": "99ce924c9d4ebc0bb4b08080f26b1c8445f4457b213ae2e598bd91558a21c2a9"
+    },
+    {
+      "path": "reports/rust-native-results.json",
+      "sha256": "7f02db857c6a436e5f53be0434570438d99553e77e6c3c7cbfcadba5c06752fe"
+    },
+    {
+      "path": "reports/rust-native.log",
+      "sha256": "10368b7a06565647d39a23187f98541b4e7ec06e5d4119f66da517d899550ad3"
+    },
+    {
+      "path": "reports/source-fingerprints.json",
+      "sha256": "a37273e4b8d86b11b8894bc21b58d6d64592181d9da7a08c1ac96ac5bba0d534"
+    },
+    {
+      "path": "requirements.json",
+      "sha256": "33e5803af29c76ce2d81ccc3ea67d943ca318da2ad850c42d25a23a927d00d94"
+    },
+    {
+      "path": "run_all.py",
+      "sha256": "56d4a75958d503ce203ee70f48e09e71dacc1a2593108e269bb3bf666a34990d"
+    },
+    {
+      "path": "run_live.py",
+      "sha256": "d9d4174af06714e4f32885a78e584875cf2bf49d55d00cb1835ecb3c316a8e6a"
+    },
+    {
+      "path": "run_native.py",
+      "sha256": "f7fba2a4cf7093c9cd822ef36422ce86346d296ecfa9158d2611e023a2de77e3"
+    },
+    {
+      "path": "run_selftests.py",
+      "sha256": "2233d91b32241fcf3ba6ef2edee22dae8a8c9eda3c50706c691f54f7438c257c"
+    },
+    {
+      "path": "scenarios.json",
+      "sha256": "81cd5d4ac29636d2a2c973c008b600211f2c221aa9e16f6467906f6df6ba9da9"
+    },
+    {
+      "path": "sos_tests/__init__.py",
+      "sha256": "e56c704f758b2434e68c935b0636fa0989f694067119c04fc9eb461ea7b96bf7"
+    },
+    {
+      "path": "sos_tests/harness.py",
+      "sha256": "b50fa8acf9de47e21585c8cd8a31c8a41f67fd124d0030234cf4161c45dc0bd7"
+    },
+    {
+      "path": "sos_tests/test_harness.py",
+      "sha256": "599d4cf3fb79287333e5e30b87caf557328c50b8c0d4cde9634538234c2640d4"
+    },
+    {
+      "path": "sos_tests/test_live.py",
+      "sha256": "2de61b62e55566cc7e3d744129db1161c9679fb90c35f0a7eaba70a9174bf25d"
+    },
+    {
+      "path": "summarize_results.py",
+      "sha256": "04a3647454d2b92d50790830d0c7e0d209c3d567a87f0ab856c4045d17c81d46"
+    }
+  ],
+  "note": "Deployment results added separately; specification assertions and native expectations unchanged."
+}

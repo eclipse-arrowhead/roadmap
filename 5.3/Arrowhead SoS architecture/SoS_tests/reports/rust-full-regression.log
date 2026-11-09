@@ -1,0 +1,261 @@
+   Compiling arrowhead-core-rust v5.2.2 (/private/tmp/arrowhead-naming-fix-tests/rust/ah5-core-rust)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.16s
+     Running unittests src/lib.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/arrowhead_core_rust-34ceaaf8ece65d18)
+
+running 2 tests
+test plant_rules::tests::rejects_invalid_snapshots ... ok
+test plant_rules::tests::preserves_empty_scope_and_zero ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/arrowhead_core-acc00cb0f89d8f4b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests authentication/src/main.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/authentication-50977219d28952eb)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests consumer-authorization/src/main.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/consumer_authorization-78b585d7bf3b9573)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/documentation.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/core_documentation-b524c2de92ec594f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests serviceorchestration-dynamic/src/main.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/serviceorchestration_dynamic-d30f5e7d38098e9c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests serviceorchestration-simple/src/main.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/serviceorchestration_simple-376bdb94b33fc304)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests serviceregistry/src/main.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/serviceregistry-ac244074829b7878)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/authorization_naming.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/authorization_naming-a396108c0fb3d5fc)
+
+running 3 tests
+test policy_lists_require_canonical_system_names ... ok
+test invalid_name_rolls_back_whole_batch_and_preserves_existing_policies ... ok
+test canonical_grant_names_are_preserved_and_invalid_names_do_not_write ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/core.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/core-c66d39bf73756cc0)
+
+running 23 tests
+test all_five_roles_have_unique_complete_route_descriptors ... ok
+test generated_configuration_examples_match_the_strict_rust_schema ... ok
+test aes_wire_formats_match_openssl ... ok
+test state_lock_corruption_and_failed_commit_do_not_reset_data ... ok
+test state_updates_are_serialized_and_do_not_publish_aliases ... ok
+test der_identity_is_profile_bound_and_rejects_malformed_values ... ok
+test simple_store_priorities_are_atomic_and_control_selection ... ok
+test subscription_ownership_callbacks_and_management_batch_are_validated ... ok
+test declared_identity_and_unverified_headers_are_rejected ... ok
+test dynamic_translation_flag_is_validated_like_java ... ok
+test policy_precedence_scopes_and_revocation_follow_java_model ... ok
+test registry_roundtrip_filters_and_ownership_are_enforced ... ok
+test config_is_strict_and_has_no_insecure_transport_mode ... ok
+test provider_encryption_keys_are_authenticated_at_rest ... ok
+test rsa_jwt_signature_and_claims_are_real ... ok
+test registry_rejects_invalid_interfaces_and_rolls_back_batch ... ok
+test usage_limited_tokens_are_atomically_consumed_and_not_stored_raw ... ok
+test private_key_permissions_are_enforced ... ok
+test malformed_nested_grants_and_token_batches_return_errors_instead_of_panicking ... ok
+test authority_cn_pinning_rejects_same_ca_substitution_before_credentials ... ok
+test blacklisted_requesters_are_refused_and_an_unreachable_blacklist_fails_closed ... ok
+test token_certificate_binding_and_management_guard_fail_closed ... ok
+test authentication_revokes_previous_sessions_and_credentials ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.31s
+
+     Running tests/dso_integrations.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/dso_integrations-9805d293b89d4083)
+
+running 5 tests
+test present_preferred_providers_exclude_the_others_like_java ... ok
+test unreachable_evaluator_only_warns_qos_compliance_failure ... ok
+test quality_requirements_sort_filter_and_warn_like_the_java_qos_driver ... ok
+test translation_bridges_non_native_providers_and_prefers_native_ones ... ok
+test blacklisted_providers_are_filtered_and_an_unreachable_blacklist_follows_the_forced_setting ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s
+
+     Running tests/federation.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/federation-a88774e3469135cb)
+
+running 3 tests
+test foreign_policy_and_tokens_are_bound_to_both_cloud_components ... ok
+test intercloud_flags_require_enabled_config_and_exactly_one_operation ... ok
+test check_policy_delegation_does_not_grant_policy_administration ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running tests/gsosd_530.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/gsosd_530-ee4a93bd32708446)
+
+running 114 tests
+test gsosd_authz_operation_all_read ... ok
+test gsosd_authz_isolation_target ... ok
+test gsosd_authz_isolation_provider ... ok
+test gsosd_authz_event_type_blacklist_testconsumer ... ok
+test gsosd_authz_operation_blacklist_read ... ok
+test gsosd_authz_isolation_consumer ... ok
+test gsosd_authz_operation_all_write ... ok
+test gsosd_authz_isolation_targettype ... ok
+test gsosd_authz_event_type_missing_otherconsumer ... ok
+test gsosd_authz_event_type_missing_testconsumer ... ok
+test gsosd_authz_event_type_whitelist_testconsumer ... ok
+test gsosd_authz_event_type_whitelist_otherconsumer ... ok
+test gsosd_authz_event_type_all_testconsumer ... ok
+test gsosd_authz_isolation_cloud ... ok
+test gsosd_authz_event_type_all_otherconsumer ... ok
+test gsosd_authz_event_type_blacklist_otherconsumer ... ok
+test gsosd_authz_operation_whitelist_read ... ok
+test gsosd_authz_priority_event_type_all_all_otherconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_all_testconsumer ... ok
+test gsosd_authz_priority_event_type_all_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_all_whitelist_testconsumer ... ok
+test gsosd_authz_operation_blacklist_write ... ok
+test gsosd_authz_priority_event_type_all_blacklist_testconsumer ... ok
+test gsosd_authz_operation_whitelist_write ... ok
+test gsosd_authz_priority_event_type_all_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_all_otherconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_all_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_all_all_otherconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_whitelist_testconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_all_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_all_otherconsumer ... ok
+test gsosd_authz_priority_service_def_all_whitelist_testconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_all_otherconsumer ... ok
+test gsosd_authz_priority_service_def_all_blacklist_testconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_whitelist_testconsumer ... ok
+test gsosd_authz_priority_service_def_all_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_all_otherconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_blacklist_otherconsumer ... ok
+test gsosd_authz_service_def_blacklist_testconsumer ... ok
+test gsosd_authz_service_def_all_otherconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_whitelist_testconsumer ... ok
+test gsosd_matrix_authentication_identitymanagement ... ok
+test gsosd_matrix_authentication_generalmanagement ... ok
+test gsosd_matrix_consumerauthorization_authorization ... ok
+test gsosd_authz_service_def_blacklist_otherconsumer ... ok
+test gsosd_matrix_authentication_identity ... ok
+test gsosd_authz_service_def_missing_testconsumer ... ok
+test gsosd_matrix_consumerauthorization_authorizationmanagement ... ok
+test gsosd_matrix_consumerauthorization_authorizationtoken ... ok
+test gsosd_matrix_consumerauthorization_generalmanagement ... ok
+test gsosd_matrix_consumerauthorization_authorizationtokenmanagement ... ok
+test gsosd_matrix_dynamicserviceorchestration_generalmanagement ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestrationhistorymanagement ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestration ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestrationlockmanagement ... ok
+test gsosd_matrix_serviceregistry_devicediscovery ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestrationpushmanagement ... ok
+test gsosd_matrix_serviceregistry_generalmanagement ... ok
+test gsosd_matrix_serviceregistry_serviceregistrymanagement ... ok
+test gsosd_matrix_serviceregistry_servicediscovery ... ok
+test gsosd_matrix_serviceregistry_systemdiscovery ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestration ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationhistorymanagement ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationsimplestoremanagement ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationpushmanagement ... ok
+test gsosd_matrix_simplestoreserviceorchestration_generalmanagement ... ok
+test gsosd_meta_04 ... ok
+test gsosd_meta_05 ... ok
+test gsosd_meta_03 ... ok
+test gsosd_meta_02 ... ok
+test gsosd_meta_01 ... ok
+test gsosd_meta_06 ... ok
+test gsosd_meta_08 ... ok
+test gsosd_meta_09 ... ok
+test gsosd_meta_10 ... ok
+test gsosd_meta_07 ... ok
+test gsosd_name_provider_04 ... ok
+test gsosd_name_provider_05 ... ok
+test gsosd_name_provider_03 ... ok
+test gsosd_name_provider_02 ... ok
+test gsosd_name_provider_01 ... ok
+test gsosd_name_provider_06 ... ok
+test gsosd_name_scope_18 ... ok
+test gsosd_name_scope_17 ... ok
+test gsosd_name_scope_14 ... ok
+test gsosd_name_scope_13 ... ok
+test gsosd_name_scope_15 ... ok
+test gsosd_name_scope_16 ... ok
+test gsosd_name_target_07 ... ok
+test gsosd_name_target_10 ... ok
+test gsosd_name_target_11 ... ok
+test gsosd_name_target_08 ... ok
+test gsosd_name_target_09 ... ok
+test gsosd_name_target_12 ... ok
+test gsosd_authz_service_def_missing_otherconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_whitelist_testconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_blacklist_otherconsumer ... ok
+test gsosd_authz_service_def_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_all_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_whitelist_otherconsumer ... ok
+test gsosd_authz_service_def_whitelist_testconsumer ... ok
+test gsosd_authz_service_def_whitelist_otherconsumer ... ok
+
+test result: ok. 114 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.56s
+
+     Running tests/integration.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/integration-2c4627edfdadcc52)
+
+running 3 tests
+test missing_client_certificate_and_wrong_authority_are_rejected ... ok
+test persisted_push_job_delivers_to_the_pinned_subscriber ... ok
+test all_five_core_systems_interoperate_over_real_mutual_tls ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.75s
+
+     Running tests/plant_rules.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/plant_rules-cc53bed0bd879e22)
+
+running 1 test
+test snapshot_permissions_empty_scopes_and_intercloud_guard ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/process.rs (/private/tmp/arrowhead-naming-fix-tests/rust-target/debug/deps/process-e336892ee6b1d561)
+
+running 3 tests
+test configured_crl_rejects_a_revoked_client_certificate ... ok
+test all_five_named_executables_start_and_reject_role_mismatch ... ok
+test native_authentication_process_persists_and_shuts_down_gracefully ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 11.07s
+
+   Doc-tests arrowhead_core_rust
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

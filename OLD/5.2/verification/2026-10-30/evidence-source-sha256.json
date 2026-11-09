@@ -1,0 +1,16 @@
+{
+  "PRIMARY-SOURCES.md": "e96c467eeacdf54a18eec35f9b3e51087f6d1135cbfa23ee12edc54729f3242a",
+  "Eclipse-Arrowhead-java/JAVA-SUPPORT-FOLDERS.md": "745799c476c2280712719c690f299795e7cc8772a8145e05f440e57ed219d4dc",
+  "Eclipse-Arrowhead-java/ALL-JAVA-SUPPORT-VERIFICATION-2026-10-25.md": "ac502cd194936b329baec8229c592d358958d5c9fc726ec8b1a7a702796e4297",
+  "Eclipse-Arrowhead-go/README.md": "901daa85dc3e78e7f9ac5926e3214c7757ab1870608a9ce9dbdc5dfa3597c602",
+  "Eclipse-Arrowhead-go/verification/REPORT.md": "b8a488a0312cca38529dd4e1731b71910c88d2e0941cc527fb896b8d1f4275d7",
+  "Eclipse-Arrowhead-rust/README.md": "875224b9359f385cc2db947dcf1aecb9b19b8df751e0bf7769210b1d7025fd86",
+  "Eclipse-Arrowhead-rust/ah5-core-rust/COMPATIBILITY.md": "2d1e46fc5cb2ae497b5b9982bc847f1ee2c1a59de0649a3451720de64fefa5d9",
+  "Eclipse-Arrowhead-rust/ah5-support-runtime-rust/COMPATIBILITY.md": "50d0d6b1815d4b5510c3d79ef46e59795e5f21ccb10c5e3fa6a7a808338b4970",
+  "Eclipse-Arrowhead-rust/ah5-LocalCloudManager-rust/VERIFICATION.md": "3dce7d208378f489362b771d07cd682d5c3430bf5a348459a25052100d64917d",
+  "Eclipse-Arrowhead-java/ah5-LocalCloudConfigurator-java/catalogs/javacloud.json": "83a148ca26ed9f93f3b7778b75ef04c4a8a55bf1c38aeff243838af3e22b3973",
+  "Eclipse-Arrowhead-java/ah5-LocalCloudConfigurator-java/verification/2026-10-30/database-assets/REPORT.md": "3d468c041cfacae4eb07fc839ff5311ab8519c5ab4d7e4b9a1a42d68fb1c2b8f",
+  "Eclipse-Arrowhead-java/ah5-LocalCloudManager-java-spring/SOS-CONFIGURATION.md": "6b8d1a7f614bcd27a781fdc82d15b38086e67bb6b395271e2e69caa0c4d75094",
+  "Eclipse-Arrowhead-java/ah5-LocalCloudManager-java-spring/GRAPHICAL-ORCHESTRATION.md": "9642784275387aad96598d2341e136bd5d169c26807d33ca8215cde1389055c5",
+  "Eclipse-Arrowhead-java/ah5-SoSConfigurator-java/README.md": "967b81a8c5eccdf59ae321127b3e137ab3f8742ce9bf3b844dd1bf68010dbb01"
+}

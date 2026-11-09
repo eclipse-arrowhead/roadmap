@@ -1,0 +1,38 @@
+% Deployment snapshot, 24 October 2026. Editable vector artwork.
+\begin{tikzpicture}[x=1cm,y=1cm,
+  block/.style={draw=ArrowheadBlue,fill=ArrowheadBlue!4,rounded corners=2pt,
+  text width=3.55cm,align=center,font=\scriptsize,inner sep=4pt},
+  route/.style={-{Stealth[length=2mm]},thick,ArrowheadBlue}]
+\node[block,text width=15.3cm,minimum height=0.9cm, ahMixed] (bus) at (6,0)
+ {\textbf{Common service-consumption contract}\\
+ ServiceRegistry discovery $\rightarrow$ Authentication identity $\rightarrow$
+ service orchestration $\rightarrow$ direct, authorised provider call};
+\node[block,anchor=north,minimum height=5.4cm, ahMixed] (core) at (0,-1.1)
+ {\textbf{Core (5; private owned state)}\\[5pt]
+ \colorbox{AHSysMLRegistry}{\parbox{3.1cm}{\centering ServiceRegistry}}\\[4pt]
+ \colorbox{AHSysMLSecurity}{\parbox{3.1cm}{\centering Authentication}}\\[4pt]
+ \colorbox{AHSysMLSecurity}{\parbox{3.1cm}{\centering ConsumerAuthorization}}\\[4pt]
+ \colorbox{AHSysMLOrchestration}{\parbox{3.1cm}{\centering DynamicService-\\Orchestration}}\\[4pt]
+ \colorbox{AHSysMLOrchestration}{\parbox{3.1cm}{\centering SimpleStoreService-\\Orchestration}}};
+\node[block,anchor=north,minimum height=5.4cm, ahSupport] (life) at (4,-1.1)
+ {\textbf{Lifecycle and policy (4)}\\[5pt]
+ Blacklist\\[7pt] Onboarding\\[7pt] CertificateAuthority\\[7pt] DeviceQoSEvaluator};
+\node[block,anchor=north,minimum height=5.4cm, ahSupport] (svc) at (8,-1.1)
+ {\textbf{Data and engineering (7)}\\[5pt]
+ TranslationManager\\[4pt] DataManager\\[4pt] TimeManager\\[4pt] EventHandler\\[4pt]
+ Configuration\\[4pt] PlantDescriptionEngine\\[4pt] Choreographer};
+\node[block,anchor=north,minimum height=5.4cm, ahMixed] (ops) at (12,-1.1)
+ {\textbf{Operations and exchange (6)}\\[5pt]
+ \colorbox{AHSysMLSupport}{\strut SysMonitor}\\[4pt] \colorbox{AHSysMLSupport}{\strut AIGym}\\[4pt] \colorbox{AHSysMLSupport}{\strut Gatekeeper}\\[4pt] \colorbox{AHSysMLSupport}{\strut GateTunnel}\\[4pt]
+ \colorbox{AHSysMLSupport}{\strut LocalCloudManager}\\[4pt]\colorbox{AHSysMLApplication}{\strut RandomDataProducer}};
+\foreach \n in {core,life,svc,ops} \draw[route] (bus.south -| \n.north) -- (\n.north);
+\node[block,text width=15.3cm,minimum height=1cm, ahMixed] (monitor) at (6,-7.5)
+ {\textbf{Native monitoring from all 22 microsystems}\\
+ AMQP broker $\rightarrow$ SysMonitor (SQLite history/outbox)
+ $\rightarrow$ MQTT broker $\rightarrow$ AIGym};
+\draw[route] (ops.south) -- (ops.south |- monitor.north);
+\node[block,text width=15.3cm,fill=gray!6,draw=ArrowheadGrey, ahInfrastructure] at (6,-9)
+ {\textbf{Integrated assets:} 15 private MySQL containers owned by their microsystems.\\
+ \textbf{Infrastructure:} AMQP and MQTT brokers; dashboard UI; constrained Docker proxy.\\
+ 24 October snapshot: 41 containers. The federation relay is a separate project.};
+\end{tikzpicture}

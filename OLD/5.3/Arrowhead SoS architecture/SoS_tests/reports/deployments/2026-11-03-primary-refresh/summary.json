@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-03",
+  "applicationContainersRunning": 60,
+  "testsPerCloud": 503,
+  "counts": {
+    "java": {
+      "passed": 266,
+      "failures": 32,
+      "errors": 0,
+      "skipped": 205
+    },
+    "go": {
+      "passed": 298,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 205
+    },
+    "rust": {
+      "passed": 298,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 205
+    }
+  },
+  "persistentBootstrapGrantApplied": false,
+  "requiresApproval": "Java ConsumerAuthorization -> Blacklist.blacklistDiscovery read permission",
+  "all503FullyExecuted": false
+}

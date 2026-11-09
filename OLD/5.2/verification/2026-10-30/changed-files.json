@@ -1,0 +1,92 @@
+[
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/bibliography_support.bib",
+    "sha256": "e0290cdef6ba5b8735709222708b9fe29e8f0a9475467a33bd29cd9250d6c004",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/bibliography_core.bib",
+    "sha256": "64b453f26d172a8ab241f2770522dec28834cffe40b30edd70802f21bf4d2159",
+    "new": true
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/GSoSDD_Arrowhead_Support_Systems_5.2.tex",
+    "sha256": "6e33dc4d30e95513239ff050a9a5e49cdb16bd39c47e92b7d0e7e82328848b3c",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/GSoSDD_Arrowhead_Core_Systems_5.2.2.pdf",
+    "sha256": "2da26e44460dc15a99d8c1ca15507af7ba093c89c9aaa6a5c288d21cdbab27af",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/bibliography.bib",
+    "sha256": "13895ce309bcfd614060ae4f1080274cfaac41d7cc737d7d4be75cedd17ba29c",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/GSoSDD_Arrowhead_Support_Systems_5.2.pdf",
+    "sha256": "d7106a2ae68a2281622c9db84c03dfeffaf6620fdb1230a6f423cf9ec96d9b97",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/GSoSDD_Arrowhead_Core_Systems_5.2.2.tex",
+    "sha256": "b002008085839eb63ab47e53082e754189acd6c7633dfd3c446fcc98ae63ebff",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/GSoSD-Core-and-Support-Systems-5.2.2.tex",
+    "sha256": "4cac3204cf2ec328e6849a663782cc998b191104f845909fb7f2a95d3576f06f",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/GSoSD-Core-and-Support-Systems-5.2.2.pdf",
+    "sha256": "a20df719527eb910f07b7cdb73a4c91dc97d05b3f0c09b0ed1de97ceea8ef40c",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/bibliography_support.bib",
+    "sha256": "fc82a11a81e675635d3a323ae5d135612ec460dd04100a907166824bbfac3e0f",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/bibliography_core.bib",
+    "sha256": "13895ce309bcfd614060ae4f1080274cfaac41d7cc737d7d4be75cedd17ba29c",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/bibliography.bib",
+    "sha256": "e2c0f6b74763d4cb79a7be0a07616150625ec922384a3dd11dec0e59b9907e31",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/figures/java-reference-deployment.tex",
+    "sha256": "55fdf2bebf729216ef493835b011c9da7daf99e58e6fc6990102b1d3c118e954",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/figures/default-cloud-owned-assets.tex",
+    "sha256": "75dd8eaea5ce67ee4c5726e34160cd11d52aea88d5e6a4f66c94b6f64b5e55f4",
+    "new": true
+  },
+  {
+    "path": "Arrowhead SoS architecture/WhiteBox_5.2.2/figures/java-go-rust-interoperability.tex",
+    "sha256": "51992060d7d5e5d58c357a47a497168784c9623edc4f97d48004ff0e12c40132",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/figures/java-reference-deployment.tex",
+    "sha256": "55fdf2bebf729216ef493835b011c9da7daf99e58e6fc6990102b1d3c118e954",
+    "new": false
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/figures/default-cloud-owned-assets.tex",
+    "sha256": "75dd8eaea5ce67ee4c5726e34160cd11d52aea88d5e6a4f66c94b6f64b5e55f4",
+    "new": true
+  },
+  {
+    "path": "Arrowhead SoS architecture/BlackBox_5.2.2/figures/java-go-rust-interoperability.tex",
+    "sha256": "51992060d7d5e5d58c357a47a497168784c9623edc4f97d48004ff0e12c40132",
+    "new": false
+  }
+]

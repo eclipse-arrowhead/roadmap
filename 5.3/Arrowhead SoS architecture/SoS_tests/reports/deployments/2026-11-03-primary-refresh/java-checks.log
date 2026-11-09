@@ -1,0 +1,455 @@
+sssssss.sssss.FFFFFssFFFFFFFFFsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss...FFF....................................FFF.........................................................FFF.........................................................FFF......FFF.....................................................................FFF....................................
+======================================================================
+FAIL: test_AUTHZ_all (sos_tests.test_live.BehaviorTests.test_AUTHZ_all)
+ALL grants an authenticated consumer [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_blacklist_in (sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_in)
+Blacklist member is denied [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_blacklist_out (sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_out)
+Consumer outside blacklist is granted [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_management_allow (sos_tests.test_live.BehaviorTests.test_AUTHZ_management_allow)
+Management allowance overrides provider denial [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 145, in execute
+    response=self.transport.request(recipe,variables);test.assertIn(response['status'],recipe.get('expected_statuses',[200,201,204]))
+                                                      ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in [200, 201, 204]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 159, in execute
+    if cleanup_errors:raise AssertionError('; '.join(cleanup_errors))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cleanup returned 403
+
+======================================================================
+FAIL: test_AUTHZ_management_deny (sos_tests.test_live.BehaviorTests.test_AUTHZ_management_deny)
+Management denial overrides provider allowance [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 145, in execute
+    response=self.transport.request(recipe,variables);test.assertIn(response['status'],recipe.get('expected_statuses',[200,201,204]))
+                                                      ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in [200, 201, 204]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 159, in execute
+    if cleanup_errors:raise AssertionError('; '.join(cleanup_errors))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Cleanup returned 403
+
+======================================================================
+FAIL: test_AUTHZ_no_policy (sos_tests.test_live.BehaviorTests.test_AUTHZ_no_policy)
+Missing access rule denies [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_operation_allow (sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_allow)
+Explicitly permitted operation is granted [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_operation_deny (sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_deny)
+Unpermitted operation is denied [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_revoked (sos_tests.test_live.BehaviorTests.test_AUTHZ_revoked)
+Revoked last applicable rule no longer grants access [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_whitelist_in (sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_in)
+Whitelist member is granted [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_whitelist_out (sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_out)
+Nonmember of whitelist is denied [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_wrong_event (sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_event)
+Service grant does not authorize a different event target [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_wrong_provider (sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_provider)
+Grant for a different provider does not apply [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AUTHZ_wrong_service (sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_service)
+Grant for a different service does not apply [PDF 11,21,23,24]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 18, in test
+    conf,base=profile();Executor(conf,base,os.environ.get('SOS_ALLOW_MUTATIONS')=='1').execute(self,c)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 152, in execute
+    assert_oracle(test,case,response,observed,expected)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/harness.py", line 91, in assert_oracle
+    test.assertIn(response['status'],range(200,300),'Expected successful observation request')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 403 not found in range(200, 300) : Expected successful observation request
+
+======================================================================
+FAIL: test_AIGym_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_naming)
+AIGym.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_AIGym_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_presence)
+AIGym.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_AIGym_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_protected)
+AIGym.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_CertificateAuthority_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_naming)
+CertificateAuthority.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_CertificateAuthority_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_presence)
+CertificateAuthority.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_CertificateAuthority_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_protected)
+CertificateAuthority.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_DataManager_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_naming)
+DataManager.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_DataManager_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_presence)
+DataManager.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_DataManager_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_protected)
+DataManager.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_GateTunnel_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_naming)
+GateTunnel.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_GateTunnel_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_presence)
+GateTunnel.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_GateTunnel_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_protected)
+GateTunnel.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_Gatekeeper_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_naming)
+Gatekeeper.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_Gatekeeper_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_presence)
+Gatekeeper.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_Gatekeeper_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_protected)
+Gatekeeper.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_SysMonitor_generalManagement_naming (sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_naming)
+SysMonitor.generalManagement naming [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_SysMonitor_generalManagement_presence (sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_presence)
+SysMonitor.generalManagement presence [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+======================================================================
+FAIL: test_SysMonitor_generalManagement_protected (sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_protected)
+SysMonitor.generalManagement protected [PDF pp.5,8-10,15,18,38-39]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 56, in test
+    rows=registrations(self,name,svc)
+  File "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/SoS_tests/sos_tests/test_live.py", line 29, in registrations
+    body=response['body'];test.assertIsInstance(body,dict);rows=body.get('entries');test.assertIsInstance(rows,list);test.assertTrue(rows,'Required registered service absent')
+                                                                                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Required registered service absent
+
+----------------------------------------------------------------------
+Ran 503 tests in 18.529s
+
+FAILED (failures=32, skipped=205)

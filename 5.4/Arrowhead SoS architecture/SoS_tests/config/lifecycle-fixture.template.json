@@ -1,0 +1,34 @@
+{
+  "scenarioId": "ONB-offboard-registry",
+  "notes": "Fill exact IDD operations and a dedicated approved test device; no default operator/device credentials are supplied.",
+  "fixture": {
+    "variables": {
+      "device": "SoSTestDevice"
+    },
+    "setup": [
+      {
+        "endpoint": "onboarding",
+        "actor": "operator",
+        "method": "DELETE",
+        "path": "/replace-with-verified-offboard-path",
+        "expected_statuses": [
+          200,
+          204
+        ]
+      }
+    ],
+    "request": {
+      "endpoint": "registry",
+      "actor": "inspector",
+      "method": "POST",
+      "path": "/serviceregistry/system-discovery/lookup",
+      "body": {
+        "systemNames": [
+          "SoSTestHostedSystem"
+        ]
+      }
+    },
+    "select": "/body/entries",
+    "cleanup": []
+  }
+}

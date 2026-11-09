@@ -1,0 +1,341 @@
+{
+  "source": {
+    "pdf": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/roadmap/5.3/Arrowhead SoS architecture/BlackBox_5.3.0/GSoSD-Core-and-Support-Systems-5.3.0.pdf",
+    "sha256": "e823ecd9aa1f8e5082d756db3fa20a1e72c8eac70e11c3697c224e15f7bf91d1",
+    "pages": 39,
+    "version": "5.3.0",
+    "status": "DRAFT",
+    "documentDate": "2026-11-02"
+  },
+  "systems": [
+    {
+      "name": "ServiceRegistry",
+      "kind": "core",
+      "services": [
+        "serviceDiscovery",
+        "systemDiscovery",
+        "deviceDiscovery",
+        "serviceRegistryManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        9,
+        38
+      ],
+      "optional": false
+    },
+    {
+      "name": "Authentication",
+      "kind": "core",
+      "services": [
+        "identity",
+        "identityManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        9,
+        38
+      ],
+      "optional": false
+    },
+    {
+      "name": "ConsumerAuthorization",
+      "kind": "core",
+      "services": [
+        "authorization",
+        "authorizationToken",
+        "authorizationManagement",
+        "authorizationTokenManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        9,
+        38
+      ],
+      "optional": false
+    },
+    {
+      "name": "DynamicServiceOrchestration",
+      "kind": "core",
+      "services": [
+        "serviceOrchestration",
+        "serviceOrchestrationPushManagement",
+        "serviceOrchestrationLockManagement",
+        "serviceOrchestrationHistoryManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        9,
+        38
+      ],
+      "optional": true
+    },
+    {
+      "name": "SimpleStoreServiceOrchestration",
+      "kind": "core",
+      "services": [
+        "serviceOrchestration",
+        "serviceOrchestrationSimpleStoreManagement",
+        "serviceOrchestrationPushManagement",
+        "serviceOrchestrationHistoryManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        9,
+        38
+      ],
+      "optional": true
+    },
+    {
+      "name": "Blacklist",
+      "kind": "support",
+      "services": [
+        "blacklistDiscovery",
+        "blacklistManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "TranslationManager",
+      "kind": "support",
+      "services": [
+        "translationBridge",
+        "translationBridgeManagement",
+        "translationReport",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "DeviceQoSEvaluator",
+      "kind": "support",
+      "services": [
+        "qualityEvaluation",
+        "deviceQualityDataManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "PlantDescriptionEngine",
+      "kind": "support",
+      "services": [
+        "plantDescriptionManagement",
+        "plantDescriptionMonitor",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "Choreographer",
+      "kind": "support",
+      "services": [
+        "choreographerSession",
+        "choreographerExecutor",
+        "choreographerManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "Configuration",
+      "kind": "support",
+      "services": [
+        "configuration",
+        "configurationProxy",
+        "configurationManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "CertificateAuthority",
+      "kind": "support",
+      "services": [
+        "certificateSigning",
+        "certificateValidation",
+        "certificateAuthorityManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "Onboarding",
+      "kind": "support",
+      "services": [
+        "onboarding",
+        "onboardingManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "EventHandler",
+      "kind": "support",
+      "services": [
+        "eventPublish",
+        "eventSubscription",
+        "eventHandlerManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "DataManager",
+      "kind": "support",
+      "services": [
+        "dataProxy",
+        "dataHistorian",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "TimeManager",
+      "kind": "support",
+      "services": [
+        "time",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "SysMonitor",
+      "kind": "support",
+      "services": [
+        "sysMonitorHistory",
+        "sysMonitorData",
+        "sysMonitorManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "AIGym",
+      "kind": "support",
+      "services": [
+        "aiGym",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "Gatekeeper",
+      "kind": "support",
+      "services": [
+        "globalServiceDiscovery",
+        "interCloudNegotiation",
+        "gatekeeperManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    },
+    {
+      "name": "GateTunnel",
+      "kind": "support",
+      "services": [
+        "gateTunnelConnection",
+        "gateTunnelKey",
+        "gateTunnelManagement",
+        "generalManagement",
+        "sysMonitor"
+      ],
+      "pages": [
+        15,
+        38,
+        39
+      ],
+      "optional": true
+    }
+  ]
+}

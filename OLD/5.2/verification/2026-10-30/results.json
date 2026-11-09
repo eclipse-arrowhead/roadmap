@@ -1,0 +1,26 @@
+[
+  {
+    "document": "Arrowhead SoS architecture/BlackBox_5.2.2/GSoSD-Core-and-Support-Systems-5.2.2.pdf",
+    "pages": 45,
+    "sha256": "a20df719527eb910f07b7cdb73a4c91dc97d05b3f0c09b0ed1de97ceea8ef40c",
+    "unresolvedReferences": false,
+    "overfullBoxes": false,
+    "visualReview": "All-page contact sheets and new-content pages inspected"
+  },
+  {
+    "document": "Arrowhead SoS architecture/WhiteBox_5.2.2/GSoSDD_Arrowhead_Core_Systems_5.2.2.pdf",
+    "pages": 36,
+    "sha256": "2da26e44460dc15a99d8c1ca15507af7ba093c89c9aaa6a5c288d21cdbab27af",
+    "unresolvedReferences": false,
+    "overfullBoxes": false,
+    "visualReview": "All-page contact sheets and new-content pages inspected"
+  },
+  {
+    "document": "Arrowhead SoS architecture/WhiteBox_5.2.2/GSoSDD_Arrowhead_Support_Systems_5.2.pdf",
+    "pages": 37,
+    "sha256": "d7106a2ae68a2281622c9db84c03dfeffaf6620fdb1230a6f423cf9ec96d9b97",
+    "unresolvedReferences": false,
+    "overfullBoxes": false,
+    "visualReview": "All-page contact sheets and new-content pages inspected"
+  }
+]

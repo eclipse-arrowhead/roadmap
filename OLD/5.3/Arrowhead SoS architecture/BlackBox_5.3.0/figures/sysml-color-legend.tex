@@ -1,0 +1,19 @@
+\paragraph{Graphics colour convention.}
+All diagrams use the SysML v1.6 Papyrus library's system-role fills, taken from
+\prop{EclipseArrowhead-5.0/Arrowhead-5.0.notation}: registry blue, authentication
+and authorisation red-orange, orchestration green, support yellow and application
+orange. Both orchestration implementations share the library's combined-cloud
+green; infrastructure is grey and mixed-system groups are neutral. These colours
+identify roles rather than implementation languages. The library's turquoise is
+reserved for service-interface elements.
+\begin{center}\scriptsize
+\setlength{\fboxsep}{4pt}
+\colorbox{AHSysMLRegistry}{\strut ServiceRegistry}\quad
+\colorbox{AHSysMLSecurity}{\strut Authentication / ConsumerAuthorization}\\[6pt]
+\colorbox{AHSysMLOrchestration}{\strut DSO / SimpleStore orchestration}\quad
+\colorbox{AHSysMLSupport}{\strut Support}\quad
+\colorbox{AHSysMLApplication}{\strut Application}\quad
+\colorbox{AHSysMLInfrastructure}{\strut Infrastructure}
+\end{center}
+%\input{sysml-color-legend.tex}
+%\input{sysml-color-palette.tex}

@@ -1,0 +1,3337 @@
+[
+  {
+    "id": "SR-register",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Owner registers its service",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition."
+  },
+  {
+    "id": "SR-lookup",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Lookup returns the registered instance",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition.",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "SR-metadata-match",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Matching metadata selects the service",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition.",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "SR-metadata-miss",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Nonmatching metadata excludes the service",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition.",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "SR-unique-instance",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Lookup by instance ID returns at most one instance",
+    "predicate": "length_at_most",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition.",
+    "expected": 1
+  },
+  {
+    "id": "SR-revoke",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Revoked instance is no longer discoverable",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition.",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "SR-expiry",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Expired registry entry is not returned",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition.",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "SR-restricted-public",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Restricted discovery retains bootstrap identity discovery",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition."
+  },
+  {
+    "id": "SR-restricted-private",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Ordinary direct discovery excludes protected service metadata",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition."
+  },
+  {
+    "id": "SR-direct-access",
+    "system": "ServiceRegistry",
+    "section": "3.1.1; 2.1.1; 6.1",
+    "pages": [
+      7,
+      10,
+      22
+    ],
+    "title": "Configured discovery principal can find a protected service",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated registered test provider; expiry/revoke require an observed transition.",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "AUTHN-login",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Correct credentials produce an identity token",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AUTHN-wrong-password",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Wrong credentials cannot authenticate",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AUTHN-verify",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Token verifies as its issuing system",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${consumer}"
+  },
+  {
+    "id": "AUTHN-expired",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Expired token is not a verified identity",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHN-logout",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Logged-out token is not a verified identity",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHN-changed-credentials",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Old credentials fail after a credential change",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AUTHN-binding",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Token for a different certificate cannot execute service",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AUTHN-unknown-token",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Unknown token is not a verified identity",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHN-missing-token",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Token-profile request without its token is refused",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AUTHN-self-declared",
+    "system": "Authentication",
+    "section": "3.1.2; 3.2; 6.2",
+    "pages": [
+      10,
+      12,
+      13,
+      23
+    ],
+    "title": "Declared name alone cannot execute a protected service",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AUTHZ-no-policy",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Missing access rule denies",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-all",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "ALL grants an authenticated consumer",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "AUTHZ-whitelist-in",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Whitelist member is granted",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "AUTHZ-whitelist-out",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Nonmember of whitelist is denied",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-blacklist-in",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Blacklist member is denied",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-blacklist-out",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Consumer outside blacklist is granted",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "AUTHZ-metadata-match",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Matching system metadata is granted",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "AUTHZ-metadata-miss",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Nonmatching system metadata is denied",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-management-deny",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Management denial overrides provider allowance",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-management-allow",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Management allowance overrides provider denial",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "AUTHZ-operation-allow",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Explicitly permitted operation is granted",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "AUTHZ-operation-deny",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Unpermitted operation is denied",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-wrong-provider",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Grant for a different provider does not apply",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-wrong-service",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Grant for a different service does not apply",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-wrong-event",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Service grant does not authorize a different event target",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "AUTHZ-revoked",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 5.2; 6.3",
+    "pages": [
+      11,
+      21,
+      23,
+      24
+    ],
+    "title": "Revoked last applicable rule no longer grants access",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-time-valid",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Unexpired service-bound token is valid",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": true
+  },
+  {
+    "id": "TOKEN-expired",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Expired access token is refused",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-usage-first",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Usage-limited token works within its allowance",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": true
+  },
+  {
+    "id": "TOKEN-usage-exhausted",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Usage-exhausted token is refused",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-wrong-consumer",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Token cannot be used by another consumer",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-wrong-provider",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Token cannot be used at another provider",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-wrong-service",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Token cannot authorize another service",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-wrong-operation",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Token cannot authorize another operation",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-tampered",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Tampered signed token is refused",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": false
+  },
+  {
+    "id": "TOKEN-local-verification",
+    "system": "ConsumerAuthorization",
+    "section": "3.1.3; 6.5; 7",
+    "pages": [
+      11,
+      25,
+      31
+    ],
+    "title": "Self-contained token verifies with issuer verification endpoint disconnected",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "For local verification isolate token issuer only; preserve any separately required identity/revocation checks.",
+    "expected": true
+  },
+  {
+    "id": "DSO-eligible",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "DSO returns an eligible permitted provider",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "DSO-unauthorized",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "DSO excludes providers denied to the consumer",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${deniedInstanceId}"
+  },
+  {
+    "id": "DSO-blacklisted",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "DSO excludes blacklisted providers",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${blacklistedInstanceId}"
+  },
+  {
+    "id": "DSO-preferred",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "Only-preferred mode excludes other providers",
+    "predicate": "subset",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${preferredInstances}"
+  },
+  {
+    "id": "DSO-exclusive",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "Exclusive provider is not assigned to another consumer",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${lockedInstanceId}"
+  },
+  {
+    "id": "DSO-expired-lock",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "Expired lock permits eligible selection again",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "DSO-qos-filter",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "QoS filtering excludes providers below the requested threshold",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${badQoSInstanceId}"
+  },
+  {
+    "id": "DSO-qos-sort",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "QoS sorting returns the configured best-to-worst order",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${qosOrder}"
+  },
+  {
+    "id": "DSO-token",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "Token-requiring interface includes an access token for the consumer",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "DSO-push",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "Subscription receives triggered orchestration",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "DSO-unsubscribe",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "Unsubscribed consumer receives no later result during observation window",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "DSO-translation-off",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "No incompatible provider is returned when translation is disabled",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "DSO-translation-on",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "An authorised compatible bridge is returned when translation is permitted",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "DSO-intercloud-denied",
+    "system": "DynamicServiceOrchestration",
+    "section": "3.1.4; 6.4; 6.5; 6.9; 6.12",
+    "pages": [
+      11,
+      12,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "title": "Remote denied provider is excluded",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${deniedRemoteInstanceId}"
+  },
+  {
+    "id": "SSO-priority",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "3.1.4; 6.4",
+    "pages": [
+      11,
+      12,
+      24
+    ],
+    "title": "Atomic orchestration returns rules in priority order",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${priorityOrder}"
+  },
+  {
+    "id": "SSO-identifiers",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "3.1.4; 6.4",
+    "pages": [
+      11,
+      12,
+      24
+    ],
+    "title": "Atomic orchestration returns resolvable instance identifiers",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "SSO-no-tokens",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "3.1.4; 6.4",
+    "pages": [
+      11,
+      12,
+      24
+    ],
+    "title": "Atomic orchestration issues no access tokens",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "SSO-not-grant",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "3.1.4; 6.4",
+    "pages": [
+      11,
+      12,
+      24
+    ],
+    "title": "Stored orchestration rule does not bypass provider authorization",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "SSO-consumer-isolation",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "3.1.4; 6.4",
+    "pages": [
+      11,
+      12,
+      24
+    ],
+    "title": "Rules for another consumer are not returned",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "SSO-push",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "3.1.4; 6.4",
+    "pages": [
+      11,
+      12,
+      24
+    ],
+    "title": "Atomic push delivers subscribed rules",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BL-reason",
+    "system": "Blacklist",
+    "section": "4.3.1",
+    "pages": [
+      16
+    ],
+    "title": "Exclusion requires a reason",
+    "predicate": "client_error",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BL-active",
+    "system": "Blacklist",
+    "section": "4.3.1",
+    "pages": [
+      16
+    ],
+    "title": "At least one unexpired entry keeps a system excluded",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "BL-expired",
+    "system": "Blacklist",
+    "section": "4.3.1",
+    "pages": [
+      16
+    ],
+    "title": "Expired entries alone do not exclude a system",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "BL-whitelist",
+    "system": "Blacklist",
+    "section": "4.3.1",
+    "pages": [
+      16
+    ],
+    "title": "A protected whitelist identity cannot be excluded",
+    "predicate": "client_error",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BL-self-lookup",
+    "system": "Blacklist",
+    "section": "4.3.1",
+    "pages": [
+      16
+    ],
+    "title": "Blacklisted requester can inspect its exclusion reason",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BL-fail-closed",
+    "system": "Blacklist",
+    "section": "4.3.1",
+    "pages": [
+      16
+    ],
+    "title": "Configured fail-closed filter refuses access when Blacklist is unavailable",
+    "predicate": "denied_or_unavailable",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "TM-bridge",
+    "system": "TranslationManager",
+    "section": "4.3.2; 4.2; 6.9",
+    "pages": [
+      15,
+      16,
+      28
+    ],
+    "title": "Negotiated bridge exposes a compatible interface",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "TM-bridge-token",
+    "system": "TranslationManager",
+    "section": "4.3.2; 4.2; 6.9",
+    "pages": [
+      15,
+      16,
+      28
+    ],
+    "title": "Bridge consumption requires its bridge token",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "TM-usage-report",
+    "system": "TranslationManager",
+    "section": "4.3.2; 4.2; 6.9",
+    "pages": [
+      15,
+      16,
+      28
+    ],
+    "title": "Translator usage reports update the owning bridge",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "TM-wrong-translator",
+    "system": "TranslationManager",
+    "section": "4.3.2; 4.2; 6.9",
+    "pages": [
+      15,
+      16,
+      28
+    ],
+    "title": "Another translator cannot report for this bridge",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "TM-termination",
+    "system": "TranslationManager",
+    "section": "4.3.2; 4.2; 6.9",
+    "pages": [
+      15,
+      16,
+      28
+    ],
+    "title": "Closed bridge is not usable",
+    "predicate": "denied_or_not_found",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "QOS-device-map",
+    "system": "DeviceQoSEvaluator",
+    "section": "4.3.3",
+    "pages": [
+      16
+    ],
+    "title": "System quality is mapped through its hosting device",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${device}"
+  },
+  {
+    "id": "QOS-filter",
+    "system": "DeviceQoSEvaluator",
+    "section": "4.3.3",
+    "pages": [
+      16
+    ],
+    "title": "Device quality below threshold is excluded",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${badDevice}"
+  },
+  {
+    "id": "QOS-sort",
+    "system": "DeviceQoSEvaluator",
+    "section": "4.3.3",
+    "pages": [
+      16
+    ],
+    "title": "Quality sort follows configured measured ranking",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${deviceOrder}"
+  },
+  {
+    "id": "PDE-one-active",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Exactly one plant description is active",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": 1
+  },
+  {
+    "id": "PDE-matched",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Registered unique plant match becomes a managed provider",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${instanceId}"
+  },
+  {
+    "id": "PDE-missing",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Unavailable engineered provider yields no unrelated fallback",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval."
+  },
+  {
+    "id": "PDE-withdrawn",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Removed connection withdraws its managed scope",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${scope}"
+  },
+  {
+    "id": "PDE-atomic",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "A reconciliation result is a complete old or complete new snapshot",
+    "predicate": "one_of",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${completeSnapshots}"
+  },
+  {
+    "id": "PDE-missing-alarm",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Missing described system raises an alarm",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${missingAlarm}"
+  },
+  {
+    "id": "PDE-ambiguous-alarm",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Ambiguous system match raises an alarm",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${ambiguousAlarm}"
+  },
+  {
+    "id": "PDE-undescribed-alarm",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Undescribed running system raises an alarm",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${undescribedAlarm}"
+  },
+  {
+    "id": "PDE-silent-alarm",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "No recent monitoring raises an alarm",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${silentAlarm}"
+  },
+  {
+    "id": "PDE-unmonitored-alarm",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Unmonitored system raises an alarm",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${unmonitoredAlarm}"
+  },
+  {
+    "id": "PDE-ack",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Operator can acknowledge an alarm",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": true
+  },
+  {
+    "id": "PDE-operator-priority",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Operator rule wins over PlantDescription rule",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${operatorProvider}"
+  },
+  {
+    "id": "PDE-plant-priority",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "PlantDescription rule wins over Orchestration and Consumer rules",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${plantProvider}"
+  },
+  {
+    "id": "PDE-includes",
+    "system": "PlantDescriptionEngine",
+    "section": "4.4.1; 5.1; 6.7",
+    "pages": [
+      12,
+      16,
+      20,
+      21,
+      26,
+      27
+    ],
+    "title": "Included plant descriptions contribute their engineered connections",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Configure registry, DSO managed-snapshot extension and monitoring; wait one successful reconciliation interval.",
+    "expected": "${includedConnection}"
+  },
+  {
+    "id": "CHOR-start",
+    "system": "Choreographer",
+    "section": "4.4.2; 4.2; 6.8",
+    "pages": [
+      15,
+      16,
+      27,
+      28
+    ],
+    "title": "Plan client starts a session",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "CHOR-executor-token",
+    "system": "Choreographer",
+    "section": "4.4.2; 4.2; 6.8",
+    "pages": [
+      15,
+      16,
+      27,
+      28
+    ],
+    "title": "Step token belongs to the selected executor",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${executor}"
+  },
+  {
+    "id": "CHOR-step-owner",
+    "system": "Choreographer",
+    "section": "4.4.2; 4.2; 6.8",
+    "pages": [
+      15,
+      16,
+      27,
+      28
+    ],
+    "title": "Another executor cannot complete the selected step",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "CHOR-retry",
+    "system": "Choreographer",
+    "section": "4.4.2; 4.2; 6.8",
+    "pages": [
+      15,
+      16,
+      27,
+      28
+    ],
+    "title": "Failed executor is excluded and a different executor receives retry",
+    "predicate": "not_equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${failedExecutor}"
+  },
+  {
+    "id": "CHOR-parallel",
+    "system": "Choreographer",
+    "section": "4.4.2; 4.2; 6.8",
+    "pages": [
+      15,
+      16,
+      27,
+      28
+    ],
+    "title": "Independent steps overlap in their recorded execution intervals",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "CHOR-complete",
+    "system": "Choreographer",
+    "section": "4.4.2; 4.2; 6.8",
+    "pages": [
+      15,
+      16,
+      27,
+      28
+    ],
+    "title": "Completed actions terminate the session",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "CHOR-abort-owner",
+    "system": "Choreographer",
+    "section": "4.4.2; 4.2; 6.8",
+    "pages": [
+      15,
+      16,
+      27,
+      28
+    ],
+    "title": "Unrelated client cannot abort another owner session",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "CFG-own",
+    "system": "Configuration",
+    "section": "4.4.3",
+    "pages": [
+      17
+    ],
+    "title": "System can fetch its own stored configuration",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${ownConfiguration}"
+  },
+  {
+    "id": "CFG-other",
+    "system": "Configuration",
+    "section": "4.4.3",
+    "pages": [
+      17
+    ],
+    "title": "System cannot fetch another system configuration through own-service endpoint",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "CFG-proxy-allowed",
+    "system": "Configuration",
+    "section": "4.4.3",
+    "pages": [
+      17
+    ],
+    "title": "Authorised proxy can fetch another configuration",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${otherConfiguration}"
+  },
+  {
+    "id": "CFG-proxy-denied",
+    "system": "Configuration",
+    "section": "4.4.3",
+    "pages": [
+      17
+    ],
+    "title": "Unauthorised proxy cannot fetch another configuration",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "CFG-management",
+    "system": "Configuration",
+    "section": "4.4.3",
+    "pages": [
+      17
+    ],
+    "title": "Ordinary consumer cannot administer all configurations",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "CA-sign-authorized",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Approved provisioning principal obtains a certificate",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text."
+  },
+  {
+    "id": "CA-sign-denied",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Ordinary consumer cannot sign certificates",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text."
+  },
+  {
+    "id": "CA-end-entity",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Issued certificate is not a CA",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text.",
+    "expected": false
+  },
+  {
+    "id": "CA-key-signing",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Issued certificate has no certificate-signing capability",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text.",
+    "expected": false
+  },
+  {
+    "id": "CA-recorded",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Issued certificate has an issuance record",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text."
+  },
+  {
+    "id": "CA-valid",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Issued currently valid certificate validates",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text.",
+    "expected": true
+  },
+  {
+    "id": "CA-revoked",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Revoked certificate does not validate",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text.",
+    "expected": false
+  },
+  {
+    "id": "CA-untrusted",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Certificate not issued by the cloud is not considered valid",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text.",
+    "expected": false
+  },
+  {
+    "id": "CA-trusted-key-expired",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Expired trusted key is not valid",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text.",
+    "expected": false
+  },
+  {
+    "id": "CA-new-handshake",
+    "system": "CertificateAuthority",
+    "section": "4.5.1; 5.2; 9(11)",
+    "pages": [
+      17,
+      21,
+      34
+    ],
+    "title": "Revoked certificate is refused on a fresh TLS handshake",
+    "predicate": "tls_rejected",
+    "classification": "architectural",
+    "prerequisites": "Inspect certificate extensions using your IDD fixture, not just returned text."
+  },
+  {
+    "id": "ONB-unapproved",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Unapproved manufacturer fingerprint cannot enroll",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-approved",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Approved bootstrap certificate obtains onboarding credential",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-sequence",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Device enrollment without the preceding credential is refused",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-system-approved",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Only a hosted system approved for this device receives an identity",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-system-unapproved",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Unapproved hosted system is refused",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-superseded",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Superseded credential is refused",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-revoked",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Revoked enrollment credential is refused",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-no-auto-grant",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "New system receives no implicit service permission",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "ONB-offboard-registry",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Offboarding removes its registry entries",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-offboard-identities",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Offboarding removes its identities",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "ONB-offboard-certs",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Offboarding revokes its issued certificates",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "ONB-offboard-exclusion",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Offboarded system is excluded",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "ONB-no-signing-key",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Onboarding has no certificate signing key",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "ONB-certificate-only",
+    "system": "Onboarding",
+    "section": "4.5.2; 5.2; 6.6",
+    "pages": [
+      17,
+      21,
+      25,
+      26
+    ],
+    "title": "Identity token alone cannot perform enrollment",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "EVENT-matching",
+    "system": "EventHandler",
+    "section": "4.6.1; 6.10",
+    "pages": [
+      17,
+      28,
+      29
+    ],
+    "title": "Matching active subscriber receives the event",
+    "predicate": "contains",
+    "classification": "architectural",
+    "prerequisites": "Observe a bounded delivery window; event-type authorization by intermediaries is separately unresolved.",
+    "expected": "${eventId}"
+  },
+  {
+    "id": "EVENT-nonmatching",
+    "system": "EventHandler",
+    "section": "4.6.1; 6.10",
+    "pages": [
+      17,
+      28,
+      29
+    ],
+    "title": "Nonmatching metadata subscriber receives no event",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "Observe a bounded delivery window; event-type authorization by intermediaries is separately unresolved.",
+    "expected": "${eventId}"
+  },
+  {
+    "id": "EVENT-expired",
+    "system": "EventHandler",
+    "section": "4.6.1; 6.10",
+    "pages": [
+      17,
+      28,
+      29
+    ],
+    "title": "Expired subscription receives no event",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "Observe a bounded delivery window; event-type authorization by intermediaries is separately unresolved.",
+    "expected": "${eventId}"
+  },
+  {
+    "id": "EVENT-not-started",
+    "system": "EventHandler",
+    "section": "4.6.1; 6.10",
+    "pages": [
+      17,
+      28,
+      29
+    ],
+    "title": "Future validity window receives no event",
+    "predicate": "not_contains",
+    "classification": "architectural",
+    "prerequisites": "Observe a bounded delivery window; event-type authorization by intermediaries is separately unresolved.",
+    "expected": "${eventId}"
+  },
+  {
+    "id": "EVENT-publisher-binding",
+    "system": "EventHandler",
+    "section": "4.6.1; 6.10",
+    "pages": [
+      17,
+      28,
+      29
+    ],
+    "title": "Published identity comes from authenticated caller",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Observe a bounded delivery window; event-type authorization by intermediaries is separately unresolved.",
+    "expected": "${publisher}"
+  },
+  {
+    "id": "EVENT-subscriber-binding",
+    "system": "EventHandler",
+    "section": "4.6.1; 6.10",
+    "pages": [
+      17,
+      28,
+      29
+    ],
+    "title": "Subscription owner comes from authenticated caller",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Observe a bounded delivery window; event-type authorization by intermediaries is separately unresolved.",
+    "expected": "${subscriber}"
+  },
+  {
+    "id": "EVENT-all-matching",
+    "system": "EventHandler",
+    "section": "4.6.1; 6.10",
+    "pages": [
+      17,
+      28,
+      29
+    ],
+    "title": "Every matching subscriber receives the event",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Observe a bounded delivery window; event-type authorization by intermediaries is separately unresolved.",
+    "expected": "${matchingSubscribers}"
+  },
+  {
+    "id": "DATA-latest",
+    "system": "DataManager",
+    "section": "4.6.2; 2.1.1",
+    "pages": [
+      7,
+      17
+    ],
+    "title": "Proxy returns latest measurement after two writes",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${latestValue}"
+  },
+  {
+    "id": "DATA-offline-producer",
+    "system": "DataManager",
+    "section": "4.6.2; 2.1.1",
+    "pages": [
+      7,
+      17
+    ],
+    "title": "Proxy can return cached data while producer is disconnected",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${latestValue}"
+  },
+  {
+    "id": "DATA-system-isolation",
+    "system": "DataManager",
+    "section": "4.6.2; 2.1.1",
+    "pages": [
+      7,
+      17
+    ],
+    "title": "Proxy data is separated by producer system",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${producerValue}"
+  },
+  {
+    "id": "DATA-service-isolation",
+    "system": "DataManager",
+    "section": "4.6.2; 2.1.1",
+    "pages": [
+      7,
+      17
+    ],
+    "title": "Proxy data is separated by producing service",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${serviceValue}"
+  },
+  {
+    "id": "DATA-history-window",
+    "system": "DataManager",
+    "section": "4.6.2; 2.1.1",
+    "pages": [
+      7,
+      17
+    ],
+    "title": "Historian returns only records within the requested time window",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${windowRecords}"
+  },
+  {
+    "id": "DATA-signal",
+    "system": "DataManager",
+    "section": "4.6.2; 2.1.1",
+    "pages": [
+      7,
+      17
+    ],
+    "title": "Historian query isolates the requested signal",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${signalRecords}"
+  },
+  {
+    "id": "TIME-startup",
+    "system": "TimeManager",
+    "section": "4.6.3",
+    "pages": [
+      17
+    ],
+    "title": "Time is untrusted before first successful comparison",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated controllable time source; do not change the host clock.",
+    "expected": false
+  },
+  {
+    "id": "TIME-within-threshold",
+    "system": "TimeManager",
+    "section": "4.6.3",
+    "pages": [
+      17
+    ],
+    "title": "Time is trusted after a successful in-threshold comparison",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated controllable time source; do not change the host clock.",
+    "expected": true
+  },
+  {
+    "id": "TIME-beyond-threshold",
+    "system": "TimeManager",
+    "section": "4.6.3",
+    "pages": [
+      17
+    ],
+    "title": "Clock beyond threshold is untrusted",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated controllable time source; do not change the host clock.",
+    "expected": false
+  },
+  {
+    "id": "TIME-zone",
+    "system": "TimeManager",
+    "section": "4.6.3",
+    "pages": [
+      17
+    ],
+    "title": "Time response reports configured cloud timezone",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "Use an isolated controllable time source; do not change the host clock.",
+    "expected": "${timezone}"
+  },
+  {
+    "id": "MON-authorized-only",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Collector subscribes only to orchestrated authorised providers",
+    "predicate": "subset",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${authorizedProviders}"
+  },
+  {
+    "id": "MON-durable",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Collector queue is durable",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "MON-deduplicate",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Duplicate observation is stored once",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": 1
+  },
+  {
+    "id": "MON-invalid",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Invalid observation is not stored",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": 0
+  },
+  {
+    "id": "MON-retention",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Expired history records are removed",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "MON-history",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Authorised history query returns stored observations",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "MON-mqtt",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Normalised stream uses MQTT over TLS",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "mqtts"
+  },
+  {
+    "id": "MON-unknown-provider",
+    "system": "SysMonitor",
+    "section": "4.7.1; 4.7.2; 6.11",
+    "pages": [
+      18,
+      29
+    ],
+    "title": "Unselected provider observation is not accepted",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": 0
+  },
+  {
+    "id": "AI-sample",
+    "system": "AIGym",
+    "section": "4.7.3",
+    "pages": [
+      18
+    ],
+    "title": "Authorised caller adds a labelled sample",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AI-predict",
+    "system": "AIGym",
+    "section": "4.7.3",
+    "pages": [
+      18
+    ],
+    "title": "Authorised caller receives a prediction",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AI-observations",
+    "system": "AIGym",
+    "section": "4.7.3",
+    "pages": [
+      18
+    ],
+    "title": "Recent normalised monitoring observations are available",
+    "predicate": "nonempty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "AI-denied",
+    "system": "AIGym",
+    "section": "4.7.3",
+    "pages": [
+      18
+    ],
+    "title": "Unauthorised caller cannot use aiGym",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "GK-discovery",
+    "system": "Gatekeeper",
+    "section": "4.8.1; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Provider cloud returns only remotely authorised service instances",
+    "predicate": "subset",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${authorizedRemoteInstances}"
+  },
+  {
+    "id": "GK-cloud-binding",
+    "system": "Gatekeeper",
+    "section": "4.8.1; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Same consumer short name in another cloud does not inherit the grant",
+    "predicate": "empty",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "GK-negotiation-recheck",
+    "system": "Gatekeeper",
+    "section": "4.8.1; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Permission revoked after discovery is denied at negotiation",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "GK-management",
+    "system": "Gatekeeper",
+    "section": "4.8.1; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Ordinary consumer cannot administer neighbours or relay",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "GT-consumer",
+    "system": "GateTunnel",
+    "section": "4.8.2; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Only the negotiated consumer can use the local session endpoint",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "GT-peer",
+    "system": "GateTunnel",
+    "section": "4.8.2; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Provider tunnel refuses a non-negotiated tunnel peer",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "GT-service",
+    "system": "GateTunnel",
+    "section": "4.8.2; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Session cannot be used for a different provider service",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "GT-exchange",
+    "system": "GateTunnel",
+    "section": "4.8.2; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Negotiated tunnel returns the remote provider response",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${remoteResponse}"
+  },
+  {
+    "id": "GT-closed",
+    "system": "GateTunnel",
+    "section": "4.8.2; 6.12",
+    "pages": [
+      18,
+      29,
+      30
+    ],
+    "title": "Closed session cannot carry new exchanges",
+    "predicate": "denied_or_not_found",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "RELAY-role-inbox",
+    "system": "Relay",
+    "section": "4.8.3",
+    "pages": [
+      18,
+      19
+    ],
+    "title": "Relay principal cannot read another role inbox",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "RELAY-cloud-inbox",
+    "system": "Relay",
+    "section": "4.8.3",
+    "pages": [
+      18,
+      19
+    ],
+    "title": "Relay principal cannot read another cloud inbox",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "RELAY-sender-spoof",
+    "system": "Relay",
+    "section": "4.8.3",
+    "pages": [
+      18,
+      19
+    ],
+    "title": "Body identity cannot replace authenticated sender cloud",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "${authenticatedSenderCloud}"
+  },
+  {
+    "id": "RELAY-name-constraints",
+    "system": "Relay",
+    "section": "4.8.3",
+    "pages": [
+      18,
+      19
+    ],
+    "title": "Cloud CA cannot authenticate another cloud identity at relay",
+    "predicate": "tls_rejected",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "RELAY-dedicated-identity",
+    "system": "Relay",
+    "section": "4.8.3",
+    "pages": [
+      18,
+      19
+    ],
+    "title": "Ordinary cloud identity is refused at dedicated relay endpoint",
+    "predicate": "tls_rejected",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BASE-plaintext-bootstrap",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "Bootstrap does not exchange credentials in plaintext",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "BASE-missing-authz",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "Unavailable required permission verification does not execute the operation",
+    "predicate": "denied_or_unavailable",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BASE-missing-authn",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "Unavailable required identity verification does not execute the operation",
+    "predicate": "denied_or_unavailable",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BASE-discovery-not-trust",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "Untrusted registry endpoint cannot establish cloud trust",
+    "predicate": "tls_rejected",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BASE-orchestration-not-grant",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "Orchestration response does not bypass provider access control",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": ""
+  },
+  {
+    "id": "BASE-own-store",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "Database accessed only by its owning system",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": true
+  },
+  {
+    "id": "BASE-store-failure",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "Unavailable local store produces degraded liveness",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": "degraded"
+  },
+  {
+    "id": "BASE-secured-before-ready",
+    "system": "All",
+    "section": "3.2; 4.2; 7",
+    "pages": [
+      12,
+      13,
+      15,
+      31
+    ],
+    "title": "No unsecured startup exposure before AAA readiness",
+    "predicate": "equals",
+    "classification": "architectural",
+    "prerequisites": "",
+    "expected": false
+  },
+  {
+    "id": "COMMON-ServiceRegistry-management",
+    "system": "ServiceRegistry",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer ServiceRegistry",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-ServiceRegistry-telemetry",
+    "system": "ServiceRegistry",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "ServiceRegistry publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "ServiceRegistry",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-Authentication-management",
+    "system": "Authentication",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer Authentication",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-Authentication-telemetry",
+    "system": "Authentication",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "Authentication publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "Authentication",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-ConsumerAuthorization-management",
+    "system": "ConsumerAuthorization",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer ConsumerAuthorization",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-ConsumerAuthorization-telemetry",
+    "system": "ConsumerAuthorization",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "ConsumerAuthorization publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "ConsumerAuthorization",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-DynamicServiceOrchestration-management",
+    "system": "DynamicServiceOrchestration",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer DynamicServiceOrchestration",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-DynamicServiceOrchestration-telemetry",
+    "system": "DynamicServiceOrchestration",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "DynamicServiceOrchestration publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "DynamicServiceOrchestration",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-SimpleStoreServiceOrchestration-management",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer SimpleStoreServiceOrchestration",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-SimpleStoreServiceOrchestration-telemetry",
+    "system": "SimpleStoreServiceOrchestration",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "SimpleStoreServiceOrchestration publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "SimpleStoreServiceOrchestration",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-Blacklist-management",
+    "system": "Blacklist",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer Blacklist",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-Blacklist-telemetry",
+    "system": "Blacklist",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "Blacklist publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "Blacklist",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-TranslationManager-management",
+    "system": "TranslationManager",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer TranslationManager",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-TranslationManager-telemetry",
+    "system": "TranslationManager",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "TranslationManager publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "TranslationManager",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-DeviceQoSEvaluator-management",
+    "system": "DeviceQoSEvaluator",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer DeviceQoSEvaluator",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-DeviceQoSEvaluator-telemetry",
+    "system": "DeviceQoSEvaluator",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "DeviceQoSEvaluator publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "DeviceQoSEvaluator",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-PlantDescriptionEngine-management",
+    "system": "PlantDescriptionEngine",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer PlantDescriptionEngine",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-PlantDescriptionEngine-telemetry",
+    "system": "PlantDescriptionEngine",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "PlantDescriptionEngine publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "PlantDescriptionEngine",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-Choreographer-management",
+    "system": "Choreographer",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer Choreographer",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-Choreographer-telemetry",
+    "system": "Choreographer",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "Choreographer publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "Choreographer",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-Configuration-management",
+    "system": "Configuration",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer Configuration",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-Configuration-telemetry",
+    "system": "Configuration",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "Configuration publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "Configuration",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-CertificateAuthority-management",
+    "system": "CertificateAuthority",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer CertificateAuthority",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-CertificateAuthority-telemetry",
+    "system": "CertificateAuthority",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "CertificateAuthority publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "CertificateAuthority",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-Onboarding-management",
+    "system": "Onboarding",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer Onboarding",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-Onboarding-telemetry",
+    "system": "Onboarding",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "Onboarding publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "Onboarding",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-EventHandler-management",
+    "system": "EventHandler",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer EventHandler",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-EventHandler-telemetry",
+    "system": "EventHandler",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "EventHandler publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "EventHandler",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-DataManager-management",
+    "system": "DataManager",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer DataManager",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-DataManager-telemetry",
+    "system": "DataManager",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "DataManager publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "DataManager",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-TimeManager-management",
+    "system": "TimeManager",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer TimeManager",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-TimeManager-telemetry",
+    "system": "TimeManager",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "TimeManager publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "TimeManager",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-SysMonitor-management",
+    "system": "SysMonitor",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer SysMonitor",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-SysMonitor-telemetry",
+    "system": "SysMonitor",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "SysMonitor publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "SysMonitor",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-AIGym-management",
+    "system": "AIGym",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer AIGym",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-AIGym-telemetry",
+    "system": "AIGym",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "AIGym publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "AIGym",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-Gatekeeper-management",
+    "system": "Gatekeeper",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer Gatekeeper",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-Gatekeeper-telemetry",
+    "system": "Gatekeeper",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "Gatekeeper publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "Gatekeeper",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  },
+  {
+    "id": "COMMON-GateTunnel-management",
+    "system": "GateTunnel",
+    "section": "4.2; 5.1; 5.2",
+    "pages": [
+      9,
+      15,
+      20,
+      21
+    ],
+    "title": "Unprivileged caller cannot administer GateTunnel",
+    "predicate": "denied",
+    "classification": "architectural",
+    "prerequisites": "Successful operator control request on the same management operation."
+  },
+  {
+    "id": "COMMON-GateTunnel-telemetry",
+    "system": "GateTunnel",
+    "section": "2; 4.2; 4.7.1",
+    "pages": [
+      5,
+      15,
+      18
+    ],
+    "title": "GateTunnel publishes a complete monitoring observation",
+    "predicate": "telemetry",
+    "expected": "GateTunnel",
+    "classification": "5.3 draft requirement / 5.2 project proposal",
+    "prerequisites": "Decoded AMQPS observation; map IDD fields with fixture project, preserving values and types."
+  }
+]

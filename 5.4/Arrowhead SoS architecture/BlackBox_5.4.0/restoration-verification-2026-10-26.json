@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-26",
+  "pages": 43,
+  "latex_build": "passed",
+  "render_review": "passed",
+  "source_content_changed": false,
+  "files": [
+    {
+      "file": "IEEEtran.bst",
+      "sha256": "7083eece0f76d6a7a84416a3709c313837e345c0a25f9ee78ec9b9f40be457bc"
+    },
+    {
+      "file": "GSoSD-Core-and-Support-Systems-5.2.2.tex",
+      "sha256": "314f4f3d8ab62eb50e4d6919cb9751103190e30bc3c5dae6d399825b39ea0831"
+    },
+    {
+      "file": "GSoSD-Core-and-Support-Systems-5.2.2.pdf",
+      "sha256": "6d43d524651b88198254284cd985190b86e171334770a1ea2295fe72bd8bcb87"
+    },
+    {
+      "file": "arrowhead.cls",
+      "sha256": "12f944684f877fc66135b159a4c7ae8375b6d93578a582857be831a233d08d87"
+    },
+    {
+      "file": "bibliography.bib",
+      "sha256": "64324a00306f7ebdfa95015572720393097d3852df6ad935ceedfe1438db3c54"
+    },
+    {
+      "file": "figures/java-reference-deployment.tex",
+      "sha256": "5584c34ade8a9c56050df31b3d495e44e63a5fc35d265464c25d02258253db88"
+    },
+    {
+      "file": "figures/sysml-color-palette.tex",
+      "sha256": "ef86c0f67422d2c259bfd092d8e9be52f2b64b1200b2880acdeeba17dd7afdbe"
+    },
+    {
+      "file": "figures/java-go-rust-interoperability.tex",
+      "sha256": "da51b48d2412a3973729cd44d9c298d8702833bedf5b93e9796deeb5e39f2826"
+    },
+    {
+      "file": "figures/java-reference-service-paths.tex",
+      "sha256": "d5df512ff71c4c97810f24e12c82642157f5884d523020b4ba5a7f74e696d9cb"
+    },
+    {
+      "file": "figures/arrowhead_logo.pdf",
+      "sha256": "7c35f5216cadb4e69bbb9acac7bb99b0e9a46ec0a5242733c09c69143fd539e6"
+    },
+    {
+      "file": "figures/sysml-color-legend.tex",
+      "sha256": "bcf99500b5d0f1b1e3594acfd200d02a44295aa306920358dcd42eae76da1071"
+    }
+  ]
+}

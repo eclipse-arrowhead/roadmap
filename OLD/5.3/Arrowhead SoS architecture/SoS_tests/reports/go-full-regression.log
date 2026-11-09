@@ -1,0 +1,4 @@
+?   	arrowhead/ah5-core-go/consumer-authorization/cmd/consumer-authorization	[no test files]
+?   	arrowhead/ah5-core-go/consumer-authorization/cmd/contract-audit	[no test files]
+?   	arrowhead/ah5-core-go/consumer-authorization/internal/command	[no test files]
+ok  	arrowhead/ah5-core-go/consumer-authorization/internal/core	13.363s
