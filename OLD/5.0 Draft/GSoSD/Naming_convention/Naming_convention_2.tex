@@ -1,0 +1,311 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1\label{sec:model:primitives:#1}\label{sec:model:primitives:#1s}\label{sec:model:primitives:#1es}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[3]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    operation
+    \textcolor{ArrowheadBlue}{#1}
+    (\notblank{#2}{\mref{#2}}{})
+    \notblank{#3}{: \mref{#3}}{}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s} \label{sec:model:#2es}
+}
+%%
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{Eclipse Arrowhead Naming Convention} % XXX = SystemName e.g. Service Registry HTTP/TLS/JSON}
+\ArrowheadType{}
+\ArrowheadTypeShort{SoSD}
+\ArrowheadVersion{5.0.0} % Arrowhead version X.Y.Z, e..g. 4.4.1
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Jerker Delsing} % Corresponding author e.g. Jerker Delsing
+\ArrowheadStatus{Prototype} % e..g. RELEASE, RELEASE CONDIDATE, PROTOTYPE
+\ArrowheadContact{jerker.delsing@ltu.se} % Email of corresponding author
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  %\Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    Proposal for naming convention of microsystems, microservices and
+    associated attributes and metadata. This is intended as an
+    appendix to the Eclipse Arrowhead GSoSD document.  
+  \end{abstract}
+
+  \vspace*{1cm}
+
+%   \scriptsize
+%   \begin{tabularx}{\textwidth}{l X}
+%     \raisebox{-0.5\height}{\includegraphics[width=2cm]{figures/artemis_logo}} & {ARTEMIS Innovation Pilot Project: Arrowhead\newline
+%     THEME [SP1-JTI-ARTEMIS-2012-AIPP4 SP1-JTI-ARTEMIS-2012-AIPP6]\newline
+%     [Production and Energy System Automation Intelligent-Built environment and urban infrastructure for sustainable and friendly cities]}
+%   \end{tabularx}
+%   \vspace*{-0.2cm}
+ \end{center}
+
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+  Proposal for naming convention of microsystems, microservices, associated attributes and metadata. This is intended as an appendix to the Eclipse Arrowhead GSoSD document.
+
+\subsection{Why naming convention is necessary}
+System, service, service operation, device and interface names are used in
+programming languages, URLs, DNS entries, file systems. A consistent
+approach to naming in the community will simplify usages of different programming
+languages and support human and machine understanding of the intended
+meaning. Different key entities in the Arrowhead architecture should
+easily be distinguished through its naming style.  
+It will further support integration and interoperability with
+major internet and modeling technologies and standards, like
+e.g. Semantic Web, Ontologies, Knowledge Graphs, SysML. It will further support interoperability and
+integration with major industrial standards like e.g. ISO 15926, ISO
+10303, IEC 81346. \\
+
+
+The rest of this document is organized as follows.
+
+In Section \ref{sec:prior_art}, we reference major prior art on
+microsystem and microservice naming within the Eclipse Arrowhead project. 
+
+In Section \ref{sec:principles}, we detail the underlying thinking
+and principles for the
+naming convention.
+
+In Section \ref{sec:examples}, we provide a set of examples.
+
+
+\newpage
+
+\section{Significant Prior Art}
+\label{sec:prior_art}
+
+A previous proposal by Paniagua et.al \cite{Paniagua_2019} has not
+  gained attention. Thus we propose here a significantly simpler
+  naming convention approach for Eclipse Arrowhead mincrosystems,
+  microservice, associated metadata and attributes.
+
+\section{Foundational naming principles}
+\label{sec:principles}
+The ambition of this naming convention is to provide names that meet the following criteria:
+\begin{itemize}
+
+\item Names shall only be composed of ASCII characters.
+
+\item Names should have a maximum character length.
+
+\item Names shall reflect the intended functionality and usage in an
+  SOA architecture.
+  
+\item Different style per architectural entity:
+  \begin{itemize}
+  \item System name: PascalCase
+    \begin{itemize}
+    \item Example: ServiceRegistry
+    \end{itemize}
+
+  \item Service name: camelCase
+  \begin{itemize}
+    \item Example: serviceDiscovery
+    \end{itemize}
+
+  \item Service operation name: kebab-case
+  \begin{itemize}
+    \item Example: get-entries
+    \end{itemize}
+
+  \item Interface name: snake\_case
+    \begin{itemize}
+    \item Example: generic\_http
+    \end{itemize}
+
+  \item Device name: UPPER\_SNAKE\_CASE
+  \begin{itemize}
+    \item Example: MY\_DEVICE
+    \end{itemize}
+    
+  \item Attributes like e.g. keys in payloads, metadata, properties: camelCase
+   \begin{itemize}
+    \item Example: subUrl
+    \end{itemize}
+ \end{itemize}
+
+\item Composite identifiers:
+  \begin{itemize}
+      \item  service instance identifiers: SystemName$<$delimiter$>$serviceName$<$delimiter$>$version 
+  \end{itemize}
+
+  \begin{itemize}
+      \item cloud identifiers: CloudName$<$delimiter$>$OrganizationName
+  \end{itemize}
+
+  \begin{itemize}
+      \item delimiter: "$|$”  is proposed
+  \end{itemize}
+  
+   \begin{itemize}
+    \item Examples: \\
+      ServiceRegistry$|$serviceDiscovery$|$1.0.0 \\
+      TestCloud$|$AitiaInc
+     \end{itemize}
+  
+\item Naming of instances of microsystems, microservices, metadata and
+  attributes shall follow  the naming convention of the
+  applied standard e.g. ISO 15296, ISO 10303.
+  
+\item The choice of industry standards to be applied should preferable
+  be possible to connected to the Industrial Data Ontology (IDO), ISO 23726-3.
+
+
+\end{itemize}
+
+
+\section{Naming example}
+\label{sec:examples}
+
+Please find below a set of examples for the most important naming
+situations in the Eclipse Arrowhead architecture.
+\begin{itemize}
+\item Microsystem name - PascalCase
+  \begin{itemize}
+  \item ServiceRegistry
+  \item DynamicServiceOrchestration
+  \item SimpleStoreServiceOrchestration
+  \item FlexibleStoreServiceOrchestration
+  \item ComputeOrchestration
+  \item DeploymentOrchestration
+  \item ConsumerAuthorization
+  \item Authentication
+  \end{itemize}
+  
+\item Microservice name - camelCase
+  \begin{itemize}
+  \item serviceDiscovery
+  \item serviceOrchestration
+  \item computeOrchestration
+  \item simpleStoreManagement
+  \item flexibleStoreManagement
+  \item deploymentOrchestration
+  \item authorization
+  \item identity
+  \end{itemize}
+
+ \item Metadata and attribute naming: camelCase (which in combination to the
+  related microsystem or microservice shall be meaningful)
+  \begin{itemize}
+  \item Metadata/attribute: timeStamp (of what should be possible to infer from
+    the naming of the microsystem or microservice instance to which the
+    metadata/attribute is connected)
+  \item Metadata/attribute: softwareVersion (version reference of the
+    deployed software)
+  \item Metadata/attribute: compiler (which compiler and version was used)
+  \item Metadata/attribute: compilerSwitches (used compiler switches
+    and value) 
+  \end{itemize}
+
+\end{itemize} 
+
+\section{How to align with other standards in use}
+
+\begin{itemize}
+
+\item URL Reserved characters: ! * ' ( ) ; : @ \& = + \$ , / ? \# [ ] 
+\begin{itemize}
+    \item Not to use these as separator in composite identifiers.
+\end{itemize}  
+  
+ \item Certificate authentication method: X.509 certificate common name (CN) allows only: uppercase letters, lowercase letters, digits, hyphen (but not at the start or end) and dot (as a separator between domain levels).
+   \begin{itemize}
+   \item Some environments handles CN in case insensitive mode. In these cases, one can use kebab-case in certificates and transform in code level (service-registry.test-cloud.aitia-inc.arrowhead.eu = ServiceRegistry.TestCloud.AitiaInc.arrowhead.eu) 
+   \item Not to use dot as separator in composite identifiers.
+   \item CN represents a fully qualified domain name, which can be maximum
+     253 characters and maximum 63 characters per label: (e.g. subdomain.example.com) 
+     \begin{itemize}
+         \item To apply maximum 63 characters rule to the names.
+     \end{itemize}
+ \end{itemize}
+ 
+ \item Semantic versioning: $<$major$>$.$<$minor$>$.$<$patch$>$
+ \item RDF (Resource Description Framework) for Knowledge Graphs: Reserved characters: $<$, $>$, \&, “,
+    \begin{itemize}
+    \item Not to use these as separator in composite identifiers.
+    \end{itemize}
+ \end{itemize}
+ 
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+%\subsection{Amendments}
+
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2025-04-02 & \arrowversion & & Jerker Delsing \\ \hline
+2 & 2025-04-09 & \arrowversion & & Jerker Delsing \\ \hline
+3 & 2025-06-24 & \arrowversion & & Rajmund Bocsi \\ \hline
+4 & & & & \\ \hline
+
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & 2025-04-02 & \arrowversion  &  Pal Varga\\ \hline
+
+\end{tabularx}
+
+\end{document}

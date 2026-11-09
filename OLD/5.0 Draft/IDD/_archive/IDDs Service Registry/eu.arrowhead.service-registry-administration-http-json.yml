@@ -1,0 +1,227 @@
+openapi: 3.0.0
+info:
+  title: Service Registry Management API
+  description: |
+    This specification outlines how to use the _Arrowhead Service Registry Administration_ service
+    on top of either of the HTTP or HTTPS protocols with payloads encoded in JASON. The service allows for 
+    service providers or cloud administrators to list, register, or unregister services from the service
+    registry catalog. To register a service, the service provider, a system administrator, or a supporting system
+    must fill a _ServiceEntry_  object with the details of the service and the service provider. Additional 
+    inforation can be especified in the _metadata_ parameter. 
+
+    ## Compression and Language
+
+    An implementation of this service interface _may_ be designed to support compression and/or
+    human-readable error texts in different languages than English, as described in 
+    [RFC 9110, Section 12](https://www.rfc-editor.org/rfc/rfc9110#name-content-negotiation). Not
+    using compression _must_ be supported and be the default. Also, the default language for error
+    messages _must_ be American English (`en-US`).
+
+    ## Managing Record Life-Cycles
+
+    In a typical use case, this service interface is meant to hold records for all service providers
+    currently part of its context. When a service provider joins or leaves a context, it is expected
+    to register and deregister its services, respectively. However, service providers can fail or be
+    detached from the context before they get a chance to deregister their services. This can make
+    it relevant to monitor service providers and temporarily suppress or permanently prune records
+    associated with unhealthy or inaccessible providers. Implementations of this service interface
+    are free to suppress and/or prune records in whatever way best supports the use cases they are
+    designed for.
+
+    ## Record Ownership
+
+    It is the provider indicated inside each record that is the owner of the record, and not the
+    consumer registering it. This means that a consumer may be forbidden from registering or
+    deregistering a record for certain or all other service providers, even if it may register
+    and/or deregister records with itself as provider.
+
+    ## Provider Identifiers
+
+    Every service instance registered via this service interface _must_ be associated with a unique
+    identifier. In contexts where authentication is not used, providers _must_ chose their own
+    identifiers. Those identifiers _should_ remain consistent between restarts of those providers.
+
+    ## Size Limits
+
+    As a mitigation against denial-of-service attacks, all implementations of this service
+    interface _should_ reject incoming requests that are larger than a predefined limit. That limit
+    _must not_ be smaller than 8192 bytes for each received request. An implementation _may_ also
+    limit the sizes of individual parts within each request. It _must_, however, receive request
+    URI:s up to 2816 bytes in size, as well as request payloads up to 4096 bytes in size.
+
+  version: 1.0.0
+
+paths:
+  /service-registry/list:
+    get:
+      summary: List all service entries
+      description: Retrieve a list of all service entries in the service registry.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServiceEntry'
+  /service-registry/modify:
+    put:
+      summary: Modify a service entry
+      description: Modify an existing service entry in the service registry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceEntry'
+      responses:
+        '200':
+          description: Service entry modified successfully
+        '404':
+          description: Service entry not found
+  /service-registry/add:
+    post:
+      summary: Add a new service entry
+      description: Add a new service entry to the service registry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceEntry'
+      responses:
+        '201':
+          description: Service entry added successfully
+  /service-registry/delete:
+    delete:
+      summary: Delete a service entry
+      description: Delete an existing service entry from the service registry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceEntry'
+      responses:
+        '200':
+          description: Service entry deleted successfully
+        '404':
+          description: Service entry not found
+
+components:
+  schemas:
+    Address:
+      description: |
+        Identifies a _transport_ and a _location_.
+
+        The _transport_ identifies the base protocol that facilitates addressing a specific service
+        instance. Examples of transports that can be supported are `tcp4`, `tcp6`, `udp4`, `udp6`
+        and `unix`. A protocol only counts as a transport if it both (A) provides a way of
+        addressing and, by extension, sending messages to service providers and consumers, as well
+        as (B) does not build upon another protocol also providing this capability. I other words,
+        TLS and DTLS are _not_ transports, because they build upon the TCP and UDP protocols, which
+        satisfy condition A.
+
+        What the _location_ part consists of depends on what transport is identified. If the
+        transport is `tcp4` or `udp4`, the location is an IPv4 address expressed as four decimal
+        numbers separated by dots, a colon and a port number, such as in `192.168.3.22:64075`. If
+        the transport is `tcp6` or `udp6`, the location is an IPv6 address, rendered as described in
+        [RFC 5952](https://www.rfc-editor.org/rfc/rfc5952), within square brackets, followed by a
+        colon and a port number. If the transport is `unix`, the location is an absolute filesystem
+        path to a Unix socket file.
+      type: string
+      pattern: ^(?<transport>[^:]+):\w*(?<location>.*)$
+      example: tcp4:192.168.0.7:45326
+
+    Metadata:
+      description: |
+        Additional details of relevance when consuming a service. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    ProviderIdentifier:
+      description: |
+        An array of bytes identifying a particular service provider. The bytes are expressed using
+        the [URL safe Base 64 encoding](https://datatracker.ietf.org/doc/html/rfc4648#section-5).
+      type: string
+      pattern: ^[A-Za-z0-9-_]*={0,2}$
+      example: MWtzOXIpaUEsOyEhc1NsTwo=
+
+    TypeIdentifier:
+      description: |
+        Identifies a particular type of service, such as `eu.arrowhead.service-discovery-coap-cbor`
+        or `eu.arrowhead.orchestration-http-json`.
+      type: string
+      pattern: ^[^!*,:@^~]+$
+      example: eu.arrowhead.authorization-http-json
+
+    Service:
+      type: object
+      properties:
+        name: 
+          type: string
+          description: Service instance human-readable name
+        service-type:
+          $ref: '#/components/schemas/TypeIdentifier'
+        version: 
+          $ref: '#/components/schemas/Version'
+        addresses:
+          description:
+            A collection of addresses, each with a unique tag name. The tag names _may_ be used to
+            help a service consumer chose the most appropriate address. The service consumer may,
+            however, simply try all of them in any order until it finds one that works.
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Address'
+        interface:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interface'
+        auth-info: 
+          type: string
+          description: Specifies the authentication method needed (if any) to consume this service, e.g., certificate, token, etc. 
+        metadata: 
+          $ref: '#/components/schemas/Metadata'
+
+    ServiceEntry:
+      type: object
+      properties:
+        serviceID:
+          type: string
+          description: The unique identifier of the service entry. 
+        providerID:
+          $ref: '#/components/schemas/ProviderIdentifier'
+          description: The ID of the system which produces the registered service. 
+        service:
+          $ref: '#/components/schemas/Service'
+        time-to-live:
+          $ref: '#/components/schemas/TimeToLive'
+      required:
+        - serviceID
+        - providerID
+        - service
+
+    TimeToLive:
+      description: TTL, duration specigying the maximun amount of time a service regristration remains valid before requiring renewal or 
+        expiration. 
+      type: string
+      pattern: ^(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$
+      example: 2d12h
+
+    Interface:
+      description: A string that describes the interface in Protocol-SecurityType-MimeType format. SecurityType can be either SECURE or 
+        INSECURE. 
+      type: string
+      pattern: ^([a-zA-Z0-9_-]+)-(SECURE|INSECURE)-([a-zA-Z0-9_-]+)$
+      example: HTTP-SECURE-JSON
+
+    Version:
+      description: |
+        A MAJOR, MINOR and a PATCH number, separated by dots. If both or the latter of the MINOR and
+        PATCH numbers are omitted, the ones omitted are assumed to be zero.
+      type: string
+      pattern: ^\d+(?:\.\d+(?:\.\d+)?)?$
+      example: 1.4

@@ -1,0 +1,582 @@
+openapi: 3.0.3
+info:
+  title: Authorization Policy Management API
+  description: |
+    This specification outlines how to realize the _Arrowhead Authorization Management_ service on top of either of the HTTP or HTTPS
+    protocols with payload encoded in JSON. The service allows for resources, data owners, service providers, or system administrators
+    to manage and express authorization rules to resources. 
+
+    Although the interface definition for the authorization system does not impose requirements on an implementation of that service 
+    with regards to how it determines if certain subjects are allowed to perform certain access rights on certain resources. This interface
+    definition is designed to allow for Attribute-based Access Control to be enforced in the Authorization system. However, the same 
+    definition can be used to describe and manage role-based or rule-based policies by the flexible use of associations and permissions. 
+
+    This interface understands _resources_ as the entities needing protection, e.g., services, data-bases, files, etc. On the other 
+    hand, _subjects_ represents the entities trying to access or consume the previously defined _resources_. Finally, _access-rights_ 
+    represents the actions that _subjects_ attempt to performed over the protected _resources_, these can be defined with different levels
+    of granularity, such as service consumption, or read or write of data. Moreover, this interface definition understands _attributes_ as
+    characteristics from users or resources to which policies can be defined. These properties describe the relevant entities and are mainly 
+    of two types: User Attributes and Object Attributes. User attributes describe the entities trying to access resources. These can be 
+    characteristics such as roles, clearance levels, job title, etc. Moreove, object attributes describe the properties of the resources being
+    accessed and protected. These properties can be such as data classifications, sensitivity levels, file type, location, source, etc. 
+    As an example, one can set attributes to behave as roles, e.g., the user 'Alice' can be assigned to the 'IT staff' attribute, while the
+    devices 'TempSensor1' and 'TempSensor2' are both assigned to the 'Sensor data' attribute. If a policy connects the User Attribute 'IT staff' 
+    with the object attribute 'Sensor data', then Alice will be able to consume data from both Temperature sensors. 
+
+    To express authorization policies over resources needing protection, a _resource_ object must be created in the policy engine. This 
+    newly created resource can be _associated_ to existing attributes using the _/management/associations_ endpoint. The same applies
+    whenever a new _subject_ wanting to consume a _resource_ enters to the environment. A _subject_ object must be created in the policy
+    engine, and it needs to be connected to an attribute using the _/management/associations_ endpoint. This association will connect
+    the newly created _resource_ or _subject_ to existing authorization policies. 
+
+    Connections between _User Attributes_ and _Object Attributes_ are made through the creation of _permissions_ by using the 
+    _/management/permissions_ endpoint. Creating a permission means that the _User Attribute_ get permission for the specified _access-rights_ 
+    to be executed on the specified _resource attribute_. This means, for example, if a permission using the user attribute 'IT staff' with the
+    _access-rights_ 
+
+
+  version: 1.0.0
+
+paths:
+  /ping:
+    get:  
+      summary: Endpoint to check the core system availability. 
+      description: Returns an OK to indicate that the core system is available. 
+      responses:
+        '200':
+          description: OK
+
+  /management/associations:
+    post:
+      summary: Create a New association
+      description: Create a new association relating resources to resource-attributes, subjects to 
+        subject attributes, or attribute-attribute associations. 
+        The resource or subject must be an existing object. The specified attribute can be one existing from the 
+        attributes collection, or if a non-existant attribute is specified, the new attribute will be created in 
+        the collection. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Association' 
+            examples: 
+              example1:
+                summary: A call to associate a Temperature sensor service to the existing "OutsideTemp" resource attribute. 
+                value: 
+                  id: "123123"
+                  association-type: "resource"
+                  target:
+                    id: "existing-resource123"
+                    name: "eu.arrowhead.tempreadings-http-json"
+                  attribute:
+                    id: "existing-attribute1233"
+                    name: "OutsideTemp"
+                    attribute-type: "resource"
+      responses:
+        '201':
+          description: Association created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association'
+    get:
+      summary: List Associations
+      description: Retrieve a lizst of all associations.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Association'
+          headers:
+            Limit:
+              $ref: '#/components/headers/Limit'
+
+  /management/associations/{associationId}:
+    get:
+      summary: Get Policy by ID
+      description: Retrieve details of a specific policy by its identifier.
+      parameters:
+        - name: associationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association'
+    put:
+      summary: Update Association
+      description: Update an existing Association by its identifier.
+      parameters:
+        - name: associationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Association'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association'
+    delete:
+      summary: Delete Association
+      description: Delete an Association by its identifier.
+      parameters:
+        - name: associationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+  
+  /management/permissions: 
+    post:
+      summary: Grant a new set of permissions.
+      description: Create a new set of permissions between a resource-attributes and a subject-attribute specified in the 
+        request body. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Permission' 
+            examples:
+              example1:
+                summary: A call to derive "consume" privileges for the subject attribute "TempController" to the 
+                  resource attribute "OutsideTemp". 
+                value:
+                  id: "321654"
+                  subject-attribute:
+                    id: "someid123" 
+                    name: "TempController"
+                    attribute-type: "subject"
+                  access-rights:
+                    - "consume"
+                  resource-attribute:
+                    id: "existing-attribute1233"
+                    name: "OutsideTemp"
+                    attribute-type: "resource"
+      responses:
+        '201':
+          description: Permission created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+
+    get:
+      summary: List Permissions
+      description: Retrieve a list of all Permissions.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Permission'
+          headers:
+            Limit:
+              $ref: '#/components/headers/Limit'
+  /management/permissions/{permissionId}:
+    get:
+      summary: Get permission by ID
+      description: Retrieve details of a specific permission by its identifier.
+      parameters:
+        - name: permissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+    put:
+      summary: Update Permission
+      description: Update an existing permission by its identifier.
+      parameters:
+        - name: permissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+    delete:
+      summary: Delete Permission
+      description: Delete a permission by its identifier.
+      parameters:
+        - name: permissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+
+  /management/subjects:
+    get:
+      summary: List subjects
+      description: Retrieve a list of all subjects.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subject'
+          headers:
+            Limit:
+              $ref: '#/components/headers/Limit'
+  /management/subjects/{subjectId}:
+    get:
+      summary: Get Subject by ID
+      description: Retrieve details of a specific subject by its identifier.
+      parameters: 
+        - name: subjectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subject'
+    delete:
+      summary: Delete subject
+      description: Delete a subject by its identifier. 
+      parameters:
+        - name: subjectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+  /management/resources:
+    get:
+      summary: List resources
+      description: Retrieve a list of all resources.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Resource'
+          headers:
+            Limit:
+              $ref: '#/components/headers/Limit'
+    post:
+      summary: Create a new resource
+      description: Create a new resource to be the target of authorization rules. 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Resource'
+      responses:
+        '201':
+          description: Resource created successfully
+
+  /management/resources/{resourceId}:
+    get:
+      summary: Get resources by ID
+      description: Retrieve details of a specific resource by its identifier.
+      parameters: 
+        - name: resourceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+    delete:
+      summary: Delete resource.
+      description: Delete a resource by its identifier. 
+      parameters:
+        - name: resourceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+ 
+  /management/user-attributes:
+    get:
+      summary: List user attributes
+      description: Retrieve a list of all user attributes.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attribute'
+          headers:
+            Limit:
+              $ref: '#/components/headers/Limit'
+  /management/user-attributes/{uaId}:
+    get:
+      summary: Get user attribute by ID
+      description: Retrieve details of a specific user attribute by its identifier.
+      parameters: 
+        - name: uaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attribute'
+    delete:
+      summary: Delete user attribute.
+      description: Delete an user attribute by its identifier. 
+      parameters:
+        - name: uaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+  /management/object-attributes:
+    get:
+      summary: List object attributes
+      description: Retrieve a list of all object attributes.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attribute'
+          headers:
+            Limit:
+              $ref: '#/components/headers/Limit'
+  /management/object-attributes/{oaId}:
+    get:
+      summary: Get user object by ID
+      description: Retrieve details of a specific object attribute by its identifier.
+      parameters: 
+        - name: oaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attribute'
+    delete:
+      summary: Delete object attribute.
+      description: Delete an object attribute by its identifier. 
+      parameters:
+        - name: oaId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+
+
+components:
+  headers:
+    Limit:
+      description: |
+        An indication of the maximum number of records the consuming system is allowed to have
+        included in the response to its query.
+      schema:
+        type: number
+        format: int32
+        minimum: 0
+      required: true
+
+  schemas:
+
+    Association:
+      oneOf:
+        - $ref: "#/components/schemas/ResourceAttributeAssociation"
+        - $ref: "#/components/schemas/SubjectAttributeAssociation"
+        - $ref: "#/components/schemas/AttributeAttributeAssociation"
+
+    ResourceAttributeAssociation:
+      type: object
+      properties:
+        resource:
+          $ref: '#/components/schemas/Resource'
+        attribute:
+          $ref: '#/components/schemas/Attribute'
+      required:
+        - resource
+        - attribute
+
+    SubjectAttributeAssociation:
+      type: object
+      properties:
+        subject:
+          $ref: '#/components/schemas/Subject'
+        attribute:
+          $ref: '#/components/schemas/Attribute'
+      required:
+        - subject
+        - attribute
+
+    AttributeAttributeAssociation:
+      type: object
+      properties:
+        attribute1:
+          $ref: '#/components/schemas/Attribute'
+        attribute2:
+          $ref: '#/components/schemas/Attribute'
+      required:
+        - attribute1
+        - attribute2
+
+    Attribute: 
+      type: object
+      required:
+        - id
+        - name
+        - Attribute-type
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the attribute
+        name:
+          type: string
+          description: The human-readable name of the attribute
+        Attribute-type:
+          type: string
+          enum: ['user', 'object']
+          description: Type of the Attribute, 'user' for subject attributes (or roles), 'object' for resource attributes. 
+        metadata: { $ref: '#/components/schemas/Metadata' }
+    
+    Metadata:
+      description: |
+        Additional details of when creating a policy element. What metadata is made available
+        depends on the type of the service holding the metadata. Possible examples of metadata are
+        HTTP base paths, message size restrictions and caching directives.
+      type: object
+      example: {"basePath":"v2"}
+
+    Subject:
+      type: object
+      required:
+        - id
+        - name
+      properties: 
+        id: 
+          type: string
+          description: The unique identifier of the subject
+        name: 
+          type: string
+          description: The human-readable name of the subject
+        auth-info:
+          type: string
+          description: Authentication information in case needed. E.g., certificate information of consuming systems.
+        metadata: { $ref: '#/components/schemas/Metadata' }
+    
+    Permission:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "Identifier of the permission"
+        subjectAttribute:
+          $ref: "#/components/schemas/Attribute"
+        accessRights:
+          type: array
+          items:
+            type: string
+            description: "Access rights, e.g., ['consume']"
+          description: "List of access rights"
+        resourceAttribute:
+          $ref: "#/components/schemas/Attribute"
+      required:
+        - id
+        - subjectAttribute
+        - accessRights
+
+    Resource:
+      required: 
+        - id
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+          description: the unique identifier of the resource
+        name: 
+          type: string
+          description: the human-readable name of the resource
+        auth-info:
+          type: string
+          description: Authentication information in case needed. E.g., certificate information of providing systems.
+        metadata: { $ref: '#/components/schemas/Metadata' }

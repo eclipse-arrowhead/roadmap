@@ -1,0 +1,260 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\renewcommand{\dateseparator}{-}
+
+\setlength{\parskip}{1em}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1\label{sec:model:primitives:#1}\label{sec:model:primitives:#1s}\label{sec:model:primitives:#1es}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[3]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    operation
+    \textcolor{ArrowheadBlue}{#1}
+    (\notblank{#2}{\mref{#2}}{})
+    \notblank{#3}{: \mref{#3}}{}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s} \label{sec:model:#2es}
+}
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{Service Orchestration Core System}
+\ArrowheadType{System Description}
+\ArrowheadTypeShort{SysD}
+\ArrowheadVersion{5.0.0}
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Rajmund Bocsi}
+\ArrowheadStatus{DRAFT}
+\ArrowheadContact{rbocsi@aitia.ai}
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  %\Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    This document provides system description for the \textbf{Service Orchestration Core System}.
+  \end{abstract}
+
+  \vspace*{1cm}
+
+ \end{center}
+
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+\color{black}
+This document describes the Service Orchestration Core System, which exists to find matching providers for the consumer's specification within an Eclipse Arrowhead Local Cloud (LC) and optionally, in other Arrowhead clouds by collaborating with other core/support Systems. This can be achieved by using stored matching rules or applying a more dynamic strategy using the Service Registry Core System. This recommended system may provide the data storage functionality for the information related to matching rules and/or provider reservation.
+
+The rest of this document is organized as follows.
+In Section \ref{sec:prior_art}, we reference major prior art capabilities
+of the system.
+In Section \ref{sec:use}, we describe the intended usage of the system.
+In Section \ref{sec:properties}, we describe fundamental properties
+provided by the system.
+In Section \ref{sec:delimitations}, we describe delimitations of capabilities
+of the system.
+In Section \ref{sec:services}, we describe the abstract services produced by the system.
+In Section \ref{sec:security}, we describe the security capabilities
+of the system.
+
+\subsection{Significant Prior Art}
+\label{sec:prior_art}
+
+The strong development on cloud technology and various requirements for digitisation and automation has led to the concept of Local Clouds (LC).
+
+\textit{"The concept takes the view that specific geographically local automation tasks should be encapsulated and protected."} \cite{jerker2017localclouds}
+
+A service orchestration system is a central component in any Service-Oriented Architecture (SOA). In applications, the use of SOA for a massive distributed System of Systems requires orchestration. It is utilised to dynamically allow the re-use of existing services and systems in order to create new services and functionality. 
+
+There are some key differences, even on conceptual level, between the previous versions (Orchestrator 4.6.x) and this version:
+
+\begin{itemize}
+    \item The previous versions were named the system as Orchestrator. Because this expression has a different meaning in some related domains, it is decided that the current version uses the name Service Orchestration to avoid confusion.
+    \item The previous versions contained three (or two in earlier versions) kind of orchestration strategies: a store containing simple, peer-to-peer rules, an other store containing more flexible rules and a dynamic orchestration method which used the live data of the Service Registry to achieve its goal. The current version separates the three strategies into three different Service Orchestration systems (but with the same orchestration service operations), and the Local Cloud's administrator can decide which strategy want to support for their use case.
+    \item There was no data storage separation requirement: the Orchestrator's data storage was interconnected to other systems' storage. In the current version, data storage separation is mandatory. 
+    \item You could only create an orchestration rule if all related entities (consumer system, provider system, service definition and interface) are already existed (in the Service Registry's data storage). The current version supports rules referencing non-existent entities for future usage. 
+    \item Only an administrator were able to add and remove rules (in case of simple store orchestration). The current version allows any system (only those with the proper permissions, of course) to add and remove orchestration rules.
+    \item Only the orchestration pull was supported in which the consumer could start an orchestration process for itself. The current version also supports orchestration push: the consumers can subscribe to a service orchestration (or an other support/application system can subscribe them) and after the subscription and whenever a system notifies the Service Orchestration system, it performs the orchestration for the related subscribers.
+    \item The Quality-of-Service (QoS) Manager component was embedded into the Orchestrator (only QoS data comes from a support system). The current version moves these functionalities into a separate support system (which also be responsible to collect and store QoS data).
+    \item X.509 certificate trust chains was used as authentication mechanism. The current version can support any type of authentication methods by using a dedicate Authentication Provider core system. 
+\end{itemize}
+
+\subsection{How This System Is Meant to Be Used}
+\label{sec:use}
+
+Service Orchestration is a recommended core system of Eclipse Arrowhead Local Cloud and is responsible for finding and pairing service consumers and providers. 
+
+There are two ways to use the offered functionality:
+
+\begin{itemize}
+    \item An application that want to consume a service should ask the Service Orchestration to find one or more accessible providers that meet the necessary requirements. The Service Orchestration returns the information that the application needs to consume the specified service.
+    \item An application can subscribe for orchestration with the necessary requirements (or can be subscribed by an other application/support system). The Service Orchestration performs the orchestration process and returns the information on the specified channel. Additionally, whenever a system notifies the Service Orchestration system, it does the orchestration again and returns the updated information the the subscriber.
+\end{itemize}
+
+The \textit{information} that is provided to the consumer whenever an orchestration is done depends on the strategy that the Service Orchestration system has implemented.
+
+\begin{itemize}
+    \item In the case of simple store orchestration, the response contains service instance names. The consumer can use these names to query the Service Registry and acquire access information of the service it should consume.
+    \item In the case of flexible store orchestration or dynamic orchestration, the Service Orchestration system has to contact the Service Registry to perform the orchestration so in the response it can return everything what is needed for the consumer to perform a service operation consumption.
+\end{itemize}
+
+\subsection{System functionalities and properties}
+\label{sec:properties}
+
+\subsubsection {Functional properties of the system}
+Service Orchestration solves the following needs to fulfill the requirements of orchestration.
+
+\begin{itemize}
+    \item Enables the application and core/support systems to find the appropriate providers to consume their services.
+    \item Enables the application and core/support systems to subscribe/unsubscribe to repeated orchestration (orchestration push).
+    \item Enables other application and core/support systems to notify the Service Orchestration system to re-orchestrate for the related subscribers.
+    \item Enables other application and core/support systems to subscribe/unsubscribe consumers to repeated orchestrations.
+\end{itemize}
+
+\subsubsection {Non functional properties of the system}
+If an Authentication Provider (AP) is present in the Local Cloud, the Service Orchestration system will use AP's service(s) to verify a requester system before responding to its request.  
+
+If flexible store or dynamic orchestration strategy is used, the following are true as well:
+
+\begin{itemize}
+    \item (\textit{Condition}: Authorization system is present in the Local Cloud): if the consumer is not authorized to use a service provider the orchestration service removes the appropriate provider from the response;
+    \item (\textit{Condition}: Authorization system is present in the Local Cloud): orchestration service automatically adds every necessary tokens to the response (if the related provider requires it);
+    \item (\textit{Condition}: Gatekeeper system is present in the Local Cloud): inter-cloud orchestration is possible;
+    \item (\textit{Condition}: Gatekeeper and Gatepath system is present in the Local Cloud): inter-cloud orchestration is possible even between two closed local clouds and the necessary communication tunnel will be built during the orchestration process;
+    \item (\textit{Condition}: Quality-of-Service Management system is present in the Local Cloud): during orchestration Quality-of-Service requirements can be considered;
+    \item (\textit{Condition}: Translation system is present in the Local Cloud): protocol and data model translation can be used to fulfill orchestration requirements.
+\end{itemize}
+
+\subsubsection {Data stored by the system}
+In order to achieve the mentioned functionalities, Service Orchestration is capable to store the following information set:
+
+\begin{itemize}
+    \item \textbf{Simple orchestration rules} (\textit{only used in the simple store orchestration strategy}): A rule consists a consumer system name, a service definition name, a service instance name and a priority. Multiple service instance can assign to the same consumer-service definition pair as long as the priority is different.
+    \item \textbf{Flexible orchestration rules} (\textit{only used in the flexible store orchestration strategy}): A rule consists a consumer system name and/or consumer system metadata requirements, a provider system name (with cloud identification data, if the provider is in an other cloud) and/or provider system metadata requirements, a service definition name, an optional service interface requirement, optional service metadata requirements, optional minimum and maximum service version requirements and an optional priority.
+    \item \textbf{Provider reservations} (\textit{only used in the flexible store and dynamic orchestration strategies}): A storage to manage ongoing provider reservations. It consists a consumer system name, a reserved provider name and a timestamp which marks the end of reservation.
+\end{itemize}
+
+\subsection{Important Delimitations}
+\label{sec:delimitations}
+
+\begin{itemize}
+    \item There are three orchestration strategies (for now). A Service Orchestration implementation must support only one of those (but it may support multiple strategies). The administrator of the Local Cloud can decide what kind of orchestration strategy is used in the cloud, a consumer can not.
+    \item If the Local Cloud does not contain an Authentication system, there is no way for the Service Orchestration to verify the requester system. In that case, the Service Orchestration will consider the authentication data comes from the requester as valid.
+    \item If the Local Cloud does not contain a Service Registry, then Service Orchestration system with simple store strategy can be used. The two other strategies need the continuous support of the Service Registry system to provide their services.
+    \item The flexible store and dynamic orchestration strategies need other core/support systems to provide their full functionalities, see details above.
+\end{itemize} 
+
+\newpage
+
+\section{Services produced}
+\label{sec:services}
+
+\msubsection{service}{orchestration}
+The purpose of this service is to find information about providers that meet the requirements. It also provided subscription functionality to repeated orchestrations (orchestration push). The service is offered for both application and core/support systems. 
+
+\msubsection{service}{orchestration-push-management}
+The purpose of this service is to manage orchestration push subscriptions in bulk. It also allows to signal the Service Orchestration system to orchestrate to related subscribers. The service is offered for both application and core/support systems. 
+
+\msubsection{service}{simple-store-management}
+Recommended service (and only if the Service Orchestration system is using the simple store strategy). The purpose of this service is to add, remove and query simple store orchestration rules in bulk. The service is offered for core/support systems.
+
+\msubsection{service}{flexible-store-management}
+Recommended service (and only if the Service Orchestration system is using the flexible store strategy). The purpose of this service is to add, remove and query flexible store orchestration rules in bulk. The service is offered for core/support systems.
+
+\msubsection{service}{reservation-management}
+Recommended service (and only if the Service Orchestration system is using the flexible store or dynamic strategy). The purpose of this service is to add, remove and query active reservations. The service is offered for core/support systems.
+
+\msubsection{service}{monitor}
+Recommended service. Its purpose is to give information about the provider system. The service is offered for both application and core/support systems. 
+
+\newpage
+
+\section{Security}
+\label{sec:security}
+
+For authentication, the Service Orchestration utilizes an other core system, the Authentication system's service to verify the identities of the requester systems. If no Authentication system is deployed into the Local Cloud, the Service Orchestration trusts the requester system self-provided identity.
+
+For authorization, the system uses an other core system, the Authorization system to decide whether a consumer can use its services or not. If the Authorization core system is not present in the Local Cloud, then the Service Orchestration allows for anyone in the local cloud to use its services. The following service operations can always be used without any authorization rules:
+
+\begin{itemize}
+    \item \textit{orchestration} service's \textit{orchestration-pull} operation,
+    \item \textit{orchestration} service's \textit{subscribe} operation,
+    \item \textit{orchestration} service's \textit{unsubscribe} operation.
+\end{itemize}
+
+Furthermore, if the Authorization system is deployed in the Local Cloud, a Service Orchestration system with flexible store or dynamic orchestration strategy, will use the appropriate service to check whether the consumer can consume the required service of a specific provider during the orchestration process.
+
+The implementation of the Service Orchestration can decide about the encryption of the connection between the Service Orchestration and other systems. 
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+\subsection{Amendments}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & YYYY-MM-DD & \arrowversion & & Xxx Yyy \\ \hline
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & YYYY-MM-DD & \arrowversion  &  \\ \hline
+
+\end{tabularx}
+
+\end{document}
