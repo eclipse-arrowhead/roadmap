@@ -1,0 +1,177 @@
+   Compiling arrowhead-core-rust v5.2.2 (/private/tmp/gsosd-native-run/rust/ah5-core-rust)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.94s
+     Running tests/gsosd_530.rs (/private/tmp/gsosd-native-run/rust-target/debug/deps/gsosd_530-ee4a93bd32708446)
+
+running 114 tests
+test gsosd_authz_event_type_all_otherconsumer ... ok
+test gsosd_authz_event_type_all_testconsumer ... ok
+test gsosd_authz_event_type_blacklist_otherconsumer ... ok
+test gsosd_authz_event_type_blacklist_testconsumer ... ok
+test gsosd_authz_event_type_missing_otherconsumer ... ok
+test gsosd_authz_event_type_missing_testconsumer ... ok
+test gsosd_authz_event_type_whitelist_otherconsumer ... ok
+test gsosd_authz_event_type_whitelist_testconsumer ... ok
+test gsosd_authz_isolation_cloud ... ok
+test gsosd_authz_isolation_consumer ... ok
+test gsosd_authz_isolation_provider ... ok
+test gsosd_authz_isolation_target ... ok
+test gsosd_authz_isolation_targettype ... ok
+test gsosd_authz_operation_all_read ... ok
+test gsosd_authz_operation_all_write ... ok
+test gsosd_authz_operation_blacklist_read ... ok
+test gsosd_authz_operation_blacklist_write ... ok
+test gsosd_authz_operation_whitelist_read ... ok
+test gsosd_authz_operation_whitelist_write ... ok
+test gsosd_authz_priority_event_type_all_all_otherconsumer ... ok
+test gsosd_authz_priority_event_type_all_all_testconsumer ... ok
+test gsosd_authz_priority_event_type_all_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_all_blacklist_testconsumer ... ok
+test gsosd_authz_priority_event_type_all_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_all_whitelist_testconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_all_otherconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_all_testconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_blacklist_whitelist_testconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_all_otherconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_all_testconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_event_type_whitelist_whitelist_testconsumer ... ok
+test gsosd_authz_priority_service_def_all_all_otherconsumer ... ok
+test gsosd_authz_priority_service_def_all_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_all_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_all_blacklist_testconsumer ... ok
+test gsosd_authz_priority_service_def_all_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_all_whitelist_testconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_all_otherconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_blacklist_whitelist_testconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_all_otherconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_all_testconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_blacklist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_blacklist_testconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_whitelist_otherconsumer ... ok
+test gsosd_authz_priority_service_def_whitelist_whitelist_testconsumer ... ok
+test gsosd_authz_service_def_all_otherconsumer ... ok
+test gsosd_authz_service_def_all_testconsumer ... ok
+test gsosd_authz_service_def_blacklist_otherconsumer ... ok
+test gsosd_authz_service_def_blacklist_testconsumer ... ok
+test gsosd_authz_service_def_missing_otherconsumer ... ok
+test gsosd_authz_service_def_missing_testconsumer ... ok
+test gsosd_authz_service_def_whitelist_otherconsumer ... ok
+test gsosd_authz_service_def_whitelist_testconsumer ... ok
+test gsosd_matrix_authentication_generalmanagement ... ok
+test gsosd_matrix_authentication_identity ... ok
+test gsosd_matrix_authentication_identitymanagement ... ok
+test gsosd_matrix_consumerauthorization_authorization ... ok
+test gsosd_matrix_consumerauthorization_authorizationmanagement ... ok
+test gsosd_matrix_consumerauthorization_authorizationtoken ... ok
+test gsosd_matrix_consumerauthorization_authorizationtokenmanagement ... ok
+test gsosd_matrix_consumerauthorization_generalmanagement ... ok
+test gsosd_matrix_dynamicserviceorchestration_generalmanagement ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestration ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestrationhistorymanagement ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestrationlockmanagement ... ok
+test gsosd_matrix_dynamicserviceorchestration_serviceorchestrationpushmanagement ... ok
+test gsosd_matrix_serviceregistry_devicediscovery ... ok
+test gsosd_matrix_serviceregistry_generalmanagement ... ok
+test gsosd_matrix_serviceregistry_servicediscovery ... ok
+test gsosd_matrix_serviceregistry_serviceregistrymanagement ... ok
+test gsosd_matrix_serviceregistry_systemdiscovery ... ok
+test gsosd_matrix_simplestoreserviceorchestration_generalmanagement ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestration ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationhistorymanagement ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationpushmanagement ... ok
+test gsosd_matrix_simplestoreserviceorchestration_serviceorchestrationsimplestoremanagement ... ok
+test gsosd_meta_01 ... ok
+test gsosd_meta_02 ... ok
+test gsosd_meta_03 ... ok
+test gsosd_meta_04 ... ok
+test gsosd_meta_05 ... ok
+test gsosd_meta_06 ... ok
+test gsosd_meta_07 ... ok
+test gsosd_meta_08 ... ok
+test gsosd_meta_09 ... ok
+test gsosd_meta_10 ... ok
+test gsosd_name_provider_01 ... ok
+test gsosd_name_provider_02 ... ok
+test gsosd_name_provider_03 ... ok
+test gsosd_name_provider_04 ... FAILED
+test gsosd_name_provider_05 ... FAILED
+test gsosd_name_provider_06 ... ok
+test gsosd_name_scope_13 ... ok
+test gsosd_name_scope_14 ... ok
+test gsosd_name_scope_15 ... ok
+test gsosd_name_scope_16 ... FAILED
+test gsosd_name_scope_17 ... FAILED
+test gsosd_name_scope_18 ... FAILED
+test gsosd_name_target_07 ... ok
+test gsosd_name_target_08 ... ok
+test gsosd_name_target_09 ... ok
+test gsosd_name_target_10 ... FAILED
+test gsosd_name_target_11 ... FAILED
+test gsosd_name_target_12 ... FAILED
+
+failures:
+
+---- gsosd_name_provider_04 stdout ----
+
+thread 'gsosd_name_provider_04' (387054) panicked at ah5-core-rust/tests/gsosd_530.rs:20:173:
+noncanonical stored identifier "lowercase" (PDF p8)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- gsosd_name_provider_05 stdout ----
+
+thread 'gsosd_name_provider_05' (387055) panicked at ah5-core-rust/tests/gsosd_530.rs:20:173:
+noncanonical stored identifier "bad_provider" (PDF p8)
+
+---- gsosd_name_scope_16 stdout ----
+
+thread 'gsosd_name_scope_16' (387060) panicked at ah5-core-rust/tests/gsosd_530.rs:20:92:
+noncanonical stored operation Uppercase (PDF p8)
+
+---- gsosd_name_scope_17 stdout ----
+
+thread 'gsosd_name_scope_17' (387061) panicked at ah5-core-rust/tests/gsosd_530.rs:20:92:
+noncanonical stored operation bad_scope (PDF p8)
+
+---- gsosd_name_scope_18 stdout ----
+
+thread 'gsosd_name_scope_18' (387062) panicked at ah5-core-rust/tests/gsosd_530.rs:20:92:
+noncanonical stored operation badScope (PDF p8)
+
+---- gsosd_name_target_10 stdout ----
+
+thread 'gsosd_name_target_10' (387066) panicked at ah5-core-rust/tests/gsosd_530.rs:20:173:
+noncanonical stored identifier "Uppercase" (PDF p8)
+
+---- gsosd_name_target_11 stdout ----
+
+thread 'gsosd_name_target_11' (387067) panicked at ah5-core-rust/tests/gsosd_530.rs:20:173:
+noncanonical stored identifier "bad_signal" (PDF p8)
+
+---- gsosd_name_target_12 stdout ----
+
+thread 'gsosd_name_target_12' (387068) panicked at ah5-core-rust/tests/gsosd_530.rs:20:173:
+noncanonical stored identifier "bad-signal" (PDF p8)
+
+
+failures:
+    gsosd_name_provider_04
+    gsosd_name_provider_05
+    gsosd_name_scope_16
+    gsosd_name_scope_17
+    gsosd_name_scope_18
+    gsosd_name_target_10
+    gsosd_name_target_11
+    gsosd_name_target_12
+
+test result: FAILED. 106 passed; 8 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.88s
+
+error: test failed, to rerun pass `-p arrowhead-core-rust --test gsosd_530`

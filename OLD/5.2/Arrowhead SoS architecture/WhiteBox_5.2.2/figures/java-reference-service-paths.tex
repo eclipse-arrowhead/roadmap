@@ -1,0 +1,32 @@
+% Main service paths; arrows show service/data direction, not a traffic trace.
+\begin{tikzpicture}[x=1cm,y=1cm,
+ b/.style={draw=ArrowheadBlue,fill=ArrowheadBlue!4,rounded corners=2pt,
+ text width=4.2cm,align=center,font=\scriptsize,minimum height=0.95cm},
+ a/.style={-{Stealth[length=2mm]},thick,ArrowheadBlue},
+ t/.style={font=\scriptsize,fill=white,align=center,text width=3.8cm,inner sep=2pt}]
+\node[b, ahApplication] (rdp) at (0,0) {RandomDataProducer};
+\node[b, ahOrchestration] (dso) at (5.3,0) {DynamicServiceOrchestration};
+\node[b, ahSupport] (dm) at (10.6,0) {DataManager\\dataHistorian / dataProxy};
+\draw[a] (rdp) -- node[t,below=18pt]{service requirement} (dso);
+\draw[a,dashed] (dso) -- node[t,above=18pt]{discovers / selects provider} (dm);
+\draw[a] (dso.north west) to[bend right=40] node[t,above=2pt]{returns endpoint to consumer} (rdp.north east);
+\draw[a] (rdp.south) -- ++(0,-1.25) -| (dm.south);
+\node[t,text width=10cm] at (5.3,-1.95) {consumer calls provider: put-data every 30 s};
+\node[b, ahSupport] (ui) at (0,-3.2) {LocalCloudManager\\plant editor};
+\node[b, ahSupport] (pde) at (5.3,-3.2) {PlantDescriptionEngine};
+\node[b, ahOrchestration] (plant) at (10.6,-3.2) {DSO managed plant snapshot};
+\draw[a] (ui) -- node[t,above=18pt]{plant descriptions} (pde);
+\draw[a] (pde) -- node[t,above=18pt]{query / replace} (plant);
+\node[b, ahSupport] (ch) at (0,-5.5) {Choreographer};
+\node[b, ahOrchestration] (push) at (5.3,-5.5) {DSO push orchestration};
+\node[b, ahApplication] (ex) at (10.6,-5.5) {Executor step\\not deployed by default};
+\draw[a] (ch) -- node[t,below=18pt]{executor's service requirement} (push);
+\draw[a] (push.north west) to[bend right=40] node[t,above=2pt]{result callback} (ch.north east);
+\draw[a,dashed] (ch.south) -- ++(0,-1.25) -| (ex.south);
+\node[t,text width=10cm] at (5.3,-7.2) {Choreographer starts executor with the result};
+\node[b, ahMixed] (gk) at (0,-9) {\colorbox{AHSysMLOrchestration}{\strut DSO / SimpleStore}\\$\rightarrow$ \colorbox{AHSysMLSupport}{\strut Gatekeeper}};
+\node[b, ahSupport] (gt) at (5.3,-9) {GateTunnel};
+\node[b, ahInfrastructure] (peer) at (10.6,-9) {Relay $\leftrightarrow$ peer GateTunnel\\$\rightarrow$ remote provider};
+\draw[a] (gk) -- node[t,above=18pt]{negotiate session} (gt);
+\draw[a] (gt) -- node[t,above=18pt]{AH-GT-1 encrypted exchange} (peer);
+\end{tikzpicture}

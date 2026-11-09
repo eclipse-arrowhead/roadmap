@@ -1,0 +1,128 @@
+[
+  {
+    "service": "authentication",
+    "image": "arrowhead-test-redeploy/authentication-java:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-core-java-spring/authentication"
+  },
+  {
+    "service": "consumer-authorization",
+    "image": "arrowhead-test-redeploy/consumer-authorization-java:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-core-java-spring/consumer-authorization"
+  },
+  {
+    "service": "serviceorchestration-dynamic",
+    "image": "arrowhead-test-redeploy/serviceorchestration-dynamic-java:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-core-java-spring/serviceorchestration-dynamic"
+  },
+  {
+    "service": "serviceorchestration-simple",
+    "image": "arrowhead-test-redeploy/serviceorchestration-simple-java:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-core-java-spring/serviceorchestration-simple"
+  },
+  {
+    "service": "serviceregistry",
+    "image": "arrowhead-test-redeploy/serviceregistry-java:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-core-java-spring/serviceregistry"
+  },
+  {
+    "service": "ah5-AIGym-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-aigym-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-AIGym-java-spring"
+  },
+  {
+    "service": "ah5-Blacklist-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-blacklist-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-Blacklist-java-spring"
+  },
+  {
+    "service": "ah5-CertificateAuthority-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-certificateauthority-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-CertificateAuthority-java-spring"
+  },
+  {
+    "service": "ah5-Choreographer-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-choreographer-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-Choreographer-java-spring"
+  },
+  {
+    "service": "ah5-Configuration-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-configuration-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-Configuration-java-spring"
+  },
+  {
+    "service": "ah5-DataManager-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-datamanager-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-DataManager-java-spring"
+  },
+  {
+    "service": "ah5-DeviceQoSEvaluator-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-deviceqosevaluator-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-DeviceQoSEvaluator-java-spring"
+  },
+  {
+    "service": "ah5-EventHandler-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-eventhandler-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-EventHandler-java-spring"
+  },
+  {
+    "service": "ah5-GateTunnel-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-gatetunnel-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-GateTunnel-java-spring"
+  },
+  {
+    "service": "ah5-Gatekeeper-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-gatekeeper-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-Gatekeeper-java-spring"
+  },
+  {
+    "service": "ah5-GraphDBManager-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-graphdbmanager-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-GraphDBManager-java-spring"
+  },
+  {
+    "service": "ah5-Onboarding-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-onboarding-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-Onboarding-java-spring"
+  },
+  {
+    "service": "ah5-PlantDescriptionEngine-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-plantdescriptionengine-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-PlantDescriptionEngine-java-spring"
+  },
+  {
+    "service": "ah5-SysMonitor-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-sysmonitor-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-SysMonitor-java-spring"
+  },
+  {
+    "service": "ah5-TimeManager-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-timemanager-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-TimeManager-java-spring"
+  },
+  {
+    "service": "ah5-TranslationManager-java-spring",
+    "image": "arrowhead-test-redeploy/ah5-translationmanager-java-spring:20261103",
+    "returncode": 0,
+    "primarySource": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-TranslationManager-java-spring"
+  }
+]

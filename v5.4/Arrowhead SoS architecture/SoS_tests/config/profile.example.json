@@ -1,0 +1,907 @@
+{
+  "test_environment": true,
+  "isolated": true,
+  "ca": "certs/cloud-ca.pem",
+  "timeout_seconds": 15,
+  "systems": [
+    "ServiceRegistry",
+    "Authentication",
+    "ConsumerAuthorization"
+  ],
+  "endpoints": {
+    "registry": "https://serviceregistry:8443",
+    "authentication": "https://authentication:8444",
+    "authorization": "https://consumerauthorization:8445"
+  },
+  "actors": {
+    "inspector": {
+      "cert": "certs/inspector.pem",
+      "key": "certs/inspector.key",
+      "token_env": "SOS_INSPECTOR_TOKEN"
+    },
+    "provider": {
+      "cert": "certs/provider.pem",
+      "key": "certs/provider.key",
+      "token_env": "SOS_PROVIDER_TOKEN"
+    },
+    "consumer": {
+      "cert": "certs/consumer.pem",
+      "key": "certs/consumer.key",
+      "token_env": "SOS_CONSUMER_TOKEN"
+    },
+    "operator": {
+      "cert": "certs/operator.pem",
+      "key": "certs/operator.key",
+      "token_env": "SOS_OPERATOR_TOKEN"
+    },
+    "loginConsumer": {
+      "cert": "certs/login-consumer.pem",
+      "key": "certs/login-consumer.key"
+    }
+  },
+  "variables": {
+    "provider": "SoSTestProvider",
+    "consumer": "SoSTestConsumer",
+    "otherConsumer": "SoSTestOther",
+    "loginConsumer": "SoSTestLoginConsumer"
+  },
+  "secret_variables": {
+    "password": "SOS_CONSUMER_PASSWORD"
+  },
+  "scenarios": {
+    "AUTHZ-no-policy": {
+      "setup": [],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestNoPolicy",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": []
+    },
+    "AUTHZ-all": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestAll",
+                "defaultPolicy": {
+                  "policyType": "ALL"
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestAll",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestAll"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-whitelist-in": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestWhitelistIn",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestWhitelistIn",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestWhitelistIn"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-whitelist-out": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestWhitelistOut",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${otherConsumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestWhitelistOut",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestWhitelistOut"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-blacklist-in": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestBlacklistIn",
+                "defaultPolicy": {
+                  "policyType": "BLACKLIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestBlacklistIn",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestBlacklistIn"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-blacklist-out": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestBlacklistOut",
+                "defaultPolicy": {
+                  "policyType": "BLACKLIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${otherConsumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestBlacklistOut",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestBlacklistOut"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-management-deny": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "provider",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/grant",
+          "body": {
+            "provider": "${provider}",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "sosTestManagementDeny",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestManagementDeny",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${otherConsumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestManagementDeny",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "provider",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/revoke/${url:providerPolicyId}"
+        },
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestManagementDeny"
+            ]
+          }
+        }
+      ],
+      "variables": {
+        "providerPolicyId": "PR|LOCAL|${provider}|SERVICE_DEF|sosTestManagementDeny"
+      }
+    },
+    "AUTHZ-management-allow": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "provider",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/grant",
+          "body": {
+            "provider": "${provider}",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "sosTestManagementAllow",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "${otherConsumer}"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestManagementAllow",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestManagementAllow",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "provider",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/revoke/${url:providerPolicyId}"
+        },
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestManagementAllow"
+            ]
+          }
+        }
+      ],
+      "variables": {
+        "providerPolicyId": "PR|LOCAL|${provider}|SERVICE_DEF|sosTestManagementAllow"
+      }
+    },
+    "AUTHZ-operation-allow": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestOperationAllow",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {
+                  "read": {
+                    "policyType": "WHITELIST",
+                    "policyList": [
+                      "${consumer}"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestOperationAllow",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestOperationAllow"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-operation-deny": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestOperationDeny",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {
+                  "read": {
+                    "policyType": "WHITELIST",
+                    "policyList": [
+                      "${otherConsumer}"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestOperationDeny",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestOperationDeny"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-wrong-provider": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestWrongProvider",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "consumer",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "SoSTestUnrelatedProvider",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestWrongProvider",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestWrongProvider"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-wrong-service": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestWrongService",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestWrongServiceUnrelated",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestWrongService"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-wrong-event": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestWrongEvent",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "EVENT_TYPE",
+          "target": "sosTestWrongEvent",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestWrongEvent"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHZ-revoked": {
+      "setup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "POST",
+          "path": "/consumerauthorization/authorization/mgmt/grant",
+          "body": {
+            "list": [
+              {
+                "provider": "${provider}",
+                "cloud": "LOCAL",
+                "targetType": "SERVICE_DEF",
+                "target": "sosTestRevoked",
+                "defaultPolicy": {
+                  "policyType": "WHITELIST",
+                  "policyList": [
+                    "${consumer}"
+                  ]
+                },
+                "scopedPolicies": {}
+              }
+            ]
+          }
+        },
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestRevoked"
+            ]
+          },
+          "expected_statuses": [
+            200,
+            204
+          ]
+        }
+      ],
+      "request": {
+        "endpoint": "authorization",
+        "actor": "provider",
+        "method": "POST",
+        "path": "/consumerauthorization/authorization/verify",
+        "body": {
+          "provider": "${provider}",
+          "consumer": "${consumer}",
+          "cloud": "LOCAL",
+          "targetType": "SERVICE_DEF",
+          "target": "sosTestRevoked",
+          "scope": "read"
+        }
+      },
+      "select": "/body",
+      "cleanup": [
+        {
+          "endpoint": "authorization",
+          "actor": "operator",
+          "method": "DELETE",
+          "path": "/consumerauthorization/authorization/mgmt/revoke",
+          "query": {
+            "instanceIds": [
+              "MGMT|LOCAL|${provider}|SERVICE_DEF|sosTestRevoked"
+            ]
+          }
+        }
+      ]
+    },
+    "AUTHN-login": {
+      "request": {
+        "endpoint": "authentication",
+        "actor": "loginConsumer",
+        "method": "POST",
+        "path": "/authentication/identity/login",
+        "body": {
+          "systemName": "${loginConsumer}",
+          "credentials": {
+            "password": "${password}"
+          }
+        }
+      },
+      "select": "/body/token"
+    },
+    "AUTHN-wrong-password": {
+      "control": {
+        "endpoint": "authentication",
+        "actor": "loginConsumer",
+        "method": "POST",
+        "path": "/authentication/identity/login",
+        "body": {
+          "systemName": "${loginConsumer}",
+          "credentials": {
+            "password": "${password}"
+          }
+        }
+      },
+      "request": {
+        "endpoint": "authentication",
+        "actor": "loginConsumer",
+        "method": "POST",
+        "path": "/authentication/identity/login",
+        "body": {
+          "systemName": "${loginConsumer}",
+          "credentials": {
+            "password": "deliberately-wrong-isolated-test-password"
+          }
+        }
+      }
+    }
+  }
+}

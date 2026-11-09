@@ -1,0 +1,122 @@
+[
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-AIGym-go",
+    "image": "arrowhead-test-redeploy/ah5-aigym-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-aigym-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-Blacklist-go",
+    "image": "arrowhead-test-redeploy/ah5-blacklist-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-blacklist-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-CertificateAuthority-go",
+    "image": "arrowhead-test-redeploy/ah5-certificateauthority-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-certificateauthority-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-Choreographer-go",
+    "image": "arrowhead-test-redeploy/ah5-choreographer-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-choreographer-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-Configuration-go",
+    "image": "arrowhead-test-redeploy/ah5-configuration-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-configuration-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-DataManager-go",
+    "image": "arrowhead-test-redeploy/ah5-datamanager-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-datamanager-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-DeviceQoSEvaluator-go",
+    "image": "arrowhead-test-redeploy/ah5-deviceqosevaluator-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-deviceqosevaluator-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-EventHandler-go",
+    "image": "arrowhead-test-redeploy/ah5-eventhandler-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-eventhandler-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-GateTunnel-go",
+    "image": "arrowhead-test-redeploy/ah5-gatetunnel-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-gatetunnel-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-Gatekeeper-go",
+    "image": "arrowhead-test-redeploy/ah5-gatekeeper-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-gatekeeper-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-Onboarding-go",
+    "image": "arrowhead-test-redeploy/ah5-onboarding-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-onboarding-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-PlantDescriptionEngine-go",
+    "image": "arrowhead-test-redeploy/ah5-plantdescriptionengine-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-plantdescriptionengine-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-SysMonitor-go",
+    "image": "arrowhead-test-redeploy/ah5-sysmonitor-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-sysmonitor-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-TimeManager-go",
+    "image": "arrowhead-test-redeploy/ah5-timemanager-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-timemanager-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-TranslationManager-go",
+    "image": "arrowhead-test-redeploy/ah5-translationmanager-go:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/ah5-translationmanager-go-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-core-go/authentication",
+    "image": "arrowhead-test-redeploy/authentication:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/authentication-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-core-go/consumer-authorization",
+    "image": "arrowhead-test-redeploy/consumer-authorization:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/consumer-authorization-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-core-go/serviceorchestration-dynamic",
+    "image": "arrowhead-test-redeploy/serviceorchestration-dynamic:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/serviceorchestration-dynamic-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-core-go/serviceorchestration-simple",
+    "image": "arrowhead-test-redeploy/serviceorchestration-simple:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/serviceorchestration-simple-build.log"
+  },
+  {
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-core-go/serviceregistry",
+    "image": "arrowhead-test-redeploy/serviceregistry:20261103",
+    "returncode": 0,
+    "log": "/Users/jerkerdelsing/Documents/ChatGPT/Testing v5.3/redeploy-work/serviceregistry-build.log"
+  }
+]

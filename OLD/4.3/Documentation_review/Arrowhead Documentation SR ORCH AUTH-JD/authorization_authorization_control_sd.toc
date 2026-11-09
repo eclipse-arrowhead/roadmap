@@ -1,0 +1,12 @@
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {1}Overview}{3}{section.1}%
+\contentsline {section}{\numberline {2}Service Interfaces}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}function \leavevmode {\color {ArrowheadBlue}Check an Intercloud rule}}{4}{section*.2}%
+\contentsline {subsection}{\numberline {2.2}function \leavevmode {\color {ArrowheadBlue}Check an Intracloud rule}}{4}{section*.3}%
+\contentsline {section}{\numberline {3}Information Model}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}struct \leavevmode {\color {ArrowheadPurple}InterCloudRule}}{5}{section*.5}%
+\contentsline {subsection}{\numberline {3.2}struct \leavevmode {\color {ArrowheadPurple}IntraCloudRule}}{5}{table.caption.7}%
+\contentsline {subsection}{\numberline {3.3}Primitives}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Revision History}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Amendments}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Quality Assurance}{6}{subsection.4.2}%

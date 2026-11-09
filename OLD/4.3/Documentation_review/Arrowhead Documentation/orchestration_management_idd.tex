@@ -1,0 +1,774 @@
+\documentclass[a4paper]{arrowhead}
+
+\usepackage[yyyymmdd]{datetime}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+
+\renewcommand{\dateseparator}{-}
+
+\newcommand{\fparam}[1]{\textit{\textcolor{ArrowheadBlue}{#1}}}
+
+%% Special references
+\newcommand{\fref}[1]{{\textcolor{ArrowheadBlue}{\hyperref[sec:functions:#1]{#1}}}}
+\newcommand{\mref}[1]{{\textcolor{ArrowheadPurple}{\hyperref[sec:model:#1]{#1}}}}
+\newcommand{\pdef}[1]{{\textcolor{ArrowheadGrey}{#1 \label{sec:model:primitives:#1} \label{sec:model:primitives:#1s}}}}
+\newcommand{\pref}[1]{{\textcolor{ArrowheadGrey}{\hyperref[sec:model:primitives:#1]{#1}}}}
+
+\newrobustcmd\fsubsection[5]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}function \textcolor{ArrowheadBlue}{#1}}
+  \renewcommand*{\do}[1]{\rref{##1},\ }
+  \subsection*{
+    \thesubsection\quad
+    #2 \textcolor{ArrowheadPurple}{#3} \\
+    \small
+    \hspace*{0.075\textwidth}\begin{minipage}{0.1\textwidth}
+      \vspace*{1mm}
+      Interface: \\
+      \notblank{#4}{Input: \\}{}
+      \notblank{#5}{Output: \\}{}
+    \end{minipage}
+    \begin{minipage}{0.825\textwidth}
+      \vspace*{1mm}
+      \textcolor{ArrowheadBlue}{#1} \\
+      \notblank{#4}{\mref{#4} \\}{}
+      \notblank{#5}{\mref{#5} \\}{}
+    \end{minipage}
+  }
+  \label{sec:functions:#1}
+}
+\newrobustcmd\msubsection[2]{
+  \addtocounter{subsection}{1}
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1 \textcolor{ArrowheadPurple}{#2}}
+  \subsection*{\thesubsection\quad#1 \textcolor{ArrowheadPurple}{#2}}
+  \label{sec:model:#2} \label{sec:model:#2s}
+}
+%%
+
+\begin{document}
+
+%% Arrowhead Document Properties
+\ArrowheadTitle{OrchestrationManagement HTTP/TLS/JSON}
+\ArrowheadServiceID{orchestration-management}
+\ArrowheadType{Interface Design Description}
+\ArrowheadTypeShort{IDD}
+\ArrowheadVersion{4.3.0}
+\ArrowheadDate{\today}
+\ArrowheadAuthor{Szvetlin Tanyi}
+\ArrowheadStatus{RELEASE}
+\ArrowheadContact{szvetlin@aitia.ai}
+\ArrowheadFooter{\href{www.arrowhead.eu}{www.arrowhead.eu}}
+\ArrowheadSetup
+%%
+
+%% Front Page
+\begin{center}
+  \vspace*{1cm}
+  \huge{\arrowtitle}
+
+  \vspace*{0.2cm}
+  \LARGE{\arrowtype}
+  \vspace*{1cm}
+
+  \Large{Service ID: \textit{"\arrowid"}}
+  \vspace*{\fill}
+
+  % Front Page Image
+  %\includegraphics{figures/TODO}
+
+  \vspace*{1cm}
+  \vspace*{\fill}
+
+  % Front Page Abstract
+  \begin{abstract}
+    This document describes a HTTP/TLS/JSON variant of the OrchestrationManagement service.
+  \end{abstract}
+
+  \vspace*{1cm}
+
+  \scriptsize
+  \begin{tabularx}{\textwidth}{l X}
+    \raisebox{-0.5\height}{\includegraphics[width=2cm]{figures/artemis_logo}} & {ARTEMIS Innovation Pilot Project: Arrowhead\newline
+    THEME [SP1-JTI-ARTEMIS-2012-AIPP4 SP1-JTI-ARTEMIS-2012-AIPP6]\newline
+    [Production and Energy System Automation Intelligent-Built environment and urban infrastructure for sustainable and friendly cities]}
+  \end{tabularx}
+  \vspace*{-0.2cm}
+\end{center}
+\newpage
+%%
+
+%% Table of Contents
+\tableofcontents
+\newpage
+%%
+
+\section{Overview}
+\label{sec:overview}
+
+This document describes the HTTP/TLS/JSON variant of the Orchestration Management Eclipse Arrowhead service, which enables managing orchestration store rules.
+Examples of this interaction is a creation of a new orchestration store rule or deletion of an existing one.
+
+This document exists as a complement to the \textit{OrchestrationManagement -- Service Description} document.
+For further details about how this service is meant to be used, please consult that document.
+The rest of this document describes how to realize the OrchestrationManagement service using HTTP \cite{fielding2014hypertext}, TLS \cite{rescorla2018transport} and JSON \cite{bray2014json}, both in terms of its functions (Section \ref{sec:functions}) and its information model (Section \ref{sec:model}).
+
+\newpage
+
+\section{Service Functions}
+\label{sec:functions}
+
+This section lists the functions that must be exposed by the Orchestration Management service in alphabetical order.
+In particular, each subsection first names the HTTP method and path used to call the function, after which it names an abstract function from the Orchestration Management SD document, as well as input and output types.
+All functions in this section respond with the HTTP status code \texttt{200 Created} if called successfully. The error codes are, \texttt{400 Bad Request} if request is malformed, \texttt{401 Unauthorized} if improper client side certificate is provided, \texttt{500 Internal Server Error} if Service Registry is unavailable.
+
+\fsubsection{Add Store Entries}{POST}{/orchestrator/mgmt/store}{StoreRules}{StoreEntryList}
+
+Called to create new Orchestrator Store records, as exemplified in Listing \ref{lst:add_store_entries}.
+
+\begin{lstlisting}[language=http,label={lst:add_store_entries},caption={An \fref{Add Store Entries} invocation.}]
+POST /orchestrator/mgmt/store
+
+[
+  {
+    "serviceDefinitionName": "string",
+    "consumerSystemId": 0,
+    "attribute": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    },
+    "providerSystem": {
+      "systemName": "string",
+      "address": "string",
+      "port": 0
+    },
+    "cloud": {
+      "operator": "string",
+      "name": "string"
+    },
+    "serviceInterfaceName": "string",
+    "priority": 1
+  }
+]
+\end{lstlisting}
+
+Response of the call above:
+
+\begin{lstlisting}[language=http,label={lst:add:store_entries_list},caption={An \fref{Add Store Entries} response is a StoreEntryList}]
+{
+  "count": 0,
+  "data": [
+    {
+      "id": 0,
+      "serviceDefinition": {
+        "id": 0,
+        "serviceDefinition": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "consumerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "foreign": true,
+      "providerCloud": {
+        "id": 0,
+        "operator": "string",
+        "name": "string",
+        "authenticationInfo": "string",
+        "secure": true,
+        "neighbor": true,
+        "ownCloud": false,
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "providerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "serviceInterface": {
+        "id": 0,
+        "interfaceName": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "priority": 1,
+      "attribute": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "createdAt": "string",
+      "updatedAt": "string"
+    }
+  ]
+}
+
+\end{lstlisting}
+
+\fsubsection{Delete Store Entry by ID}{DELETE}{/orchestrator/mgmt/store/\{id\}}{StoreEntryID}{StatusCodeKind}
+
+Called to delete an existing Orchestration Store rule, as exemplified in Listing \ref{lst:delete_store_rule}.
+
+\begin{lstlisting}[language=http,label={lst:delete_store_rule},caption={A \fref{Delete Store Entry by ID} invocation.}]
+DELETE /orchestrator/mgmt/store/{id}
+
+The ID is passed as a path parameter.
+\end{lstlisting}
+
+
+\fsubsection{Get all Store Entries}{GET}{/orchestrator/mgmt/}{}{StoreEntryList}
+
+Called to query all Orchestration Store rules, as exemplified in Listing \ref{lst:get_store_rules}.
+
+\begin{lstlisting}[language=http,label={lst:get_store_rules},caption={A \fref{Get all Store Entries} invocation.}]
+GET /orchestrator/mgmt/
+\end{lstlisting}
+
+Response of the call above:
+
+\begin{lstlisting}[language=http,label={lst:get_store_rules_res},caption={A \fref{Get all Store Entries} response is an StoreEntryList}]
+{
+  "count": 0,
+  "data": [
+    {
+      "id": 0,
+      "serviceDefinition": {
+        "id": 0,
+        "serviceDefinition": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "consumerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "foreign": true,
+      "providerCloud": {
+        "id": 0,
+        "operator": "string",
+        "name": "string",
+        "authenticationInfo": "string",
+        "secure": true,
+        "neighbor": true,
+        "ownCloud": false,
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "providerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "serviceInterface": {
+        "id": 0,
+        "interfaceName": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "priority": 1,
+      "attribute": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "createdAt": "string",
+      "updatedAt": "string"
+    }
+  ]
+}
+\end{lstlisting}
+
+\fsubsection{Get Entries by Consumer}{POST}{/orchestrator/mgmt/store/all_by_consumer}{ConsumerRule}{StoreEntryList}
+
+Called to query a list of Orchestrator Store rule records related to consumer, service definition and optionally service interface, as exemplified in Listing \ref{lst:get_consumer}.
+
+\begin{lstlisting}[language=http,label={lst:get_consumer},caption={A \fref{Get Entries by Consumer} invocation.}]
+POST /orchestrator/mgmt/store/all_by_consumer
+
+{
+ "consumerSystemId": 0,
+ "serviceDefinitionName": "string",
+ "serviceInterfaceName": "string"
+}
+
+\end{lstlisting}
+
+Response of the call above:
+
+\begin{lstlisting}[language=http,label={lst:get_consumer_res},caption={A \fref{Get Entries by Consumers} response is an StoreEntryList}]
+{
+  "count": 0,
+  "data": [
+    {
+      "id": 0,
+      "serviceDefinition": {
+        "id": 0,
+        "serviceDefinition": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "consumerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "foreign": true,
+      "providerCloud": {
+        "id": 0,
+        "operator": "string",
+        "name": "string",
+        "authenticationInfo": "string",
+        "secure": true,
+        "neighbor": true,
+        "ownCloud": false,
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "providerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "serviceInterface": {
+        "id": 0,
+        "interfaceName": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "priority": 1,
+      "attribute": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "createdAt": "string",
+      "updatedAt": "string"
+    }
+  ]
+}
+\end{lstlisting}
+
+\fsubsection{Get Store Entry by ID}{GET}{/orchestration/mgmt/store/\{id\}}{StoreEntryID}{StoreEntry}
+
+Called to used to get an Orchestration Store rule identified by its ID, as exemplified in Listing \ref{lst:get_store_id}.
+
+\begin{lstlisting}[language=http,label={lst:get_store_id},caption={A \fref{Get Store Entry by ID} invocation.}]
+GET /orchestration/mgmt/store/{id}
+
+The ID is passed as a path parameter.
+\end{lstlisting}
+
+Response of the call above:
+
+\begin{lstlisting}[language=http,label={lst:get_store_id_res},caption={A \fref{Get Store Entry by ID} response is an StoreEntry}]
+{
+  "id": 0,
+  "serviceDefinition": {
+    "id": 0,
+    "serviceDefinition": "string",
+    "createdAt": "string",
+    "updatedAt": "string"
+  },
+  "consumerSystem": {
+    "id": 0,
+    "systemName": "string",
+    "address": "string",
+    "port": 0,
+    "authenticationInfo": "string",
+    "createdAt": "string",
+    "updatedAt": "string"
+  },
+  "foreign": true,
+  "providerCloud": {
+    "id": 0,
+    "operator": "string",
+    "name": "string",
+    "authenticationInfo": "string",
+    "secure": true,
+    "neighbor": true,
+    "ownCloud": false,
+    "createdAt": "string",
+    "updatedAt": "string"
+  },
+  "providerSystem": {
+    "id": 0,
+    "systemName": "string",
+    "address": "string",
+    "port": 0,
+    "authenticationInfo": "string",
+    "createdAt": "string",
+    "updatedAt": "string"
+  },
+  "serviceInterface": {
+    "id": 0,
+    "interfaceName": "string",
+    "createdAt": "string",
+    "updatedAt": "string"
+  },
+  "priority": 1,
+  "attribute": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+\end{lstlisting}
+
+\fsubsection{Get top Priority Entries}{GET}{/orchestration/mgmt/store/all\_top\_priority}{}{StoreEntryList}
+
+Called to query the top priority Orchestration Store rules, as exemplified in Listing \ref{lst:get_top_priority}.
+
+\begin{lstlisting}[language=http,label={lst:get_top_priority},caption={A \fref{Get top Priority Entries} invocation.}]
+GET /orchestrator/mgmt/store/all_top_priority
+
+\end{lstlisting}
+
+Response of the call above:
+
+\begin{lstlisting}[language=http,label={lst:get_top_priority_res},caption={A \fref{Get an Intercloud rule by ID} response is an InterCloudRule}]
+{
+  "count": 0,
+  "data": [
+    {
+      "id": 0,
+      "serviceDefinition": {
+        "id": 0,
+        "serviceDefinition": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "consumerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "foreign": true,
+      "providerCloud": {
+        "id": 0,
+        "operator": "string",
+        "name": "string",
+        "authenticationInfo": "string",
+        "secure": true,
+        "neighbor": true,
+        "ownCloud": false,
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "providerSystem": {
+        "id": 0,
+        "systemName": "string",
+        "address": "string",
+        "port": 0,
+        "authenticationInfo": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "serviceInterface": {
+        "id": 0,
+        "interfaceName": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+      "priority": 1,
+      "attribute": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "createdAt": "string",
+      "updatedAt": "string"
+    }
+  ]
+}
+\end{lstlisting}
+
+\fsubsection{Modify Priorities}{POST}{/orchestration/mgmt/store/modify\_priorities}{PriorityList}{StatusCodeKind}
+
+Called to modify the priority of the referenced Orchestration Store rules. \ref{lst:get_consumer}.
+
+\begin{lstlisting}[language=http,label={lst:modify_priorities},caption={A \fref{Get Entries by Consumer} invocation.}]
+POST /orchestration/mgmt/store/modify_priorities
+
+{
+  "priorityMap": {
+    "{id1}": 1,
+    "{id2}": 2,
+    "{id3}": 3
+ }
+}
+
+\end{lstlisting}
+
+\newpage
+
+\section{Information Model}
+\label{sec:model}
+
+Here, all data objects that can be part of the service calls associated with this service are listed in alphabetic order.
+Note that each subsection, which describes one type of object, begins with the \textit{struct} keyword, which is meant to denote a JSON \pref{Object} that must contain certain fields, or names, with values conforming to explicitly named types.
+As a complement to the primary types defined in this section, there is also a list of secondary types in Section \ref{sec:model:primitives}, which are used to represent things like hashes, identifiers and texts.
+
+\msubsection{struct}{Cloud}
+
+This structure is used to describe a Cloud \pref{Object}.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"consumerSystemId"                & \pref{RandomID}     & Consumer ID. \\ \hline
+"serviceDefinitionName"            & \pref{String}     & Service Definition. \\ \hline
+"serviceInterfaceName"           & \pref{String}    & Interface Name. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+
+\msubsection{struct}{ConsumerRule}
+
+This structure is used to query Orchestrator Store rule records related to consumer, service definition and optionally service interface.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"id"                  & \pref{RandomID}     & Cloud ID. \\ \hline
+"operator"            & \pref{String}       & Operator. \\ \hline
+"name"                & \pref{String}       & Cloud Name. \\ \hline
+"authenticationInfo"  & \pref{String}       & Clouds' public key \\ \hline
+"secure"              & \pref{Boolean}      & Is the cloud secure? \\ \hline
+"neighbor"            & \pref{Boolean}      & Neighbor cloud? \\ \hline
+"ownCloud"            & \pref{Boolean}      & Own cloud? \\ \hline
+"createdAt"           & \pref{DateTime}     & Created at timestamp. \\ \hline
+"updatedAt"           & \pref{DateTime}     & Updated at timestamp. \\ \hline
+
+
+\end{tabularx}
+\end{table}
+
+
+\msubsection{struct}{PriorityList}
+
+This structure is used to check whether the consumer system can use a service from a list of provider systems.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"priorityMap"                   & \pref{PriorityMap}     & PriorityMap. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+
+\msubsection{struct}{StoreEntry}
+
+This structure is used to describe an Orchestration Store rule.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"id"                 & \pref{RandomID}                     & ID \\ \hline
+"consumerSystem"     & \pref{System}                       & Consumer system. \\ \hline
+"providerSystem"     & \pref{System}                       & Provider system. \\ \hline
+"serviceDefinition"  & \pref{ServiceDefinition}            & Service Definition. \\ \hline
+"foreign"            & \pref{Boolean}                      & Foreign cloud flag \\ \hline
+"providerCloud"      & \pref{Cloud}                        & Provider Cloud \\ \hline
+"priority"           & \pref{Number}                       & Rule priority \\ \hline
+"attribute"          & \pref{Object}                       & Legacy orchestration attributes \\ \hline
+"serviceInterface"   & \pref{Interface}                    & Interface. \\ \hline
+"createdAt"          & \pref{DateTime}                     & Created at timestamp. \\ \hline
+"updatedAt"          & \pref{DateTime}                     & Updated at timestamp. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{StoreEntryList}
+
+This structure is used to describe a list of Orchestration Store rules.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"count"     & \pref{Number}                        & Number of entries. \\ \hline
+"data"      & \pref{Array}$<$\mref{StoreEntry}$>$  & List of Store Entries. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{StoreRules}
+
+This structure is used to create Orchestration Store Rules.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm}| X |} \hline
+\rowcolor{gray!33} Value Type      & Description \\ \hline
+ \pref{Array}$<$\mref{StoreRule}$>$     & List of Store Rules. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{StoreRule}
+
+This structure is used to create an Orchestration Store rule.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"serviceDefinitionName"                 & \pref{String}            & Service Definition \\ \hline
+"consumerSystemId"                      & \pref{RandomID}          & Consumer system ID. \\ \hline
+"attribute"                             & \pref{Object}            & Legacy orchestration attributes. \\ \hline
+"providerSystem"                        & \pref{System}            & Provider System. \\ \hline
+"cloud"                                 & \pref{Cloud}             & Provider Cloud. \\ \hline
+"serviceInterfaceName"                  & \pref{Interface}         & Interface. \\ \hline
+"priority"                              & \pref{Number}            & Rule priority \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{ServiceDefinition}
+
+This structure is used to describe a ServiceDefinition \textit{Object}.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{3.5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"id"                  & \pref{RandomID}   & ID of the system. \\ \hline
+"serviceDefinition"          & \pref{String}       & Service Definition. \\ \hline
+"createdAt"           & \pref{DateTime}   & Date of creation. \\ \hline
+"updatedAt"           & \pref{DateTime}   & Date of last modification. \\ \hline
+
+
+\end{tabularx}
+\end{table}
+
+\msubsection{struct}{System}
+
+This structure is used to describe a System \textit{Object}.
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{5cm} | p{3.5cm} | X |} \hline
+\rowcolor{gray!33} Object Field & Value Type      & Description \\ \hline
+"id"                  & \pref{RandomID}   & ID of the system (only in responses). \\ \hline
+"systemName"          & \pref{Name}       & Name of the system. \\ \hline
+"address"             & \pref{String}     & Address \\ \hline
+"port"                & \pref{Port}       & Port \\ \hline
+"authenticationInfo"  & \pref{String}     & Providers public key. \\ \hline
+"createdAt"           & \pref{DateTime}   & Date of creation (only in responses). \\ \hline
+"updatedAt"           & \pref{DateTime}   & Date of last modification (only in responses). \\ \hline
+
+
+\end{tabularx}
+\end{table}
+
+
+\subsection{Primitives}
+\label{sec:model:primitives}
+
+As all messages are encoded using the JSON format \cite{bray2014json}, the following primitive constructs, part of that standard, become available.
+Note that the official standard is defined in terms of parsing rules, while this list only concerns syntactic information.
+Furthermore, the \pref{Object} and \pref{Array} types are given optional generic type parameters, which are used in this document to signify when pair values or elements are expected to conform to certain types. 
+
+\begin{table}[ht!]
+\begin{tabularx}{\textwidth}{| p{3cm} | X |} \hline
+\rowcolor{gray!33} JSON Type & Description \\ \hline
+\pdef{Value}                 & Any out of \pref{Object}, \pref{Array}, \pref{String}, \pref{Number}, \pref{Boolean} or \pref{Null}. \\ \hline
+\pdef{Object}$<$A$>$         & An unordered collection of $[$\pref{String}: \pref{Value}$]$ pairs, where each \pref{Value} conforms to type A. \\ \hline
+\pdef{Array}$<$A$>$          & An ordered collection of \pref{Value} elements, where each element conforms to type A. \\ \hline
+\pdef{String}                & An arbitrary UTF-8 string. \\ \hline
+\pdef{Number}                & Any IEEE 754 binary64 floating point number \cite{cowlishaw2019floating}, except for \textit{+Inf}, \textit{-Inf} and \textit{NaN}. \\ \hline
+\pdef{Boolean}               & One out of \texttt{true} or \texttt{false}. \\ \hline
+\pdef{Null}                  & Must be \texttt{null}. \\ \hline
+\end{tabularx}
+\end{table}
+
+With these primitives now available, we proceed to define all the types specified in the Service Discovery Register SD document without a direct equivalent among the JSON types.
+Concretely, we define the Service Discovery Register SD primitives either as \textit{aliases} or \textit{structs}.
+An \textit{alias} is a renaming of an existing type, but with some further details about how it is intended to be used.
+Structs are described in the beginning of the parent section.
+The types are listed by name in alphabetical order.
+
+\subsubsection{alias \pdef{Attributes} = \pref{Object}}
+
+This object contains optional orchestration attributes. This only exits for the sake of backwards compatibility.
+
+\subsubsection{alias \pdef{DateTime} = \pref{String}}
+
+Pinpoints a moment in time in the format of "YYYY-MM-DD HH:mm:ss", where "YYYY" denotes year (4 digits), "MM" denotes month starting from 01, "DD" denotes day starting from 01, "HH" denotes hour in the 24-hour format (00-23), "MM" denotes minute (00-59), "SS" denotes second (00-59). " " is used as separator between the date and the time.
+An example of a valid date/time string is "2020-12-05 12:00:00"
+
+\subsubsection{alias \pdef{Interface} = \pref{String}}
+
+A \pref{String} that describes an interface in \textit{Protocol-SecurityType-MimeType} format. \textit{SecurityType} can be SECURE or INSECURE. \textit{Protocol} and \textit{MimeType} can be anything. An example of a valid interface is: "HTTPS-SECURE-JSON" or "HTTP-INSECURE-SENML".
+
+\subsubsection{alias \pdef{Name} = \pref{String}}
+
+A String that is meant to be short (less than a few tens of characters) and both human and machine-readable.
+
+\subsubsection{alias \pdef{PriorityMap} = \pref{Object}}
+
+A simple JSON object, where the key is the ID of the Orchestration Store Rule, and the value is the assigned priority.
+
+\subsubsection{alias \pdef{RandomID} = \pref{Number}}
+
+An integer Number, originally chosen from a secure source of random numbers. When new RandomIDs are created, they must be ensured not to conflict with any relevant existing random numbers.
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\newpage
+
+\section{Revision History}
+\subsection{Amendments}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X | p{4cm} |} \hline
+\rowcolor{gray!33} No. & Date & Version & Subject of Amendments & Author \\ \hline
+
+1 & 2020-12-05 & 1.0.0 & & Szvetlin Tanyi \\ \hline
+
+\end{tabularx}
+
+\subsection{Quality Assurance}
+
+\noindent\begin{tabularx}{\textwidth}{| p{1cm} | p{3cm} | p{2cm} | X |} \hline
+\rowcolor{gray!33} No. & Date & Version & Approved by \\ \hline
+
+1 & & & \\ \hline
+
+\end{tabularx}
+
+\end{document}

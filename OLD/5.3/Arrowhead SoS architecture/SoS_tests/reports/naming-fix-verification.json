@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-03",
+  "originalNamingFailuresResolved": 16,
+  "originalSpecificationTestsChanged": false,
+  "nativeSpecificationCases": 293,
+  "nativeSpecificationPassed": 293,
+  "nativeSpecificationFailed": 0,
+  "goFullSuitePassed": true,
+  "rustFullSuitePassed": 157,
+  "goRegressionCopiesPassed": [
+    "authentication",
+    "consumer-authorization",
+    "serviceorchestration-simple",
+    "serviceorchestration-dynamic"
+  ],
+  "storedPoliciesModified": false,
+  "deploymentPerformed": false,
+  "files": [
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/serviceorchestration-dynamic/internal/core/authorization.go",
+      "before": "82db048aea714e9377eacbc2305cd96543db614f16883ae2a7bc31b931ceb489",
+      "after": "b7a3580389cda1bb4937619464a8090f2ae08a6d62920ac59d307190ad2f3565"
+    },
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/serviceorchestration-simple/internal/core/authorization.go",
+      "before": "82db048aea714e9377eacbc2305cd96543db614f16883ae2a7bc31b931ceb489",
+      "after": "b7a3580389cda1bb4937619464a8090f2ae08a6d62920ac59d307190ad2f3565"
+    },
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/consumer-authorization/internal/core/authorization.go",
+      "before": "82db048aea714e9377eacbc2305cd96543db614f16883ae2a7bc31b931ceb489",
+      "after": "b7a3580389cda1bb4937619464a8090f2ae08a6d62920ac59d307190ad2f3565"
+    },
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/authentication/internal/core/authorization.go",
+      "before": "82db048aea714e9377eacbc2305cd96543db614f16883ae2a7bc31b931ceb489",
+      "after": "b7a3580389cda1bb4937619464a8090f2ae08a6d62920ac59d307190ad2f3565"
+    },
+    {
+      "path": "Eclipse-Arrowhead-rust/ah5-core-rust/src/authorization.rs",
+      "before": "de0067435593e39bb896daf5c0ee0258594742ddf76b11e1243c1c09e459e18c",
+      "after": "44298e2c8d467133707aa3c05854b83cfe131acdc48ff54bb0cfb3d42d958f21"
+    },
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/serviceorchestration-dynamic/internal/core/authorization_naming_test.go",
+      "before": null,
+      "after": "f42de852f19642e96e8ad69e9bb6fa89dccc472c82ca14098412a5aa8110345f"
+    },
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/serviceorchestration-simple/internal/core/authorization_naming_test.go",
+      "before": null,
+      "after": "f42de852f19642e96e8ad69e9bb6fa89dccc472c82ca14098412a5aa8110345f"
+    },
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/consumer-authorization/internal/core/authorization_naming_test.go",
+      "before": null,
+      "after": "f42de852f19642e96e8ad69e9bb6fa89dccc472c82ca14098412a5aa8110345f"
+    },
+    {
+      "path": "Eclipse-Arrowhead-go/ah5-core-go/authentication/internal/core/authorization_naming_test.go",
+      "before": null,
+      "after": "f42de852f19642e96e8ad69e9bb6fa89dccc472c82ca14098412a5aa8110345f"
+    },
+    {
+      "path": "Eclipse-Arrowhead-rust/ah5-core-rust/tests/authorization_naming.rs",
+      "before": null,
+      "after": "3a28f54c8098f44cbad2c74c4693f052ec51945e279122be6ea1922b8a5665f2"
+    }
+  ]
+}

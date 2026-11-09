@@ -1,0 +1,2229 @@
+{
+  "kind": "live-deployment-tests",
+  "cases": [
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_denied",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AI-denied"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_observations",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AI-observations"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_predict",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AI-predict"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_sample",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AI-sample"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_binding",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-binding"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_changed_credentials",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-changed-credentials"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_expired",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-expired"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_login",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_logout",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-logout"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_missing_token",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-missing-token"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_self_declared",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-self-declared"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_unknown_token",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-unknown-token"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_verify",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHN-verify"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_wrong_password",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_all",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_in",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_out",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_management_allow",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_management_deny",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_metadata_match",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHZ-metadata-match"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_metadata_miss",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for AUTHZ-metadata-miss"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_no_policy",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_allow",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_deny",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_revoked",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_in",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_out",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_event",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_provider",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_service",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_discovery_not_trust",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-discovery-not-trust"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_missing_authn",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-missing-authn"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_missing_authz",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-missing-authz"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_orchestration_not_grant",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-orchestration-not-grant"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_own_store",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-own-store"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_plaintext_bootstrap",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-plaintext-bootstrap"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_secured_before_ready",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-secured-before-ready"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_store_failure",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BASE-store-failure"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_active",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BL-active"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_expired",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BL-expired"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_fail_closed",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BL-fail-closed"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_reason",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BL-reason"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_self_lookup",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BL-self-lookup"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_whitelist",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for BL-whitelist"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_end_entity",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-end-entity"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_key_signing",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-key-signing"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_new_handshake",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-new-handshake"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_recorded",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-recorded"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_revoked",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-revoked"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_sign_authorized",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-sign-authorized"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_sign_denied",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-sign-denied"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_trusted_key_expired",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-trusted-key-expired"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_untrusted",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-untrusted"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_valid",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CA-valid"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CFG-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_other",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CFG-other"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_own",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CFG-own"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_proxy_allowed",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CFG-proxy-allowed"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_proxy_denied",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CFG-proxy-denied"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_abort_owner",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CHOR-abort-owner"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_complete",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CHOR-complete"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_executor_token",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CHOR-executor-token"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_parallel",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CHOR-parallel"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_retry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CHOR-retry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_start",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CHOR-start"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_step_owner",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for CHOR-step-owner"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_AIGym_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-AIGym-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_AIGym_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-AIGym-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Authentication_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Authentication-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Authentication_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Authentication-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Blacklist_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Blacklist-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Blacklist_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Blacklist-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_CertificateAuthority_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-CertificateAuthority-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_CertificateAuthority_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-CertificateAuthority-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Choreographer_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Choreographer-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Choreographer_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Choreographer-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Configuration_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Configuration-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Configuration_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Configuration-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ConsumerAuthorization_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-ConsumerAuthorization-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ConsumerAuthorization_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-ConsumerAuthorization-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DataManager_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-DataManager-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DataManager_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-DataManager-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DeviceQoSEvaluator_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-DeviceQoSEvaluator-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DeviceQoSEvaluator_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-DeviceQoSEvaluator-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DynamicServiceOrchestration_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-DynamicServiceOrchestration-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DynamicServiceOrchestration_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-DynamicServiceOrchestration-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_EventHandler_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-EventHandler-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_EventHandler_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-EventHandler-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_GateTunnel_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-GateTunnel-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_GateTunnel_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-GateTunnel-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Gatekeeper_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Gatekeeper-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Gatekeeper_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Gatekeeper-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Onboarding_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Onboarding-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Onboarding_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-Onboarding-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_PlantDescriptionEngine_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-PlantDescriptionEngine-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_PlantDescriptionEngine_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-PlantDescriptionEngine-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ServiceRegistry_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-ServiceRegistry-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ServiceRegistry_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-ServiceRegistry-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SimpleStoreServiceOrchestration_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-SimpleStoreServiceOrchestration-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SimpleStoreServiceOrchestration_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-SimpleStoreServiceOrchestration-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SysMonitor_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-SysMonitor-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SysMonitor_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-SysMonitor-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TimeManager_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-TimeManager-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TimeManager_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-TimeManager-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TranslationManager_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-TranslationManager-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TranslationManager_telemetry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for COMMON-TranslationManager-telemetry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_history_window",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DATA-history-window"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_latest",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DATA-latest"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_offline_producer",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DATA-offline-producer"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_service_isolation",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DATA-service-isolation"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_signal",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DATA-signal"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_system_isolation",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DATA-system-isolation"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_blacklisted",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-blacklisted"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_eligible",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-eligible"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_exclusive",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-exclusive"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_expired_lock",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-expired-lock"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_intercloud_denied",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-intercloud-denied"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_preferred",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-preferred"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_push",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-push"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_qos_filter",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-qos-filter"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_qos_sort",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-qos-sort"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_token",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-token"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_translation_off",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-translation-off"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_translation_on",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-translation-on"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_unauthorized",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-unauthorized"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_unsubscribe",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for DSO-unsubscribe"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_all_matching",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for EVENT-all-matching"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_expired",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for EVENT-expired"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_matching",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for EVENT-matching"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_nonmatching",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for EVENT-nonmatching"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_not_started",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for EVENT-not-started"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_publisher_binding",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for EVENT-publisher-binding"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_subscriber_binding",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for EVENT-subscriber-binding"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_cloud_binding",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GK-cloud-binding"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_discovery",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GK-discovery"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_management",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GK-management"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_negotiation_recheck",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GK-negotiation-recheck"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_closed",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GT-closed"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_consumer",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GT-consumer"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_exchange",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GT-exchange"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_peer",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GT-peer"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_service",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for GT-service"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_authorized_only",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-authorized-only"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_deduplicate",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-deduplicate"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_durable",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-durable"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_history",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-history"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_invalid",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-invalid"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_mqtt",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-mqtt"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_retention",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-retention"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_unknown_provider",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for MON-unknown-provider"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_approved",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-approved"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_certificate_only",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-certificate-only"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_no_auto_grant",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-no-auto-grant"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_no_signing_key",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-no-signing-key"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_certs",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-offboard-certs"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_exclusion",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-offboard-exclusion"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_identities",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-offboard-identities"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_registry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-offboard-registry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_revoked",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-revoked"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_sequence",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-sequence"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_superseded",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-superseded"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_system_approved",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-system-approved"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_system_unapproved",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-system-unapproved"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_unapproved",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for ONB-unapproved"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_ack",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-ack"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_ambiguous_alarm",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-ambiguous-alarm"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_atomic",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-atomic"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_includes",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-includes"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_matched",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-matched"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_missing",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-missing"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_missing_alarm",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-missing-alarm"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_one_active",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-one-active"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_operator_priority",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-operator-priority"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_plant_priority",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-plant-priority"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_silent_alarm",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-silent-alarm"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_undescribed_alarm",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-undescribed-alarm"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_unmonitored_alarm",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-unmonitored-alarm"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_withdrawn",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for PDE-withdrawn"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_QOS_device_map",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for QOS-device-map"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_QOS_filter",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for QOS-filter"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_QOS_sort",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for QOS-sort"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_cloud_inbox",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for RELAY-cloud-inbox"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_dedicated_identity",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for RELAY-dedicated-identity"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_name_constraints",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for RELAY-name-constraints"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_role_inbox",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for RELAY-role-inbox"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_sender_spoof",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for RELAY-sender-spoof"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_direct_access",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-direct-access"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_expiry",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-expiry"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_lookup",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-lookup"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_metadata_match",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-metadata-match"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_metadata_miss",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-metadata-miss"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_register",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-register"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_restricted_private",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-restricted-private"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_restricted_public",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-restricted-public"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_revoke",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-revoke"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_unique_instance",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SR-unique-instance"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_consumer_isolation",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SSO-consumer-isolation"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_identifiers",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SSO-identifiers"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_no_tokens",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SSO-no-tokens"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_not_grant",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SSO-not-grant"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_priority",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SSO-priority"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_push",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for SSO-push"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_beyond_threshold",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TIME-beyond-threshold"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_startup",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TIME-startup"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_within_threshold",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TIME-within-threshold"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_zone",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TIME-zone"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_bridge",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TM-bridge"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_bridge_token",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TM-bridge-token"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_termination",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TM-termination"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_usage_report",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TM-usage-report"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_wrong_translator",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TM-wrong-translator"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_expired",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-expired"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_local_verification",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-local-verification"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_tampered",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-tampered"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_time_valid",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-time-valid"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_usage_exhausted",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-usage-exhausted"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_usage_first",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-usage-first"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_consumer",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-wrong-consumer"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_operation",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-wrong-operation"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_provider",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-wrong-provider"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_service",
+      "outcome": "skip",
+      "reason": "No isolated live fixture for TOKEN-wrong-service"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identity_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identity_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identity_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configuration_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configuration_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configuration_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_time_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_time_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_time_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_protected",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_naming",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_presence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_protected",
+      "outcome": "pass"
+    }
+  ],
+  "testsRun": 503,
+  "passed": 298,
+  "skipped": 205,
+  "failures": 0,
+  "errors": 0,
+  "timestamp": "2026-11-04T03:42:48.831735+00:00",
+  "note": "Skipped cases have not tested an implementation. No profile means no network requests."
+}

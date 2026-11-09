@@ -1,0 +1,205 @@
+%% ============================================================================================
+%% Port numbering specification for local clouds and systems of local clouds.
+%% Normative section of the Core GSoSDD; referenced by the Support Systems GSoSDD.
+%% ============================================================================================
+\section{Port Numbering Specification}
+\label{sec:ports}
+
+Arrowhead systems discover each other through the \sys{ServiceRegistry}, so in principle any
+port works. In practice fixed, well-known default ports matter: the \sys{ServiceRegistry} port
+must be known for bootstrapping, test and reference deployments put many systems on one host,
+firewall rules and container mappings are written against them, and several local clouds are
+often run side by side. Up to 5.2.2 the defaults were assigned per repository without a common
+plan, which led to the same default port (8465) being used by
+\sys{SimpleStoreServiceOrchestration}, \sys{TranslationManager} and \sys{Onboarding}. This
+section specifies how ports are allocated within a local cloud and across a system of local
+clouds. The key words \emph{shall}, \emph{should} and \emph{may} are used as in RFC 2119.
+
+\subsection{Principles}
+
+\begin{description}
+  \item[P1 -- One canonical port per system type.] Every Arrowhead framework system type (Core
+        and Support) \emph{shall} have exactly one canonical default port, unique across the
+        whole framework allocation (Table~\ref{tab:portalloc}). Any combination of framework
+        systems can thereby be co-located on one host without reconfiguration.
+  \item[P2 -- One port per system instance.] A system \emph{shall} serve all its HTTP(S)
+        services on its canonical port; the same port is used in secure and insecure mode.
+        Additional listeners (health or sidecar endpoints) \emph{shall} use the health range.
+  \item[P3 -- Stability.] Allocated ports are never changed without a Roadmap WG decision. Ports
+        of retired systems stay \emph{reserved} for at least one major version and are not
+        re-assigned. The Arrowhead 4.6 allocations are kept wherever they are unique.
+  \item[P4 -- Discovery over configuration.] Only the \sys{ServiceRegistry} port is needed for
+        bootstrapping. Consumers \emph{shall not} hard-code any other port; the registered
+        \prop{accessPort} of a service interface is authoritative.
+  \item[P5 -- Reachability of registered ports.] The port a system registers \emph{shall} be
+        the port its consumers use. If address or port translation is applied (NAT, container
+        port publishing), the registered value \emph{shall} be valid for the consumers of the
+        local cloud, or translation \emph{shall} follow the cloud offset rule of
+        Section~\ref{sec:ports:sos}.
+  \item[P6 -- Ephemeral-range avoidance.] Allocated ports \emph{shall} lie below 32768, the
+        start of the Linux ephemeral port range, so that outgoing connections never occupy them.
+\end{description}
+
+\subsection{Port Block of a Local Cloud}
+\label{sec:ports:lc}
+
+A local cloud uses the 1000-port \emph{block} 8000--8999 (cloud index $k=0$), divided into
+functional ranges (Table~\ref{tab:portranges}).
+
+\begin{table}[h!]
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{|P{2.2cm}|P{5.0cm}|Y|}\hline
+\rowcolor{gray!33}Range & Use & Allocation authority \\\hline
+8000--8099 & Tunnel control port pool (\sys{GateTunnel} session control ports) & Allocated at run time by \sys{GateTunnel} \\\hline
+8100--8199 & Reserved for future framework ranges & Roadmap WG \\\hline
+8200--8299 & Inter-cloud session listeners (\sys{GateTunnel}, one per negotiated consumer) & Allocated at run time by \sys{GateTunnel} \\\hline
+8300--8429 & Reserved for future framework ranges & Roadmap WG \\\hline
+8430--8439 & Life cycle and engineering systems & Roadmap WG \\\hline
+8440--8449 & Core systems and trust infrastructure & Roadmap WG \\\hline
+8450--8469 & Support systems & Roadmap WG \\\hline
+8470--8479 & Monitoring, QoS and analytics systems & Roadmap WG \\\hline
+8480--8489 & Health and sidecar endpoints of framework systems & Roadmap WG \\\hline
+8490--8499 & Operator tools (LocalCloudManager, LocalCloudConfigurator, SoSConfigurator) & Roadmap WG \\\hline
+8500--8799 & Application systems of the local cloud & Local cloud operator \\\hline
+8800--8899 & Messaging infrastructure (8883 MQTT over TLS) & Roadmap WG \\\hline
+(5671) & AMQP broker for \svc{sysMonitor} (well-known port, outside the block) & Roadmap WG \\\hline
+8900--8999 & Reserved & Roadmap WG \\\hline
+\end{tabularx}
+\caption{Functional ranges of the port block of a local cloud ($k=0$).}
+\label{tab:portranges}
+\end{table}
+
+Databases and other private back ends of a system are not part of the block: they \emph{should}
+not be published outside the host or container network. If they must be, the operator chooses
+ports outside the block.
+
+\subsection{Canonical Port Allocation}
+
+{\footnotesize
+\begin{longtable}{|P{2.4cm}|P{4.8cm}|P{2.3cm}|P{6.0cm}|}\hline
+\rowcolor{gray!33}Port & System & Status & Remark \\\hline\endhead
+8432 & \sys{PlantDescriptionEngine} & allocated & as in 4.6 \\\hline
+8435 & \sys{Onboarding} & allocated & 4.6 Onboarding controller port; was 8465 in the 5.2.2 migration \\\hline
+8437 & (SystemRegistry) & reserved & 4.6, replaced by \sys{ServiceRegistry} \\\hline
+8439 & (DeviceRegistry) & reserved & 4.6, replaced by \sys{ServiceRegistry} \\\hline
+8441 & \sys{DynamicServiceOrchestration} & allocated & 4.6 Orchestrator port \\\hline
+8442 & \sys{SimpleStoreServiceOrchestration} & allocated & was 8465 up to 5.2.2 \\\hline
+8443 & \sys{ServiceRegistry} & allocated & bootstrap port \\\hline
+8444 & \sys{Authentication} & allocated & \\\hline
+8445 & \sys{ConsumerAuthorization} & allocated & 4.6 Authorization port \\\hline
+8446 & -- & free (core) & next Core system \\\hline
+8447 & (hawkBit configuration manager) & reserved & 4.6 \\\hline
+8448 & \sys{CertificateAuthority} & allocated & as in 4.6 \\\hline
+8449 & \sys{Gatekeeper} & allocated & as in 4.6 \\\hline
+8451 & (QoS Monitor) & reserved & 4.6, replaced by \sys{DeviceQoSEvaluator} \\\hline
+8453 & \sys{GateTunnel} & allocated & 4.6 Gateway port \\\hline
+8455 & \sys{EventHandler} & allocated & as in 4.6 \\\hline
+8457 & \sys{Choreographer} & allocated & as in 4.6 \\\hline
+8459 & \sys{Configuration} & allocated & as in 4.6 \\\hline
+8461 & \sys{DataManager} & allocated & as in 4.6 \\\hline
+8462 & (Translator) & reserved & 4.6, replaced by \sys{TranslationManager} \\\hline
+8463 & \sys{TimeManager} & allocated & as in 4.6 \\\hline
+8464 & \sys{Blacklist} & allocated & \\\hline
+8465 & \sys{TranslationManager} & allocated & sole owner from 5.2.2 on \\\hline
+8450, 8452, 8454, 8456, 8458, 8460, 8466--8469 & -- & free (support) & \\\hline
+8472 & \sys{DeviceQoSEvaluator} & allocated & \\\hline
+8475 & \sys{SysMonitor} & allocated & \\\hline
+8478 & \sys{AIGym} & allocated & \\\hline
+8470, 8471, 8473, 8474, 8476, 8477, 8479 & -- & free (monitoring) & \\\hline
+8480 & \sys{Gatekeeper} health & allocated & not used by the Java-Spring reference (container health checks use the service port) \\\hline
+8481 & \sys{GateTunnel} health & allocated & not used by the Java-Spring reference (container health checks use the service port) \\\hline
+8482 & \sys{SysMonitor} health & allocated & not used by the Java-Spring reference (container health checks use the service port) \\\hline
+8483--8489 & -- & free (health) & \\\hline
+8490 & LocalCloudManager UI & allocated & \\\hline
+8491 & LocalCloudManager API & allocated & \\\hline
+8492 & \sys{LocalCloudConfigurator} & allocated & \\\hline
+8493 & \sys{LocalCloudConfigurator} host worker & allocated & loopback of the cloud host only \\\hline
+8494 & \sys{SoSConfigurator} & allocated & \\\hline
+8495 & \sys{SoSConfigurator} console & allocated & loopback only \\\hline
+8496--8499 & -- & free (operator tools) & \\\hline
+8501, 8502 & (MSCV, GAMS) & reserved & 4.6 application-level systems \\\hline
+8883 & MQTT broker (TLS) & allocated & IANA \emph{secure-mqtt}; \svc{sysMonitorData} and other intra-cloud MQTT traffic \\\hline
+5671 & AMQP broker (TLS) & allocated (exception) & IANA \emph{amqps}; carries only \svc{sysMonitor}; outside the block, offset applies ($5671+1000k$) \\\hline
+\caption{Canonical port allocation (cloud index $k=0$).}
+\label{tab:portalloc}
+\end{longtable}
+}
+
+Plain MQTT (1883) and other unencrypted infrastructure ports are permitted only for
+development on isolated hosts; they are outside the block and are not subject to the cloud
+offset.
+
+\subsection{Systems of Local Clouds}
+\label{sec:ports:sos}
+
+When several local clouds share hosts or addresses -- test beds, edge servers hosting more
+than one cloud, or a system of local clouds deployed on common infrastructure -- their port
+blocks \emph{shall not} overlap. Each such cloud is given a \emph{cloud index} $k$ and uses the
+block shifted by $1000\cdot k$:
+\[
+  \mathit{port}(s,k) \;=\; \mathit{canonical}(s) \;+\; 1000\cdot k,
+  \qquad k \in \{0,1,\dots,23\}.
+\]
+
+\begin{itemize}
+  \item The upper bound $k \le 23$ keeps every port below 32768 (P6). The cloud with $k$ uses
+        $8000+1000k$ to $8999+1000k$, e.g.\ $k=1$: 9000--9999, $k=2$: 10000--10999.
+  \item Clouds on disjoint hosts and addresses \emph{may} all use $k=0$; the cloud index only
+        has to be unique among clouds that share an address.
+  \item The cloud index is assigned by the operator of the shared infrastructure and recorded
+        with the cloud's identity (cloud name, organisation) in the description of the system
+        of local clouds. For the 5.2.2 test beds: \texttt{Arrowhead-test-cloud} $k=0$,
+        \texttt{Arrowhead-test-cloud-go} $k=1$.
+  \item The offset applies to every range of the block, including the \sys{GateTunnel} control
+        pool and session listeners, health and operator ports, and the MQTT broker
+        (8883 $\rightarrow$ 9883 for $k=1$). It applies equally to the AMQP broker
+        (5671 $\rightarrow$ 6671 for $k=1$).
+  \item The \emph{inter-cloud relay} is organisation infrastructure shared by the local clouds and
+        belongs to none of their blocks. It listens on 8883 (MQTT over TLS) on its own address;
+        where it must be published on a host that also carries local clouds, a port outside their
+        blocks is used (the test beds use 8893).
+  \item Two deployment styles are conformant:
+        \emph{(a) offset ports} -- the systems listen on $\mathit{port}(s,k)$ and register it; or
+        \emph{(b) canonical inside, offset outside} -- the systems listen on and register the
+        canonical port inside an isolated network (e.g.\ a container network), and only the
+        published host ports carry the offset. Style (b) satisfies P5 only for consumers inside
+        that network; consumers outside it reach the cloud through the offset ports and
+        \emph{shall} be configured with the offset \sys{ServiceRegistry} port.
+  \item Inter-cloud contacts (\sys{Gatekeeper} cloud records, relays) \emph{shall} carry the
+        explicit port of the neighbour cloud's \sys{Gatekeeper}
+        ($8449+1000k$); a cloud \emph{shall not} infer it.
+\end{itemize}
+
+\subsection{Allocation Procedure}
+\begin{enumerate}
+  \item A new framework system obtains its canonical port from the free ports of the matching
+        range through the Roadmap WG, which updates Table~\ref{tab:portalloc}.
+  \item Its implementation \emph{shall} use that port as the shipped default in all
+        configuration artefacts (application properties, code defaults, container images,
+        compose files and documentation).
+  \item Application systems obtain ports from 8500--8799 from the local cloud operator; these
+        allocations are local to the cloud.
+\end{enumerate}
+
+\subsection{Conformance of the 5.2.2 Implementations}
+
+\begin{table}[h!]
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{|P{4.3cm}|P{3.3cm}|Y|}\hline
+\rowcolor{gray!33}Item & Status & Action \\\hline
+\sys{SimpleStoreServiceOrchestration} default 8465 & fixed in workspace & Changed to 8442 (source default, test clouds, image built from the primary Java tree, which also exposes 8442). Only the published upstream image still carries 8465 and copies it at every container start, so deployments of that image set \prop{SERVER_PORT=8442}. Upstream change proposed. \\\hline
+\sys{Onboarding} default 8465 & fixed in workspace & Changed to 8435 (code default, properties, IDD, SysDD, test clouds). \\\hline
+\sys{TranslationManager} 8465 & conformant & Sole owner of 8465. \\\hline
+Test-cloud random-data-producer on container port 8463 (\sys{TimeManager}'s port) & fixed in test clouds & Moved to 8500 (application range, operator allocation); \sys{TimeManager} is now published on its canonical 8463 instead of 8467. \\\hline
+\sys{DataManager} on 8462 in the test clouds (\prop{SERVER_PORT=8462}) & fixed in test clouds & Runs on and registers the canonical 8461; 8462 stays reserved. \\\hline
+LocalCloudManager UI on 8080, API on 8790 & fixed in test clouds & Moved to 8490 (UI) and 8491 (API), clearing the tunnel pool. \\\hline
+Plain MQTT 1883 as \prop{mqtt.broker.port} default in Core configurations & accepted (development) & Production deployments use 8883. \\\hline
+Test cloud $k=1$ (\texttt{Arrowhead-test-cloud-go}) & conformant, style (b) & Host ports carry $+1000$ for every system (e.g.\ 9443, 9490, 9883); systems register canonical ports inside the container network. \\\hline
+AMQP broker of test cloud $k=1$ published on 9671 & fixed in test clouds & Now published on 6671 ($5671+1000k$). Moving the AMQP broker into the messaging range (e.g.\ 8871) to remove the exception remains a Roadmap WG option. \\\hline
+\sys{GateTunnel} control pool configured as 8000--8100 & fixed in test clouds & Upper bound set to 8099 (compose files and code default). \\\hline
+Inter-cloud relay published on host port 8893 & conformant & Relay is outside the cloud blocks. \\\hline
+Test cloud $k=2$ (\prop{Arrowhead-test-cloud-rust}) on host ports 85xx with container ports 8465 (\sys{SimpleStoreServiceOrchestration}), 8476 (\sys{Onboarding}) and 8480 (LocalCloudManager) & fixed in test clouds & Systems listen on canonical ports (8442, 8435, 8490) and are published on canonical $+2000$ (e.g.\ 10443, UI 10490, API 10491). \\\hline
+\end{tabularx}
+\caption{Conformance of the 5.2.2 implementations and test beds with the port specification.}
+\label{tab:portconf}
+\end{table}

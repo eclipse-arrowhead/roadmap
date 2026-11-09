@@ -1,0 +1,131 @@
+\setcounter {tocdepth}{2}
+\contentsline {section}{\numberline {1}Overview}{4}{section.1}%
+\contentsline {paragraph}{Graphics colour convention.}{4}{section*.2}%
+\contentsline {subsection}{\numberline {1.1}Implementation baseline and roadmap status (30 October 2026)}{4}{subsection.1.1}%
+\contentsline {paragraph}{Core inventory versus default cloud.}{4}{section*.4}%
+\contentsline {paragraph}{Database ownership and access boundary.}{4}{section*.5}%
+\contentsline {paragraph}{Evidence-qualified roadmap.}{5}{section*.7}%
+\contentsline {subsection}{\numberline {1.2}Support implementations and graphical engineering updates}{5}{subsection.1.2}%
+\contentsline {paragraph}{Graphical editors and authoritative state.}{5}{section*.8}%
+\contentsline {paragraph}{Persistence is inside the microsystem boundary.}{6}{section*.9}%
+\contentsline {paragraph}{Native support release gates.}{6}{section*.10}%
+\contentsline {subsection}{\numberline {1.3}Provenance and Scope}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Document Structure}{6}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Significant Prior Art}{6}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}How This SoS Is Meant to Be Used}{7}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}SoS Functionalities and Properties}{7}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}Functional properties of the SoS}{7}{subsubsection.1.7.1}%
+\contentsline {subsubsection}{\numberline {1.7.2}Configuration of SoS properties}{8}{subsubsection.1.7.2}%
+\contentsline {subsubsection}{\numberline {1.7.3}Data stored by the individual microsystems}{8}{subsubsection.1.7.3}%
+\contentsline {subsubsection}{\numberline {1.7.4}Non-functional properties}{8}{subsubsection.1.7.4}%
+\contentsline {subsubsection}{\numberline {1.7.5}Stateful or stateless}{8}{subsubsection.1.7.5}%
+\contentsline {subsection}{\numberline {1.8}Important Delimitations}{8}{subsection.1.8}%
+\contentsline {section}{\numberline {2}SoS Architecture}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}System Inventory}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Implementation Patterns}{10}{subsection.2.2}%
+\contentsline {paragraph}{Spring systems on \texttt {arrowhead-common}.}{10}{section*.12}%
+\contentsline {paragraph}{Independently packaged native Java systems.}{10}{section*.13}%
+\contentsline {subsection}{\numberline {2.3}Independent native Java support deployments}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Complete selectable Java support distribution}{12}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}The sysMonitor Contract}{12}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Dependency Graph}{13}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Deployed Java Reference Cloud (24 October 2026)}{14}{subsection.2.7}%
+\contentsline {paragraph}{Discovery, orchestration and direct consumption.}{15}{section*.18}%
+\contentsline {paragraph}{Monitoring and application data.}{15}{section*.19}%
+\contentsline {paragraph}{Engineering, workflow and federation paths.}{15}{section*.20}%
+\contentsline {paragraph}{Reference security profile.}{16}{section*.21}%
+\contentsline {subsection}{\numberline {2.8}Support-System Paths in the Deployed Cloud}{16}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Support System White-Box Descriptions}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Orchestration Support (upstream v5.2.2)}{17}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Blacklist}{17}{subsubsection.3.1.1}%
+\contentsline {paragraph}{Purpose.}{17}{section*.23}%
+\contentsline {paragraph}{Services.}{17}{section*.24}%
+\contentsline {paragraph}{Internal design.}{17}{section*.25}%
+\contentsline {subsubsection}{\numberline {3.1.2}TranslationManager}{17}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Purpose.}{17}{section*.26}%
+\contentsline {paragraph}{Services.}{17}{section*.27}%
+\contentsline {paragraph}{Internal design.}{17}{section*.28}%
+\contentsline {subsubsection}{\numberline {3.1.3}DeviceQoSEvaluator}{17}{subsubsection.3.1.3}%
+\contentsline {paragraph}{Purpose.}{17}{section*.29}%
+\contentsline {paragraph}{Services.}{18}{section*.30}%
+\contentsline {paragraph}{Internal design.}{18}{section*.31}%
+\contentsline {subsection}{\numberline {3.2}Engineering and Automation}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}PlantDescriptionEngine}{18}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Purpose.}{18}{section*.32}%
+\contentsline {paragraph}{Services.}{18}{section*.33}%
+\contentsline {paragraph}{Internal design.}{18}{section*.34}%
+\contentsline {paragraph}{Management layer and engineering UI.}{18}{section*.35}%
+\contentsline {paragraph}{Operation in the test beds.}{19}{section*.36}%
+\contentsline {subsubsection}{\numberline {3.2.2}Choreographer}{19}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Purpose.}{19}{section*.37}%
+\contentsline {paragraph}{Services.}{19}{section*.38}%
+\contentsline {paragraph}{Internal design.}{19}{section*.39}%
+\contentsline {subsubsection}{\numberline {3.2.3}Configuration}{19}{subsubsection.3.2.3}%
+\contentsline {paragraph}{Purpose.}{19}{section*.40}%
+\contentsline {paragraph}{Services.}{19}{section*.41}%
+\contentsline {paragraph}{Internal design.}{19}{section*.42}%
+\contentsline {subsection}{\numberline {3.3}Security and Life Cycle}{19}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}CertificateAuthority}{19}{subsubsection.3.3.1}%
+\contentsline {paragraph}{Purpose.}{19}{section*.43}%
+\contentsline {paragraph}{Services.}{19}{section*.44}%
+\contentsline {paragraph}{Internal design.}{20}{section*.45}%
+\contentsline {subsubsection}{\numberline {3.3.2}Onboarding}{20}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Purpose.}{20}{section*.46}%
+\contentsline {paragraph}{Services.}{20}{section*.47}%
+\contentsline {paragraph}{Internal design.}{20}{section*.48}%
+\contentsline {subsection}{\numberline {3.4}Information and Messaging}{21}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}EventHandler}{21}{subsubsection.3.4.1}%
+\contentsline {paragraph}{Services.}{21}{section*.49}%
+\contentsline {paragraph}{Internal design.}{21}{section*.50}%
+\contentsline {subsubsection}{\numberline {3.4.2}DataManager}{21}{subsubsection.3.4.2}%
+\contentsline {paragraph}{Services.}{21}{section*.51}%
+\contentsline {paragraph}{Internal design.}{21}{section*.52}%
+\contentsline {subsubsection}{\numberline {3.4.3}TimeManager}{21}{subsubsection.3.4.3}%
+\contentsline {paragraph}{Services.}{21}{section*.53}%
+\contentsline {paragraph}{Internal design.}{21}{section*.54}%
+\contentsline {subsection}{\numberline {3.5}Monitoring and Analytics}{21}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}SysMonitor}{21}{subsubsection.3.5.1}%
+\contentsline {paragraph}{Purpose.}{21}{section*.55}%
+\contentsline {paragraph}{Services.}{21}{section*.56}%
+\contentsline {paragraph}{Internal design.}{22}{section*.57}%
+\contentsline {subsubsection}{\numberline {3.5.2}SysMonitorPublisher (deprecated)}{22}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}AIGym}{22}{subsubsection.3.5.3}%
+\contentsline {paragraph}{Services.}{22}{section*.58}%
+\contentsline {paragraph}{Internal design.}{22}{section*.59}%
+\contentsline {subsection}{\numberline {3.6}Inter-Cloud}{22}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Gatekeeper}{22}{subsubsection.3.6.1}%
+\contentsline {paragraph}{Services.}{22}{section*.60}%
+\contentsline {paragraph}{Internal design.}{22}{section*.61}%
+\contentsline {subsubsection}{\numberline {3.6.2}GateTunnel}{22}{subsubsection.3.6.2}%
+\contentsline {paragraph}{Services.}{22}{section*.62}%
+\contentsline {paragraph}{Internal design.}{22}{section*.63}%
+\contentsline {subsubsection}{\numberline {3.6.3}Inter-Cloud Relay}{23}{subsubsection.3.6.3}%
+\contentsline {section}{\numberline {4}Services}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Produced Services}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Consumed Services}{25}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Use Cases (White Box)}{26}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Device Onboarding and Off-boarding}{26}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Plant-Description-Driven Orchestration}{26}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Workflow Execution by the Choreographer}{27}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Monitoring Data Path}{27}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Inter-Cloud Service Consumption}{27}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Plant-Managed Dynamic Orchestration (Local Extension)}{28}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Security}{28}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Default Secure Profile and Development Exceptions}{28}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Security Model}{29}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Non-Functional Requirements as Realised}{29}{section.7}%
+\contentsline {section}{\numberline {8}Port Allocation}{30}{section.8}%
+\contentsline {section}{\numberline {9}Interoperability with the Java Reference Implementation}{31}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Evidence and Current Deployment Scope}{31}{subsection.9.1}%
+\contentsline {paragraph}{Five-core substitution (19--20 October).}{31}{section*.70}%
+\contentsline {paragraph}{Native Rust federation and monitoring (19 October).}{31}{section*.71}%
+\contentsline {paragraph}{Plant-managed orchestration (23 October).}{31}{section*.72}%
+\contentsline {paragraph}{Mixed-language and MQTT translation (24 October).}{31}{section*.73}%
+\contentsline {paragraph}{Interpreting the source-contract audit.}{32}{section*.74}%
+\contentsline {subsection}{\numberline {9.2}Contract and Security Requirements}{32}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Boundaries and Acceptance of Further Replacements}{32}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Implementation Observations and Open Issues}{33}{section.10}%
+\contentsline {section}{\numberline {11}References}{33}{section.11}%
+\contentsline {section}{\numberline {12}Revision History}{36}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Amendments}{36}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Quality Assurance}{37}{subsection.12.2}%

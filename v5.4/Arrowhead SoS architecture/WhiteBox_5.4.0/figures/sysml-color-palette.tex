@@ -1,0 +1,31 @@
+% Exact RGB fills decoded from Papyrus notation packed BGR integers.
+% Source: profile-library-sysml/distribution/SysML-v1.6/Papyrus/
+% ArrowheadDSL_2025_v5/SysML v1.6/EclipseArrowhead-5.0/Arrowhead-5.0.notation
+% ServiceRegistry 16750080; security 9983; combined-cloud orchestration 63744.
+% Earlier standalone orchestration views also use 7928434 (72FA78).
+\definecolor{AHSysMLRegistry}{HTML}{0096FF}
+\definecolor{AHSysMLSecurity}{HTML}{FF2600}
+\definecolor{AHSysMLOrchestration}{HTML}{00F900}
+\definecolor{AHSysMLSupport}{HTML}{FEFB00}
+\definecolor{AHSysMLApplication}{HTML}{FF9300}
+\definecolor{AHSysMLInterface}{HTML}{9BC7CC}
+\definecolor{AHSysMLInfrastructure}{HTML}{C0C0C0}
+% Aliases keep existing black-box diagrams on the same exact palette.
+\colorlet{SRBlue}{AHSysMLRegistry}
+\colorlet{AuthzRed}{AHSysMLSecurity}
+\colorlet{AuthnLilac}{AHSysMLSecurity}
+\colorlet{OrchGreen}{AHSysMLOrchestration}
+\colorlet{AppOrange}{AHSysMLApplication}
+\colorlet{SupTeal}{AHSysMLSupport}
+\tikzset{
+ ahRegistry/.style={fill=AHSysMLRegistry,draw=black!80,text=black},
+ ahAuthentication/.style={fill=AHSysMLSecurity,draw=black!80,text=black},
+ ahAuthorization/.style={fill=AHSysMLSecurity,draw=black!80,text=black},
+ ahOrchestration/.style={fill=AHSysMLOrchestration,draw=black!80,text=black},
+ ahSupport/.style={fill=AHSysMLSupport,draw=black!80,text=black},
+ ahApplication/.style={fill=AHSysMLApplication,draw=black!80,text=black},
+ ahInterface/.style={fill=AHSysMLInterface,draw=black!80,text=black},
+ ahInfrastructure/.style={fill=AHSysMLInfrastructure,draw=black!80,text=black},
+ lolli/.append style={fill=AHSysMLInterface,draw=black!80},
+ ahMixed/.style={fill=white,draw=black!65,text=black}
+}

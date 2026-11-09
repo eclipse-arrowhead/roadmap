@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Eclipse foundational principles and developments v2.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: arrowhead-bib.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 9 entries,
+            4087 wiz_defined-function locations,
+            880 strings with 9186 characters,
+and the built_in function-call counts, 5388 in all, are:
+= -- 432
+> -- 114
+< -- 31
++ -- 60
+- -- 22
+* -- 263
+:= -- 886
+add.period$ -- 18
+call.type$ -- 9
+change.case$ -- 10
+chr.to.int$ -- 60
+cite$ -- 9
+duplicate$ -- 404
+empty$ -- 452
+format.name$ -- 27
+if$ -- 1222
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 79
+newline$ -- 54
+num.names$ -- 10
+pop$ -- 180
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 414
+stack$ -- 0
+substring$ -- 148
+swap$ -- 308
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 9
+warning$ -- 0
+while$ -- 19
+width$ -- 10
+write$ -- 110

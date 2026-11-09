@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Overview}{}% 1
+\BOOKMARK [1][-]{section.2}{Service Interfaces}{}% 2
+\BOOKMARK [2][-]{section*.2}{function Check an Intercloud rule}{section.2}% 3
+\BOOKMARK [2][-]{section*.3}{function Check an Intracloud rule}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Information Model}{}% 5
+\BOOKMARK [2][-]{section*.5}{struct InterCloudRule}{section.3}% 6
+\BOOKMARK [2][-]{table.caption.7}{struct IntraCloudRule}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Primitives}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Revision History}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Amendments}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Quality Assurance}{section.4}% 11

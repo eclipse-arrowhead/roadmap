@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Overview}{}% 1
+\BOOKMARK [1][-]{section.2}{Service Operations}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Register}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.1}{function Register}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Data Models}{}% 5
+\BOOKMARK [2][-]{section*.5}{struct ServiceRegistryRequest}{section.3}% 6
+\BOOKMARK [2][-]{table.caption.7}{struct Metadata}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Primitives}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{References}{}% 9
+\BOOKMARK [1][-]{section.5}{Revision History}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{Amendments}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.2}{Quality Assurance}{section.5}% 12

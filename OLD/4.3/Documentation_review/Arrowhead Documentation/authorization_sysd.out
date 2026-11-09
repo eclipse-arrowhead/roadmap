@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Overview}{}% 1
+\BOOKMARK [1][-]{section.2}{System Role}{}% 2
+\BOOKMARK [1][-]{section.3}{Services}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Consumed Services}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Service Discovery Query}{subsection.3.1}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Provided Services}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Token Generation}{subsection.3.2}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Authorization Control}{subsection.3.2}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Get Public Key}{subsection.3.2}% 9
+\BOOKMARK [1][-]{section.4}{Security}{}% 10
+\BOOKMARK [1][-]{section.5}{Revision History}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Amendments}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Quality Assurance}{section.5}% 13

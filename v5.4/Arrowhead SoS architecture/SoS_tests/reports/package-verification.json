@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-03",
+  "sourcePdfHashVerified": true,
+  "requirementsUnique": true,
+  "liveChecksCollected": 503,
+  "concreteExampleFixturesValidated": 16,
+  "nativeCasesRecorded": 293,
+  "pythonSyntaxValid": true,
+  "jsonFilesValid": true,
+  "liveSystemsContacted": false,
+  "phase": "naming-conformance fix",
+  "sourceFilesMatchingCurrentTestRun": 177,
+  "originalNamingFailuresResolved": 16
+}

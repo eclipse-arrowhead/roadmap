@@ -1,0 +1,114 @@
+{
+  "kind": "test-harness-self-tests",
+  "cases": [
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_authentication_failure_is_not_success",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_boolean_is_not_zero",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_cleanup_runs_after_failed_assertion",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_empty_only_accepts_collections",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_error_is_not_tls_rejection",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_json_pointer_arrays_and_escaping",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_missing_live_fixture_skips",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_missing_pointer_fails",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_missing_variable_skips",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_mutation_gate",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_negative_case_needs_control",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_nested_interpolation",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_nested_url_variable",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_not_found_is_not_authorization_denial",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_plaintext_endpoint_refused",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_preflight_before_mutation",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_redirects_refused",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_root_pointer",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_setup_capture_and_cleanup",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_snapshot_detects_partial_update",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_subset_detects_unauthorized_provider",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_telemetry_rejects_missing_sequence",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_telemetry_valid",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_typed_interpolation",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_unknown_oracle_is_error",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_variable_cycles_are_errors",
+      "outcome": "pass"
+    },
+    {
+      "id": "sos_tests.test_harness.HarnessTests.test_wrong_equality_fails",
+      "outcome": "pass"
+    }
+  ],
+  "note": "Runner correctness only; these are not Arrowhead conformance passes."
+}

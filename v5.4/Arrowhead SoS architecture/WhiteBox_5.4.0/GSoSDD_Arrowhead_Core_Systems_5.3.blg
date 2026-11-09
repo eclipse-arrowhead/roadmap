@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: GSoSDD_Arrowhead_Core_Systems_5.3.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bibliography_core.bib
+Warning--I didn't find a database entry for "FoundationaProperties"
+Warning--I didn't find a database entry for "BasedOnStandards"
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 12 entries,
+            4039 wiz_defined-function locations,
+            863 strings with 10240 characters,
+and the built_in function-call counts, 4489 in all, are:
+= -- 357
+> -- 48
+< -- 0
++ -- 24
+- -- 12
+* -- 149
+:= -- 813
+add.period$ -- 24
+call.type$ -- 12
+change.case$ -- 22
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 392
+empty$ -- 445
+format.name$ -- 12
+if$ -- 963
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 94
+newline$ -- 59
+num.names$ -- 12
+pop$ -- 258
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 359
+stack$ -- 0
+substring$ -- 32
+swap$ -- 214
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 12
+warning$ -- 0
+while$ -- 12
+width$ -- 14
+write$ -- 118
+(There were 2 warnings)

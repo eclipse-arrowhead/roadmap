@@ -1,0 +1,128 @@
+[
+  {
+    "system": "AIGym",
+    "actor": "inspector",
+    "expectedStatus": 200,
+    "actualStatus": 200,
+    "passed": true
+  },
+  {
+    "system": "AIGym",
+    "actor": "consumer",
+    "expectedStatus": 403,
+    "actualStatus": 403,
+    "passed": true
+  },
+  {
+    "system": "AIGym",
+    "actor": "withoutToken",
+    "expectedStatus": 401,
+    "actualStatus": 401,
+    "passed": true
+  },
+  {
+    "system": "CertificateAuthority",
+    "actor": "inspector",
+    "expectedStatus": 200,
+    "actualStatus": 200,
+    "passed": true
+  },
+  {
+    "system": "CertificateAuthority",
+    "actor": "consumer",
+    "expectedStatus": 403,
+    "actualStatus": 403,
+    "passed": true
+  },
+  {
+    "system": "CertificateAuthority",
+    "actor": "withoutToken",
+    "expectedStatus": 401,
+    "actualStatus": 401,
+    "passed": true
+  },
+  {
+    "system": "DataManager",
+    "actor": "inspector",
+    "expectedStatus": 200,
+    "actualStatus": 200,
+    "passed": true
+  },
+  {
+    "system": "DataManager",
+    "actor": "consumer",
+    "expectedStatus": 403,
+    "actualStatus": 403,
+    "passed": true
+  },
+  {
+    "system": "DataManager",
+    "actor": "withoutToken",
+    "expectedStatus": 401,
+    "actualStatus": 401,
+    "passed": true
+  },
+  {
+    "system": "GateTunnel",
+    "actor": "inspector",
+    "expectedStatus": 200,
+    "actualStatus": 200,
+    "passed": true
+  },
+  {
+    "system": "GateTunnel",
+    "actor": "consumer",
+    "expectedStatus": 403,
+    "actualStatus": 403,
+    "passed": true
+  },
+  {
+    "system": "GateTunnel",
+    "actor": "withoutToken",
+    "expectedStatus": 401,
+    "actualStatus": 401,
+    "passed": true
+  },
+  {
+    "system": "Gatekeeper",
+    "actor": "inspector",
+    "expectedStatus": 200,
+    "actualStatus": 200,
+    "passed": true
+  },
+  {
+    "system": "Gatekeeper",
+    "actor": "consumer",
+    "expectedStatus": 403,
+    "actualStatus": 403,
+    "passed": true
+  },
+  {
+    "system": "Gatekeeper",
+    "actor": "withoutToken",
+    "expectedStatus": 401,
+    "actualStatus": 401,
+    "passed": true
+  },
+  {
+    "system": "SysMonitor",
+    "actor": "inspector",
+    "expectedStatus": 200,
+    "actualStatus": 200,
+    "passed": true
+  },
+  {
+    "system": "SysMonitor",
+    "actor": "consumer",
+    "expectedStatus": 403,
+    "actualStatus": 403,
+    "passed": true
+  },
+  {
+    "system": "SysMonitor",
+    "actor": "withoutToken",
+    "expectedStatus": 401,
+    "actualStatus": 401,
+    "passed": true
+  }
+]

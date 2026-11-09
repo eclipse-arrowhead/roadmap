@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm,y=1cm,
+ b/.style={draw=ArrowheadBlue,fill=ArrowheadBlue!4,rounded corners=2pt,
+ text width=4.3cm,align=center,font=\scriptsize,minimum height=1.4cm},
+ a/.style={<->,>=Stealth,thick,ArrowheadBlue}]
+\node[b, ahMixed] (j) at (0,0) {\textbf{Java reference}\\TestCloud / Company\\Spring + native Java services};
+\node[b, ahMixed] (g) at (5.5,0) {\textbf{GoCloud / Company}\\Go core and support\\Java Blacklist + Rust TimeManager swaps};
+\node[b, ahMixed] (r) at (11,0) {\textbf{Native Rust candidate}\\RustDev / Lab\\Separate from legacy Rust cloud};
+\node[b,text width=9cm,minimum height=0.85cm, ahInfrastructure] (relay) at (5.5,-2.5)
+ {\textbf{Shared federation relay: AH-GT-1}\\Explicit neighbours, organisation bindings and foreign-operation policies};
+\draw[a] (j.south) -- (relay.north west);
+\draw[a] (g.south) -- (relay.north);
+\draw[a] (r.south) -- (relay.north east);
+\end{tikzpicture}

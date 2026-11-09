@@ -1,0 +1,152 @@
+ Container arrowhead-v53-test-cloud-rust-aigym-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-choreographer-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-amqp-broker-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-configuration-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-blacklist-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-onboarding-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-certificateauthority-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-authentication-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-gatekeeper-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-gatetunnel-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-mqtt-broker-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-consumer-authorization-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-datamanager-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-plantdescriptionengine-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-deviceqosevaluator-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-eventhandler-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-serviceregistry-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-dynamic-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-translationmanager-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-sysmonitor-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-timemanager-1 Recreate 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-simple-1 Recreate 
+ configuration The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ choreographer The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ gatekeeper The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ serviceorchestration-simple The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ sysmonitor The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ serviceorchestration-dynamic The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ timemanager The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ aigym The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ translationmanager The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ deviceqosevaluator The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ consumer-authorization The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ plantdescriptionengine The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ onboarding The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ eventhandler The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ certificateauthority The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ blacklist The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ datamanager The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ authentication The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ serviceregistry The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ gatetunnel The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ Container arrowhead-v53-test-cloud-rust-mqtt-broker-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-amqp-broker-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-gatekeeper-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-aigym-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-sysmonitor-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-eventhandler-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-consumer-authorization-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-datamanager-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-certificateauthority-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-configuration-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-deviceqosevaluator-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-plantdescriptionengine-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-choreographer-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-gatetunnel-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-timemanager-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-simple-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-dynamic-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-onboarding-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-blacklist-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-translationmanager-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-serviceregistry-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-authentication-1 Recreated 
+ Container arrowhead-v53-test-cloud-rust-datamanager-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-configuration-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-simple-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-timemanager-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-blacklist-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-authentication-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-aigym-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-onboarding-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-plantdescriptionengine-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-gatetunnel-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-sysmonitor-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-deviceqosevaluator-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-serviceregistry-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-amqp-broker-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-gatekeeper-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-consumer-authorization-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-dynamic-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-mqtt-broker-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-certificateauthority-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-choreographer-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-eventhandler-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-translationmanager-1 Starting 
+ Container arrowhead-v53-test-cloud-rust-datamanager-1 Started 
+ Container arrowhead-v53-test-cloud-rust-configuration-1 Started 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-simple-1 Started 
+ Container arrowhead-v53-test-cloud-rust-timemanager-1 Started 
+ Container arrowhead-v53-test-cloud-rust-blacklist-1 Started 
+ Container arrowhead-v53-test-cloud-rust-authentication-1 Started 
+ Container arrowhead-v53-test-cloud-rust-aigym-1 Started 
+ Container arrowhead-v53-test-cloud-rust-onboarding-1 Started 
+ Container arrowhead-v53-test-cloud-rust-plantdescriptionengine-1 Started 
+ Container arrowhead-v53-test-cloud-rust-gatetunnel-1 Started 
+ Container arrowhead-v53-test-cloud-rust-sysmonitor-1 Started 
+ Container arrowhead-v53-test-cloud-rust-deviceqosevaluator-1 Started 
+ Container arrowhead-v53-test-cloud-rust-serviceregistry-1 Started 
+ Container arrowhead-v53-test-cloud-rust-amqp-broker-1 Started 
+ Container arrowhead-v53-test-cloud-rust-gatekeeper-1 Started 
+ Container arrowhead-v53-test-cloud-rust-consumer-authorization-1 Started 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-dynamic-1 Started 
+ Container arrowhead-v53-test-cloud-rust-mqtt-broker-1 Started 
+ Container arrowhead-v53-test-cloud-rust-certificateauthority-1 Started 
+ Container arrowhead-v53-test-cloud-rust-choreographer-1 Started 
+ Container arrowhead-v53-test-cloud-rust-eventhandler-1 Started 
+ Container arrowhead-v53-test-cloud-rust-translationmanager-1 Started 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-dynamic-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-blacklist-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-onboarding-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-authentication-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-certificateauthority-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-choreographer-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-timemanager-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-plantdescriptionengine-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-gatetunnel-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-translationmanager-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-serviceregistry-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-simple-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-configuration-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-mqtt-broker-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-amqp-broker-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-gatekeeper-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-aigym-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-sysmonitor-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-consumer-authorization-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-deviceqosevaluator-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-eventhandler-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-datamanager-1 Waiting 
+ Container arrowhead-v53-test-cloud-rust-timemanager-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-configuration-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-simple-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-blacklist-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-authentication-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-aigym-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-onboarding-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-plantdescriptionengine-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-sysmonitor-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-gatetunnel-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-datamanager-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-serviceregistry-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-deviceqosevaluator-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-gatekeeper-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-serviceorchestration-dynamic-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-consumer-authorization-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-mqtt-broker-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-certificateauthority-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-eventhandler-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-choreographer-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-translationmanager-1 Healthy 
+ Container arrowhead-v53-test-cloud-rust-amqp-broker-1 Healthy 
