@@ -1,0 +1,42 @@
+ Container arrowhead-v52-test-cloud-configuration-1 Recreate 
+ Container arrowhead-v52-test-cloud-choreographer-1 Recreate 
+ Container arrowhead-v52-test-cloud-datamanager-1 Recreate 
+ Container arrowhead-v52-test-cloud-eventhandler-1 Recreate 
+ Container arrowhead-v52-test-cloud-timemanager-1 Recreate 
+ Container arrowhead-v52-test-cloud-plantdescriptionengine-1 Recreate 
+ timemanager The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ configuration The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ plantdescriptionengine The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ datamanager The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ choreographer The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ eventhandler The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ Container arrowhead-v52-test-cloud-configuration-1 Recreated 
+ Container arrowhead-v52-test-cloud-timemanager-1 Recreated 
+ Container arrowhead-v52-test-cloud-choreographer-1 Recreated 
+ Container arrowhead-v52-test-cloud-datamanager-1 Recreated 
+ Container arrowhead-v52-test-cloud-eventhandler-1 Recreated 
+ Container arrowhead-v52-test-cloud-plantdescriptionengine-1 Recreated 
+ Container arrowhead-v52-test-cloud-choreographer-1 Starting 
+ Container arrowhead-v52-test-cloud-datamanager-1 Starting 
+ Container arrowhead-v52-test-cloud-plantdescriptionengine-1 Starting 
+ Container arrowhead-v52-test-cloud-timemanager-1 Starting 
+ Container arrowhead-v52-test-cloud-configuration-1 Starting 
+ Container arrowhead-v52-test-cloud-eventhandler-1 Starting 
+ Container arrowhead-v52-test-cloud-choreographer-1 Started 
+ Container arrowhead-v52-test-cloud-datamanager-1 Started 
+ Container arrowhead-v52-test-cloud-plantdescriptionengine-1 Started 
+ Container arrowhead-v52-test-cloud-timemanager-1 Started 
+ Container arrowhead-v52-test-cloud-configuration-1 Started 
+ Container arrowhead-v52-test-cloud-eventhandler-1 Started 
+ Container arrowhead-v52-test-cloud-timemanager-1 Waiting 
+ Container arrowhead-v52-test-cloud-eventhandler-1 Waiting 
+ Container arrowhead-v52-test-cloud-configuration-1 Waiting 
+ Container arrowhead-v52-test-cloud-choreographer-1 Waiting 
+ Container arrowhead-v52-test-cloud-datamanager-1 Waiting 
+ Container arrowhead-v52-test-cloud-plantdescriptionengine-1 Waiting 
+ Container arrowhead-v52-test-cloud-choreographer-1 Healthy 
+ Container arrowhead-v52-test-cloud-datamanager-1 Healthy 
+ Container arrowhead-v52-test-cloud-plantdescriptionengine-1 Healthy 
+ Container arrowhead-v52-test-cloud-timemanager-1 Healthy 
+ Container arrowhead-v52-test-cloud-configuration-1 Healthy 
+ Container arrowhead-v52-test-cloud-eventhandler-1 Healthy 

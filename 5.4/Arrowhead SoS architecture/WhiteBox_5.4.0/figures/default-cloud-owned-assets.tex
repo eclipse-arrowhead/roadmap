@@ -1,0 +1,22 @@
+% Current Java default design: owned assets are nested inside host boundaries.
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,
+ host/.style={draw,rounded corners,minimum width=6.6cm,minimum height=2.15cm},
+ asset/.style={draw,fill=white,rounded corners,text width=5.8cm,align=center,font=\scriptsize,minimum height=0.55cm}]
+\node[host,ahRegistry] (sr) at (0,0) {};
+\node at (0,0.65) {\textbf{ServiceRegistry}};
+\node[asset] at (0,-0.25) {Internal database asset: serviceregistry-db};
+\node[host,ahAuthentication] (auth) at (7.2,0) {};
+\node at (7.2,0.65) {\textbf{Authentication}};
+\node[asset] at (7.2,-0.25) {Internal database asset: authentication-db};
+\node[host,ahAuthorization] (ca) at (0,-2.8) {};
+\node at (0,-2.15) {\textbf{ConsumerAuthorization}};
+\node[asset] at (0,-3.05) {Internal database asset: consumerauthorization-db};
+\node[host,ahOrchestration] (dso) at (7.2,-2.8) {};
+\node at (7.2,-2.15) {\textbf{DynamicServiceOrchestration}};
+\node[asset] at (7.2,-3.05) {Internal database asset: serviceorchestration-dynamic-db};
+\node[draw,rounded corners,ahInfrastructure,text width=13.6cm,align=center,minimum height=0.8cm] at (3.6,-4.9)
+ {\textbf{Shared infrastructure: AMQP broker} (not a database)};
+\node[text width=13.6cm,align=center,font=\scriptsize] at (3.6,-6.0)
+ {Only the owning host accesses its database. Other microsystems use the host's services.\\
+ SimpleStoreServiceOrchestration remains available as an optional core implementation.};
+\end{tikzpicture}

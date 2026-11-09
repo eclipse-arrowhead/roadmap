@@ -1,0 +1,32 @@
+[
+  {
+    "system": "AIGym",
+    "image": "arrowhead-test-redeploy/ah5-aigym-java-spring:20261104-general-management",
+    "returncode": 0
+  },
+  {
+    "system": "CertificateAuthority",
+    "image": "arrowhead-test-redeploy/ah5-certificateauthority-java-spring:20261104-general-management",
+    "returncode": 0
+  },
+  {
+    "system": "DataManager",
+    "image": "arrowhead-test-redeploy/ah5-datamanager-java-spring:20261104-general-management",
+    "returncode": 0
+  },
+  {
+    "system": "GateTunnel",
+    "image": "arrowhead-test-redeploy/ah5-gatetunnel-java-spring:20261104-general-management",
+    "returncode": 0
+  },
+  {
+    "system": "Gatekeeper",
+    "image": "arrowhead-test-redeploy/ah5-gatekeeper-java-spring:20261104-general-management",
+    "returncode": 0
+  },
+  {
+    "system": "SysMonitor",
+    "image": "arrowhead-test-redeploy/ah5-sysmonitor-java-spring:20261104-general-management",
+    "returncode": 0
+  }
+]

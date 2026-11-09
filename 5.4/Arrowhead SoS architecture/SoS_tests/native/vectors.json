@@ -1,0 +1,3132 @@
+{
+  "policies": [
+    {
+      "id": "AUTHZ-SERVICE_DEF-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-SERVICE_DEF-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-SERVICE_DEF-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-SERVICE_DEF-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-SERVICE_DEF-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-SERVICE_DEF-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-SERVICE_DEF-missing-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-SERVICE_DEF-missing-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-all-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-all-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-all-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-all-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-all-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-all-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-whitelist-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-whitelist-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-whitelist-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-whitelist-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-whitelist-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-whitelist-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-blacklist-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-blacklist-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-blacklist-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-blacklist-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-blacklist-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-SERVICE_DEF-blacklist-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-missing-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-EVENT_TYPE-missing-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-all-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-all-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-all-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-all-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-all-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-all-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-whitelist-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-whitelist-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-whitelist-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-whitelist-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-whitelist-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-whitelist-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-blacklist-all-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-blacklist-all-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-blacklist-whitelist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-blacklist-whitelist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-blacklist-blacklist-TestConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-priority-EVENT_TYPE-blacklist-blacklist-OtherConsumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        },
+        {
+          "level": "MGMT",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "EVENT_TYPE",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-isolation-provider",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "OtherProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-isolation-consumer",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "OtherConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-isolation-cloud",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "OtherCloud|Org",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-isolation-target",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "otherSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-isolation-targetType",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {}
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "EVENT_TYPE",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-operation-all-read",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {
+              "read": {
+                "policyType": "WHITELIST",
+                "policyList": [
+                  "OtherConsumer"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-operation-all-write",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "ALL"
+            },
+            "scopedPolicies": {
+              "read": {
+                "policyType": "WHITELIST",
+                "policyList": [
+                  "OtherConsumer"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "write"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-operation-whitelist-read",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {
+              "read": {
+                "policyType": "WHITELIST",
+                "policyList": [
+                  "OtherConsumer"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-operation-whitelist-write",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "WHITELIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {
+              "read": {
+                "policyType": "WHITELIST",
+                "policyList": [
+                  "OtherConsumer"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "write"
+      },
+      "expected": true
+    },
+    {
+      "id": "AUTHZ-operation-blacklist-read",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {
+              "read": {
+                "policyType": "WHITELIST",
+                "policyList": [
+                  "OtherConsumer"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "read"
+      },
+      "expected": false
+    },
+    {
+      "id": "AUTHZ-operation-blacklist-write",
+      "pages": [
+        11,
+        21,
+        23,
+        24
+      ],
+      "section": "3.1.3; 5.2; 6.3",
+      "grants": [
+        {
+          "level": "PROVIDER",
+          "request": {
+            "provider": "TestProvider",
+            "cloud": "LOCAL",
+            "targetType": "SERVICE_DEF",
+            "target": "testSignal",
+            "defaultPolicy": {
+              "policyType": "BLACKLIST",
+              "policyList": [
+                "TestConsumer"
+              ]
+            },
+            "scopedPolicies": {
+              "read": {
+                "policyType": "WHITELIST",
+                "policyList": [
+                  "OtherConsumer"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query": {
+        "provider": "TestProvider",
+        "consumer": "TestConsumer",
+        "cloud": "LOCAL",
+        "targetType": "SERVICE_DEF",
+        "target": "testSignal",
+        "scope": "write"
+      },
+      "expected": false
+    }
+  ],
+  "metadata": [
+    {
+      "id": "META-01",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "location": "LineA"
+      },
+      "requirements": {
+        "location": "LineA"
+      },
+      "expected": true
+    },
+    {
+      "id": "META-02",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "location": "LineA"
+      },
+      "requirements": {
+        "location": "LineB"
+      },
+      "expected": false
+    },
+    {
+      "id": "META-03",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {},
+      "requirements": {
+        "location": "LineA"
+      },
+      "expected": false
+    },
+    {
+      "id": "META-04",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "location": "LineA",
+        "role": "sensor"
+      },
+      "requirements": {
+        "location": "LineA"
+      },
+      "expected": true
+    },
+    {
+      "id": "META-05",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "location": "LineA",
+        "role": "sensor"
+      },
+      "requirements": {
+        "location": "LineA",
+        "role": "sensor"
+      },
+      "expected": true
+    },
+    {
+      "id": "META-06",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "location": "LineA",
+        "role": "sensor"
+      },
+      "requirements": {
+        "location": "LineA",
+        "role": "actuator"
+      },
+      "expected": false
+    },
+    {
+      "id": "META-07",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "load": 2
+      },
+      "requirements": {
+        "load": 2
+      },
+      "expected": true
+    },
+    {
+      "id": "META-08",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "load": 2
+      },
+      "requirements": {
+        "load": 3
+      },
+      "expected": false
+    },
+    {
+      "id": "META-09",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "online": true
+      },
+      "requirements": {
+        "online": true
+      },
+      "expected": true
+    },
+    {
+      "id": "META-10",
+      "pages": [
+        10,
+        11
+      ],
+      "section": "3.1.1; 3.1.3",
+      "actual": {
+        "online": false
+      },
+      "requirements": {
+        "online": true
+      },
+      "expected": false
+    }
+  ],
+  "canonical": [
+    {
+      "id": "NAME-provider-01",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "provider",
+      "value": "TestProvider"
+    },
+    {
+      "id": "NAME-provider-02",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "provider",
+      "value": "DynamicServiceOrchestration"
+    },
+    {
+      "id": "NAME-provider-03",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "provider",
+      "value": "Provider2"
+    },
+    {
+      "id": "NAME-provider-04",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "provider",
+      "value": "lowercase"
+    },
+    {
+      "id": "NAME-provider-05",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "provider",
+      "value": "bad_provider"
+    },
+    {
+      "id": "NAME-provider-06",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "provider",
+      "value": "Bad-Provider"
+    },
+    {
+      "id": "NAME-target-07",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "target",
+      "value": "testSignal"
+    },
+    {
+      "id": "NAME-target-08",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "target",
+      "value": "serviceOrchestration"
+    },
+    {
+      "id": "NAME-target-09",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "target",
+      "value": "signal2"
+    },
+    {
+      "id": "NAME-target-10",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "target",
+      "value": "Uppercase"
+    },
+    {
+      "id": "NAME-target-11",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "target",
+      "value": "bad_signal"
+    },
+    {
+      "id": "NAME-target-12",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "target",
+      "value": "bad-signal"
+    },
+    {
+      "id": "NAME-scope-13",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "scope",
+      "value": "read"
+    },
+    {
+      "id": "NAME-scope-14",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "scope",
+      "value": "modify-priorities"
+    },
+    {
+      "id": "NAME-scope-15",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "scope",
+      "value": "get-log"
+    },
+    {
+      "id": "NAME-scope-16",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "scope",
+      "value": "Uppercase"
+    },
+    {
+      "id": "NAME-scope-17",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "scope",
+      "value": "bad_scope"
+    },
+    {
+      "id": "NAME-scope-18",
+      "pages": [
+        8,
+        32
+      ],
+      "section": "2.1.5",
+      "field": "scope",
+      "value": "badScope"
+    }
+  ]
+}

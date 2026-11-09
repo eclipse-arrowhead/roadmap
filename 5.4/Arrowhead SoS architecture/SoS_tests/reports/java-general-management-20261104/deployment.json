@@ -1,0 +1,382 @@
+[
+  {
+    "system": "AIGym",
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-AIGym-java-spring",
+    "sourceFiles": [
+      {
+        "path": "src/main/java/eu/arrowhead/aigym/AiGymApplication.java",
+        "sha256": "b21ef0990750863b01b3e601dd0a7b001b37eb43694a0c5aef042bc43895e07d"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/aigym/AiGymController.java",
+        "sha256": "84274c72669d108bbac87002cfc9320f5c5edfb2a23cf83bdd67898ce26d438e"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/aigym/AiGymRuntime.java",
+        "sha256": "fd343259caf8d0342ebaf5b7660403a7eb3b40f2528388465bde6c3eae1da771"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/aigym/ArrowheadGateway.java",
+        "sha256": "560b604295b81ca28a8b23f0b648172b1d7972523fe773fbcd2801688ab8f921"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/aigym/ArrowheadSecurityFilter.java",
+        "sha256": "604f2ee2515c48f995cfea3ed894163aa45140d019bdbe4e2a5997c641ab6fc6"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/aigym/CrlRevocationConfig.java",
+        "sha256": "e52781de0a1b634577eee8524929a909ebd76bc617addd686a71b5a38008acc7"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/aigym/ModelStore.java",
+        "sha256": "ba0720fe5e8aae4ee0c90cc38ef657b56aaf15071d11fcf51d99f7647acea46e"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/aigym/GeneralManagementSecurityTest.java",
+        "sha256": "e8736946102f43d34dd64f496c263da9b406919ae4d20ab72e9a07bb088203df"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/aigym/ModelStoreTest.java",
+        "sha256": "5cfbfb79b31ab48054d0d4a9f965732d1eaa8bf7ecf9c4f88d8e809ea2bfc942"
+      }
+    ],
+    "image": "arrowhead-test-redeploy/ah5-aigym-java-spring:20261104-general-management",
+    "imageId": "sha256:e4ce358b2533dbd07747f3b2952c7ddf40186d3ec5e67bae87e50fbcc2e7d9ea",
+    "status": "running",
+    "health": "healthy"
+  },
+  {
+    "system": "CertificateAuthority",
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-CertificateAuthority-java-spring",
+    "sourceFiles": [
+      {
+        "path": "src/main/java/eu/arrowhead/port/CertificateAuthority.java",
+        "sha256": "0ed15d9a913c067ab66ace225c4490fe71bd1c6fa208cac8e6564cd91af251ae"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Database.java",
+        "sha256": "48aac647810154ff70ca97d73456182fb1c4654c53f596227f55f514535fedaf"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Json.java",
+        "sha256": "bb32b891d17b84cd86d815169fa084e645e2b599fd04853956bec6dfaef48dfb"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Main.java",
+        "sha256": "0e0980dcc8c6fdc0fce57efd67ff1a3cf0e3fa7c3fc9efbb6228d9798c88f740"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Messaging.java",
+        "sha256": "921b9fd518150f341e669d96af14d39478c2d730b29bb946463ec8478fb65880"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Service.java",
+        "sha256": "71ff89d5535d0655f97c11342eb6e66c1ea5f6604191a4a6533afbf436abf184"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Tls.java",
+        "sha256": "6a0fef4c0ecc33d29b11ee4a7f616cb26fb06dfaac7207e50424356c7c85d28c"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/SecurityTest.java",
+        "sha256": "cbb5a55e62dc8171caf6f2c458da5c412638334759f01766ead4271d1bbaae13"
+      }
+    ],
+    "image": "arrowhead-test-redeploy/ah5-certificateauthority-java-spring:20261104-general-management",
+    "imageId": "sha256:0160752671df7e13730de963913497b4837062aa24bd30fe753aed57f020b6d2",
+    "status": "running",
+    "health": "healthy"
+  },
+  {
+    "system": "DataManager",
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-DataManager-java-spring",
+    "sourceFiles": [
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/DataManagerConstants.java",
+        "sha256": "06e7450187c6a7ca670b1989f226ada967e60c50768a61b70f9991c2733cae7c"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/DataManagerDefaults.java",
+        "sha256": "71501862e36bd19508b150a4c11b0675542a0fed77ba06395fab8d33c5be689c"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/DataManagerMain.java",
+        "sha256": "15d66a297b90625d2d6b2d8d62c3896236ad5cd5e266a373e08c238905a0e604"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/DataManagerSystemInfo.java",
+        "sha256": "7321d1b9c1e507903caeb9ac75e8feafe5c2299700c2300b7d0553f2f8cc290e"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/api/dto/SenMLRecordDTO.java",
+        "sha256": "60565c594ff026830fdb772a5ebcec48a4da8763924fef648970d4136b207ede"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/api/dto/ServiceListResponseDTO.java",
+        "sha256": "36b395f2307e976c476e94942874c8d7ffbd8a85067f08766b8f09dcdd60c1aa"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/api/dto/SystemListResponseDTO.java",
+        "sha256": "b4cf101195f68a1c2006b46e05695c450535fac55d3abda633793a5f7c1000f2"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/api/http/DataHistorianAPI.java",
+        "sha256": "903282c2fa5659946134667b64b732bbe0aa458f587a6b9b1f0e28460c797b0b"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/api/http/DataProxyAPI.java",
+        "sha256": "94b10bd6ced854528698866ac50c42b4a7a2f59e6a0620e6ea9ea991a78544b3"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/api/http/GeneralManagementAPI.java",
+        "sha256": "c1e864f7ea020d193a16f95e96be348f6d90fecaaa84d64359775a103f2fcbbb"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/init/DataManagerApplicationInitListener.java",
+        "sha256": "3fd9bdfce0178d1829d9352e83cc8e79e83f6f7c04c5710886f83a318759694d"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/jpa/entity/HistorianRecord.java",
+        "sha256": "35da784fc4032cfc9458c910294fff1a13d25c5ea5723249d2b6becb47ed5c65"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/jpa/entity/Logs.java",
+        "sha256": "1f954005a3a2fbaedda9bba09738fb8c3a8f686ab9f16a00670eb474d0ebf1e9"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/jpa/repository/HistorianRecordRepository.java",
+        "sha256": "df818e09b2f86e7178f29c0ff959e956769ffc287b8087573381d3d0883915a4"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/jpa/repository/LogsRepository.java",
+        "sha256": "002d2479deb99b12d93325a92daace63f659a900f9e8a4de77be7ce940d2a712"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/security/DataManagerAuthorizationFilter.java",
+        "sha256": "29ee19a5bef5f676e18103480dc6f3e1bc8a00b5da6db553b08f7353beb39370"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/security/DataManagerAuthorizationService.java",
+        "sha256": "1243ccbf75f3a9c5affc21d9d3fa601f4105b3f4ea65871ba696230c0d748eb2"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/security/DataManagerOperationResolver.java",
+        "sha256": "3a574d2d0fdb0f670d8a1c5719896deb62990511daaf5a3424f7f26840099f0b"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/service/DataManagerHealthIndicator.java",
+        "sha256": "b60ebfce33f4dc346cf72478812ebce5aa59f6c52f2939f247188071306cda9a"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/service/DataManagerNameService.java",
+        "sha256": "94ffc6229154e9fe8ca2dfccf92d804a2e7b46f28f4f3f5d2f984d5876d42400"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/service/HistorianService.java",
+        "sha256": "0b543b9ec679767ac9f353d416538bf7fcb6b5042546e9f9f16e71def0f7232d"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/service/ProxyService.java",
+        "sha256": "b81491402f028f49bef02d87b7126a8bb620e5f789af5c509f72185f5a60ed33"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/service/SenMLValidation.java",
+        "sha256": "1a9f142c6eec529ae288b90cb1b23064e36adf4408a85878e7748b47f52c4bb1"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/datamanager/swagger/SwaggerConfig.java",
+        "sha256": "ce2b0ab237b12f82dfcf6ef6ab455bacfaff02a20402ae5eb22a92de2e1a24dc"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/datamanager/api/http/GeneralManagementAPITest.java",
+        "sha256": "cd155b233c30313e55406040c45dd201c64a6e94c4d7f6fc839eff34273262de"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/datamanager/security/DataManagerAuthorizationTest.java",
+        "sha256": "3b82a954de76ee4bebd075efe1dd6b61229bd4ef5b49dbeb7a2b3a0ba17e23bb"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/datamanager/service/DataManagerHealthIndicatorTest.java",
+        "sha256": "af5fd04b03592317a1967cbf1f9cda1fb4807cda8e4225ac130cffdd1f4917ed"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/datamanager/service/HistorianServiceTest.java",
+        "sha256": "4e229e08b7d5bf9f6d619590618afdbcbd858f284d5188508741a0eaedb8a7df"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/datamanager/service/ProxyServiceTest.java",
+        "sha256": "cf6fef7a29df5ed9ee722b12e0ba9d5c79f48f0b0598b51be3c8b7d0eabdae4e"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/datamanager/service/SenMLValidationTest.java",
+        "sha256": "ad6e4562a66630a8da744554438929c05a21422104ad4a4134ec3593353c4462"
+      }
+    ],
+    "image": "arrowhead-test-redeploy/ah5-datamanager-java-spring:20261104-general-management",
+    "imageId": "sha256:95419540326c247c98f530e592c192d1d4378dde5038a5c8cdd235f4a3c94712",
+    "status": "running",
+    "health": "healthy"
+  },
+  {
+    "system": "GateTunnel",
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-GateTunnel-java-spring",
+    "sourceFiles": [
+      {
+        "path": "src/main/java/eu/arrowhead/port/Database.java",
+        "sha256": "48aac647810154ff70ca97d73456182fb1c4654c53f596227f55f514535fedaf"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/GateTunnel.java",
+        "sha256": "21fd95d941d8dfe31712e1d29ca51cd05b37130db2a1b42251713ca6a5086052"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Json.java",
+        "sha256": "bb32b891d17b84cd86d815169fa084e645e2b599fd04853956bec6dfaef48dfb"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Main.java",
+        "sha256": "956d6bbbf3632cde7bee31c7a2631903d5b7901d64ab64730b19907bdbe073b2"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Messaging.java",
+        "sha256": "191dcf81bd8db86805101670a3f56826b480cd44e271d03bd467025b5aad532b"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/PeerNames.java",
+        "sha256": "b556021de6073d1522bdae6149e851b103fd99d4fba31e548d8f54a15abd5c79"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Service.java",
+        "sha256": "71ff89d5535d0655f97c11342eb6e66c1ea5f6604191a4a6533afbf436abf184"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/SessionSecurity.java",
+        "sha256": "54260b1614fb067299c9cb73265b03e1587c2fe0aecc5a09bb611576a9eb997b"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Tls.java",
+        "sha256": "6a0fef4c0ecc33d29b11ee4a7f616cb26fb06dfaac7207e50424356c7c85d28c"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/ContractTest.java",
+        "sha256": "f247b1560b440dd445c5722f3919649717603041717f4a3a439534f1cec06fa6"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/PeerNamesTest.java",
+        "sha256": "32e826fefd48fa8d2cf59224ee9769eb0b2846b79761879cd11a7b5d30b7b016"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/SecurityTest.java",
+        "sha256": "093746c581a31a348faa741161f95d75a62d58041f21dfb2e75c1103d3c5820a"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/SessionSecurityTest.java",
+        "sha256": "675ede0cce62c7cf54e364450e69f8bba6226b1ec8cb3651aeb2b28d3b324e70"
+      }
+    ],
+    "image": "arrowhead-test-redeploy/ah5-gatetunnel-java-spring:20261104-general-management",
+    "imageId": "sha256:3b508daa5850a2aa8cd0bd51a167139cb791e3e08a420eceaa8fa39ca9859bd6",
+    "status": "running",
+    "health": "healthy"
+  },
+  {
+    "system": "Gatekeeper",
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-Gatekeeper-java-spring",
+    "sourceFiles": [
+      {
+        "path": "src/main/java/eu/arrowhead/port/Database.java",
+        "sha256": "48aac647810154ff70ca97d73456182fb1c4654c53f596227f55f514535fedaf"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Gatekeeper.java",
+        "sha256": "62388d7f97c9099f6b6b60689e5a4946722988d3fa456776851c15f6818ddc12"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Json.java",
+        "sha256": "bb32b891d17b84cd86d815169fa084e645e2b599fd04853956bec6dfaef48dfb"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Main.java",
+        "sha256": "834010f969eabd10559e001a7fe5dd23d7f8646da0eff984692e4945c6b960c8"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Messaging.java",
+        "sha256": "191dcf81bd8db86805101670a3f56826b480cd44e271d03bd467025b5aad532b"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/PeerNames.java",
+        "sha256": "b556021de6073d1522bdae6149e851b103fd99d4fba31e548d8f54a15abd5c79"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Service.java",
+        "sha256": "71ff89d5535d0655f97c11342eb6e66c1ea5f6604191a4a6533afbf436abf184"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Tls.java",
+        "sha256": "6a0fef4c0ecc33d29b11ee4a7f616cb26fb06dfaac7207e50424356c7c85d28c"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/PeerNamesTest.java",
+        "sha256": "32e826fefd48fa8d2cf59224ee9769eb0b2846b79761879cd11a7b5d30b7b016"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/SecurityTest.java",
+        "sha256": "462a33aaf22751a13ef67cab45fbed2beb12d10ba53cd2d7d05d52cb55c71ac4"
+      }
+    ],
+    "image": "arrowhead-test-redeploy/ah5-gatekeeper-java-spring:20261104-general-management",
+    "imageId": "sha256:2ddcc25a94f6fbe043390ee3231a7a82bb645369cd280af61030df946efe0058",
+    "status": "running",
+    "health": "healthy"
+  },
+  {
+    "system": "SysMonitor",
+    "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-java/ah5-SysMonitor-java-spring",
+    "sourceFiles": [
+      {
+        "path": "src/main/java/eu/arrowhead/port/Database.java",
+        "sha256": "48aac647810154ff70ca97d73456182fb1c4654c53f596227f55f514535fedaf"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Json.java",
+        "sha256": "bb32b891d17b84cd86d815169fa084e645e2b599fd04853956bec6dfaef48dfb"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Main.java",
+        "sha256": "04f7836d2e411e4a3ac82361397eecdda9dbfc17cf1917824649efbd56621833"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Messaging.java",
+        "sha256": "921b9fd518150f341e669d96af14d39478c2d730b29bb946463ec8478fb65880"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/MonitorStore.java",
+        "sha256": "c950831d3d16e8aa4af1ffe27842c9a952a04ed9b58acf990faa903a8497e340"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Service.java",
+        "sha256": "71ff89d5535d0655f97c11342eb6e66c1ea5f6604191a4a6533afbf436abf184"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/SysMonitor.java",
+        "sha256": "8cff9dc4437b0f3e6a9faba5b1a07774428a455429c7b9fe1ad3e2f0cbb43972"
+      },
+      {
+        "path": "src/main/java/eu/arrowhead/port/Tls.java",
+        "sha256": "6a0fef4c0ecc33d29b11ee4a7f616cb26fb06dfaac7207e50424356c7c85d28c"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/ContractTest.java",
+        "sha256": "a7cc605e64f64d0b6ab056a969bfbc9db34523a091191f70931a099999d22c99"
+      },
+      {
+        "path": "src/test/java/eu/arrowhead/port/SecurityTest.java",
+        "sha256": "1819fc50ba4ac0b35d1d4b648882b0de89fbdb302e94fe78b5104613e818a20f"
+      }
+    ],
+    "image": "arrowhead-test-redeploy/ah5-sysmonitor-java-spring:20261104-general-management",
+    "imageId": "sha256:05e2b6c0c74bb723d4c71259abf7ebb1b17cb153f6b4eb1ce13de456ca55b93c",
+    "status": "running",
+    "health": "healthy"
+  }
+]

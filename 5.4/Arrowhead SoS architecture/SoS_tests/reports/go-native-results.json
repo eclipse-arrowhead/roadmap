@@ -1,0 +1,468 @@
+{
+  "state": "executed",
+  "returncode": 0,
+  "cases": [
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-missing-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-SERVICE_DEF-missing-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-all-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-whitelist-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-SERVICE_DEF-blacklist-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-missing-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-EVENT_TYPE-missing-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-all-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-whitelist-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-all-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-all-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-whitelist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-whitelist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-blacklist-TestConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-priority-EVENT_TYPE-blacklist-blacklist-OtherConsumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-isolation-provider",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-isolation-consumer",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-isolation-cloud",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-isolation-target",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-isolation-targetType",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-operation-all-read",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-operation-all-write",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-operation-whitelist-read",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-operation-whitelist-write",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-operation-blacklist-read",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDPolicyDecisions/AUTHZ-operation-blacklist-write",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-01",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-02",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-03",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-04",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-05",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-06",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-07",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-08",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-09",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDMetadataSelection/META-10",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-provider-01",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-provider-02",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-provider-03",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-provider-04",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-provider-05",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-provider-06",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-target-07",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-target-08",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-target-09",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-target-10",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-target-11",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-target-12",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-scope-13",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-scope-14",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-scope-15",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-scope-16",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-scope-17",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCanonicalIdentifiers/NAME-scope-18",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDAMQPTransport/secure-default",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDAMQPTransport/secure-explicit",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDAMQPTransport/plaintext",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDAMQPTransport/mqtt-not-monitor",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDAMQPTransport/missing-host",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDAMQPTransport/embedded-password",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/authentication/identity",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/authentication/identityManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/authentication/generalManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/consumer-authorization/authorization",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/consumer-authorization/authorizationToken",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/consumer-authorization/authorizationManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/consumer-authorization/authorizationTokenManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/consumer-authorization/generalManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestration",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestrationPushManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestrationLockManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/serviceOrchestrationHistoryManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-dynamic/generalManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestration",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestrationSimpleStoreManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestrationPushManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-simple/serviceOrchestrationHistoryManagement",
+      "outcome": "pass"
+    },
+    {
+      "id": "TestGSoSDCoreServiceMatrix/serviceorchestration-simple/generalManagement",
+      "outcome": "pass"
+    }
+  ],
+  "source": "/Users/jerkerdelsing/Work/lule/EISLAB/Project/Eclipse/Eclipse-Arrowhead-go/ah5-core-go/consumer-authorization",
+  "elapsedSeconds": 1.16
+}

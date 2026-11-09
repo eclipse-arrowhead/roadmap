@@ -1,0 +1,22 @@
+{
+  "status": "NOT APPLIED \u2014 automatic approval review rejected persistent policy mutation",
+  "cloud": "Java",
+  "conditions": [
+    "Query current local policies for Blacklist/blacklistDiscovery before applying; abort if existing policies require reconciliation."
+  ],
+  "policy": {
+    "provider": "Blacklist",
+    "cloud": "LOCAL",
+    "targetType": "SERVICE_DEF",
+    "target": "blacklistDiscovery",
+    "description": "Authorization authority reads exclusion status for enabled fail-closed blacklist filtering",
+    "defaultPolicy": {
+      "policyType": "WHITELIST",
+      "policyList": [
+        "ConsumerAuthorization"
+      ]
+    },
+    "scopedPolicies": {}
+  },
+  "risk": "Creates a persistent read-only service permission for the authorization authority; does not grant blacklist management, signing or identity administration."
+}

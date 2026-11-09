@@ -1,0 +1,2527 @@
+{
+  "kind": "live-deployment-tests",
+  "cases": [
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_denied",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_observations",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_predict",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AI_sample",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_binding",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_changed_credentials",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_expired",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_login",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_logout",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_missing_token",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_self_declared",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_unknown_token",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_verify",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHN_wrong_password",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_all",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_in",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_blacklist_out",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_management_allow",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_management_deny",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_metadata_match",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_metadata_miss",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_no_policy",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_allow",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_operation_deny",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_revoked",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_in",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_whitelist_out",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_event",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_provider",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_AUTHZ_wrong_service",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_discovery_not_trust",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_missing_authn",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_missing_authz",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_orchestration_not_grant",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_own_store",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_plaintext_bootstrap",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_secured_before_ready",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BASE_store_failure",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_active",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_expired",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_fail_closed",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_reason",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_self_lookup",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_BL_whitelist",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_end_entity",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_key_signing",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_new_handshake",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_recorded",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_revoked",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_sign_authorized",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_sign_denied",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_trusted_key_expired",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_untrusted",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CA_valid",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_other",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_own",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_proxy_allowed",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CFG_proxy_denied",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_abort_owner",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_complete",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_executor_token",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_parallel",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_retry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_start",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_CHOR_step_owner",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_AIGym_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_AIGym_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Authentication_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Authentication_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Blacklist_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Blacklist_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_CertificateAuthority_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_CertificateAuthority_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Choreographer_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Choreographer_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Configuration_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Configuration_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ConsumerAuthorization_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ConsumerAuthorization_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DataManager_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DataManager_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DeviceQoSEvaluator_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DeviceQoSEvaluator_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DynamicServiceOrchestration_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_DynamicServiceOrchestration_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_EventHandler_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_EventHandler_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_GateTunnel_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_GateTunnel_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Gatekeeper_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Gatekeeper_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Onboarding_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_Onboarding_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_PlantDescriptionEngine_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_PlantDescriptionEngine_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ServiceRegistry_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_ServiceRegistry_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SimpleStoreServiceOrchestration_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SimpleStoreServiceOrchestration_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SysMonitor_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_SysMonitor_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TimeManager_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TimeManager_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TranslationManager_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_COMMON_TranslationManager_telemetry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_history_window",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_latest",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_offline_producer",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_service_isolation",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_signal",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DATA_system_isolation",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_blacklisted",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_eligible",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_exclusive",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_expired_lock",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_intercloud_denied",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_preferred",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_push",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_qos_filter",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_qos_sort",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_token",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_translation_off",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_translation_on",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_unauthorized",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_DSO_unsubscribe",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_all_matching",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_expired",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_matching",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_nonmatching",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_not_started",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_publisher_binding",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_EVENT_subscriber_binding",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_cloud_binding",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_discovery",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_management",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GK_negotiation_recheck",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_closed",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_consumer",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_exchange",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_peer",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_GT_service",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_authorized_only",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_deduplicate",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_durable",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_history",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_invalid",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_mqtt",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_retention",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_MON_unknown_provider",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_approved",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_certificate_only",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_no_auto_grant",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_no_signing_key",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_certs",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_exclusion",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_identities",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_offboard_registry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_revoked",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_sequence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_superseded",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_system_approved",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_system_unapproved",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_ONB_unapproved",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_ack",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_ambiguous_alarm",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_atomic",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_includes",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_matched",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_missing",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_missing_alarm",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_one_active",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_operator_priority",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_plant_priority",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_silent_alarm",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_undescribed_alarm",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_unmonitored_alarm",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_PDE_withdrawn",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_QOS_device_map",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_QOS_filter",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_QOS_sort",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_cloud_inbox",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_dedicated_identity",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_name_constraints",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_role_inbox",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_RELAY_sender_spoof",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_direct_access",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_expiry",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_lookup",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_metadata_match",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_metadata_miss",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_register",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_restricted_private",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_restricted_public",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_revoke",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SR_unique_instance",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_consumer_isolation",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_identifiers",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_no_tokens",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_not_grant",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_priority",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_SSO_push",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_beyond_threshold",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_startup",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_within_threshold",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TIME_zone",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_bridge",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_bridge_token",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_termination",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_usage_report",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TM_wrong_translator",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_expired",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_local_verification",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_tampered",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_time_valid",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_usage_exhausted",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_usage_first",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_consumer",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_operation",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_provider",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.BehaviorTests.test_TOKEN_wrong_service",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_aiGym_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_AIGym_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identityManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identity_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identity_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_identity_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Authentication_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistDiscovery_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_blacklistManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Blacklist_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateAuthorityManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateSigning_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_certificateValidation_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_CertificateAuthority_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerExecutor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_choreographerSession_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Choreographer_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configurationProxy_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configuration_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configuration_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_configuration_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Configuration_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationTokenManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorizationToken_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_authorization_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ConsumerAuthorization_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataHistorian_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_dataProxy_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DataManager_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_deviceQualityDataManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_qualityEvaluation_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DeviceQoSEvaluator_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationHistoryManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationLockManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestrationPushManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_serviceOrchestration_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_DynamicServiceOrchestration_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventHandlerManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventPublish_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_eventSubscription_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_EventHandler_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelConnection_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelKey_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_gateTunnelManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_GateTunnel_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_gatekeeperManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_globalServiceDiscovery_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_interCloudNegotiation_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Gatekeeper_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboardingManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_onboarding_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_Onboarding_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_plantDescriptionMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_PlantDescriptionEngine_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_deviceDiscovery_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceDiscovery_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_serviceRegistryManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_ServiceRegistry_systemDiscovery_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationHistoryManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationPushManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestrationSimpleStoreManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_serviceOrchestration_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SimpleStoreServiceOrchestration_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorData_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorHistory_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitorManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_SysMonitor_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_time_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_time_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TimeManager_time_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_generalManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_sysMonitor_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridgeManagement_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationBridge_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_naming",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_presence",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    },
+    {
+      "id": "sos_tests.test_live.RegistrationTests.test_TranslationManager_translationReport_protected",
+      "outcome": "skip",
+      "reason": "Set SOS_TEST_PROFILE to an isolated test deployment profile"
+    }
+  ],
+  "testsRun": 503,
+  "passed": 0,
+  "skipped": 503,
+  "failures": 0,
+  "errors": 0,
+  "timestamp": "2026-11-03T13:00:12.915098+00:00",
+  "note": "Skipped cases have not tested an implementation. No profile means no network requests."
+}

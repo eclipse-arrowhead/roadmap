@@ -1,0 +1,162 @@
+{
+  "verifiedFiles": 39,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "f995c7fcbe5a040b7354249a962a2594159df8c024e46305a47df10c0796579d"
+    },
+    {
+      "path": "COVERAGE.md",
+      "sha256": "f9b5be3907df35e30c309f119438f72ec9935ce3443809f9221f4c6fa1981f2d"
+    },
+    {
+      "path": "CURRENT_RESULTS.md",
+      "sha256": "45a9b7e78f0345d61a6eef6f76928ee6466fc93ebf9b264e6f0b2ddad4986497"
+    },
+    {
+      "path": "FINDINGS.md",
+      "sha256": "522934cdee7bbb91386e7e23b80c25da9358453825c6b6fbfd90f7c2c7047bf0"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "ad6a6ecfe4593c5f31a6b1b0ee740cff8472798bd59b13c812062f06aab63a7a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "da28e4b500533bffd01a08ed369398e20fdf10dfb9b16485a3f55e75e7becae8"
+    },
+    {
+      "path": "RESULTS.md",
+      "sha256": "247181457252fa25ec3f37054c1d25b28479343a400b2d1540b3dae7ba79ae55"
+    },
+    {
+      "path": "TRACEABILITY.md",
+      "sha256": "53dce22940a58023f9cc99a5f7e3fc57fe7085c8c7a2068828a524fa0cce98e8"
+    },
+    {
+      "path": "catalog.json",
+      "sha256": "d9a5b356e0facc16295caab8b49362a0f8e2ec69cff8295592e1dba8506bdf9f"
+    },
+    {
+      "path": "config/lifecycle-fixture.template.json",
+      "sha256": "bf2c1a69553d18bd2de51ab2e705bc3abd099f482a6aebe7e6452afda058a868"
+    },
+    {
+      "path": "config/profile.example.json",
+      "sha256": "53059040d3d7cce651fd86a7858e307cef3310f664ca18e53cc7262c920228b0"
+    },
+    {
+      "path": "native/SoSAuthorizationEngineTests.java",
+      "sha256": "adf9513c8b59a41a1690389431ef1ba760c6cbe3efa8cf52a50a1b81ee086f9f"
+    },
+    {
+      "path": "native/gsosd_530.rs",
+      "sha256": "eee4c466711044a443622e84a07b88375e968d4eb88abd39f6a0021f276228c7"
+    },
+    {
+      "path": "native/gsosd_530_test.go",
+      "sha256": "a19b4986f9eedefda7cc9019ecdc12f7a21dd1c6edb9dd00dffbff1c8fe229be"
+    },
+    {
+      "path": "native/vectors.json",
+      "sha256": "e23b49ec4fae55a3d00b8d6e438aa130081ea5afbc4c1e79aae8b6663a121151"
+    },
+    {
+      "path": "reports/go-native-results.json",
+      "sha256": "4754d960651951779f7f7437939bb8f559444b2db266de264606fa2107c52b40"
+    },
+    {
+      "path": "reports/go-native.log",
+      "sha256": "9a255d2c27a8be0bef060bfa7076303264abbc6f5f1bbe019d261e05c0fd1e6c"
+    },
+    {
+      "path": "reports/harness-results.json",
+      "sha256": "3f7e3388d4d2524c675a80d339106d2b61595ad6d99737dfcaa5da670e067e95"
+    },
+    {
+      "path": "reports/java-native-results.json",
+      "sha256": "8685d92912d3c8dd50c9678d75882d1de161c004dfa15c3e4a05d5835c8c0fd6"
+    },
+    {
+      "path": "reports/java-native.log",
+      "sha256": "985bc9f99c26260397751135cf1c57aa70a5a475f74930fe157e9e437f841af2"
+    },
+    {
+      "path": "reports/junit.xml",
+      "sha256": "fb3dd789d4d7e2a33a619970c7b8f46ed0089936801af2ba016891555e492f24"
+    },
+    {
+      "path": "reports/live-results.json",
+      "sha256": "84af04f0394474df131f95b9a741d05ba0e27ca996ffb83f763f571392fd09cc"
+    },
+    {
+      "path": "reports/native-results.json",
+      "sha256": "a2c66806f39ddfdca7855e26fd1d10f982a99ed58b8232df7bac01a7f915b51f"
+    },
+    {
+      "path": "reports/package-verification.json",
+      "sha256": "f24b5ab8ea7f0a33f36af5b99209d5f99f9f87aea9d3a70003c3f5dcaea87ef5"
+    },
+    {
+      "path": "reports/rust-native-results.json",
+      "sha256": "4c58ae0e7801642bb01ad2d5dfb472f539dc190a73d461f57d76ec3af4cec5e6"
+    },
+    {
+      "path": "reports/rust-native.log",
+      "sha256": "00bfaf535f52eac0517e5c4c11005986e93407a6e54f92458aabc8c49ab43e91"
+    },
+    {
+      "path": "reports/source-fingerprints.json",
+      "sha256": "7791c0e74cad32c442e308832c218a850677738ae713a1655cc86a77e53a9757"
+    },
+    {
+      "path": "requirements.json",
+      "sha256": "bef14975764acce9f805b0ae1f3adfdc94bf9ffd0618e935657f5a96ee687adf"
+    },
+    {
+      "path": "run_all.py",
+      "sha256": "56d4a75958d503ce203ee70f48e09e71dacc1a2593108e269bb3bf666a34990d"
+    },
+    {
+      "path": "run_live.py",
+      "sha256": "d9d4174af06714e4f32885a78e584875cf2bf49d55d00cb1835ecb3c316a8e6a"
+    },
+    {
+      "path": "run_native.py",
+      "sha256": "f7fba2a4cf7093c9cd822ef36422ce86346d296ecfa9158d2611e023a2de77e3"
+    },
+    {
+      "path": "run_selftests.py",
+      "sha256": "2233d91b32241fcf3ba6ef2edee22dae8a8c9eda3c50706c691f54f7438c257c"
+    },
+    {
+      "path": "scenarios.json",
+      "sha256": "81cd5d4ac29636d2a2c973c008b600211f2c221aa9e16f6467906f6df6ba9da9"
+    },
+    {
+      "path": "sos_tests/__init__.py",
+      "sha256": "e56c704f758b2434e68c935b0636fa0989f694067119c04fc9eb461ea7b96bf7"
+    },
+    {
+      "path": "sos_tests/harness.py",
+      "sha256": "b50fa8acf9de47e21585c8cd8a31c8a41f67fd124d0030234cf4161c45dc0bd7"
+    },
+    {
+      "path": "sos_tests/test_harness.py",
+      "sha256": "599d4cf3fb79287333e5e30b87caf557328c50b8c0d4cde9634538234c2640d4"
+    },
+    {
+      "path": "sos_tests/test_live.py",
+      "sha256": "2de61b62e55566cc7e3d744129db1161c9679fb90c35f0a7eaba70a9174bf25d"
+    },
+    {
+      "path": "summarize_results.py",
+      "sha256": "04a3647454d2b92d50790830d0c7e0d209c3d567a87f0ab856c4045d17c81d46"
+    }
+  ],
+  "note": "Install-time hashes; reports may change after subsequent test runs."
+}

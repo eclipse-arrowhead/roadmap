@@ -1,0 +1,26 @@
+[
+  {
+    "service": "blacklist",
+    "previousImage": "arrowhead-blacklist:5.2.2-sysmonitor",
+    "restored": {
+      "management.policy": "authorization",
+      "management.whitelist": "DynamicServiceOrchestration,TranslationManager"
+    }
+  },
+  {
+    "service": "translation-manager",
+    "previousImage": "arrowhead-translation-manager:5.2.2-sysmonitor",
+    "restored": {
+      "management.policy": "authorization",
+      "management.whitelist": "DynamicServiceOrchestration"
+    }
+  },
+  {
+    "service": "device-qos-evaluator",
+    "previousImage": "arrowhead-device-qos-evaluator:5.2.2-sysmonitor",
+    "restored": {
+      "management.policy": "authorization",
+      "management.whitelist": ""
+    }
+  }
+]
